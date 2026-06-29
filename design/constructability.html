@@ -5,12 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
     <!-- SEO & OPEN GRAPH META TAGS -->
-    <title>Pre-Construction & Design Insights | Unicon Construction</title>
-    <meta name="description" content="Read expert engineering articles, pre-construction diagnostics, and structural clash detection guides compiled by Unicon's Hilton HQ engineering desk.">
-    <meta property="og:title" content="Unicon Construction | Pre-Construction & Design Insights">
-    <meta property="og:description" content="In-depth, data-backed reports on minimizing risk and guaranteeing cost certainty in heavy construction.">
+    <title>BIM & Constructability Analysis | Unicon Construction</title>
+    <meta name="description" content="Unicon utilizes advanced Building Information Modeling (BIM) to detect clashes, simulate construction timelines, and generate absolute cost certainty.">
+    <meta property="og:title" content="Unicon Construction | BIM & Constructability Analysis">
+    <meta property="og:description" content="Digital Coordination: The technological overlay that guarantees execution.">
     <meta property="og:image" content="https://raw.githubusercontent.com/chrisnott-unicon/bestphotos/main/unicon-construction-large-scale-foundations-formwork-site.jpg">
-    <meta property="og:url" content="https://www.uniconsa.co.za/design/insights">
+    <meta property="og:url" content="https://www.uniconsa.co.za/design/constructability">
     <meta property="og:type" content="website">
 
     <!-- GLOBAL SITE TAG (gtag.js) - GOOGLE ANALYTICS & REMARKETING -->
@@ -37,17 +37,19 @@
     </script>
     <style>
         body { background-color: #ffffff; color: #0a0a0a; -webkit-font-smoothing: antialiased; margin: 0; padding: 0; overflow-x: hidden; }
-        .bg-blueprint { background-image: linear-gradient(to right, rgba(229, 231, 235, 0.5) 1px, transparent 1px), linear-gradient(to bottom, rgba(229, 231, 235, 0.5) 1px, transparent 1px); background-size: 4rem 4rem; }
-        .text-outline { color: transparent; -webkit-text-stroke: 1px #0a0a0a; }
+        .bg-blueprint-dark { background-image: linear-gradient(to right, rgba(255,255,255,0.05) 1px, transparent 1px), linear-gradient(to bottom, rgba(255,255,255,0.05) 1px, transparent 1px); background-size: 4rem 4rem; }
+        .text-outline { color: transparent; -webkit-text-stroke: 1px #ffffff; }
         .no-scrollbar::-webkit-scrollbar { display: none; }
         .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+        @keyframes scan { 0% { top: 0%; opacity: 0; } 10% { opacity: 1; } 90% { opacity: 1; } 100% { top: 100%; opacity: 0; } }
+        .animate-scan { animation: scan 4s linear infinite; }
         .whatsapp-fab { position: fixed; bottom: 30px; right: 30px; background-color: #25D366; color: white; width: 60px; height: 60px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 32px; box-shadow: 0 4px 15px rgba(0,0,0,0.3); z-index: 9999; transition: transform 0.3s ease; text-decoration: none; }
     </style>
 </head>
 <body class="font-sans pt-20">
 
     <!-- WHATSAPP FLOATING CTA -->
-    <a href="https://wa.me/27664834709?text=Hello%20Unicon,%20I%20am%20interested%20in%20your%20Pre-Construction%20and%20Design%20Insights." target="_blank" class="whatsapp-fab" aria-label="Chat with us on WhatsApp">
+    <a href="https://wa.me/27664834709?text=Hello%20Unicon,%20I%20am%20interested%20in%20your%20BIM%20%26%20Digital%20Coordination%20capabilities." target="_blank" class="whatsapp-fab" aria-label="Chat with us on WhatsApp">
         <i class="fa-brands fa-whatsapp"></i>
     </a>
 
@@ -115,18 +117,26 @@
         </div>
     </nav>
 
-    <header class="relative min-h-[50vh] flex flex-col justify-center border-b border-unicon-border bg-blueprint pt-24 pb-16 overflow-hidden">
-        <div class="max-w-[90rem] mx-auto px-6 sm:px-8 lg:px-12 w-full relative z-10">
+    <header class="relative min-h-[70vh] flex flex-col justify-center border-b border-gray-800 bg-unicon-black bg-blueprint-dark pt-24 pb-16 overflow-hidden">
+        <div class="max-w-[90rem] mx-auto px-6 sm:px-8 lg:px-12 w-full relative z-10 text-white">
             <div class="mb-8 animate-fade-up flex items-center gap-2 font-mono text-[9px] sm:text-[10px] uppercase tracking-widest font-bold">
                 <a href="/design" target="_top" class="text-gray-400 hover:text-unicon-green transition-colors">Design Division</a>
                 <span class="text-gray-400">/</span>
-                <span class="bg-unicon-black text-white px-3 py-1">Pre-Con Insights</span>
+                <span class="bg-unicon-green text-white px-3 py-1">BIM & Constructability</span>
             </div>
             
             <h1 class="text-5xl sm:text-7xl lg:text-[7.5rem] font-extrabold tracking-tighter leading-[0.85] mb-8 animate-fade-up uppercase">
-                Pre-Con <br />
-                <span class="text-outline">Insights.</span>
+                Digital <br />
+                <span class="text-outline">Coordination.</span>
             </h1>
+            
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 mt-12 border-t border-gray-800 pt-10">
+                <div class="lg:col-span-8">
+                    <p class="text-xl md:text-2xl font-light leading-relaxed text-gray-300 max-w-3xl">
+                        The technological overlay that guarantees execution. Unicon utilizes advanced <span class="text-unicon-green font-bold">Building Information Modeling (BIM)</span> to detect clashes, simulate construction timelines, and generate absolute cost certainty.
+                    </p>
+                </div>
+            </div>
         </div>
     </header>
 
@@ -137,38 +147,36 @@
                 <li class="snap-start shrink-0"><a href="/design/architecture" target="_top" class="block py-4 px-6 text-[10px] font-bold uppercase tracking-[0.15em] text-gray-400 hover:text-white transition-colors whitespace-nowrap">Architecture</a></li>
                 <li class="snap-start shrink-0"><a href="/design/structural-engineering" target="_top" class="block py-4 px-6 text-[10px] font-bold uppercase tracking-[0.15em] text-gray-400 hover:text-white transition-colors whitespace-nowrap">Structural</a></li>
                 <li class="snap-start shrink-0"><a href="/design/civil-engineering" target="_top" class="block py-4 px-6 text-[10px] font-bold uppercase tracking-[0.15em] text-gray-400 hover:text-white transition-colors whitespace-nowrap">Civil & Earthworks</a></li>
-                <li class="snap-start shrink-0"><a href="/design/constructability" target="_top" class="block py-4 px-6 text-[10px] font-bold uppercase tracking-[0.15em] text-gray-400 hover:text-white transition-colors whitespace-nowrap">BIM / Constructability</a></li>
-                <li class="snap-start shrink-0"><a href="/design/insights" target="_top" class="block py-4 px-6 text-[10px] font-bold uppercase tracking-[0.15em] text-unicon-green border-b-2 border-unicon-green whitespace-nowrap bg-[#111111]">Pre-Con Insights</a></li>
+                <li class="snap-start shrink-0"><a href="/design/constructability" target="_top" class="block py-4 px-6 text-[10px] font-bold uppercase tracking-[0.15em] text-unicon-green border-b-2 border-unicon-green whitespace-nowrap bg-[#111111]">BIM / Constructability</a></li>
+                <li class="snap-start shrink-0"><a href="/design/insights" target="_top" class="block py-4 px-6 text-[10px] font-bold uppercase tracking-[0.15em] text-gray-400 hover:text-white transition-colors whitespace-nowrap">Pre-Con Insights</a></li>
             </ul>
         </div>
     </nav>
 
-    <!-- ARTICLES GRID -->
-    <section class="py-20 bg-unicon-slate">
+    <section class="py-20 md:py-32 bg-white border-b border-unicon-border">
         <div class="max-w-[90rem] mx-auto px-6 sm:px-8 lg:px-12">
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-                
-                <!-- Article 1 -->
-                <article class="bg-white border border-unicon-border p-8 shadow-sm flex flex-col">
-                    <span class="text-unicon-green font-mono text-[10px] uppercase tracking-widest font-bold mb-2">BIM Methodologies</span>
-                    <h3 class="text-2xl font-bold uppercase tracking-tight mb-4 text-unicon-black">Eliminating Structural Clash Through 4D BIM Modeling</h3>
-                    <p class="text-sm text-gray-600 font-light leading-relaxed mb-6 flex-grow">
-                        Discover how Unicon utilizes structural coordination overlay matrices during the conceptual drafting phase to isolate and resolve constructability issues on-screen—mitigating costly downtime on-site.
-                    </p>
-                    <a href="/communications/insights" target="_top" class="text-xs font-bold uppercase tracking-widest text-unicon-black hover:text-unicon-green transition-colors">Read Report <i class="fa-solid fa-arrow-right ml-1"></i></a>
-                </article>
-
-                <!-- Article 2 -->
-                <article class="bg-white border border-unicon-border p-8 shadow-sm flex flex-col">
-                    <span class="text-unicon-green font-mono text-[10px] uppercase tracking-widest font-bold mb-2">Pre-Con Risk Analysis</span>
-                    <h3 class="text-2xl font-bold uppercase tracking-tight mb-4 text-unicon-black">How Concurrent Costing and Estimating De-Risks Project Funding</h3>
-                    <p class="text-sm text-gray-600 font-light leading-relaxed mb-6 flex-grow">
-                        Establishing structural bills of quantities (BOQs) concurrently with spatial architecture drafts guarantees absolute budget alignment, helping MEA developers secure rapid municipal and board approvals.
-                    </p>
-                    <a href="/communications/insights" target="_top" class="text-xs font-bold uppercase tracking-widest text-unicon-black hover:text-unicon-green transition-colors">Read Report <i class="fa-solid fa-arrow-right ml-1"></i></a>
-                </article>
-
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                <div class="lg:col-span-6">
+                    <h3 class="text-3xl font-extrabold uppercase mb-4">4D Scheduling \& Clash Detection</h3>
+                    <p class="text-sm text-gray-600 font-light leading-relaxed mb-6">By building your asset digitally inside BIM software before physically breaking ground, we run active clash-detections to solve potential site conflicts on screen—not with jackhammers.</p>
+                </div>
+                <div class="lg:col-span-6">
+                    <div class="bg-unicon-slate border border-unicon-border p-8">
+                        <p class="text-xs uppercase tracking-widest text-[#475c4d] font-mono mb-2">BIM Core Tech</p>
+                        <h4 class="text-lg font-bold uppercase tracking-tight text-unicon-black">Autodesk Construction Cloud</h4>
+                        <p class="text-xs text-gray-500 font-light mt-2">Linking design and field operations seamlessly via real-time data sync.</p>
+                    </div>
+                </div>
             </div>
+        </div>
+    </section>
+
+    <!-- REMARKETING CTA -->
+    <section class="py-20 bg-unicon-green text-white text-center">
+        <div class="max-w-4xl mx-auto px-6">
+            <h2 class="text-3xl sm:text-4xl font-extrabold tracking-tight uppercase leading-none mb-6">De-Risk Your Project Now</h2>
+            <p class="text-white/80 font-light text-lg mb-8">Deploy virtual clash detection and BIM scheduling simulation on your upcoming build.</p>
+            <a href="/contact" target="_top" class="px-10 py-5 bg-unicon-black text-white font-bold uppercase tracking-widest text-xs hover:bg-white hover:text-unicon-black transition-colors inline-block">Consult BIM Specialists</a>
         </div>
     </section>
 
