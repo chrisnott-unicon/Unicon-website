@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Unicon Construction - Olive CPM Software</title>
+    <meta name="description" content="Olive CPM is a proprietary digital platform engineered to bring absolute transparency and remote oversight to infrastructure projects.">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: { unicon: { black: '#0a0a0a', dark: '#1c1c1c', slate: '#f4f4f5', green: '#475c4d', border: '#e5e7eb' } },
+                    fontFamily: { sans: ['"Century Gothic"', 'sans-serif'], mono: ['ui-monospace', 'monospace'] },
+                    letterSpacing: { tighter: '-0.04em', tight: '-0.02em', widest: '0.2em' }
+                }
+            }
+        }
+    </script>
+    <style>
+        body { background-color: #fafafa; color: #0a0a0a; margin: 0; padding: 0; overflow-x: hidden; }
+        .bg-blueprint { background-image: linear-gradient(to right, rgba(229, 231, 235, 0.6) 1px, transparent 1px), linear-gradient(to bottom, rgba(229, 231, 235, 0.6) 1px, transparent 1px); background-size: 4rem 4rem; }
+        .text-outline { color: transparent; -webkit-text-stroke: 1px #0a0a0a; }
+        @keyframes fadeUp { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+        .animate-fade-up { animation: fadeUp 1s cubic-bezier(0.16, 1, 0.3, 1) forwards; }
+    </style>
+</head>
+<body class="font-sans selection:bg-unicon-green selection:text-white">
+
+    <!-- NATIVE NAV BAR -->
+    <nav id="navbar" class="fixed top-0 left-0 w-full z-[100] transition-all duration-300 bg-[#0a0a0a]/95 backdrop-blur-md border-b border-gray-800 py-3 sm:py-4">
+        <div class="max-w-[90rem] mx-auto px-6 sm:px-8 lg:px-12 flex justify-between items-center">
+            <a href="/" class="flex items-center gap-3 group">
+                <span class="font-extrabold text-xl sm:text-2xl tracking-tighter uppercase text-white group-hover:text-unicon-green transition-colors">UNICON</span>
+                <div class="h-4 w-[1px] bg-gray-700"></div>
+                <span class="text-[8px] sm:text-[10px] font-mono text-unicon-green tracking-[0.2em] uppercase font-bold hidden sm:inline-block">EST. 1991</span>
+            </a>
+
+            <div class="hidden lg:flex items-center gap-8">
+                <a href="/home/about" class="text-xs font-bold uppercase tracking-widest text-white hover:text-unicon-green transition-colors py-2">Company</a>
+                <a href="/design" class="text-xs font-bold uppercase tracking-widest text-white hover:text-unicon-green transition-colors py-2">Design</a>
+                <a href="/build/water-engineering" class="text-xs font-bold uppercase tracking-widest text-white hover:text-unicon-green transition-colors py-2">Build</a>
+                <a href="/manage/project-management" class="text-xs font-bold uppercase tracking-widest text-white hover:text-unicon-green transition-colors py-2">Manage</a>
+                <!-- Dropdown: Contact (Active) -->
+                <div class="relative group">
+                    <button class="text-xs font-bold uppercase tracking-widest text-unicon-green transition-colors py-2 flex items-center gap-1">Contact <i class="fa-solid fa-chevron-down text-[9px] opacity-70"></i></button>
+                    <div class="absolute top-full right-0 mt-4 w-48 bg-[#0a0a0a] border border-gray-800 shadow-2xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 translate-y-2 group-hover:translate-y-0">
+                        <div class="absolute -top-4 right-0 w-full h-4 bg-transparent"></div>
+                        <a href="/contact/corporate-profile" class="block px-5 py-3 text-[10px] uppercase tracking-widest text-gray-400 hover:text-white hover:bg-unicon-green/20 border-b border-gray-800">Corporate Downloads</a>
+                        <a href="/contact/olive-cpm-overview" class="block px-5 py-3 text-[10px] uppercase tracking-widest text-unicon-green bg-[#111111] hover:text-white border-b border-gray-800">Olive CPM</a>
+                        <a href="/contact/supplier-network" class="block px-5 py-3 text-[10px] uppercase tracking-widest text-gray-400 hover:text-white hover:bg-unicon-green/20 border-b border-gray-800">Vendor Network</a>
+                        <a href="/contact/join-unicon" class="block px-5 py-3 text-[10px] uppercase tracking-widest text-gray-400 hover:text-white hover:bg-unicon-green/20">Careers</a>
+                    </div>
+                </div>
+            </div>
+
+            <button id="mobile-menu-btn" class="lg:hidden text-white hover:text-unicon-green transition-colors p-2">
+                <i class="fa-solid fa-bars text-xl"></i>
+            </button>
+        </div>
+    </nav>
+
+    <header class="relative pt-24 pb-16 md:pt-32 md:pb-24 border-b border-unicon-border bg-white overflow-hidden">
+        <div class="absolute inset-0 bg-blueprint z-0 opacity-50"></div>
+
+        <div class="max-w-[90rem] mx-auto px-6 sm:px-8 lg:px-12 relative z-10 animate-fade-up">
+            
+            <div class="mb-6 flex items-center gap-3">
+                <span class="inline-flex items-center gap-2 py-1.5 px-4 border border-unicon-black text-[10px] md:text-xs font-bold uppercase tracking-widest text-unicon-black bg-white shadow-sm">
+                    <span class="w-2 h-2 bg-unicon-green rounded-full animate-pulse"></span>
+                    Unicon Tech Division
+                </span>
+                <span class="inline-flex items-center gap-2 py-1.5 px-4 border border-unicon-green text-[10px] md:text-xs font-bold uppercase tracking-widest text-unicon-green bg-unicon-green/10 shadow-sm">
+                    Closed Beta Active
+                </span>
+            </div>
+            
+            <h1 class="text-[11vw] sm:text-[9vw] lg:text-[7rem] xl:text-[8rem] font-extrabold tracking-tighter leading-[0.85] mb-8 uppercase text-unicon-black">
+                Olive <br />
+                <span class="text-outline">CPM.</span>
+            </h1>
+            
+            <div class="max-w-4xl border-t border-unicon-border pt-8 grid grid-cols-1 lg:grid-cols-12 gap-8">
+                <div class="lg:col-span-8">
+                    <p class="text-xl sm:text-2xl font-light leading-relaxed text-unicon-dark mb-8">
+                        Construction management without the black box. Olive CPM is a proprietary digital platform engineered to bring <span class="text-unicon-green font-bold">absolute transparency, remote oversight, and contractual protection</span> to infrastructure projects across the African continent.
+                    </p>
+                    <div class="flex flex-col sm:flex-row gap-4">
+                        <a href="#beta-request" class="px-8 py-4 bg-unicon-black text-white font-bold uppercase tracking-widest text-xs hover:bg-unicon-green transition-colors rounded-sm text-center shadow-lg flex items-center justify-center gap-3">
+                            Request Beta Access <i class="fa-solid fa-arrow-down"></i>
+                        </a>
+                    </div>
+                </div>
+                <div class="lg:col-span-4 flex flex-col justify-center border-l border-unicon-border pl-8 hidden lg:flex">
+                    <p class="text-[10px] font-mono text-gray-500 uppercase tracking-widest mb-1 font-bold">Contract Formats Supported</p>
+                    <p class="text-lg font-bold text-unicon-black uppercase tracking-tight">JBCC, GCC, FIDIC</p>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <section class="py-20 md:py-32 bg-unicon-slate border-b border-unicon-border relative">
+        <div class="max-w-[90rem] mx-auto px-6 sm:px-8 lg:px-12 relative z-10">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-20 items-center">
+                <div class="lg:col-span-5">
+                    <p class="text-unicon-green font-bold uppercase tracking-widest text-[10px] md:text-xs mb-3 flex items-center">
+                        <i class="fa-solid fa-earth-africa mr-2"></i> The African Context
+                    </p>
+                    <h2 class="text-4xl sm:text-5xl font-extrabold tracking-tight uppercase leading-none mb-6 text-unicon-black">
+                        Remote Execution. <br> <span class="text-unicon-green">Total Control.</span>
+                    </h2>
+                    <p class="text-gray-600 font-light leading-relaxed mb-6 text-base md:text-lg">
+                        Executing major infrastructure across Southern Africa comes with inherent risks. Geographical isolation, fragmented supply chains, extreme weather events, and delayed reporting plague traditional contracting.
+                    </p>
+                    <p class="text-gray-600 font-light leading-relaxed text-base md:text-lg">
+                        For developers and stakeholders sitting in boardrooms in Johannesburg, London, or Dubai, managing a project in a deep-rural node often feels like looking into a black box. <strong class="text-unicon-black">Olive CPM was built by Unicon to shatter that black box.</strong>
+                    </p>
+                </div>
+
+                <div class="lg:col-span-7 grid grid-cols-1 sm:grid-cols-2 gap-6">
+                    <div class="bg-white p-8 border border-unicon-border shadow-sm">
+                        <i class="fa-solid fa-shield-halved text-3xl text-unicon-green mb-5"></i>
+                        <h4 class="font-bold uppercase tracking-tight text-lg mb-2 text-unicon-black">Contractual Defence</h4>
+                        <p class="text-sm text-gray-500 font-light leading-relaxed">By enforcing rigid, timestamped daily site records, Olive actively builds a defensive wall of data against unfair penalties and secures valid Extensions of Time (EOT).</p>
+                    </div>
+                    <div class="bg-white p-8 border border-unicon-border shadow-sm">
+                        <i class="fa-solid fa-satellite-dish text-3xl text-unicon-green mb-5"></i>
+                        <h4 class="font-bold uppercase tracking-tight text-lg mb-2 text-unicon-black">Live Telemetry</h4>
+                        <p class="text-sm text-gray-500 font-light leading-relaxed">No more waiting for month-end reports. Stakeholders gain immediate, cloud-based access to site weather data, labour counts, material deliveries, and geo-tagged progress photos.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="beta-request" class="py-24 bg-unicon-black text-white relative overflow-hidden">
+        <div class="absolute inset-0 opacity-[0.05] pointer-events-none font-mono text-xs overflow-hidden">
+            <div class="absolute top-10 left-10">INITIALIZING_NODE...<br>VERIFYING_CREDENTIALS...</div>
+            <div class="absolute bottom-10 right-10 text-right">SYSTEM_ONLINE<br>UPTIME: 99.99%</div>
+            <svg viewBox="0 0 100 100" class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px]" stroke="currentColor" fill="none">
+                <circle cx="50" cy="50" r="40" stroke-width="0.2" stroke-dasharray="2 2" />
+                <circle cx="50" cy="50" r="30" stroke-width="0.1" />
+            </svg>
+        </div>
+
+        <div class="max-w-4xl mx-auto px-6 relative z-10 text-center border border-gray-800 bg-[#050505] p-10 md:p-16 shadow-2xl">
+            <span class="inline-block py-1 px-3 border border-unicon-green text-[10px] font-bold uppercase tracking-widest text-unicon-green mb-6 bg-unicon-green/10">
+                <i class="fa-solid fa-lock mr-2"></i> Closed Beta Program
+            </span>
+            <h2 class="text-3xl sm:text-5xl font-extrabold tracking-tight uppercase leading-none mb-6">Request A Trial Deployment</h2>
+            <p class="text-gray-400 font-light text-lg mb-10 max-w-2xl mx-auto">
+                Olive CPM is currently in active deployment on internal Unicon projects and is available strictly via invitation to approved external developers, principal agents, and contractors.
+            </p>
+            
+            <div class="flex flex-col sm:flex-row gap-5 justify-center">
+                <a href="/contact" target="_top" class="px-10 py-5 bg-unicon-green text-white font-bold uppercase tracking-widest text-xs hover:bg-white hover:text-unicon-black transition-colors rounded-sm shadow-[0_0_20px_rgba(71,92,77,0.4)]">
+                    Apply For Access
+                </a>
+            </div>
+            <p class="text-[10px] font-mono text-gray-500 uppercase tracking-widest mt-8">
+                * Approval requires verification of active professional registration.
+            </p>
+        </div>
+    </section>
+
+    <footer class="py-12 bg-white border-t border-unicon-border text-center">
+        <p class="text-[10px] text-gray-400 uppercase tracking-widest">© <span id="year-footer"></span> Unicon Construction SA. <br> <a href="/" class="text-unicon-green hover:underline mt-2 inline-block">Return to Home</a></p>
+    </footer>
+    <script>document.getElementById('year-footer').textContent = new Date().getFullYear();</script>
+</body>
+</html>
