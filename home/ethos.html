@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Unicon Ethos | Unicon Construction</title>
+    <meta name="description" content="Our ethos is deeply rooted in how we impact our people, our clients, and the environment. We build on integrity and are driven by purpose.">
+    
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-XXXXXXXXXX');
+      gtag('config', 'AW-XXXXXXXXXX');
+    </script>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: { unicon: { black: '#0a0a0a', dark: '#1c1c1c', slate: '#f4f4f5', green: '#475c4d', border: '#e5e7eb' } },
+                    fontFamily: { sans: ['"Century Gothic"', 'sans-serif'], mono: ['ui-monospace', 'monospace'] }
+                }
+            }
+        }
+    </script>
+    <style>
+        body { background-color: #ffffff; color: #0a0a0a; -webkit-font-smoothing: antialiased; margin: 0; padding: 0; overflow-x: hidden; }
+        .bg-blueprint { background-image: linear-gradient(to right, #f3f4f6 1px, transparent 1px), linear-gradient(to bottom, #f3f4f6 1px, transparent 1px); background-size: 4rem 4rem; }
+        .text-outline { color: transparent; -webkit-text-stroke: 1px #0a0a0a; }
+        @keyframes fadeUp { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: translateY(0); } }
+        .animate-fade-up { animation: fadeUp 1s cubic-bezier(0.16, 1, 0.3, 1) forwards; opacity: 0; }
+        .delay-100 { animation-delay: 100ms; }
+        .delay-200 { animation-delay: 200ms; }
+        .whatsapp-fab { position: fixed; bottom: 30px; right: 30px; background-color: #25D366; color: white; width: 60px; height: 60px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 32px; box-shadow: 0 4px 15px rgba(0,0,0,0.3); z-index: 9999; transition: transform 0.3s ease; text-decoration: none; }
+        .no-scrollbar::-webkit-scrollbar { display: none; }
+        .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+    </style>
+</head>
+<body class="font-sans pt-16 sm:pt-20">
+
+    <a href="https://wa.me/27664834709?text=Hello%20Unicon" target="_blank" class="whatsapp-fab">
+        <i class="fa-brands fa-whatsapp"></i>
+    </a>
+
+    <!-- NATIVE NAV BAR (Condensed) -->
+    <nav id="navbar" class="fixed top-0 left-0 w-full z-[100] transition-all duration-300 bg-[#0a0a0a]/95 backdrop-blur-md border-b border-gray-800 py-3 sm:py-4">
+        <div class="max-w-[90rem] mx-auto px-6 sm:px-8 lg:px-12 flex justify-between items-center">
+            <a href="/" class="flex items-center gap-3 group">
+                <span class="font-extrabold text-xl sm:text-2xl tracking-tighter uppercase text-white group-hover:text-unicon-green transition-colors">UNICON</span>
+                <div class="h-4 w-[1px] bg-gray-700"></div>
+                <span class="text-[8px] sm:text-[10px] font-mono text-unicon-green tracking-[0.2em] uppercase font-bold hidden sm:inline-block">EST. 1991</span>
+            </a>
+            <div class="flex items-center gap-4">
+                <a href="/contact" class="px-5 py-2.5 bg-unicon-green text-white text-[10px] font-bold uppercase tracking-widest hover:bg-white hover:text-unicon-black transition-colors rounded-sm">Secure Terminal</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- HERO SECTION -->
+    <header class="relative min-h-[75vh] flex flex-col justify-center border-b border-unicon-border bg-blueprint py-16 md:py-24 overflow-hidden">
+        <div class="max-w-[90rem] mx-auto px-6 sm:px-8 lg:px-12 w-full relative z-10">
+            
+            <div class="mb-8 animate-fade-up">
+                <span class="inline-flex items-center gap-2 py-1.5 px-4 border border-unicon-black text-[10px] md:text-xs font-bold uppercase tracking-widest text-unicon-black bg-white shadow-sm">
+                    <span class="w-2 h-2 bg-unicon-green rounded-full animate-pulse"></span>
+                    Purpose & Values
+                </span>
+            </div>
+            
+            <h1 class="text-[12vw] sm:text-[9vw] lg:text-[7rem] xl:text-[8rem] font-extrabold tracking-tighter leading-[0.85] mb-10 animate-fade-up delay-100 uppercase">
+                The Unicon <br />
+                <span class="text-outline">Ethos.</span>
+            </h1>
+            
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 mt-12 border-t border-unicon-border pt-10 animate-fade-up delay-200">
+                <div class="lg:col-span-8 2xl:col-span-7">
+                    <p class="text-xl sm:text-2xl md:text-3xl font-light leading-relaxed text-unicon-dark max-w-3xl">
+                        Since our inception, our mission has extended far beyond pouring concrete. Our ethos is deeply rooted in how we impact our <span class="text-unicon-green font-bold">people, our clients, and the environment.</span>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- COMPANY SUB-NAV -->
+    <nav class="bg-[#0a0a0a] border-b border-gray-800 sticky top-[60px] sm:top-[72px] z-40 shadow-2xl">
+        <div class="max-w-[90rem] mx-auto px-0 sm:px-8 lg:px-12">
+            <ul class="flex items-center overflow-x-auto no-scrollbar snap-x">
+                <li class="snap-start shrink-0"><a href="/home/about" class="block py-4 px-6 text-[10px] font-bold uppercase tracking-[0.15em] text-gray-400 hover:text-white transition-colors whitespace-nowrap">Profile</a></li>
+                <li class="snap-start shrink-0"><a href="/home/history" class="block py-4 px-6 text-[10px] font-bold uppercase tracking-[0.15em] text-gray-400 hover:text-white transition-colors whitespace-nowrap">History</a></li>
+                <li class="snap-start shrink-0"><a href="/home/team" class="block py-4 px-6 text-[10px] font-bold uppercase tracking-[0.15em] text-gray-400 hover:text-white transition-colors whitespace-nowrap">Workforce</a></li>
+                <li class="snap-start shrink-0"><a href="/home/ethos" class="block py-4 px-6 text-[10px] font-bold uppercase tracking-[0.15em] text-unicon-green border-b-2 border-unicon-green whitespace-nowrap bg-[#111111]">Core Ethos</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- CAPABILITIES -->
+    <section class="py-20 md:py-32 bg-[#050505] border-b border-gray-800 relative overflow-hidden">
+        <img src="https://raw.githubusercontent.com/chrisnott-unicon/bestphotos/main/construction-site-excavator-earthworks.jpg" class="absolute inset-0 w-full h-full object-cover opacity-20 grayscale mix-blend-luminosity" alt="Heavy Earthworks">
+        <div class="absolute inset-0 bg-gradient-to-r from-[#050505] via-[#050505]/95 to-[#050505]/80"></div>
+
+        <div class="max-w-[90rem] mx-auto px-6 sm:px-8 lg:px-12 relative z-10">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 md:gap-16 items-start">
+                
+                <div class="lg:col-span-5 2xl:col-span-4 lg:sticky lg:top-32">
+                    <i class="fa-solid fa-quote-left text-5xl text-unicon-green mb-6 opacity-50"></i>
+                    <h2 class="text-4xl sm:text-5xl md:text-6xl font-extrabold tracking-tight uppercase leading-none mb-6 text-white">
+                        Built on Integrity. <br>
+                        <span class="text-unicon-green">Driven by Purpose.</span>
+                    </h2>
+                    <p class="text-gray-400 font-light leading-relaxed text-base md:text-lg">
+                        We demand absolute transparency and strict ethical adherence across all levels of project procurement and execution.
+                    </p>
+                </div>
+
+                <div class="lg:col-span-7 2xl:col-span-8 grid grid-cols-1 sm:grid-cols-2 gap-6 lg:gap-8">
+                    <div class="bg-[#111111]/90 backdrop-blur-sm border border-gray-800 p-8 hover:border-unicon-green transition-colors duration-300">
+                        <i class="fa-solid fa-scale-balanced text-unicon-green text-3xl mb-5"></i>
+                        <h4 class="text-white font-bold uppercase tracking-tight text-lg mb-3">Ethical Constraints</h4>
+                        <p class="text-gray-500 font-light text-sm leading-relaxed">Integrity is our foundation. We conduct every project, from procurement to handover, within the strictest ethical boundaries and financial transparency.</p>
+                    </div>
+                    
+                    <div class="bg-[#111111]/90 backdrop-blur-sm border border-gray-800 p-8 hover:border-unicon-green transition-colors duration-300">
+                        <i class="fa-solid fa-hard-hat text-unicon-green text-3xl mb-5"></i>
+                        <h4 class="text-white font-bold uppercase tracking-tight text-lg mb-3">Prioritizing Safety</h4>
+                        <p class="text-gray-500 font-light text-sm leading-relaxed">The well-being of our teams and communities is non-negotiable. Our safety protocols on heavy earthworks sites regularly exceed industry standards.</p>
+                    </div>
+
+                    <div class="bg-[#111111]/90 backdrop-blur-sm border border-gray-800 p-8 hover:border-unicon-green transition-colors duration-300 sm:col-span-2">
+                        <i class="fa-solid fa-leaf text-unicon-green text-3xl mb-5"></i>
+                        <h4 class="text-white font-bold uppercase tracking-tight text-lg mb-3">Environmental Duty</h4>
+                        <p class="text-gray-500 font-light text-sm leading-relaxed max-w-xl">We build for the future while protecting the present. We deploy innovative concrete systems that reduce material waste and minimize ecological impact.</p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER SNIPPET -->
+    <footer class="py-12 bg-white border-t border-unicon-border text-center">
+        <p class="text-[10px] text-gray-400 uppercase tracking-widest">© 2026 Unicon Construction SA. <br> <a href="/" class="text-unicon-green hover:underline mt-2 inline-block">Return to Home</a></p>
+    </footer>
+
+</body>
+</html>
