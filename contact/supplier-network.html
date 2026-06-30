@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Unicon Construction - Supplier Network</title>
+    <meta name="description" content="Register your enterprise to partner with Unicon on major infrastructure projects across Southern Africa.">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: { unicon: { black: '#0a0a0a', dark: '#1c1c1c', slate: '#f4f4f5', green: '#475c4d', border: '#e5e7eb' } },
+                    fontFamily: { sans: ['"Century Gothic"', 'sans-serif'], mono: ['ui-monospace', 'monospace'] },
+                    letterSpacing: { tighter: '-0.04em', tight: '-0.02em', widest: '0.2em' }
+                }
+            }
+        }
+    </script>
+    <style>
+        body { background-color: #ffffff; color: #0a0a0a; margin: 0; padding: 0; overflow-x: hidden; }
+        .bg-blueprint { background-image: linear-gradient(to right, #f3f4f6 1px, transparent 1px), linear-gradient(to bottom, #f3f4f6 1px, transparent 1px); background-size: 4rem 4rem; }
+        .text-outline { color: transparent; -webkit-text-stroke: 1px #0a0a0a; }
+        @keyframes fadeUp { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+        .animate-fade-up { animation: fadeUp 1s cubic-bezier(0.16, 1, 0.3, 1) forwards; }
+        
+        .hp-gate { position: absolute; left: -5000px; top: -5000px; opacity: 0; pointer-events: none; }
+        .hidden-state { display: none !important; }
+        .toggle-checkbox:checked { right: 0; border-color: #475c4d; }
+        .toggle-checkbox:checked + .toggle-label { background-color: #475c4d; }
+    </style>
+</head>
+<body class="font-sans pt-16 sm:pt-20">
+
+    <!-- NATIVE NAV BAR -->
+    <nav id="navbar" class="fixed top-0 left-0 w-full z-[100] transition-all duration-300 bg-[#0a0a0a]/95 backdrop-blur-md border-b border-gray-800 py-3 sm:py-4">
+        <div class="max-w-[90rem] mx-auto px-6 sm:px-8 lg:px-12 flex justify-between items-center">
+            <a href="/" class="flex items-center gap-3 group">
+                <span class="font-extrabold text-xl sm:text-2xl tracking-tighter uppercase text-white group-hover:text-unicon-green transition-colors">UNICON</span>
+                <div class="h-4 w-[1px] bg-gray-700"></div>
+                <span class="text-[8px] sm:text-[10px] font-mono text-unicon-green tracking-[0.2em] uppercase font-bold hidden sm:inline-block">EST. 1991</span>
+            </a>
+
+            <div class="hidden lg:flex items-center gap-8">
+                <a href="/home/about" class="text-xs font-bold uppercase tracking-widest text-white hover:text-unicon-green transition-colors py-2">Company</a>
+                <a href="/design" class="text-xs font-bold uppercase tracking-widest text-white hover:text-unicon-green transition-colors py-2">Design</a>
+                <a href="/build/water-engineering" class="text-xs font-bold uppercase tracking-widest text-white hover:text-unicon-green transition-colors py-2">Build</a>
+                <a href="/manage/project-management" class="text-xs font-bold uppercase tracking-widest text-white hover:text-unicon-green transition-colors py-2">Manage</a>
+                <!-- Dropdown: Contact (Active) -->
+                <div class="relative group">
+                    <button class="text-xs font-bold uppercase tracking-widest text-unicon-green transition-colors py-2 flex items-center gap-1">Contact <i class="fa-solid fa-chevron-down text-[9px] opacity-70"></i></button>
+                    <div class="absolute top-full right-0 mt-4 w-48 bg-[#0a0a0a] border border-gray-800 shadow-2xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 translate-y-2 group-hover:translate-y-0">
+                        <div class="absolute -top-4 right-0 w-full h-4 bg-transparent"></div>
+                        <a href="/contact/corporate-profile" class="block px-5 py-3 text-[10px] uppercase tracking-widest text-gray-400 hover:text-white hover:bg-unicon-green/20 border-b border-gray-800">Corporate Downloads</a>
+                        <a href="/contact/olive-cpm-overview" class="block px-5 py-3 text-[10px] uppercase tracking-widest text-gray-400 hover:text-white hover:bg-unicon-green/20 border-b border-gray-800">Olive CPM</a>
+                        <a href="/contact/supplier-network" class="block px-5 py-3 text-[10px] uppercase tracking-widest text-unicon-green bg-[#111111] hover:text-white border-b border-gray-800">Vendor Network</a>
+                        <a href="/contact/join-unicon" class="block px-5 py-3 text-[10px] uppercase tracking-widest text-gray-400 hover:text-white hover:bg-unicon-green/20">Careers</a>
+                    </div>
+                </div>
+            </div>
+
+            <button id="mobile-menu-btn" class="lg:hidden text-white hover:text-unicon-green transition-colors p-2">
+                <i class="fa-solid fa-bars text-xl"></i>
+            </button>
+        </div>
+    </nav>
+
+    <!-- HERO SECTION -->
+    <header class="relative pt-24 pb-16 md:pt-32 md:pb-24 border-b border-unicon-border bg-blueprint overflow-hidden">
+        <div class="absolute inset-0 z-0">
+            <img src="https://raw.githubusercontent.com/chrisnott-unicon/bestphotos/main/Unicon_Concrete_Pumping_Truck_Mixer_Steel_Rebar_Bridge_Deck_Pour_Resources_Drakensberg_Mountains_South_Africa_20150912.jpg" class="w-full h-full object-cover opacity-10 grayscale" alt="Unicon Supply Chain" onerror="this.src='https://images.unsplash.com/photo-1541888086425-d81bb19240f5?q=80&w=2070'">
+            <div class="absolute inset-0 bg-gradient-to-t from-white via-white/80 to-transparent"></div>
+        </div>
+
+        <div class="max-w-[90rem] mx-auto px-6 sm:px-8 lg:px-12 relative z-10 animate-fade-up">
+            <div class="mb-6">
+                <span class="inline-flex items-center gap-2 py-1.5 px-4 border border-unicon-black text-[10px] md:text-xs font-bold uppercase tracking-widest text-unicon-black bg-white shadow-sm">
+                    <span class="w-2 h-2 bg-unicon-green rounded-full animate-pulse"></span>
+                    Procurement Division
+                </span>
+            </div>
+            
+            <h1 class="text-[12vw] sm:text-[9vw] lg:text-[7rem] xl:text-[8.5rem] font-extrabold tracking-tighter leading-[0.85] mb-8 uppercase text-unicon-black">
+                Supplier <br />
+                <span class="text-outline">Network.</span>
+            </h1>
+            
+            <div class="max-w-4xl border-t border-unicon-border pt-8">
+                <p class="text-lg sm:text-xl md:text-2xl font-light leading-relaxed text-unicon-dark">
+                    A heavy civil build is only as reliable as its supply chain. Register your enterprise to partner with Unicon on major infrastructure projects across Southern Africa.
+                </p>
+            </div>
+        </div>
+    </header>
+
+    <!-- NARRATIVE & FORM SECTION -->
+    <section class="py-16 md:py-24 bg-white relative">
+        <div class="max-w-[90rem] mx-auto px-6 sm:px-8 lg:px-12 relative z-10">
+            
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-20">
+                
+                <div class="lg:col-span-5">
+                    <p class="text-unicon-green font-bold uppercase tracking-widest text-[10px] md:text-xs mb-3">The Backbone of Execution</p>
+                    <h2 class="text-3xl sm:text-4xl font-extrabold tracking-tight uppercase leading-none mb-6">
+                        Procurement <br><span class="text-unicon-green">Standards</span>
+                    </h2>
+                    
+                    <div class="prose max-w-none text-gray-600 font-light text-sm md:text-base leading-relaxed mb-10">
+                        <p class="mb-4">Executing over R1.5 Billion in successful infrastructure projects requires absolute precision. We maintain strict standards for our vendor network to ensure the safety, quality, and structural compliance of our builds.</p>
+                        <p>However, we are deeply committed to empowering local industry. As a proud Level 2 B-BBEE contributor, Unicon actively seeks to partner with, mentor, and procure from emerging, empowered enterprises in the regions we operate.</p>
+                    </div>
+
+                    <div class="bg-unicon-slate border border-unicon-border p-6 sm:p-8 shadow-sm">
+                        <h4 class="font-bold uppercase tracking-tight text-unicon-black mb-4 border-b border-unicon-border pb-3 text-sm flex items-center gap-2">
+                            <i class="fa-solid fa-clipboard-check text-unicon-green"></i> Required Documentation
+                        </h4>
+                        <ul class="space-y-4 text-xs text-gray-600 font-light">
+                            <li class="flex items-start gap-3"><i class="fa-solid fa-check text-unicon-green mt-0.5"></i> <span>Company Registration (CIPC)</span></li>
+                            <li class="flex items-start gap-3"><i class="fa-solid fa-check text-unicon-green mt-0.5"></i> <span>Valid Tax Clearance Certificate</span></li>
+                            <li class="flex items-start gap-3"><i class="fa-solid fa-check text-unicon-green mt-0.5"></i> <span>Verified B-BBEE Affidavit / Certificate</span></li>
+                            <li class="flex items-start gap-3"><i class="fa-solid fa-check text-unicon-green mt-0.5"></i> <span>Letter of Good Standing (COIDA)</span></li>
+                            <li class="flex items-start gap-3"><i class="fa-solid fa-check text-unicon-green mt-0.5"></i> <span>Relevant CIDB Grading (if applicable)</span></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="lg:col-span-7">
+                    <div class="bg-white border border-unicon-border p-8 md:p-12 shadow-xl h-full flex flex-col relative overflow-hidden">
+                        
+                        <div class="flex justify-between items-center border-b border-unicon-border pb-6 mb-8">
+                            <div>
+                                <h3 class="text-2xl font-extrabold uppercase tracking-tight text-unicon-black">Vendor Registration</h3>
+                                <p class="text-gray-500 font-light text-xs mt-1">Submit your company profile to our central procurement database.</p>
+                            </div>
+                            <i class="fa-solid fa-truck-fast text-2xl text-unicon-green opacity-50"></i>
+                        </div>
+                        
+                        <div id="form-container" class="flex-grow">
+                            <form id="vendorForm" class="space-y-6">
+                                <div class="hp-gate"><input type="text" name="bot_trap" tabindex="-1" autocomplete="off"></div>
+                                <input type="hidden" name="form_type" value="Vendor Registration">
+
+                                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                                    <div>
+                                        <label class="block text-[9px] font-mono uppercase tracking-widest text-gray-500 mb-1.5">Company Name *</label>
+                                        <input type="text" name="company" class="w-full bg-unicon-slate border-b border-unicon-border focus:border-unicon-green px-4 py-3 outline-none text-xs font-bold uppercase tracking-tight" required>
+                                    </div>
+                                    <div>
+                                        <label class="block text-[9px] font-mono uppercase tracking-widest text-gray-500 mb-1.5">Primary Contact Name *</label>
+                                        <input type="text" name="name" class="w-full bg-unicon-slate border-b border-unicon-border focus:border-unicon-green px-4 py-3 outline-none text-xs font-bold uppercase tracking-tight" required>
+                                    </div>
+                                </div>
+                                
+                                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                                    <div>
+                                        <label class="block text-[9px] font-mono uppercase tracking-widest text-gray-500 mb-1.5">Email Address *</label>
+                                        <input type="email" name="email" class="w-full bg-unicon-slate border-b border-unicon-border focus:border-unicon-green px-4 py-3 outline-none text-xs font-bold uppercase tracking-tight" required>
+                                    </div>
+                                    <div>
+                                        <label class="block text-[9px] font-mono uppercase tracking-widest text-gray-500 mb-1.5">B-BBEE Level Status *</label>
+                                        <select name="bbbee" class="w-full bg-unicon-slate border-b border-unicon-border focus:border-unicon-green px-4 py-3 outline-none text-xs uppercase font-bold text-gray-700 cursor-pointer" required>
+                                            <option value="" disabled selected>Select Status</option>
+                                            <option value="Level 1">Level 1 Contributor</option>
+                                            <option value="Level 2">Level 2 Contributor</option>
+                                            <option value="Level 3">Level 3 Contributor</option>
+                                            <option value="Level 4">Level 4 Contributor</option>
+                                            <option value="Non-Compliant">Non-Compliant / EME</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                
+                                <div>
+                                    <label class="block text-[9px] font-mono uppercase tracking-widest text-gray-500 mb-1.5">Core Service / Material Provided *</label>
+                                    <textarea name="message" rows="4" class="w-full bg-unicon-slate border-b border-unicon-border focus:border-unicon-green px-4 py-3 outline-none text-xs font-light resize-none" placeholder="Outline the materials, plant hire, or subcontracting services your business provides..." required></textarea>
+                                </div>
+
+                                <div class="bg-unicon-slate border border-unicon-border p-4 flex items-center justify-between mt-8">
+                                    <div class="flex items-center gap-3">
+                                        <div class="relative inline-block w-12 mr-2 align-middle select-none transition duration-200 ease-in">
+                                            <input type="checkbox" name="human_toggle" id="humanToggle" class="toggle-checkbox absolute block w-6 h-6 rounded-full bg-white border-4 border-gray-300 appearance-none cursor-pointer z-10 transition-transform duration-300 ease-in-out"/>
+                                            <label for="humanToggle" class="toggle-label block overflow-hidden h-6 rounded-full bg-gray-300 cursor-pointer transition-colors duration-300 ease-in-out"></label>
+                                        </div>
+                                        <div>
+                                            <p class="text-[9px] font-mono uppercase tracking-widest text-gray-500 mb-0.5">Security Check</p>
+                                            <p id="toggleStatusText" class="text-xs font-bold uppercase tracking-tight text-red-500">Unverified</p>
+                                        </div>
+                                    </div>
+                                    <i id="toggleIcon" class="fa-solid fa-robot text-gray-300 text-2xl"></i>
+                                </div>
+
+                                <button type="submit" id="submitBtn" disabled class="w-full py-5 bg-gray-200 text-gray-400 font-bold uppercase tracking-widest text-xs flex items-center justify-center gap-3 cursor-not-allowed transition-all">
+                                    Transmission Locked <i class="fa-solid fa-lock text-[10px]"></i>
+                                </button>
+                            </form>
+                        </div>
+
+                        <!-- Success State -->
+                        <div id="successState" class="hidden-state flex-grow flex flex-col items-center justify-center text-center py-10 relative z-20">
+                            <div class="w-20 h-20 bg-unicon-green text-white rounded-full flex items-center justify-center mb-6 shadow-xl">
+                                <i class="fa-solid fa-check text-3xl"></i>
+                            </div>
+                            <h3 class="text-2xl font-black uppercase tracking-tighter text-unicon-black mb-3">Registration Captured</h3>
+                            <p class="text-sm text-gray-600 font-light leading-relaxed max-w-xs mb-8">
+                                Your company profile has been securely routed to our Procurement Desk. We will contact you should your services align with our active pipeline.
+                            </p>
+                            <button onclick="location.reload()" class="text-[10px] font-bold uppercase tracking-widest text-unicon-green hover:text-unicon-black transition-colors border-b border-unicon-green pb-1">
+                                Submit Another Vendor
+                            </button>
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="py-12 bg-white border-t border-unicon-border text-center">
+        <p class="text-[10px] text-gray-400 uppercase tracking-widest">© <span id="year-footer"></span> Unicon Construction SA.</p>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => { document.getElementById('year-footer').textContent = new Date().getFullYear(); });
+
+        const toggle = document.getElementById('humanToggle'), submitBtn = document.getElementById('submitBtn'), statusText = document.getElementById('toggleStatusText'), toggleIcon = document.getElementById('toggleIcon'), vendorForm = document.getElementById('vendorForm');
+
+        toggle.addEventListener('change', function() {
+            if (this.checked) {
+                submitBtn.disabled = false; submitBtn.classList.remove('bg-gray-200', 'text-gray-400', 'cursor-not-allowed'); submitBtn.classList.add('bg-unicon-black', 'text-white', 'hover:bg-unicon-green', 'shadow-lg');
+                submitBtn.innerHTML = 'Transmit Registration <i class="fa-solid fa-paper-plane"></i>';
+                statusText.textContent = "Verified Human"; statusText.classList.replace('text-red-500', 'text-unicon-green');
+                toggleIcon.classList.replace('fa-robot', 'fa-user-check'); toggleIcon.classList.replace('text-gray-300', 'text-unicon-green');
+            } else {
+                submitBtn.disabled = true; submitBtn.classList.add('bg-gray-200', 'text-gray-400', 'cursor-not-allowed'); submitBtn.classList.remove('bg-unicon-black', 'text-white', 'hover:bg-unicon-green', 'shadow-lg');
+                submitBtn.innerHTML = 'Transmission Locked <i class="fa-solid fa-lock text-[10px]"></i>';
+                statusText.textContent = "Unverified"; statusText.classList.replace('text-unicon-green', 'text-red-500');
+                toggleIcon.classList.replace('fa-user-check', 'fa-robot'); toggleIcon.classList.replace('text-unicon-green', 'text-gray-300');
+            }
+        });
+
+        vendorForm.addEventListener('submit', function(e) {
+            e.preventDefault(); 
+            if (vendorForm.elements['bot_trap'].value !== "" || !toggle.checked) return;
+
+            submitBtn.innerHTML = 'Transmitting... <i class="fa-solid fa-spinner fa-spin ml-2"></i>'; submitBtn.disabled = true;
+            fetch('https://formspree.io/f/xpqoanel', { method: 'POST', body: new FormData(vendorForm), headers: { 'Accept': 'application/json' } })
+            .then(res => {
+                if (res.ok) { document.getElementById('form-container').classList.add('hidden-state'); document.getElementById('successState').classList.remove('hidden-state'); vendorForm.reset(); toggle.checked = false; } 
+                else { submitBtn.innerHTML = 'Transmission Failed. Retry?'; submitBtn.classList.replace('bg-unicon-black', 'bg-red-600'); submitBtn.disabled = false; }
+            }).catch(() => { submitBtn.innerHTML = 'Network Error. Retry?'; submitBtn.classList.replace('bg-unicon-black', 'bg-red-600'); submitBtn.disabled = false; });
+        });
+    </script>
+</body>
+</html>
