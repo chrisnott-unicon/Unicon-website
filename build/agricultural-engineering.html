@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- SEO & OPEN GRAPH META TAGS -->
+    <title>Agricultural Engineering & EPC | Unicon Construction</title>
+    <meta name="description" content="Turnkey Agricultural EPC execution across Africa. Bridging raw landscape and industrial-scale farming with intensive animal rearing and bulk irrigation networks.">
+    <meta property="og:title" content="Unicon Construction | Agricultural Engineering">
+    <meta property="og:description" content="In strategic partnership with JWE Africa, delivering high-capacity animal rearing systems and automated dairies.">
+    <meta property="og:image" content="https://raw.githubusercontent.com/chrisnott-unicon/bestphotos/main/Agrico_Pivot_Irrigation_System_20210830.jpg">
+    <meta property="og:url" content="https://www.uniconsa.co.za/build/agricultural-engineering">
+    <meta property="og:type" content="website">
+
+    <!-- GLOBAL SITE TAG (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-XXXXXXXXXX');
+      gtag('config', 'AW-XXXXXXXXXX');
+    </script>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: { unicon: { black: '#0a0a0a', dark: '#1c1c1c', slate: '#f4f4f5', green: '#475c4d', border: '#e5e7eb' } },
+                    fontFamily: { 
+                        sans: ['"Century Gothic"', 'sans-serif'],
+                        mono: ['ui-monospace', 'monospace']
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body { background-color: #ffffff; color: #0a0a0a; -webkit-font-smoothing: antialiased; margin: 0; padding: 0; overflow-x: hidden; }
+        .bg-blueprint { background-image: linear-gradient(to right, #f3f4f6 1px, transparent 1px), linear-gradient(to bottom, #f3f4f6 1px, transparent 1px); background-size: 4rem 4rem; }
+        .text-outline { color: transparent; -webkit-text-stroke: 1px #0a0a0a; }
+        @keyframes fadeUp { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+        .animate-fade-up { animation: fadeUp 1s cubic-bezier(0.16, 1, 0.3, 1) forwards; opacity: 0; }
+        .delay-100 { animation-delay: 100ms; }
+        .delay-200 { animation-delay: 200ms; }
+        
+        .whatsapp-fab { position: fixed; bottom: 30px; right: 30px; background-color: #25D366; color: white; width: 60px; height: 60px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 32px; box-shadow: 0 4px 15px rgba(0,0,0,0.3); z-index: 9999; transition: transform 0.3s ease; text-decoration: none; }
+        .whatsapp-fab:hover { transform: scale(1.1); }
+        .no-scrollbar::-webkit-scrollbar { display: none; }
+        .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+        details > summary { list-style: none; }
+        details > summary::-webkit-details-marker { display: none; }
+    </style>
+</head>
+<body class="font-sans pt-16 sm:pt-20">
+
+    <a href="https://wa.me/27664834709?text=Hello%20Unicon,%20I%20am%20interested%20in%20your%20Agricultural%20Engineering%20EPC%20capabilities." target="_blank" class="whatsapp-fab" aria-label="Chat with us on WhatsApp">
+        <i class="fa-brands fa-whatsapp"></i>
+    </a>
+
+    <!-- NATIVE NAVIGATION BAR -->
+    <nav id="navbar" class="fixed top-0 left-0 w-full z-[100] transition-all duration-300 bg-[#0a0a0a]/95 backdrop-blur-md border-b border-gray-800 py-3 sm:py-4">
+        <div class="max-w-[90rem] mx-auto px-6 sm:px-8 lg:px-12 flex justify-between items-center">
+            <a href="/" class="flex items-center gap-3 group relative z-[110]">
+                <span class="font-extrabold text-xl sm:text-2xl tracking-tighter uppercase text-white group-hover:text-unicon-green transition-colors">UNICON</span>
+                <div class="h-4 w-[1px] bg-gray-700"></div>
+                <span class="text-[8px] sm:text-[10px] font-mono text-unicon-green tracking-[0.2em] uppercase font-bold hidden sm:inline-block">EST. 1991</span>
+            </a>
+
+            <!-- Desktop Menu -->
+            <div class="hidden lg:flex items-center gap-8">
+                <!-- Dropdown: Company -->
+                <div class="relative group">
+                    <button class="text-xs font-bold uppercase tracking-widest text-white hover:text-unicon-green transition-colors py-2 flex items-center gap-1">Company <i class="fa-solid fa-chevron-down text-[9px] opacity-70"></i></button>
+                    <div class="absolute top-full left-0 mt-4 w-48 bg-[#0a0a0a] border border-gray-800 shadow-2xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 translate-y-2 group-hover:translate-y-0">
+                        <div class="absolute -top-4 left-0 w-full h-4 bg-transparent"></div>
+                        <a href="/home/about" class="block px-5 py-3 text-[10px] uppercase tracking-widest text-gray-400 hover:text-white hover:bg-unicon-green/20 border-b border-gray-800">Profile</a>
+                        <a href="/home/history" class="block px-5 py-3 text-[10px] uppercase tracking-widest text-gray-400 hover:text-white hover:bg-unicon-green/20 border-b border-gray-800">History</a>
+                        <a href="/home/team" class="block px-5 py-3 text-[10px] uppercase tracking-widest text-gray-400 hover:text-white hover:bg-unicon-green/20 border-b border-gray-800">Workforce</a>
+                        <a href="/home/ethos" class="block px-5 py-3 text-[10px] uppercase tracking-widest text-gray-400 hover:text-white hover:bg-unicon-green/20">Core Ethos</a>
+                    </div>
+                </div>
+
+                <!-- Dropdown: Design -->
+                <div class="relative group">
+                    <button class="text-xs font-bold uppercase tracking-widest text-white hover:text-unicon-green transition-colors py-2 flex items-center gap-1">Design <i class="fa-solid fa-chevron-down text-[9px] opacity-70"></i></button>
+                    <div class="absolute top-full left-0 mt-4 w-52 bg-[#0a0a0a] border border-gray-800 shadow-2xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 translate-y-2 group-hover:translate-y-0">
+                        <div class="absolute -top-4 left-0 w-full h-4 bg-transparent"></div>
+                        <a href="/design/architecture" class="block px-5 py-3 text-[10px] uppercase tracking-widest text-gray-400 hover:text-white hover:bg-unicon-green/20 border-b border-gray-800">Architectural Plan</a>
+                        <a href="/design/civil-engineering" class="block px-5 py-3 text-[10px] uppercase tracking-widest text-gray-400 hover:
