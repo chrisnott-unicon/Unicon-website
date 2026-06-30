@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Visual Archive & Project History | Unicon Construction</title>
+    
+    <!-- ADVANCED SEO META TAGS -->
+    <meta name="description" content="Photographic archive of Unicon Construction's structural engineering, heavy civil, and turnkey projects. Featuring works alongside Axiom Architecture, Tusk Construction Support, and KZN Public Works.">
+    <meta name="keywords" content="Unicon Construction, KZN Public Works, Anglo American Platinum, Civil Engineering photos, Water Reservoirs, Nozaic & Westwood Consulting, Turnkey Construction, South Africa, Axiom Architecture, R&L Architects">
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        unicon: { black: '#0a0a0a', dark: '#1c1c1c', slate: '#f4f4f5', green: '#475c4d', border: '#e5e7eb' }
+                    },
+                    fontFamily: { 
+                        sans: ['"Century Gothic"', 'sans-serif'],
+                        mono: ['ui-monospace', 'monospace']
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body { background-color: #ffffff; color: #0a0a0a; -webkit-font-smoothing: antialiased; margin: 0; padding: 0; }
+        .bg-blueprint { background-image: linear-gradient(to right, #f3f4f6 1px, transparent 1px), linear-gradient(to bottom, #f3f4f6 1px, transparent 1px); background-size: 4rem 4rem; }
+        
+        @keyframes fadeUp { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+        .animate-fade-up { animation: fadeUp 1s cubic-bezier(0.16, 1, 0.3, 1) forwards; opacity: 0; }
+        
+        /* Lightbox styling */
+        .lightbox-active { overflow: hidden; }
+        .lightbox-bg { backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px); }
+        
+        /* Gallery item overlays */
+        .grid-overlay { background: linear-gradient(to top, rgba(0,0,0,0.85) 0%, transparent 60%); opacity: 0; transition: opacity 0.4s ease; }
+        .group:hover .grid-overlay { opacity: 1; }
+        
+        .hidden-gallery-item { display: none !important; }
+        
+        /* Loading Skeleton */
+        .skeleton-loader {
+            position: absolute;
+            inset: 0;
+            background-color: #e5e7eb;
+            animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+            z-index: 0;
+        }
+        @keyframes pulse { 0%, 100% { opacity: 1; } 50% { opacity: .5; } }
+    </style>
+</head>
+<body class="font-sans selection:bg-unicon-green selection:text-white" id="body">
+
+    <!-- HEADER -->
+    <header class="relative pt-24 pb-16 border-b border-unicon-border bg-blueprint">
+        <div class="max-w-[90rem] mx-auto px-6 sm:px-8 lg:px-12 relative z-10 animate-fade-up">
+            <div class="mb-6">
+                <a href="/" class="text-unicon-green text-sm font-bold uppercase tracking-widest hover:text-unicon-black transition-colors inline-flex items-center gap-2">
+                    <i class="fa-solid fa-arrow-left"></i> Return Home
+                </a>
+            </div>
+            
+            <h1 class="text-5xl sm:text-6xl md:text-7xl font-extrabold uppercase tracking-tighter text-unicon-black mb-6 leading-none">
+                Visual <br><span class="text-unicon-green">Archive.</span>
+            </h1>
+            <p class="text-lg sm:text-xl font-light text-gray-600 max-w-3xl leading-relaxed border-t border-unicon-border pt-6">
+                A photographic record documenting 35 years of physical execution. Raw, unpolished captures from the site telling the story of Unicon's workforce, heavy plant operations, and structural milestones alongside our elite engineering partners.
+            </p>
+        </div>
+    </header>
+
+    <!-- GALLERY GRID -->
+    <section class="py-12 md:py-20 bg-white">
+        <div class="max-w-[90rem] mx-auto px-4 sm:px-6 lg:px-8">
+            
+            <div id="gallery-grid" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 auto-rows-[250px] md:auto-rows-[300px]">
+                <!-- Images will be injected here by JavaScript -->
+            </div>
+
+            <!-- LOAD MORE BUTTON -->
+            <div class="mt-16 text-center" id="load-more-container" style="display: none;">
+                <button onclick="loadMoreImages()" class="px-10 py-5 bg-unicon-black text-white font-bold uppercase tracking-widest text-xs hover:bg-unicon-green transition-all duration-300 shadow-xl inline-flex items-center gap-3">
+                    <i class="fa-solid fa-images"></i> Load Additional Archives
+                </button>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- LIGHTBOX OVERLAY -->
+    <div id="lightbox" class="fixed inset-0 z-50 bg-black/95 lightbox-bg hidden flex flex-col opacity-0 transition-opacity duration-300">
+        
+        <div class="flex justify-between items-center p-6 shrink-0">
+            <span class="text-unicon-green font-bold uppercase tracking-widest text-[10px] font-mono">[VISUAL_INSPECTION_MODE]</span>
+            <button onclick="closeLightbox()" class="text-gray-400 hover:text-white transition-colors p-2">
+                <i class="fa-solid fa-xmark text-3xl"></i>
+            </button>
+        </div>
+        
+        <div class="flex-grow flex items-center justify-center p-4 overflow-hidden relative">
+            <div id="lightbox-spinner" class="absolute inset-0 flex items-center justify-center">
+                <i class="fa-solid fa-circle-notch fa-spin text-4xl text-unicon-green"></i>
+            </div>
+            <img id="lightbox-img" src="" alt="Enlarged View" class="max-w-full max-h-full object-contain shadow-2xl rounded-sm relative z-10 opacity-0 transition-opacity duration-300" onload="this.classList.remove('opacity-0'); document.getElementById('lightbox-spinner').style.display='none';">
+        </div>
+
+        <div class="p-6 bg-unicon-black shrink-0 text-center border-t border-gray-800">
+            <p id="lightbox-caption" class="text-white font-bold text-sm tracking-widest uppercase"></p>
+        </div>
+    </div>
+
+    <!-- SEO DATA MATRIX (Hidden to users, readable by Googlebot) -->
+    <div class="sr-only">
+        <h2>Unicon Construction Strategic Partnerships and Materials Index</h2>
+        <p>This image gallery depicts the high-quality construction works completed by Unicon Construction SA. The projects visualized here represent partnerships with premier South African clients including Anglo American Platinum, KZN Public Works, Tinley Leisure, JTR Ross Property, Dr & Mrs De scally, P Watcher, and Safal Steel.</p>
+        <p>Our execution standards are supported by elite architectural and engineering consultants such as Axiom Architecture, Visi Architects, R&L Architects, Allan Potter & Assoc Architect, Tusk Construction Support, Nozaic & Westwood Consulting, and JWE Africa.</p>
+        <p>Visualized materials and methods include: XYPEX Waterproofing, Post-Tensioned concrete cables, geomembrane liners, structural steel portal frames, high-density rebar, slip-form concrete, asphalt, and specialized brick and cement laying.</p>
+    </div>
+
+    <!-- MASTER FOOTER -->
+    <footer class="py-12 bg-white border-t border-unicon-border text-center">
+        <p class="text-[10px] text-gray-400 uppercase tracking-widest">© <span id="year-footer"></span> Unicon Construction SA. <br> <a href="/" class="text-unicon-green hover:underline mt-2 inline-block">Return to Home</a></p>
+    </footer>
+
+    <!-- SCRIPTS -->
+    <script>
+        document.getElementById('year-footer').textContent = new Date().getFullYear();
+
+        const masterImageList = [
+            "https://raw.githubusercontent.com/chrisnott-unicon/bestphotos/main/Agrico_Pivot_Irrigation_System_20210830.jpg",
+            "https://raw.githubusercontent.com/chrisnott-unicon/bestphotos/main/Bridge-Construction-I-Beams-Erection-Crane-Uniconsa.jpg.jpg",
+            "https://raw.githubusercontent.com/chrisnott-unicon/bestphotos/main/Circular_Concrete_Reservoir_Construction_20161123.jpg",
+            "https://raw.githubusercontent.com/chrisnott-unicon/bestphotos/main/Clarifloculator_Reservoir_Construction_Site_Concrete_Structure_Rebar_Boyboyi_Port%20Shepstone_KZN_RSA_(2).jpg",
+            "https://raw.githubusercontent.com/chrisnott-unicon/bestphotos/main/Concrete%20Bridge%20Construction%20-%20Unicon%20SA.jpg",
+            "https://raw.githubusercontent.com/chrisnott-unicon/bestphotos/main/Construction-Site-Bidum-Geomembrane-Reedbeds-Wastewater%20Treatment-Club%20Med-Tinley%20Manor-Ballito-20250312.JPG",
+            "https://raw.githubusercontent.com/chrisnott-unicon/bestphotos/main/Construction-Site-Concrete-Pour-Reedbeds-Wastewater%20Treatment-Club%20Med-Tinley%20Manor-Ballito-20250312.JPG",
+            "https://raw.githubusercontent.com/chrisnott-unicon/bestphotos/main/Construction-Site-Concrete-Slab-Prep-_Invesco%20Centre_Pietermaritzburg_200825.jpg",
+            "https://raw.githubusercontent.com/chrisnott-unicon/bestphotos/main/Construction-Site-Workers-Concrete-Formwork-Unicon.jpg.jpg",
+            "https://raw.githubusercontent.com/chrisnott-unicon/bestphotos/main/Dome-Roof-Tank-Scaffolding-Unicon-Construction.jpg",
+            "https://raw.githubusercontent.com/chrisnott-unicon/bestphotos/main/HighwayBridgeConstruction_Formwork_SouthAfrica_UniconSA.jpg",
+            "https://raw.githubusercontent.com/chrisnott-unicon/bestphotos/main/New-Bridge-Construction-Rural-South-Africa-Uniconsa.jpg",
+            "https://raw.githubusercontent.com/chrisnott-unicon/bestphotos/main/Unicon-Construction-Foundation-Concrete-Excavators-Site-Work-South-Africa-20180515.jpg",
+            "https://raw.githubusercontent.com/chrisnott-unicon/bestphotos/main/Unicon-Construction-Resources-Crane-Scaffolding-Concrete-Tank-Building-Element-September-2018.jpg",
+            "https://raw.githubusercontent.com/chrisnott-unicon/bestphotos/main/Unicon-Construction-Site-Building-Brick-Work-Materials-2026-05-08.JPG",
+            "https://raw.githubusercontent.com/chrisnott-unicon/bestphotos/main/Unicon-Construction-Site-Foundation-Concrete-Excavator-Truck-Earthworks-Development-20180515.jpg",
+            "https://raw.githubusercontent.com/chrisnott-unicon/bestphotos/main/Unicon-Construction-Site-Reinforcement-Concrete-Rebar-Kearsney%20College-20150702.jpg",
+            "https://raw.githubusercontent.com/chrisnott-unicon/bestphotos/main/Unicon_Concrete_Dome_Pour_Reinforcement_Construction_Mountain_Landscape_20170325.jpg",
+            "https://raw.githubusercontent.com/chrisnott-unicon/bestphotos/main/Unicon_Concrete_Pumping_Truck_Mixer_Steel_Rebar_Bridge_Deck_Pour_Resources_Drakensberg_Mountains_South_Africa_20150912.jpg",
+            "https://raw.githubusercontent.com/chrisnott-unicon/bestphotos/main/Unicon_Construction_Workers_on_Concrete_Slab_Formwork.JPG",
+            "https://raw.githubusercontent.com/chrisnott-unicon/bestphotos/main/Unicon_Curved-Formwork_Metal_Dome_Roof_Plate-Cladding_Building-Structure_Construction_South-Africa_20170325.jpg",
+            "https://raw.githubusercontent.com/chrisnott-unicon/bestphotos/main/concrete-reservoir-construction-pumping-uniconsa-south-africa.jpg",
+            "https://raw.githubusercontent.com/chrisnott-unicon/bestphotos/main/construction-site-crane-building-scaffolding-Pietermaritzburg-Invesco%20Centre.JPG",
+            "https://raw.githubusercontent.com/chrisnott-unicon/bestphotos/main/construction-site-excavator-earthworks.jpg"
+        ];
+
+        const galleryGrid = document.getElementById('gallery-grid');
+        const loadMoreBtn = document.getElementById('load-more-container');
+        
+        let currentItemIndex = 0; 
+        const itemsPerLoad = 12;
+
+        function getOptimizedUrl(rawUrl) {
+            const cleanUrl = rawUrl.replace(/^https?:\/\//, '');
+            return `https://wsrv.nl/?url=${encodeURIComponent(cleanUrl)}&w=800&output=webp&q=70`;
+        }
+
+        function createGalleryItem(rawUrl, index) {
+            if(index > 0 && masterImageList[index] === masterImageList[index-1]) return '';
+
+            const optimizedUrl = getOptimizedUrl(rawUrl);
+
+            let layoutClasses = 'col-span-1 shadow-sm border border-unicon-border bg-gray-100';
+            if (index % 7 === 0) layoutClasses = 'row-span-2 col-span-1 sm:col-span-2 md:col-span-2 shadow-sm border border-unicon-border bg-gray-100';
+            else if (index % 5 === 0) layoutClasses = 'col-span-1 sm:col-span-2 md:col-span-2 shadow-sm border border-unicon-border bg-gray-100';
+            else if (index % 11 === 0) layoutClasses = 'row-span-2 col-span-1 md:col-span-2 lg:col-span-1 shadow-sm border border-unicon-border bg-gray-100';
+
+            return `
+                <div class="gallery-item opacity-0 group relative overflow-hidden cursor-zoom-in transition-opacity duration-700 ${layoutClasses}" 
+                     onclick="openLightbox('${rawUrl}', 'Unicon Project Masterfile #${index + 1} // SEO: Turnkey Structural Engineering')">
+                    
+                    <div class="skeleton-loader"></div>
+                    
+                    <img src="${optimizedUrl}" 
+                         onload="this.classList.remove('opacity-0'); this.previousElementSibling.style.display='none';"
+                         onerror="this.parentElement.classList.add('hidden-gallery-item')" 
+                         alt="Unicon Construction - Structural Engineering and Civil Works Archive" 
+                         class="w-full h-full object-cover transition-all duration-700 grayscale-[60%] group-hover:grayscale-0 group-hover:scale-105 opacity-0 relative z-10" 
+                         loading="lazy">
+                         
+                    <div class="grid-overlay absolute inset-0 flex flex-col justify-end p-5 z-20">
+                        <span class="text-unicon-green text-[9px] font-bold uppercase tracking-widest mb-1">Visual Log</span>
+                        <h3 class="text-white text-sm font-bold uppercase tracking-tight">Archive Record #${index + 1}</h3>
+                    </div>
+                </div>
+            `;
+        }
+
+        function loadMoreImages() {
+            let htmlToInject = '';
+            let loadedCount = 0;
+            
+            for (let i = currentItemIndex; i < masterImageList.length && loadedCount < itemsPerLoad; i++) {
+                htmlToInject += createGalleryItem(masterImageList[i], i);
+                loadedCount++;
+            }
+
+            galleryGrid.insertAdjacentHTML('beforeend', htmlToInject);
+            
+            const newItems = document.querySelectorAll('.gallery-item.opacity-0');
+            newItems.forEach((element, i) => {
+                setTimeout(() => {
+                    element.classList.remove('opacity-0');
+                }, i * 100);
+            });
+
+            currentItemIndex += loadedCount;
+
+            if (currentItemIndex >= masterImageList.length) {
+                loadMoreBtn.style.display = 'none';
+            } else {
+                loadMoreBtn.style.display = 'block'; 
+            }
+        }
+
+        window.addEventListener('DOMContentLoaded', () => {
+            loadMoreImages();
+        });
+
+        const lightbox = document.getElementById('lightbox');
+        const lightboxImg = document.getElementById('lightbox-img');
+        const lightboxCaption = document.getElementById('lightbox-caption');
+        const lightboxSpinner = document.getElementById('lightbox-spinner');
+        const body = document.getElementById('body');
+
+        function openLightbox(rawSrc, caption) {
+            lightboxImg.classList.add('opacity-0');
+            lightboxSpinner.style.display = 'flex';
+            
+            lightboxImg.src = rawSrc;
+            lightboxCaption.textContent = caption;
+            
+            lightbox.classList.remove('hidden');
+            setTimeout(() => {
+                lightbox.classList.remove('opacity-0');
+                body.classList.add('lightbox-active');
+            }, 10);
+        }
+
+        function closeLightbox() {
+            lightbox.classList.add('opacity-0');
+            body.classList.remove('lightbox-active');
+            
+            setTimeout(() => {
+                lightbox.classList.add('hidden');
+                lightboxImg.src = '';
+            }, 300);
+        }
+
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && !lightbox.classList.contains('hidden')) {
+                closeLightbox();
+            }
+        });
+        
+        lightbox.addEventListener('click', (e) => {
+            if (e.target === lightbox || e.target.closest('.flex-grow')) {
+                if(e.target !== lightboxImg) {
+                    closeLightbox();
+                }
+            }
+        });
+    </script>
+</body>
+</html>
