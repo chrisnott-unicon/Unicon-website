@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Insights & Field Reports | Unicon Construction</title>
+    <meta name="description" content="Latest engineering field reports, project updates, and African infrastructure insights from Unicon Construction.">
+    <meta property="og:title" content="Insights & Field Reports | Unicon Construction">
+    <meta property="og:type" content="website">
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: { unicon: { black: '#0a0a0a', dark: '#1c1c1c', slate: '#f4f4f5', green: '#475c4d', border: '#e5e7eb' } },
+                    fontFamily: { sans: ['"Century Gothic"', 'sans-serif'], mono: ['ui-monospace', 'monospace'] },
+                    letterSpacing: { tighter: '-0.04em', tight: '-0.02em', widest: '0.2em' }
+                }
+            }
+        }
+    </script>
+    <style>
+        body { background-color: #ffffff; color: #0a0a0a; -webkit-font-smoothing: antialiased; margin: 0; padding: 0; overflow-x: hidden; }
+        .bg-blueprint { background-image: linear-gradient(to right, #f3f4f6 1px, transparent 1px), linear-gradient(to bottom, #f3f4f6 1px, transparent 1px); background-size: 4rem 4rem; }
+        .text-outline { color: transparent; -webkit-text-stroke: 1px #0a0a0a; }
+        @keyframes fadeUp { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+        .animate-fade-up { animation: fadeUp 1s cubic-bezier(0.16, 1, 0.3, 1) forwards; opacity: 0; }
+        .delay-100 { animation-delay: 100ms; }
+        .delay-200 { animation-delay: 200ms; }
+        .link-underline { position: relative; }
+        .link-underline::after { content: ''; position: absolute; width: 0; height: 1px; bottom: -2px; left: 0; background-color: #475c4d; transition: width 0.3s ease; }
+        .link-underline:hover::after { width: 100%; }
+        .hidden-state { display: none !important; }
+    </style>
+</head>
+<body class="font-sans selection:bg-unicon-green selection:text-white pt-16 sm:pt-20">
+
+    <!-- NATIVE NAV BAR -->
+    <nav id="navbar" class="fixed top-0 left-0 w-full z-[100] transition-all duration-300 bg-[#0a0a0a]/95 backdrop-blur-md border-b border-gray-800 py-3 sm:py-4">
+        <div class="max-w-[90rem] mx-auto px-6 sm:px-8 lg:px-12 flex justify-between items-center">
+            <a href="/index.html" class="flex items-center gap-3 group">
+                <span class="font-extrabold text-xl sm:text-2xl tracking-tighter uppercase text-white group-hover:text-unicon-green transition-colors">UNICON</span>
+                <div class="h-4 w-[1px] bg-gray-700"></div>
+                <span class="text-[8px] sm:text-[10px] font-mono text-unicon-green tracking-[0.2em] uppercase font-bold hidden sm:inline-block">EST. 1991</span>
+            </a>
+            <div class="hidden lg:flex items-center gap-8">
+                <a href="/home/about.html" class="text-xs font-bold uppercase tracking-widest text-white hover:text-unicon-green transition-colors py-2">Company</a>
+                <a href="/design.html" class="text-xs font-bold uppercase tracking-widest text-white hover:text-unicon-green transition-colors py-2">Design</a>
+                <a href="/build.html" class="text-xs font-bold uppercase tracking-widest text-white hover:text-unicon-green transition-colors py-2">Build</a>
+                <a href="/manage.html" class="text-xs font-bold uppercase tracking-widest text-white hover:text-unicon-green transition-colors py-2">Manage</a>
+                <a href="/projects.html" class="text-xs font-bold uppercase tracking-widest text-white hover:text-unicon-green transition-colors py-2">Portfolio</a>
+                <a href="/communications/insights.html" class="text-xs font-bold uppercase tracking-widest text-unicon-green transition-colors py-2 border-b border-unicon-green">Insights</a>
+            </div>
+            <div class="flex items-center gap-4 relative z-[110]">
+                <a href="/contact.html" class="hidden sm:inline-block px-5 py-2.5 bg-unicon-green text-white text-[10px] font-bold uppercase tracking-widest hover:bg-white hover:text-unicon-black transition-colors rounded-sm shadow-sm">Secure Terminal</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- HEADER -->
+    <header class="relative min-h-[60vh] flex flex-col justify-center border-b border-unicon-border bg-blueprint pt-24 pb-16 overflow-hidden">
+        <div class="max-w-[90rem] mx-auto px-6 sm:px-8 lg:px-12 w-full relative z-10">
+            <div class="mb-8 animate-fade-up flex items-center gap-2 font-mono text-[9px] sm:text-[10px] uppercase tracking-widest font-bold">
+                <span class="text-gray-400">Communications</span>
+                <span class="text-gray-400">/</span>
+                <span class="bg-unicon-black text-white px-3 py-1">Insights Hub</span>
+            </div>
+            
+            <h1 class="text-[12vw] sm:text-[9vw] lg:text-[7rem] xl:text-[8rem] font-extrabold tracking-tighter leading-[0.85] mb-10 animate-fade-up delay-100 uppercase">
+                Field <br />
+                <span class="text-outline">Reports.</span>
+            </h1>
+            
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 mt-12 border-t border-unicon-border pt-10 animate-fade-up delay-200">
+                <div class="lg:col-span-8 2xl:col-span-7">
+                    <p class="text-xl sm:text-2xl md:text-3xl font-light leading-relaxed text-unicon-dark max-w-3xl">
+                        Industry insights, engineering breakthroughs, and project updates from Unicon Construction's active deployment nodes across the continent.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- BLOG / INSIGHTS FEED -->
+    <section class="py-20 bg-unicon-slate border-b border-unicon-border">
+        <div class="max-w-[90rem] mx-auto px-6 sm:px-8 lg:px-12">
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                
+                <!-- ARTICLE 1 -->
+                <article class="bg-white border border-unicon-border flex flex-col hover:border-unicon-green transition-colors shadow-sm group">
+                    <div class="h-64 overflow-hidden relative">
+                        <img src="https://raw.githubusercontent.com/chrisnott-unicon/bestphotos/main/Circular_Concrete_Reservoir_Construction_20161123.jpg" class="w-full h-full object-cover grayscale-[40%] group-hover:grayscale-0 group-hover:scale-105 transition-all duration-700" alt="Water Infrastructure">
+                        <div class="absolute top-4 left-4 bg-unicon-green text-white text-[9px] font-bold uppercase tracking-widest px-3 py-1 shadow-md">Water Engineering</div>
+                    </div>
+                    <div class="p-8 flex flex-col flex-grow">
+                        <p class="text-[10px] text-gray-400 font-mono uppercase tracking-widest mb-3">June 24, 2026</p>
+                        <h3 class="text-2xl font-bold uppercase tracking-tight text-unicon-black mb-4 group-hover:text-unicon-green transition-colors">The Critical Role of 40ML Reservoirs in African Water Security</h3>
+                        <p class="text-gray-600 font-light text-sm leading-relaxed mb-8 flex-grow">
+                            As municipal grids face unprecedented strain, we examine the engineering requirements and post-tensioning techniques necessary to construct zero-leakage bulk water storage.
+                        </p>
+                        <div class="border-t border-unicon-border pt-4 flex justify-between items-center">
+                            <a href="/communications/insights/40ml-reservoirs.html" class="text-xs font-bold uppercase tracking-widest text-unicon-black hover:text-unicon-green transition-colors flex items-center gap-2">Read Full Report <i class="fa-solid fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- ARTICLE 2 -->
+                <article class="bg-white border border-unicon-border flex flex-col hover:border-unicon-green transition-colors shadow-sm group">
+                    <div class="h-64 overflow-hidden relative">
+                        <img src="https://raw.githubusercontent.com/chrisnott-unicon/UniconPhotos01/main/20210830_161928-01.jpeg" class="w-full h-full object-cover grayscale-[40%] group-hover:grayscale-0 group-hover:scale-105 transition-all duration-700" alt="JWE Partnership" onerror="this.src='https://images.unsplash.com/photo-1500937386664-56d1dfef3854?q=80&w=2070'">
+                        <div class="absolute top-4 left-4 bg-unicon-black text-white text-[9px] font-bold uppercase tracking-widest px-3 py-1 shadow-md">Strategic Alliance</div>
+                    </div>
+                    <div class="p-8 flex flex-col flex-grow">
+                        <p class="text-[10px] text-gray-400 font-mono uppercase tracking-widest mb-3">June 18, 2026</p>
+                        <h3 class="text-2xl font-bold uppercase tracking-tight text-unicon-black mb-4 group-hover:text-unicon-green transition-colors">Bridging Civil Mastery with Biological Harmony: The JWE Africa Partnership</h3>
+                        <p class="text-gray-600 font-light text-sm leading-relaxed mb-8 flex-grow">
+                            Unicon Construction formally details its strategic alliance with JWE Africa, bringing over 30 years of intensive animal rearing and agro-processing design expertise to the EPC sector.
+                        </p>
+                        <div class="border-t border-unicon-border pt-4 flex justify-between items-center">
+                            <a href="/communications/insights/jwe-partnership.html" class="text-xs font-bold uppercase tracking-widest text-unicon-black hover:text-unicon-green transition-colors flex items-center gap-2">Read Full Report <i class="fa-solid fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- ARTICLE 3 -->
+                <article class="bg-white border border-unicon-border flex flex-col hover:border-unicon-green transition-colors shadow-sm group">
+                    <div class="h-64 overflow-hidden relative">
+                        <div class="absolute inset-0 bg-unicon-black flex items-center justify-center">
+                            <i class="fa-solid fa-microchip text-6xl text-unicon-green opacity-50 group-hover:scale-110 group-hover:opacity-100 transition-all duration-500"></i>
+                        </div>
+                        <div class="absolute top-4 left-4 bg-white text-unicon-black text-[9px] font-bold uppercase tracking-widest px-3 py-1 shadow-md">Technology</div>
+                    </div>
+                    <div class="p-8 flex flex-col flex-grow">
+                        <p class="text-[10px] text-gray-400 font-mono uppercase tracking-widest mb-3">June 10, 2026</p>
+                        <h3 class="text-2xl font-bold uppercase tracking-tight text-unicon-black mb-4 group-hover:text-unicon-green transition-colors">Launching 2027: Predictive Facility Management</h3>
+                        <p class="text-gray-600 font-light text-sm leading-relaxed mb-8 flex-grow">
+                            Heavy infrastructure degrades rapidly in harsh environments. Unicon previews its upcoming Facility Management division, utilizing IoT sensors and drone structural audits to protect R100M+ assets.
+                        </p>
+                        <div class="border-t border-unicon-border pt-4 flex justify-between items-center">
+                            <a href="/communications/insights/facility-management.html" class="text-xs font-bold uppercase tracking-widest text-unicon-black hover:text-unicon-green transition-colors flex items-center gap-2">Read Full Report <i class="fa-solid fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                </article>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- MASTER FOOTER -->
+    <footer class="footer-container text-unicon-black pt-20 pb-10 border-t border-unicon-border relative overflow-hidden bg-white">
+        <div class="max-w-[90rem] mx-auto px-6 sm:px-8 lg:px-12 relative z-10">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-12 lg:gap-16 mb-16">
+                <!-- Branding HUD -->
+                <div class="lg:col-span-4">
+                    <div class="flex items-center gap-4 mb-8">
+                        <span class="font-extrabold text-2xl md:text-3xl tracking-tighter uppercase text-unicon-black">UNICON</span>
+                        <div class="h-5 w-[1px] bg-unicon-border"></div>
+                        <span class="text-[10px] font-mono text-unicon-green tracking-[0.2em] uppercase font-bold">EST. 1991</span>
+                    </div>
+                    <p class="text-gray-500 text-sm font-light leading-relaxed mb-10 max-w-sm">
+                        Uncompromising quality and engineering excellence in South Africa. Specialists in water retaining structures, civils, and turnkey construction.
+                    </p>
+                </div>
+                <!-- Navigation Links -->
+                <div class="lg:col-span-2">
+                    <h4 class="text-[10px] font-bold uppercase tracking-[0.2em] text-unicon-green mb-8 border-l-2 border-unicon-green pl-3">Sectors</h4>
+                    <ul class="space-y-4 text-xs font-light text-gray-500">
+                        <li><a href="/build/water-engineering.html" class="hover:text-unicon-green transition-colors link-underline">Bulk Water</a></li>
+                        <li><a href="/build/civil-engineering.html" class="hover:text-unicon-green transition-colors link-underline">Civils & Earthworks</a></li>
+                        <li><a href="/build/general-building.html" class="hover:text-unicon-green transition-colors link-underline">General Building</a></li>
+                        <li><a href="/build/agricultural-engineering.html" class="hover:text-unicon-green transition-colors link-underline">Agricultural Build</a></li>
+                    </ul>
+                </div>
+                <div class="lg:col-span-2">
+                    <h4 class="text-[10px] font-bold uppercase tracking-[0.2em] text-unicon-green mb-8 border-l-2 border-unicon-green pl-3">Company</h4>
+                    <ul class="space-y-4 text-xs font-light text-gray-500">
+                        <li><a href="/projects.html" class="hover:text-unicon-green transition-colors link-underline">Our Projects</a></li>
+                        <li><a href="/home/history.html" class="hover:text-unicon-green transition-colors link-underline">Company History</a></li>
+                        <li><a href="/communications/insights.html" class="hover:text-unicon-green transition-colors link-underline">Insights Hub</a></li>
+                        <li><a href="/contact.html" class="hover:text-unicon-green transition-colors link-underline">Contact Us</a></li>
+                    </ul>
+                </div>
+                <!-- Head Office Info -->
+                <div class="lg:col-span-4">
+                    <h4 class="text-[10px] font-bold uppercase tracking-[0.2em] text-unicon-green mb-8 border-l-2 border-unicon-green pl-3">Head Office</h4>
+                    <div class="space-y-6">
+                        <div class="flex items-start gap-4">
+                            <i class="fa-solid fa-location-crosshairs text-unicon-green mt-1 text-sm opacity-70"></i>
+                            <div>
+                                <p class="text-xs font-bold text-unicon-black uppercase tracking-tight">Hilton / Pietermaritzburg</p>
+                                <p class="text-[10px] text-gray-500 font-light mt-1">KwaZulu-Natal, South Africa</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start gap-4">
+                            <i class="fa-solid fa-phone-volume text-unicon-green mt-1 text-sm opacity-70"></i>
+                            <div>
+                                <p class="text-[10px] text-gray-400 uppercase tracking-widest font-mono mb-1">Direct Uplink</p>
+                                <a href="tel:+27664834709" class="text-xs font-bold text-unicon-black hover:text-unicon-green transition-colors font-mono tracking-tighter">+27 66 483 4709</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Bottom Compliance -->
+            <div class="pt-8 border-t border-unicon-border flex flex-col md:flex-row justify-between items-center gap-6">
+                <div class="flex flex-wrap justify-center md:justify-start items-center gap-6">
+                    <p class="text-[10px] text-gray-400 uppercase tracking-widest">© <span id="year-footer"></span> Unicon Construction SA</p>
+                    <div class="flex gap-3">
+                        <span class="text-[8px] text-gray-400 uppercase tracking-widest border border-unicon-border px-2 py-0.5 rounded-sm bg-white">CIDB: 7CE // 7GB</span>
+                        <span class="text-[8px] text-gray-400 uppercase tracking-widest border border-unicon-border px-2 py-0.5 rounded-sm bg-white">ISO 9001</span>
+                    </div>
+                </div>
+                <div class="flex gap-6 items-center">
+                    <div class="flex gap-4 items-center">
+                        <a href="https://www.linkedin.com/company/unicon-construction" target="_blank" rel="noopener noreferrer" class="text-gray-400 hover:text-[#0a66c2] transition-colors"><i class="fa-brands fa-linkedin text-xl"></i></a>
+                    </div>
+                    <div class="w-[1px] h-6 bg-gray-300 hidden sm:block"></div>
+                    <p class="text-[9px] font-mono text-gray-400 uppercase tracking-tighter">Quality <span class="text-unicon-green font-bold">Construction</span></p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const yearElem = document.getElementById('year-footer');
+            if(yearElem) yearElem.textContent = new Date().getFullYear();
+        });
+    </script>
+</body>
+</html>
