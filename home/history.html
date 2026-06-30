@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Company History | Unicon Construction</title>
+    <meta name="description" content="Explore Unicon Construction's 35-year legacy. From rural clinics in 1991 to executing R100m+ BIM-integrated civil masterworks across Africa.">
+    
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-XXXXXXXXXX');
+      gtag('config', 'AW-XXXXXXXXXX');
+    </script>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: { unicon: { black: '#0a0a0a', dark: '#1c1c1c', slate: '#f4f4f5', green: '#475c4d', border: '#e5e7eb' } },
+                    fontFamily: { sans: ['"Century Gothic"', 'sans-serif'], mono: ['ui-monospace', 'monospace'] }
+                }
+            }
+        }
+    </script>
+    <style>
+        body { background-color: #ffffff; color: #0a0a0a; -webkit-font-smoothing: antialiased; margin: 0; padding: 0; overflow-x: hidden; }
+        .bg-blueprint { background-image: linear-gradient(to right, #f3f4f6 1px, transparent 1px), linear-gradient(to bottom, #f3f4f6 1px, transparent 1px); background-size: 4rem 4rem; }
+        .text-outline { color: transparent; -webkit-text-stroke: 1px #0a0a0a; }
+        @keyframes fadeUp { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: translateY(0); } }
+        .animate-fade-up { animation: fadeUp 1s cubic-bezier(0.16, 1, 0.3, 1) forwards; opacity: 0; }
+        .delay-100 { animation-delay: 100ms; }
+        .delay-200 { animation-delay: 200ms; }
+        .timeline-line::before { content: ''; position: absolute; top: 0; bottom: 0; left: 27px; width: 2px; background-color: #e5e7eb; z-index: 0; }
+        .whatsapp-fab { position: fixed; bottom: 30px; right: 30px; background-color: #25D366; color: white; width: 60px; height: 60px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 32px; box-shadow: 0 4px 15px rgba(0,0,0,0.3); z-index: 9999; transition: transform 0.3s ease; text-decoration: none; }
+        .no-scrollbar::-webkit-scrollbar { display: none; }
+        .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+        @media (max-width: 768px) { .timeline-line::before { left: 23px; } }
+    </style>
+</head>
+<body class="font-sans pt-16 sm:pt-20">
+
+    <a href="https://wa.me/27664834709?text=Hello%20Unicon" target="_blank" class="whatsapp-fab">
+        <i class="fa-brands fa-whatsapp"></i>
+    </a>
+
+    <!-- NATIVE NAV BAR (Condensed) -->
+    <nav id="navbar" class="fixed top-0 left-0 w-full z-[100] transition-all duration-300 bg-[#0a0a0a]/95 backdrop-blur-md border-b border-gray-800 py-3 sm:py-4">
+        <div class="max-w-[90rem] mx-auto px-6 sm:px-8 lg:px-12 flex justify-between items-center">
+            <a href="/" class="flex items-center gap-3 group">
+                <span class="font-extrabold text-xl sm:text-2xl tracking-tighter uppercase text-white group-hover:text-unicon-green transition-colors">UNICON</span>
+                <div class="h-4 w-[1px] bg-gray-700"></div>
+                <span class="text-[8px] sm:text-[10px] font-mono text-unicon-green tracking-[0.2em] uppercase font-bold hidden sm:inline-block">EST. 1991</span>
+            </a>
+            <div class="flex items-center gap-4">
+                <a href="/contact" class="px-5 py-2.5 bg-unicon-green text-white text-[10px] font-bold uppercase tracking-widest hover:bg-white hover:text-unicon-black transition-colors rounded-sm">Secure Terminal</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- HERO SECTION -->
+    <header class="relative min-h-[75vh] flex flex-col justify-center border-b border-unicon-border bg-blueprint py-16 md:py-24 overflow-hidden">
+        
+        <div class="absolute right-[-5%] top-1/2 -translate-y-1/2 w-1/2 h-full opacity-[0.03] pointer-events-none hidden lg:block z-0">
+            <svg viewBox="0 0 800 600" class="w-full h-full text-unicon-black" preserveAspectRatio="xMidYMid slice">
+                <text x="50" y="450" font-size="300" font-weight="900" fill="none" stroke="currentColor" stroke-width="2" opacity="0.5">1991</text>
+            </svg>
+        </div>
+
+        <div class="max-w-[90rem] mx-auto px-6 sm:px-8 lg:px-12 w-full relative z-10">
+            
+            <div class="mb-8 animate-fade-up">
+                <span class="inline-flex items-center gap-2 py-1.5 px-4 border border-unicon-black text-[10px] md:text-xs font-bold uppercase tracking-widest text-unicon-black bg-white shadow-sm">
+                    <i class="fa-solid fa-clock-rotate-left text-unicon-green"></i> Foundational Archive
+                </span>
+            </div>
+            
+            <h1 class="text-[12vw] sm:text-[9vw] lg:text-[7rem] xl:text-[8rem] font-extrabold tracking-tighter leading-[0.85] mb-10 animate-fade-up delay-100 uppercase">
+                Forged in 1991. <br />
+                <span class="text-outline">Built for</span> <br />
+                Tomorrow.
+            </h1>
+            
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 mt-12 border-t border-unicon-border pt-10 animate-fade-up delay-200">
+                <div class="lg:col-span-7 2xl:col-span-6">
+                    <p class="text-xl sm:text-2xl md:text-3xl font-light leading-relaxed text-unicon-dark max-w-3xl">
+                        For over <span class="font-bold text-unicon-green">35</span> years, Unicon Construction has shaped the infrastructure of Southern Africa. From rural clinic origins to executing R100m+ <span class="text-unicon-green font-bold">BIM-integrated</span> civil masterworks.
+                    </p>
+                </div>
+                
+                <div class="lg:col-span-5 2xl:col-span-6 flex items-center mt-6 lg:mt-0">
+                    <div class="w-full bg-unicon-slate border border-unicon-border p-8 relative overflow-hidden shadow-sm">
+                        <div class="grid grid-cols-2 gap-8 relative z-10">
+                            <div>
+                                <p class="text-[10px] uppercase tracking-widest text-gray-400 font-mono mb-2">Legacy Deliverables</p>
+                                <p class="text-4xl font-extrabold tracking-tighter text-unicon-black">92 Works</p>
+                            </div>
+                            <div>
+                                <p class="text-[10px] uppercase tracking-widest text-gray-400 font-mono mb-2">Accumulative Impact</p>
+                                <p class="text-4xl font-extrabold tracking-tighter text-unicon-black">R1.5Bn+</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- COMPANY SUB-NAV -->
+    <nav class="bg-[#0a0a0a] border-b border-gray-800 sticky top-[60px] sm:top-[72px] z-40 shadow-2xl">
+        <div class="max-w-[90rem] mx-auto px-0 sm:px-8 lg:px-12">
+            <ul class="flex items-center overflow-x-auto no-scrollbar snap-x">
+                <li class="snap-start shrink-0"><a href="/home/about" class="block py-4 px-6 text-[10px] font-bold uppercase tracking-[0.15em] text-gray-400 hover:text-white transition-colors whitespace-nowrap">Profile</a></li>
+                <li class="snap-start shrink-0"><a href="/home/history" class="block py-4 px-6 text-[10px] font-bold uppercase tracking-[0.15em] text-unicon-green border-b-2 border-unicon-green whitespace-nowrap bg-[#111111]">History</a></li>
+                <li class="snap-start shrink-0"><a href="/home/team" class="block py-4 px-6 text-[10px] font-bold uppercase tracking-[0.15em] text-gray-400 hover:text-white transition-colors whitespace-nowrap">Workforce</a></li>
+                <li class="snap-start shrink-0"><a href="/home/ethos" class="block py-4 px-6 text-[10px] font-bold uppercase tracking-[0.15em] text-gray-400 hover:text-white transition-colors whitespace-nowrap">Core Ethos</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- TIMELINE SECTION -->
+    <section class="py-20 md:py-32 bg-white border-b border-unicon-border">
+        <div class="max-w-[90rem] mx-auto px-6 sm:px-8 lg:px-12">
+            
+            <div class="mb-16 md:mb-24">
+                <p class="text-unicon-green font-bold uppercase tracking-widest text-[10px] md:text-xs mb-3">Chronology</p>
+                <h2 class="text-4xl sm:text-5xl md:text-6xl font-extrabold tracking-tight uppercase leading-none">The Evolution of <br>Unicon</h2>
+            </div>
+
+            <div class="relative timeline-line space-y-20 max-w-5xl mx-auto">
+                
+                <div class="relative z-10 flex gap-8 items-start group">
+                    <div class="w-14 h-14 shrink-0 bg-white border-2 border-unicon-green rounded-full flex items-center justify-center text-unicon-green shadow-xl z-10">
+                        <span class="font-bold text-sm">1991</span>
+                    </div>
+                    <div class="pt-2">
+                        <h3 class="font-extrabold uppercase tracking-tight text-2xl md:text-3xl mb-4 group-hover:text-unicon-green transition-colors">Foundation & Early Roots</h3>
+                        <p class="text-lg text-gray-600 font-light leading-relaxed">
+                            Founded by Tony Nott, Unicon Construction began its journey with a strong community focus, specializing in the construction of rural government clinics, critical healthcare facilities, and educational campuses across KwaZulu-Natal.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="relative z-10 flex gap-8 items-start group">
+                    <div class="w-14 h-14 shrink-0 bg-white border-2 border-gray-300 rounded-full flex items-center justify-center text-gray-400 shadow-xl z-10 group-hover:border-unicon-green group-hover:text-unicon-green transition-colors">
+                        <i class="fa-solid fa-shop text-xl"></i>
+                    </div>
+                    <div class="pt-2">
+                        <h3 class="font-extrabold uppercase tracking-tight text-2xl md:text-3xl mb-4 group-hover:text-unicon-green transition-colors">Commercial Expansion (2000s)</h3>
+                        <p class="text-lg text-gray-600 font-light leading-relaxed">
+                            A rapid diversification phase. Unicon successfully transitioned into the private sector, executing massive multi-story retail malls, specialized factory fit-outs, and heavy concrete machine bases for blue-chip clients like Nestle.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="relative z-10 flex gap-8 items-start group">
+                    <div class="w-14 h-14 shrink-0 bg-white border-2 border-gray-300 rounded-full flex items-center justify-center text-gray-400 shadow-xl z-10 group-hover:border-unicon-green group-hover:text-unicon-green transition-colors">
+                        <span class="font-bold text-sm">2010</span>
+                    </div>
+                    <div class="pt-2">
+                        <h3 class="font-extrabold uppercase tracking-tight text-2xl md:text-3xl mb-4 group-hover:text-unicon-green transition-colors">The Turnkey Pivot</h3>
+                        <p class="text-lg text-gray-600 font-light leading-relaxed">
+                            Recognizing a critical market shift, we invested heavily in an in-house design office. This allowed us to pioneer <strong>Design and Build</strong> methods, providing clients with holistic, risk-mitigated construction solutions.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="relative z-10 flex gap-8 items-start group">
+                    <div class="w-14 h-14 shrink-0 bg-white border-2 border-gray-300 rounded-full flex items-center justify-center text-gray-400 shadow-xl z-10 group-hover:border-unicon-green group-hover:text-unicon-green transition-colors">
+                        <i class="fa-solid fa-water text-xl"></i>
+                    </div>
+                    <div class="pt-2">
+                        <h3 class="font-extrabold uppercase tracking-tight text-2xl md:text-3xl mb-4 group-hover:text-unicon-green transition-colors">Mastery of Civil Infrastructure</h3>
+                        <p class="text-lg text-gray-600 font-light leading-relaxed">
+                            Our expertise evolved into heavy municipal civils. We established specialized systems—dominating the sector in water retaining structures, massive post-tensioned 40ML+ reservoirs, and provincial bridges.
+                        </p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- DECADE ARCHIVES -->
+    <section class="py-20 md:py-32 bg-unicon-black text-white border-b border-unicon-border bg-blueprint-dark">
+        <div class="max-w-[90rem] mx-auto px-6 sm:px-8 lg:px-12">
+            <h2 class="text-4xl sm:text-5xl font-extrabold tracking-tight uppercase leading-none mb-12">
+                Explore the <br><span class="text-unicon-green">Decade Logs.</span>
+            </h2>
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                <!-- Example Card (Link to full database) -->
+                <a href="/projects" class="group block border border-gray-800 bg-[#111111] p-8 hover:border-unicon-green transition-all relative overflow-hidden">
+                    <div class="w-12 h-12 border border-gray-700 flex items-center justify-center rounded-full mb-6 group-hover:bg-unicon-green group-hover:text-white transition-colors text-gray-400">
+                        <span class="text-xs font-bold">20s</span>
+                    </div>
+                    <h3 class="text-2xl font-bold uppercase tracking-tight text-white mb-2">Active & 2020s</h3>
+                    <p class="text-sm text-gray-500 font-light">Turnkey & High-Spec</p>
+                </a>
+                <a href="/projects" class="group block border border-gray-800 bg-[#111111] p-8 hover:border-unicon-green transition-all relative overflow-hidden">
+                    <div class="w-12 h-12 border border-gray-700 flex items-center justify-center rounded-full mb-6 group-hover:bg-unicon-green group-hover:text-white transition-colors text-gray-400">
+                        <span class="text-xs font-bold">10s</span>
+                    </div>
+                    <h3 class="text-2xl font-bold uppercase tracking-tight text-white mb-2">The 2010s</h3>
+                    <p class="text-sm text-gray-500 font-light">Mega-Project Expansion</p>
+                </a>
+                <a href="/projects" class="group block border border-gray-800 bg-[#111111] p-8 hover:border-unicon-green transition-all relative overflow-hidden">
+                    <div class="w-12 h-12 border border-gray-700 flex items-center justify-center rounded-full mb-6 group-hover:bg-unicon-green group-hover:text-white transition-colors text-gray-400">
+                        <span class="text-xs font-bold">00s</span>
+                    </div>
+                    <h3 class="text-2xl font-bold uppercase tracking-tight text-white mb-2">The 2000s</h3>
+                    <p class="text-sm text-gray-500 font-light">Commercial Diversification</p>
+                </a>
+                <a href="/projects" class="group block border border-gray-800 bg-[#111111] p-8 hover:border-unicon-green transition-all relative overflow-hidden">
+                    <div class="w-12 h-12 border border-gray-700 flex items-center justify-center rounded-full mb-6 group-hover:bg-unicon-green group-hover:text-white transition-colors text-gray-400">
+                        <span class="text-xs font-bold">90s</span>
+                    </div>
+                    <h3 class="text-2xl font-bold uppercase tracking-tight text-white mb-2">The 1990s</h3>
+                    <p class="text-sm text-gray-500 font-light">Foundational Works</p>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER SNIPPET -->
+    <footer class="py-12 bg-white border-t border-unicon-border text-center">
+        <p class="text-[10px] text-gray-400 uppercase tracking-widest">© 2026 Unicon Construction SA.</p>
+    </footer>
+
+</body>
+</html>
