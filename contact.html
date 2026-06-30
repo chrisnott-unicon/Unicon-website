@@ -181,7 +181,7 @@
 
                     <!-- Direct Contact Block -->
                     <div class="bg-unicon-slate border border-unicon-border p-6 shadow-sm">
-                        <p class="text-[10px] font-mono text-unicon-green uppercase tracking-widest mb-4 font-bold border-b border-unicon-border pb-2">[DIRECT_UPLINK]</p>
+                        <p class="text-[10px] font-mono text-unicon-green uppercase tracking-widest mb-4 font-bold border-b border-unicon-border pb-2">[DIRECT_contact]</p>
                         
                         <div class="mb-4">
                             <p class="text-[9px] text-gray-400 uppercase tracking-widest font-mono mb-1">Corporate HQ</p>
@@ -208,7 +208,7 @@
                         <div class="bg-unicon-black text-white px-6 py-4 flex justify-between items-center shrink-0 relative z-30">
                             <div class="flex items-center gap-3">
                                 <i class="fa-solid fa-shield-halved text-unicon-green text-sm"></i>
-                                <span class="text-[10px] font-mono uppercase tracking-[0.2em]" id="terminal-label">Secure_Uplink_V4.exe</span>
+                                <span class="text-[10px] font-mono uppercase tracking-[0.2em]" id="terminal-label">Secure_contact_V4.exe</span>
                             </div>
                             <div class="w-1.5 h-1.5 rounded-full bg-unicon-green animate-pulse"></div>
                         </div>
@@ -264,7 +264,7 @@
                             </div>
                             <h3 class="text-2xl font-black uppercase tracking-tighter text-unicon-black mb-3">Transmission Sent</h3>
                             <p class="text-sm text-gray-500 font-light leading-relaxed max-w-[280px] mb-8">
-                                Uplink established. Your project telemetry has been successfully routed to the Engineering Office.
+                                contact established. Your project telemetry has been successfully routed to the Engineering Office.
                             </p>
                             <div class="w-full max-w-[200px] bg-gray-100 h-[2px] mb-4 relative overflow-hidden">
                                 <div class="absolute inset-0 bg-unicon-green w-full"></div>
@@ -345,7 +345,7 @@
                     document.getElementById('form-container').classList.add('hidden-state');
                     document.getElementById('successState').classList.remove('hidden-state');
                     terminalLabel.innerText = "Confirmation_Receipt.pdf";
-                    statusText.innerHTML = 'Status: <span class="text-unicon-green">Uplink_Complete</span>';
+                    statusText.innerHTML = 'Status: <span class="text-unicon-green">contact_Complete</span>';
                     contactForm.reset(); 
                 } else {
                     submitBtn.innerHTML = 'Transmission Failed. Retry?';
@@ -357,7 +357,7 @@
                 submitBtn.innerHTML = 'Network Error. Retry?';
                 submitBtn.classList.replace('bg-unicon-black', 'bg-red-600');
                 submitBtn.disabled = false;
-                statusText.innerHTML = 'Status: <span class="text-red-500">Uplink_Failed</span>';
+                statusText.innerHTML = 'Status: <span class="text-red-500">contact_Failed</span>';
             });
         });
     </script>
