@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- SEO & OPEN GRAPH META TAGS -->
+    <title>Company Profile | Unicon Construction</title>
+    <meta name="description" content="Unicon Construction is a Level 2 B-BBEE Multi-Disciplined Turnkey EPC provider specializing in Heavy Civils, Bulk Water, and Agricultural Engineering since 1991.">
+    <meta property="og:title" content="Unicon Construction | Company Profile">
+    <meta property="og:description" content="Solution-Driven Engineering in Heavy Civils, Water, and Turnkey Construction.">
+    <meta property="og:type" content="website">
+
+    <!-- GLOBAL SITE TAG (gtag.js) - GOOGLE ANALYTICS & REMARKETING -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-XXXXXXXXXX'); // GA4 Tracking
+      gtag('config', 'AW-XXXXXXXXXX'); // Google Ads Remarketing
+    </script>
+
+    <!-- JSON-LD STRUCTURED DATA -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "AboutPage",
+      "mainEntity": {
+        "@type": "GeneralContractor",
+        "name": "Unicon Construction (Pty) Ltd",
+        "foundingDate": "1991",
+        "url": "https://www.uniconsa.co.za",
+        "telephone": "+27664834709"
+      }
+    }
+    </script>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: { unicon: { black: '#0a0a0a', dark: '#1c1c1c', slate: '#f4f4f5', green: '#475c4d', border: '#e5e7eb' } },
+                    fontFamily: { sans: ['"Century Gothic"', 'sans-serif'], mono: ['ui-monospace', 'monospace'] }
+                }
+            }
+        }
+    </script>
+    <style>
+        body { background-color: #ffffff; color: #0a0a0a; -webkit-font-smoothing: antialiased; margin: 0; padding: 0; overflow-x: hidden; }
+        .bg-blueprint { background-image: linear-gradient(to right, #f3f4f6 1px, transparent 1px), linear-gradient(to bottom, #f3f4f6 1px, transparent 1px); background-size: 4rem 4rem; }
+        .bg-blueprint-dark { background-image: linear-gradient(to right, rgba(255,255,255,0.05) 1px, transparent 1px), linear-gradient(to bottom, rgba(255,255,255,0.05) 1px, transparent 1px); background-size: 4rem 4rem; }
+        .text-outline { color: transparent; -webkit-text-stroke: 1px #0a0a0a; }
+        @keyframes fadeUp { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: translateY(0); } }
+        .animate-fade-up { animation: fadeUp 1s cubic-bezier(0.16, 1, 0.3, 1) forwards; opacity: 0; }
+        .delay-100 { animation-delay: 100ms; }
+        .whatsapp-fab { position: fixed; bottom: 30px; right: 30px; background-color: #25D366; color: white; width: 60px; height: 60px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 32px; box-shadow: 0 4px 15px rgba(0,0,0,0.3); z-index: 9999; transition: transform 0.3s ease; text-decoration: none; }
+        .whatsapp-fab:hover { transform: scale(1.1); }
+        .no-scrollbar::-webkit-scrollbar { display: none; }
+        .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+        @keyframes scan { 0% { top: 0%; opacity: 0; } 10% { opacity: 1; } 90% { opacity: 1; } 100% { top: 100%; opacity: 0; } }
+        .animate-scan { animation: scan 4s linear infinite; }
+        details > summary { list-style: none; }
+        details > summary::-webkit-details-marker { display: none; }
+    </style>
+</head>
+<body class="font-sans pt-16 sm:pt-20">
+
+    <!-- WHATSAPP CTA -->
+    <a href="https://wa.me/27664834709?text=Hello%20Unicon,%20I%20would%20like%20to%20learn%20more%20about%20your%20company%20profile." target="_blank" class="whatsapp-fab">
+        <i class="fa-brands fa-whatsapp"></i>
+    </a>
+
+    <!-- NATIVE NAV BAR -->
+    <nav id="navbar" class="fixed top-0 left-0 w-full z-[100] transition-all duration-300 bg-[#0a0a0a]/95 backdrop-blur-md border-b border-gray-800 py-3 sm:py-4">
+        <div class="max-w-[90rem] mx-auto px-6 sm:px-8 lg:px-12 flex justify-between items-center">
+            <a href="/" class="flex items-center gap-3 group">
+                <span class="font-extrabold text-xl sm:text-2xl tracking-tighter uppercase text-white group-hover:text-unicon-green transition-colors">UNICON</span>
+                <div class="h-4 w-[1px] bg-gray-700"></div>
+                <span class="text-[8px] sm:text-[10px] font-mono text-unicon-green tracking-[0.2em] uppercase font-bold hidden sm:inline-block">EST. 1991</span>
+            </a>
+            <div class="hidden lg:flex items-center gap-8">
+                <div class="relative group">
+                    <button class="text-xs font-bold uppercase tracking-widest text-unicon-green transition-colors py-2 flex items-center gap-1">Company <i class="fa-solid fa-chevron-down text-[9px] opacity-70"></i></button>
+                    <div class="absolute top-full left-0 mt-4 w-48 bg-[#0a0a0a] border border-gray-800 shadow-2xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 translate-y-2 group-hover:translate-y-0">
+                        <div class="absolute -top-4 left-0 w-full h-4 bg-transparent"></div>
+                        <a href="/home/about" class="block px-5 py-3 text-[10px] uppercase tracking-widest text-gray-400 hover:text-white hover:bg-unicon-green/20 border-b border-gray-800">Profile</a>
+                        <a href="/home/history" class="block px-5 py-3 text-[10px] uppercase tracking-widest text-gray-400 hover:text-white hover:bg-unicon-green/20 border-b border-gray-800">History</a>
+                        <a href="/home/team" class="block px-5 py-3 text-[10px] uppercase tracking-widest text-gray-400 hover:text-white hover:bg-unicon-green/20 border-b border-gray-800">Workforce</a>
+                        <a href="/home/ethos" class="block px-5 py-3 text-[10px] uppercase tracking-widest text-gray-400 hover:text-white hover:bg-unicon-green/20">Core Ethos</a>
+                    </div>
+                </div>
+                <a href="/design" class="text-xs font-bold uppercase tracking-widest text-white hover:text-unicon-green transition-colors py-2">Design</a>
+                <a href="/build/civil-engineering" class="text-xs font-bold uppercase tracking-widest text-white hover:text-unicon-green transition-colors py-2">Build</a>
+                <a href="/manage/project-management" class="text-xs font-bold uppercase tracking-widest text-white hover:text-unicon-green transition-colors py-2">Manage</a>
+                <a href="/projects" class="text-xs font-bold uppercase tracking-widest text-white hover:text-unicon-green transition-colors py-2">Portfolio</a>
+            </div>
+            <div class="flex items-center gap-4">
+                <a href="/contact" class="px-5 py-2.5 bg-unicon-green text-white text-[10px] font-bold uppercase tracking-widest hover:bg-white hover:text-unicon-black transition-colors rounded-sm hidden sm:inline-block">Secure Terminal</a>
+                <button id="mobile-menu-btn" class="lg:hidden text-white hover:text-unicon-green transition-colors p-2"><i class="fa-solid fa-bars text-xl"></i></button>
+            </div>
+        </div>
+        
+        <!-- Mobile Menu (Simplified for brevity, refer to main nav code for full details) -->
+        <div id="mobile-menu" class="fixed inset-0 bg-[#0a0a0a] z-[100] transform translate-x-full transition-transform duration-300 overflow-y-auto lg:hidden pt-24 pb-12 px-6 border-l border-gray-800">
+            <div class="flex flex-col space-y-4">
+                <a href="/home/about" class="text-sm font-bold uppercase tracking-widest text-unicon-green border-b border-gray-800 pb-3">Company Profile</a>
+                <a href="/home/history" class="text-sm font-bold uppercase tracking-widest text-white border-b border-gray-800 pb-3">History & Legacy</a>
+                <a href="/home/team" class="text-sm font-bold uppercase tracking-widest text-white border-b border-gray-800 pb-3">The Workforce</a>
+                <a href="/home/ethos" class="text-sm font-bold uppercase tracking-widest text-white border-b border-gray-800 pb-3">Core Ethos</a>
+                <a href="/contact" class="block w-full py-4 mt-6 bg-unicon-green text-white text-center text-xs font-bold uppercase tracking-widest hover:bg-white hover:text-unicon-black">Secure Terminal</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- HERO SECTION -->
+    <header class="relative min-h-[75vh] flex flex-col justify-center border-b border-unicon-border bg-blueprint py-16 md:py-24 overflow-hidden">
+        <div class="max-w-[90rem] mx-auto px-6 sm:px-8 lg:px-12 w-full relative z-10">
+            
+            <div class="mb-8 animate-fade-up flex items-center gap-2 font-mono text-[9px] sm:text-[10px] uppercase tracking-widest font-bold">
+                <span class="bg-unicon-black text-white px-3 py-1">Company Profile</span>
+            </div>
+            
+            <h1 class="text-[12vw] sm:text-[9vw] lg:text-[7rem] xl:text-[8rem] font-extrabold tracking-tighter leading-[0.85] mb-10 animate-fade-up delay-100 uppercase">
+                Who We <br />
+                <span class="text-outline">Are.</span>
+            </h1>
+            
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 mt-12 border-t border-unicon-border pt-10 animate-fade-up delay-200">
+                <div class="lg:col-span-8 2xl:col-span-7">
+                    <p class="text-xl sm:text-2xl md:text-3xl font-light leading-relaxed text-unicon-dark max-w-3xl">
+                        Unicon Construction is a leading provider of solution-driven civil and building services. Headquartered in KwaZulu-Natal, we deliver exceptional infrastructure with an unwavering commitment to quality and integrity since 1991.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- COMPANY SUB-NAV -->
+    <nav class="bg-[#0a0a0a] border-b border-gray-800 sticky top-[60px] sm:top-[72px] z-40 shadow-2xl">
+        <div class="max-w-[90rem] mx-auto px-0 sm:px-8 lg:px-12">
+            <ul class="flex items-center overflow-x-auto no-scrollbar snap-x">
+                <li class="snap-start shrink-0"><a href="/home/about" class="block py-4 px-6 text-[10px] font-bold uppercase tracking-[0.15em] text-unicon-green border-b-2 border-unicon-green whitespace-nowrap bg-[#111111]">Profile</a></li>
+                <li class="snap-start shrink-0"><a href="/home/history" class="block py-4 px-6 text-[10px] font-bold uppercase tracking-[0.15em] text-gray-400 hover:text-white transition-colors whitespace-nowrap">History</a></li>
+                <li class="snap-start shrink-0"><a href="/home/team" class="block py-4 px-6 text-[10px] font-bold uppercase tracking-[0.15em] text-gray-400 hover:text-white transition-colors whitespace-nowrap">Workforce</a></li>
+                <li class="snap-start shrink-0"><a href="/home/ethos" class="block py-4 px-6 text-[10px] font-bold uppercase tracking-[0.15em] text-gray-400 hover:text-white transition-colors whitespace-nowrap">Core Ethos</a></li>
+                <li class="snap-start shrink-0 ml-auto border-l border-gray-800"><a href="/contact/corporate-profile" class="block py-4 px-6 text-[10px] font-bold uppercase tracking-[0.15em] text-gray-400 hover:text-white transition-colors whitespace-nowrap"><i class="fa-solid fa-file-pdf mr-2"></i> Download Deck</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- SPECIALISATION WITH XR GRAPHIC -->
+    <section class="py-20 md:py-32 bg-unicon-black bg-blueprint-dark border-b border-gray-800">
+        <div class="max-w-[90rem] mx-auto px-6 sm:px-8 lg:px-12">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+                
+                <div class="order-2 lg:order-1 relative group w-full mx-auto">
+                    <div class="absolute inset-0 translate-x-4 translate-y-4 border border-unicon-green/40 z-0"></div>
+                    <div class="border border-gray-800 overflow-hidden bg-[#050505] p-2 relative z-10 w-full shadow-2xl">
+                        <div class="w-full aspect-[4/3] relative overflow-hidden bg-[#0a0a0a] flex items-center justify-center font-mono">
+                            <div class="absolute inset-0 opacity-20" style="background-image: linear-gradient(rgba(71,92,77,0.2) 1px, transparent 1px), linear-gradient(90deg, rgba(71,92,77,0.2) 1px, transparent 1px); background-size: 20px 20px;"></div>
+                            <div class="absolute top-0 left-0 w-full h-[2px] bg-unicon-green shadow-[0_0_15px_#475c4d] animate-scan z-20"></div>
+                            
+                            <svg viewBox="0 0 400 300" class="w-full h-full relative z-10 drop-shadow-[0_0_8px_rgba(71,92,77,0.4)]" preserveAspectRatio="xMidYMid meet">
+                                <path d="M 200 260 L 90 205 L 200 150 L 310 205 Z" fill="rgba(71,92,77,0.05)" stroke="#475c4d" stroke-width="1.5" />
+                                <path d="M 160 175 L 160 30 L 200 10 L 240 30 L 240 175" fill="none" stroke="#475c4d" stroke-width="1.5" stroke-dasharray="4 4" />
+                                <line x1="175" y1="40" x2="175" y2="185" stroke="#ffffff" stroke-width="1.5" opacity="0.9" />
+                                <line x1="225" y1="40" x2="225" y2="185" stroke="#ffffff" stroke-width="1.5" opacity="0.9" />
+                                <path d="M 175 110 L 200 125 L 225 110" fill="none" stroke="#ffffff" stroke-width="1.5" opacity="0.7" />
+                                <circle cx="175" cy="110" r="4" fill="#FFB81C" class="animate-pulse" />
+                            </svg>
+                            
+                            <div class="absolute top-5 left-5 text-[9px] text-unicon-green z-20">
+                                <p class="text-white font-bold mb-1"><span class="w-2 h-2 bg-red-500 rounded-full inline-block animate-pulse mr-1.5"></span> XR_STRUCTURAL // LIVE</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="order-1 lg:order-2 text-white">
+                    <p class="text-unicon-green font-bold uppercase tracking-widest text-[10px] md:text-xs mb-3">Our Mastery</p>
+                    <h2 class="text-4xl sm:text-5xl font-extrabold uppercase leading-none mb-6">The Core of Our <br><span class="text-unicon-green">Expertise</span></h2>
+                    <p class="text-gray-400 font-light leading-relaxed mb-6 text-lg">
+                        At the heart of Unicon's capabilities lies unparalleled mastery in concrete work. We understand material properties deeply, creating structures that are both highly durable and technically precise.
+                    </p>
+                    <ul class="space-y-4 text-gray-300 font-light">
+                        <li class="flex items-start gap-3"><i class="fa-solid fa-check text-unicon-green mt-1"></i> Unique cast-in ties for zero-leakage tolerance.</li>
+                        <li class="flex items-start gap-3"><i class="fa-solid fa-check text-unicon-green mt-1"></i> Perfect shutter finishes extending asset lifespans.</li>
+                        <li class="flex items-start gap-3"><i class="fa-solid fa-check text-unicon-green mt-1"></i> Specialized applications for commercial and industrial zones.</li>
+                    </ul>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- INNOVATION & TURNKEY -->
+    <section class="py-20 md:py-32 bg-unicon-slate border-b border-unicon-border bg-blueprint">
+        <div class="max-w-[90rem] mx-auto px-6 sm:px-8 lg:px-12">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
+                <div>
+                    <h2 class="text-4xl md:text-5xl font-extrabold uppercase leading-none mb-6">Turnkey Services & <br><span class="text-unicon-green">Innovation</span></h2>
+                    <p class="text-unicon-dark font-light leading-relaxed mb-8 text-lg">
+                        Unicon continuously invests in R&D, staying at the forefront of construction tech. By offering integrated Turnkey solutions, we eliminate the friction between architectural consultants and civil contractors.
+                    </p>
+                    <a href="/design/architecture" class="text-xs font-bold uppercase tracking-widest text-unicon-green border-b border-unicon-green pb-1 hover:text-unicon-black transition-colors">Explore Design Division</a>
+                </div>
+                <div class="bg-white border border-unicon-border p-8 md:p-12 shadow-xl hover:border-unicon-green transition-colors">
+                    <div class="flex items-center gap-6 mb-8 border-b border-unicon-border pb-6">
+                        <div class="w-16 h-16 bg-unicon-slate flex items-center justify-center rounded-full text-unicon-green shrink-0"><i class="fa-solid fa-compass-drafting text-2xl"></i></div>
+                        <div>
+                            <h3 class="font-extrabold uppercase text-xl md:text-2xl">Design & Build</h3>
+                            <p class="text-[10px] font-bold uppercase tracking-widest text-unicon-green mt-1">In-house Architecture</p>
+                        </div>
+                    </div>
+                    <p class="text-base text-gray-600 font-light mb-4 leading-relaxed">
+                        We provide highly cost-effective Turnkey arrangements, significantly lowering design fees and ensuring blueprints are 100% constructible before execution.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER SNIPPET -->
+    <footer class="py-12 bg-white border-t border-unicon-border text-center">
+        <p class="text-[10px] text-gray-400 uppercase tracking-widest">© 2026 Unicon Construction SA. <br> <a href="/" class="text-unicon-green hover:underline mt-2 inline-block">Return to Home</a></p>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const mobileBtn = document.getElementById('mobile-menu-btn');
+            const mobileMenu = document.getElementById('mobile-menu');
+            if(mobileBtn && mobileMenu) {
+                mobileBtn.addEventListener('click', () => {
+                    mobileMenu.classList.toggle('translate-x-full');
+                });
+            }
+        });
+    </script>
+</body>
+</html>
