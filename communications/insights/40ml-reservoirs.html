@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Field Report: 40ML Concrete Reservoirs | Unicon Construction</title>
+    <meta name="description" content="An in-depth look at the engineering requirements and post-tensioning techniques necessary to construct zero-leakage bulk water storage in hostile topographies.">
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: { unicon: { black: '#0a0a0a', dark: '#1c1c1c', slate: '#f4f4f5', green: '#475c4d', border: '#e5e7eb' } },
+                    fontFamily: { sans: ['"Century Gothic"', 'sans-serif'], mono: ['ui-monospace', 'monospace'] },
+                    letterSpacing: { tighter: '-0.04em', tight: '-0.02em', widest: '0.2em' }
+                }
+            }
+        }
+    </script>
+    <style>
+        body { background-color: #ffffff; color: #0a0a0a; -webkit-font-smoothing: antialiased; margin: 0; padding: 0; overflow-x: hidden; }
+        .bg-blueprint { background-image: linear-gradient(to right, #f3f4f6 1px, transparent 1px), linear-gradient(to bottom, #f3f4f6 1px, transparent 1px); background-size: 4rem 4rem; }
+        .article-body p { margin-bottom: 1.5rem; line-height: 1.8; color: #374151; font-weight: 300; font-size: 1.125rem; }
+        .article-body h2 { font-size: 2rem; font-weight: 800; text-transform: uppercase; color: #0a0a0a; margin-top: 3rem; margin-bottom: 1.5rem; letter-spacing: -0.02em; }
+        .article-body ul { margin-bottom: 2rem; list-style-type: none; padding-left: 0; }
+        .article-body li { margin-bottom: 0.75rem; color: #374151; font-weight: 300; position: relative; padding-left: 1.5rem; }
+        .article-body li::before { content: '■'; color: #475c4d; position: absolute; left: 0; font-size: 0.75rem; top: 0.25rem; }
+        .link-underline { position: relative; }
+        .link-underline::after { content: ''; position: absolute; width: 0; height: 1px; bottom: -2px; left: 0; background-color: #475c4d; transition: width 0.3s ease; }
+        .link-underline:hover::after { width: 100%; }
+        
+        .whatsapp-fab { position: fixed; bottom: 30px; right: 30px; background-color: #25D366; color: white; width: 60px; height: 60px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 32px; box-shadow: 0 4px 15px rgba(0,0,0,0.3); z-index: 9999; transition: transform 0.3s ease; text-decoration: none; }
+        .whatsapp-fab:hover { transform: scale(1.1); }
+    </style>
+</head>
+<body class="font-sans selection:bg-unicon-green selection:text-white pt-16 sm:pt-20">
+
+    <!-- WHATSAPP CTA -->
+    <a href="https://wa.me/27664834709?text=Hello%20Unicon,%20I%20read%20your%20report%20on%20Water%20Reservoirs%20and%20would%20like%20to%20discuss%20a%20project." target="_blank" class="whatsapp-fab">
+        <i class="fa-brands fa-whatsapp"></i>
+    </a>
+
+    <!-- NATIVE NAV BAR -->
+    <nav id="navbar" class="fixed top-0 left-0 w-full z-[100] transition-all duration-300 bg-[#0a0a0a]/95 backdrop-blur-md border-b border-gray-800 py-3 sm:py-4">
+        <div class="max-w-[90rem] mx-auto px-6 sm:px-8 lg:px-12 flex justify-between items-center">
+            <a href="/index.html" class="flex items-center gap-3 group">
+                <span class="font-extrabold text-xl sm:text-2xl tracking-tighter uppercase text-white group-hover:text-unicon-green transition-colors">UNICON</span>
+                <div class="h-4 w-[1px] bg-gray-700"></div>
+                <span class="text-[8px] sm:text-[10px] font-mono text-unicon-green tracking-[0.2em] uppercase font-bold hidden sm:inline-block">EST. 1991</span>
+            </a>
+            <div class="hidden lg:flex items-center gap-8">
+                <a href="/home/about.html" class="text-xs font-bold uppercase tracking-widest text-white hover:text-unicon-green transition-colors py-2">Company</a>
+                <a href="/design.html" class="text-xs font-bold uppercase tracking-widest text-white hover:text-unicon-green transition-colors py-2">Design</a>
+                <a href="/build.html" class="text-xs font-bold uppercase tracking-widest text-white hover:text-unicon-green transition-colors py-2">Build</a>
+                <a href="/manage.html" class="text-xs font-bold uppercase tracking-widest text-white hover:text-unicon-green transition-colors py-2">Manage</a>
+                <a href="/projects.html" class="text-xs font-bold uppercase tracking-widest text-white hover:text-unicon-green transition-colors py-2">Portfolio</a>
+                <a href="/communications/insights.html" class="text-xs font-bold uppercase tracking-widest text-unicon-green transition-colors py-2 border-b border-unicon-green">Insights</a>
+            </div>
+            <div class="flex items-center gap-4 relative z-[110]">
+                <a href="/contact.html" class="hidden sm:inline-block px-5 py-2.5 bg-unicon-green text-white text-[10px] font-bold uppercase tracking-widest hover:bg-white hover:text-unicon-black transition-colors rounded-sm shadow-sm">Secure Terminal</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- ARTICLE HEADER -->
+    <header class="relative min-h-[70vh] flex flex-col justify-end pb-16 pt-32 overflow-hidden bg-unicon-black">
+        <div class="absolute inset-0 z-0">
+            <img src="https://raw.githubusercontent.com/chrisnott-unicon/bestphotos/main/Circular_Concrete_Reservoir_Construction_20161123.jpg" class="w-full h-full object-cover opacity-50 grayscale-[20%]" alt="Water Reservoir Construction">
+            <div class="absolute inset-0 bg-gradient-to-t from-unicon-black via-unicon-black/60 to-transparent"></div>
+        </div>
+
+        <div class="max-w-[50rem] mx-auto px-6 sm:px-8 w-full relative z-10">
+            <div class="mb-6 flex flex-wrap items-center gap-4 font-mono text-[10px] uppercase tracking-widest font-bold">
+                <a href="/communications/insights.html" class="text-unicon-green hover:text-white transition-colors"><i class="fa-solid fa-arrow-left mr-2"></i> Back to Hub</a>
+                <span class="bg-white text-unicon-black px-3 py-1">Water Engineering</span>
+                <span class="text-gray-400">June 24, 2026</span>
+            </div>
+            
+            <h1 class="text-4xl md:text-5xl lg:text-6xl font-extrabold tracking-tighter leading-none mb-6 text-white uppercase">
+                The Critical Role of 40ML Reservoirs in African Water Security.
+            </h1>
+            <p class="text-lg md:text-xl text-gray-300 font-light leading-relaxed border-l-4 border-unicon-green pl-4">
+                Executing zero-leakage bulk water storage in hostile topographies requires absolute mastery of post-tensioned concrete and mass earthworks.
+            </p>
+        </div>
+    </header>
+
+    <!-- ARTICLE CONTENT -->
+    <main class="py-16 md:py-24 bg-white bg-blueprint">
+        <div class="max-w-[50rem] mx-auto px-6 sm:px-8 article-body">
+            
+            <p><span class="text-3xl font-extrabold float-left mr-3 text-unicon-green mt-[-6px]">A</span>s municipal grids across the Sub-Saharan region face unprecedented strain due to rapid urbanization and shifting climate patterns, the demand for high-capacity, highly resilient bulk water storage has never been greater.</p>
+
+            <p>For decades, Unicon Construction has been at the forefront of liquid-retaining infrastructure. A mega-reservoir—often exceeding 40 Megalitres (40,000,000 liters)—is not simply a concrete tank. It is a highly stressed, dynamic structural vessel that must withstand immense hydrostatic pressure without a single millimeter of variance.</p>
+
+            <h2>The Post-Tensioning Advantage</h2>
+            <p>Traditional reinforced concrete struggles to contain massive volumes of water without micro-cracking under outward pressure. To mitigate this, Unicon deploys advanced <strong>post-tensioning techniques</strong> in our circular reservoirs.</p>
+            
+            <ul>
+                <li><strong>Active Compression:</strong> High-tensile steel cables are sleeved within the concrete walls. Once the concrete cures, these cables are hydraulically tensioned, actively squeezing the concrete together to counteract the outward force of the water.</li>
+                <li><strong>Zero-Leak Tolerances:</strong> This active compression ensures that the concrete remains entirely crack-free, guaranteeing zero-leakage over a multi-decade operational lifespan.</li>
+                <li><strong>Material Efficiency:</strong> Post-tensioning allows for thinner wall profiles, significantly reducing the amount of raw concrete required, thereby accelerating the construction schedule and reducing the carbon footprint of the build.</li>
+            </ul>
+
+            <!-- INLINE LEAD GENERATION CALLOUT -->
+            <div class="my-12 bg-unicon-slate border border-unicon-border p-8 text-center shadow-sm">
+                <h4 class="text-xl font-bold uppercase tracking-tight text-unicon-black mb-2">Planning a Water Infrastructure Project?</h4>
+                <p class="text-sm text-gray-600 font-light mb-6">Our engineering team specializes in turnkey EPC delivery of bulk water assets.</p>
+                <a href="/contact.html" class="px-8 py-3 bg-unicon-green text-white font-bold uppercase tracking-widest text-[10px] hover:bg-unicon-black transition-colors inline-block rounded-sm">Request a Consultation</a>
+            </div>
+
+            <h2>Mastering the Unsupported Dome</h2>
+            <p>A hallmark of a modern Unicon reservoir is the unsupported concrete dome roof. In traditional construction, large roofs require internal supporting columns. However, internal columns in a water reservoir create weak points in the floor slab and complicate the waterproofing process.</p>
+
+            <p>By engineering a perfect, free-spanning curved dome, we eliminate the need for internal columns. This is achieved through highly complex, custom-fabricated steel shuttering and a continuous, synchronized concrete pour that requires our teams to work seamlessly, often late into the night, to prevent cold joints.</p>
+
+            <p>The result is a monolithic, hyper-resilient structure that protects the municipal or agricultural water supply from contamination, evaporation, and structural fatigue.</p>
+
+        </div>
+    </main>
+
+    <!-- MASTER FOOTER -->
+    <footer class="footer-container text-unicon-black pt-20 pb-10 border-t border-unicon-border relative overflow-hidden bg-white">
+        <div class="max-w-[90rem] mx-auto px-6 sm:px-8 lg:px-12 relative z-10">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-12 lg:gap-16 mb-16">
+                <!-- Branding HUD -->
+                <div class="lg:col-span-4">
+                    <div class="flex items-center gap-4 mb-8">
+                        <span class="font-extrabold text-2xl md:text-3xl tracking-tighter uppercase text-unicon-black">UNICON</span>
+                        <div class="h-5 w-[1px] bg-unicon-border"></div>
+                        <span class="text-[10px] font-mono text-unicon-green tracking-[0.2em] uppercase font-bold">EST. 1991</span>
+                    </div>
+                    <p class="text-gray-500 text-sm font-light leading-relaxed mb-10 max-w-sm">
+                        Uncompromising quality and engineering excellence in South Africa. Specialists in water retaining structures, civils, and turnkey construction.
+                    </p>
+                </div>
+                <!-- Navigation Links -->
+                <div class="lg:col-span-2">
+                    <h4 class="text-[10px] font-bold uppercase tracking-[0.2em] text-unicon-green mb-8 border-l-2 border-unicon-green pl-3">Sectors</h4>
+                    <ul class="space-y-4 text-xs font-light text-gray-500">
+                        <li><a href="/build/water-engineering.html" class="hover:text-unicon-green transition-colors link-underline">Bulk Water</a></li>
+                        <li><a href="/build/civil-engineering.html" class="hover:text-unicon-green transition-colors link-underline">Civils & Earthworks</a></li>
+                        <li><a href="/build/general-building.html" class="hover:text-unicon-green transition-colors link-underline">General Building</a></li>
+                        <li><a href="/build/agricultural-engineering.html" class="hover:text-unicon-green transition-colors link-underline">Agricultural Build</a></li>
+                    </ul>
+                </div>
+                <div class="lg:col-span-2">
+                    <h4 class="text-[10px] font-bold uppercase tracking-[0.2em] text-unicon-green mb-8 border-l-2 border-unicon-green pl-3">Company</h4>
+                    <ul class="space-y-4 text-xs font-light text-gray-500">
+                        <li><a href="/projects.html" class="hover:text-unicon-green transition-colors link-underline">Our Projects</a></li>
+                        <li><a href="/home/history.html" class="hover:text-unicon-green transition-colors link-underline">Company History</a></li>
+                        <li><a href="/communications/insights.html" class="hover:text-unicon-green transition-colors link-underline">Insights Hub</a></li>
+                        <li><a href="/contact.html" class="hover:text-unicon-green transition-colors link-underline">Contact Us</a></li>
+                    </ul>
+                </div>
+                <!-- Head Office Info -->
+                <div class="lg:col-span-4">
+                    <h4 class="text-[10px] font-bold uppercase tracking-[0.2em] text-unicon-green mb-8 border-l-2 border-unicon-green pl-3">Head Office</h4>
+                    <div class="space-y-6">
+                        <div class="flex items-start gap-4">
+                            <i class="fa-solid fa-location-crosshairs text-unicon-green mt-1 text-sm opacity-70"></i>
+                            <div>
+                                <p class="text-xs font-bold text-unicon-black uppercase tracking-tight">Hilton / Pietermaritzburg</p>
+                                <p class="text-[10px] text-gray-500 font-light mt-1">KwaZulu-Natal, South Africa</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start gap-4">
+                            <i class="fa-solid fa-phone-volume text-unicon-green mt-1 text-sm opacity-70"></i>
+                            <div>
+                                <p class="text-[10px] text-gray-400 uppercase tracking-widest font-mono mb-1">Direct Uplink</p>
+                                <a href="tel:+27664834709" class="text-xs font-bold text-unicon-black hover:text-unicon-green transition-colors font-mono tracking-tighter">+27 66 483 4709</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Bottom Compliance -->
+            <div class="pt-8 border-t border-unicon-border flex flex-col md:flex-row justify-between items-center gap-6">
+                <div class="flex flex-wrap justify-center md:justify-start items-center gap-6">
+                    <p class="text-[10px] text-gray-400 uppercase tracking-widest">© <span id="year-footer"></span> Unicon Construction SA</p>
+                    <div class="flex gap-3">
+                        <span class="text-[8px] text-gray-400 uppercase tracking-widest border border-unicon-border px-2 py-0.5 rounded-sm bg-white">CIDB: 7CE // 7GB</span>
+                        <span class="text-[8px] text-gray-400 uppercase tracking-widest border border-unicon-border px-2 py-0.5 rounded-sm bg-white">ISO 9001</span>
+                    </div>
+                </div>
+                <div class="flex gap-6 items-center">
+                    <div class="flex gap-4 items-center">
+                        <a href="https://www.linkedin.com/company/unicon-construction" target="_blank" rel="noopener noreferrer" class="text-gray-400 hover:text-[#0a66c2] transition-colors"><i class="fa-brands fa-linkedin text-xl"></i></a>
+                    </div>
+                    <div class="w-[1px] h-6 bg-gray-300 hidden sm:block"></div>
+                    <p class="text-[9px] font-mono text-gray-400 uppercase tracking-tighter">Quality <span class="text-unicon-green font-bold">Construction</span></p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const yearElem = document.getElementById('year-footer');
+            if(yearElem) yearElem.textContent = new Date().getFullYear();
+        });
+    </script>
+</body>
+</html>
