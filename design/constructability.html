@@ -19,9 +19,23 @@
         .no-scrollbar::-webkit-scrollbar { display: none; }
         @keyframes fadeUp { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: translateY(0); } }
         .animate-fade-up { animation: fadeUp 1s cubic-bezier(0.16, 1, 0.3, 1) forwards; opacity: 0; }
+        .bg-blueprint-dark { background-image: linear-gradient(to right, rgba(255,255,255,0.05) 1px, transparent 1px), linear-gradient(to bottom, rgba(255,255,255,0.05) 1px, transparent 1px); background-size: 4rem 4rem; }
     </style>
 </head>
 <body class="font-sans pt-16 sm:pt-20">
+
+    <nav id="navbar" class="fixed top-0 left-0 w-full z-[100] transition-all duration-300 bg-[#0a0a0a]/95 backdrop-blur-md border-b border-gray-800 py-3 sm:py-4">
+        <div class="max-w-[90rem] mx-auto px-6 sm:px-8 lg:px-12 flex justify-between items-center">
+            <a href="/index.html" class="flex items-center gap-3 group relative z-[110]">
+                <span class="font-extrabold text-xl sm:text-2xl tracking-tighter uppercase text-white group-hover:text-unicon-green transition-colors">UNICON</span>
+                <div class="h-4 w-[1px] bg-gray-700"></div>
+                <span class="text-[8px] sm:text-[10px] font-mono text-unicon-green tracking-[0.2em] uppercase font-bold hidden sm:inline-block">EST. 1991</span>
+            </a>
+            <div class="flex items-center gap-4 relative z-[110]">
+                <a href="/contact.html" class="hidden sm:inline-block px-5 py-2.5 bg-unicon-green text-white text-[10px] font-bold uppercase tracking-widest hover:bg-white hover:text-unicon-black transition-colors rounded-sm">Secure Terminal</a>
+            </div>
+        </div>
+    </nav>
 
     <header class="relative min-h-[70vh] flex flex-col justify-center border-b border-gray-800 bg-unicon-black pt-24 pb-16 overflow-hidden">
         <div class="absolute inset-0 z-0">
@@ -31,7 +45,7 @@
 
         <div class="max-w-[90rem] mx-auto px-6 sm:px-8 lg:px-12 w-full relative z-10">
             <div class="mb-8 animate-fade-up flex items-center gap-2 font-mono text-[9px] sm:text-[10px] uppercase tracking-widest font-bold">
-                <a href="/design" target="_top" class="text-gray-400 hover:text-unicon-green transition-colors">Design Division</a>
+                <a href="/design.html" class="text-gray-400 hover:text-unicon-green transition-colors">Design Division</a>
                 <span class="text-gray-400">/</span>
                 <span class="bg-unicon-green text-white px-3 py-1">BIM & Constructability</span>
             </div>
@@ -44,7 +58,7 @@
             <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 mt-12 border-t border-gray-800 pt-10">
                 <div class="lg:col-span-8">
                     <p class="text-xl md:text-2xl font-light leading-relaxed text-gray-300 max-w-3xl">
-                        The technological overlay that guarantees execution. Unicon utilizes advanced <span class="text-unicon-green font-bold">Building Information Modeling (BIM)</span> and specialized CAD software like PERI to simulate construction and detect clashes before breaking ground.
+                        The technological overlay that guarantees execution. Unicon utilizes advanced <span class="text-unicon-green font-bold">Building Information Modeling (BIM)</span> and specialized CAD software to simulate construction and detect clashes before breaking ground.
                     </p>
                 </div>
             </div>
@@ -54,30 +68,60 @@
     <nav class="bg-[#0a0a0a] border-b border-gray-800 sticky top-0 z-50 shadow-2xl">
         <div class="max-w-[90rem] mx-auto px-0 sm:px-8 lg:px-12">
             <ul class="flex items-center overflow-x-auto no-scrollbar snap-x">
-                <li class="snap-start shrink-0"><a href="/design/architecture" target="_top" class="block py-4 px-6 text-[10px] font-bold uppercase tracking-[0.15em] text-gray-400 hover:text-white transition-colors whitespace-nowrap">Architecture</a></li>
-                <li class="snap-start shrink-0"><a href="/design/structural-engineering" target="_top" class="block py-4 px-6 text-[10px] font-bold uppercase tracking-[0.15em] text-gray-400 hover:text-white transition-colors whitespace-nowrap">Structural</a></li>
-                <li class="snap-start shrink-0"><a href="/design/civil-engineering" target="_top" class="block py-4 px-6 text-[10px] font-bold uppercase tracking-[0.15em] text-gray-400 hover:text-white transition-colors whitespace-nowrap">Earthworks</a></li>
-                <li class="snap-start shrink-0"><a href="/design/constructability" target="_top" class="block py-4 px-6 text-[10px] font-bold uppercase tracking-[0.15em] text-unicon-green border-b-2 border-unicon-green whitespace-nowrap bg-[#111111]">BIM / Constructability</a></li>
+                <li class="snap-start shrink-0"><a href="/design/architecture.html" class="block py-4 px-6 text-[10px] font-bold uppercase tracking-[0.15em] text-gray-400 hover:text-white transition-colors whitespace-nowrap">Architecture</a></li>
+                <li class="snap-start shrink-0"><a href="/design/structural.html" class="block py-4 px-6 text-[10px] font-bold uppercase tracking-[0.15em] text-gray-400 hover:text-white transition-colors whitespace-nowrap">Structural & MEP</a></li>
+                <li class="snap-start shrink-0"><a href="/design/earthworks.html" class="block py-4 px-6 text-[10px] font-bold uppercase tracking-[0.15em] text-gray-400 hover:text-white transition-colors whitespace-nowrap">Civil Profiling</a></li>
+                <li class="snap-start shrink-0"><a href="/design/bim.html" class="block py-4 px-6 text-[10px] font-bold uppercase tracking-[0.15em] text-unicon-green border-b-2 border-unicon-green whitespace-nowrap bg-[#111111]">BIM / Constructability</a></li>
             </ul>
         </div>
     </nav>
 
-    <section class="py-20 md:py-32 bg-white text-unicon-black border-b border-unicon-border">
+    <!-- DEEP CONTENT -->
+    <section class="py-20 md:py-32 bg-white text-unicon-black border-b border-unicon-border bg-blueprint">
         <div class="max-w-[90rem] mx-auto px-6 sm:px-8 lg:px-12">
-            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+            
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center mb-20">
                 <div class="lg:col-span-6">
-                    <h3 class="text-3xl md:text-4xl font-extrabold uppercase mb-6 tracking-tight">4D Scheduling & Formwork Simulation</h3>
+                    <h3 class="text-4xl md:text-5xl font-extrabold uppercase mb-6 tracking-tight">4D Scheduling & <br><span class="text-unicon-green">Formwork Simulation</span></h3>
                     <p class="text-base text-gray-600 font-light leading-relaxed mb-6">By building your asset digitally inside BIM software before physically deploying, we run active clash-detections to solve potential site conflicts on screen—not with jackhammers.</p>
-                    <p class="text-base text-gray-600 font-light leading-relaxed">Our advanced CAD integration ensures complex formwork and scaffolding structures are stress-tested and perfectly aligned with architectural intent.</p>
+                    <p class="text-base text-gray-600 font-light leading-relaxed">Our advanced integration ensures complex proprietary formwork (such as PERI scaffolding structures) are stress-tested and perfectly aligned with the architectural intent, maximizing the safety of our vertical concrete pours.</p>
                 </div>
                 <div class="lg:col-span-6">
-                    <div class="bg-gray-50 border border-unicon-border p-8">
-                        <p class="text-xs uppercase tracking-widest text-unicon-green font-mono mb-2">BIM Core Tech</p>
-                        <h4 class="text-xl font-bold uppercase tracking-tight text-unicon-black mb-2">Autodesk & Specialized CAD</h4>
-                        <p class="text-sm text-gray-500 font-light mt-2 leading-relaxed">Linking design and field operations seamlessly via real-time data sync, bridging structural capacity with operational reality.</p>
+                    <div class="bg-gray-50 border border-unicon-border p-10 shadow-lg">
+                        <p class="text-xs uppercase tracking-widest text-unicon-green font-mono mb-3">BIM Core Tech Stack</p>
+                        <h4 class="text-2xl font-bold uppercase tracking-tight text-unicon-black mb-4">Autodesk Construction Cloud</h4>
+                        <p class="text-sm text-gray-500 font-light leading-relaxed">Linking the design office and field operations seamlessly via real-time data sync. This bridges our structural capacity with operational reality, ensuring site agents execute exactly what was engineered.</p>
+                        <div class="mt-6 border-t border-unicon-border pt-4 flex gap-4">
+                            <span class="text-[10px] font-bold uppercase tracking-widest border border-gray-300 px-3 py-1 bg-white">Revit</span>
+                            <span class="text-[10px] font-bold uppercase tracking-widest border border-gray-300 px-3 py-1 bg-white">Navisworks</span>
+                            <span class="text-[10px] font-bold uppercase tracking-widest border border-gray-300 px-3 py-1 bg-white">AutoCAD</span>
+                        </div>
                     </div>
                 </div>
             </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div class="border border-unicon-border p-8 bg-white shadow-sm hover:border-unicon-green transition-colors flex flex-col">
+                    <i class="fa-solid fa-layer-group text-3xl text-unicon-green mb-6"></i>
+                    <h4 class="font-bold uppercase tracking-tight text-xl mb-3">Clash Detection Matrix</h4>
+                    <p class="text-sm text-gray-600 font-light leading-relaxed flex-grow">We overlay MEP (Mechanical, Electrical, Plumbing) designs directly onto structural steel and concrete models. This isolates pipe-routing conflicts and HVAC clashes, eliminating costly on-site variations and schedule delays.</p>
+                </div>
+                <div class="border border-unicon-border p-8 bg-white shadow-sm hover:border-unicon-green transition-colors flex flex-col">
+                    <i class="fa-solid fa-vr-cardboard text-3xl text-unicon-green mb-6"></i>
+                    <h4 class="font-bold uppercase tracking-tight text-xl mb-3">Digital Twin Handover</h4>
+                    <p class="text-sm text-gray-600 font-light leading-relaxed flex-grow">Upon practical completion, clients don't just receive paper blueprints. We provide a full 3D "Digital Twin" of the completed asset, giving facility managers a transparent map of every embedded cable and structural tie for future maintenance.</p>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="py-20 bg-unicon-black text-center border-t border-gray-800">
+        <div class="max-w-4xl mx-auto px-6">
+            <h2 class="text-3xl font-extrabold uppercase text-white mb-6">De-Risk Your Project</h2>
+            <p class="text-gray-400 font-light mb-8 text-lg">Deploy virtual clash detection and BIM scheduling simulation on your upcoming build.</p>
+            <a href="/contact.html" class="px-10 py-5 bg-unicon-green text-white font-bold uppercase tracking-widest text-xs hover:bg-white hover:text-unicon-black transition-colors inline-block shadow-lg">Consult BIM Specialists</a>
         </div>
     </section>
 
