@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The 2010s Projects | Unicon Construction</title>
+    
+    <!-- ADVANCED SEO META TAGS -->
+    <meta name="description" content="Unicon Construction's 2010s project archive. Highlighting massive 40ML post-tensioned reservoirs for Anglo American Platinum and heavy civils for UGU District Municipality.">
+    <meta name="keywords" content="Anglo American Platinum, Tusk Construction Support, JWE Africa, UGU District Municipality, Umgeni Water Board, 40ML concrete reservoir, XYPEX waterproofing, KZN Department of Transport">
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: { unicon: { black: '#0a0a0a', dark: '#1c1c1c', slate: '#f4f4f5', green: '#475c4d', border: '#e5e7eb' } },
+                    fontFamily: { sans: ['"Century Gothic"', 'sans-serif'], mono: ['ui-monospace', 'monospace'] }
+                }
+            }
+        }
+    </script>
+    <style>
+        body { background-color: #ffffff; color: #0a0a0a; -webkit-font-smoothing: antialiased; margin: 0; padding: 0; }
+        .bg-pattern { background-image: radial-gradient(#e5e7eb 1px, transparent 1px); background-size: 20px 20px; }
+        .table-container::-webkit-scrollbar { height: 8px; }
+        .table-container::-webkit-scrollbar-track { background: #f4f4f5; }
+        .table-container::-webkit-scrollbar-thumb { background: #475c4d; border-radius: 4px; }
+    </style>
+</head>
+<body class="font-sans selection:bg-unicon-green selection:text-white overflow-x-hidden">
+
+    <!-- NATIVE NAVIGATION BAR -->
+    <nav id="navbar" class="fixed top-0 left-0 w-full z-[100] transition-all duration-300 bg-[#0a0a0a]/95 backdrop-blur-md border-b border-gray-800 py-3 sm:py-4">
+        <div class="max-w-[90rem] mx-auto px-6 sm:px-8 lg:px-12 flex justify-between items-center">
+            <a href="/" class="flex items-center gap-3 group relative z-[110]">
+                <span class="font-extrabold text-xl sm:text-2xl tracking-tighter uppercase text-white group-hover:text-unicon-green transition-colors">UNICON</span>
+                <div class="h-4 w-[1px] bg-gray-700"></div>
+                <span class="text-[8px] sm:text-[10px] font-mono text-unicon-green tracking-[0.2em] uppercase font-bold hidden sm:inline-block">EST. 1991</span>
+            </a>
+            <div class="hidden lg:flex items-center gap-8">
+                <a href="/home/about" class="text-xs font-bold uppercase tracking-widest text-white hover:text-unicon-green transition-colors py-2">Company</a>
+                <a href="/design" class="text-xs font-bold uppercase tracking-widest text-white hover:text-unicon-green transition-colors py-2">Design</a>
+                <a href="/build/civil-engineering" class="text-xs font-bold uppercase tracking-widest text-white hover:text-unicon-green transition-colors py-2">Build</a>
+                <a href="/manage/project-management" class="text-xs font-bold uppercase tracking-widest text-white hover:text-unicon-green transition-colors py-2">Manage</a>
+                <a href="/projects" class="text-xs font-bold uppercase tracking-widest text-unicon-green hover:text-white transition-colors py-2">Portfolio</a>
+            </div>
+            <div class="flex items-center gap-4 relative z-[110]">
+                <a href="/contact" class="hidden sm:inline-block px-5 py-2.5 bg-unicon-green text-white text-[10px] font-bold uppercase tracking-widest hover:bg-white hover:text-unicon-black transition-colors rounded-sm">
+                    Secure Terminal
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <header class="pt-24 pb-16 md:pt-32 md:pb-24 bg-pattern border-b border-unicon-border">
+        <div class="max-w-[90rem] mx-auto px-6 sm:px-8 lg:px-12">
+            <div class="mb-4">
+                <a href="/projects" class="text-unicon-green text-xs font-bold uppercase tracking-widest hover:text-unicon-black transition-colors inline-flex items-center gap-2">
+                    <i class="fa-solid fa-arrow-left"></i> Back to Master Portfolio
+                </a>
+            </div>
+            <h1 class="text-5xl sm:text-6xl font-extrabold uppercase tracking-tight text-unicon-black mb-6">The 2010s: <br>Mega-Project Expansion</h1>
+            <p class="text-xl text-gray-600 font-light max-w-3xl leading-relaxed">
+                The era where Unicon successfully pivoted into Turnkey Design & Build, executing massive bulk water, heavy civil masterworks, and mining infrastructure for clients like Anglo American Platinum.
+            </p>
+        </div>
+    </header>
+
+    <section class="py-16 md:py-24 bg-white relative">
+        <div class="max-w-[90rem] mx-auto px-6 sm:px-8 lg:px-12 relative z-10">
+            
+            <div class="bg-white border border-unicon-border shadow-lg overflow-hidden">
+                <div class="overflow-x-auto table-container">
+                    <table class="w-full text-left border-collapse min-w-[1000px]">
+                        <thead>
+                            <tr class="bg-unicon-black text-white">
+                                <th class="p-5 text-[10px] font-bold uppercase tracking-widest whitespace-nowrap">Project / Era</th>
+                                <th class="p-5 text-[10px] font-bold uppercase tracking-widest whitespace-nowrap border-l border-gray-800">Employer</th>
+                                <th class="p-5 text-[10px] font-bold uppercase tracking-widest whitespace-nowrap border-l border-gray-800">Engineering Partners</th>
+                                <th class="p-5 text-[10px] font-bold uppercase tracking-widest border-l border-gray-800 min-w-[300px]">Technical Scope & Materials</th>
+                            </tr>
+                        </thead>
+                        <tbody class="divide-y divide-unicon-border text-sm font-light text-gray-700">
+                            
+                            <tr class="hover:bg-unicon-slate transition-colors">
+                                <td class="p-5 align-top">
+                                    <strong class="block text-unicon-black font-bold mb-1 text-base">Thabazimbi 10ML Reservoir</strong>
+                                    <span class="text-gray-500 font-mono text-[10px]">2016 - 2018</span>
+                                </td>
+                                <td class="p-5 align-top border-l border-unicon-border font-medium">Anglo American Platinum</td>
+                                <td class="p-5 align-top border-l border-unicon-border"><span class="text-unicon-green font-bold">Tusk Construction Support</span></td>
+                                <td class="p-5 align-top border-l border-unicon-border">
+                                    <span class="px-2 py-1 bg-unicon-green text-white rounded-sm text-[9px] uppercase font-bold tracking-widest mb-2 inline-block">Mining Infrastructure</span>
+                                    <p class="text-gray-600 text-xs">Flagship reinforced concrete reservoir. Executed post-tensioned walls, a free-spanning concrete dome roof, and critical XYPEX waterproofing integration.</p>
+                                    <span class="text-[9px] font-bold uppercase tracking-widest text-unicon-black mt-2 block">Status: Complete</span>
+                                </td>
+                            </tr>
+
+                            <tr class="hover:bg-unicon-slate transition-colors">
+                                <td class="p-5 align-top">
+                                    <strong class="block text-unicon-black font-bold mb-1 text-base">Makhathini Drainage Canal</strong>
+                                    <span class="text-gray-500 font-mono text-[10px]">2014 - 2016</span>
+                                </td>
+                                <td class="p-5 align-top border-l border-unicon-border font-medium">Mjindi Plantations / KZN Wildlife</td>
+                                <td class="p-5 align-top border-l border-unicon-border"><span class="text-unicon-green font-bold">Internal Engineering</span></td>
+                                <td class="p-5 align-top border-l border-unicon-border">
+                                    <span class="px-2 py-1 bg-unicon-green text-white rounded-sm text-[9px] uppercase font-bold tracking-widest mb-2 inline-block">Heavy Civils</span>
+                                    <p class="text-gray-600 text-xs">Heavy civil construction of a 4-kilometer concrete-lined bulk irrigation canal. Required massive earthworks and stabilized retaining structures.</p>
+                                    <span class="text-[9px] font-bold uppercase tracking-widest text-unicon-black mt-2 block">Status: Complete</span>
+                                </td>
+                            </tr>
+
+                            <tr class="hover:bg-unicon-slate transition-colors">
+                                <td class="p-5 align-top">
+                                    <strong class="block text-unicon-black font-bold mb-1 text-base">Ntwasahlobo Bridge P-127</strong>
+                                    <span class="text-gray-500 font-mono text-[10px]">2015</span>
+                                </td>
+                                <td class="p-5 align-top border-l border-unicon-border font-medium">KZN Department Of Transport</td>
+                                <td class="p-5 align-top border-l border-unicon-border"><span class="text-unicon-green font-bold">Civil Bridge Consultants</span></td>
+                                <td class="p-5 align-top border-l border-unicon-border">
+                                    <span class="px-2 py-1 bg-gray-800 text-white rounded-sm text-[9px] uppercase font-bold tracking-widest mb-2 inline-block">Heavy Civils</span>
+                                    <p class="text-gray-600 text-xs">Construction of a multi-span Provincial Road Bridge. Demanded deep piling and high-load structural concrete execution in active riverbeds.</p>
+                                    <span class="text-[9px] font-bold uppercase tracking-widest text-unicon-black mt-2 block">Status: Complete</span>
+                                </td>
+                            </tr>
+
+                            <tr class="hover:bg-unicon-slate transition-colors">
+                                <td class="p-5 align-top">
+                                    <strong class="block text-unicon-black font-bold mb-1 text-base">Bayonne Dairy Farm</strong>
+                                    <span class="text-gray-500 font-mono text-[10px]">2012</span>
+                                </td>
+                                <td class="p-5 align-top border-l border-unicon-border font-medium">Agri Development Agency (ADA)</td>
+                                <td class="p-5 align-top border-l border-unicon-border"><span class="text-unicon-green font-bold">JWE Africa Partnership</span></td>
+                                <td class="p-5 align-top border-l border-unicon-border">
+                                    <span class="px-2 py-1 bg-gray-800 text-white rounded-sm text-[9px] uppercase font-bold tracking-widest mb-2 inline-block">Agri-Processing EPC</span>
+                                    <p class="text-gray-600 text-xs">Turnkey construction of a highly advanced, 500-cattle milking dairy facility. Integrated earth dams, concrete silage pits, and industrial super-flat flooring.</p>
+                                    <span class="text-[9px] font-bold uppercase tracking-widest text-unicon-black mt-2 block">Status: Complete</span>
+                                </td>
+                            </tr>
+                            
+                            <tr class="hover:bg-unicon-slate transition-colors">
+                                <td class="p-5 align-top">
+                                    <strong class="block text-unicon-black font-bold mb-1 text-base">Mkomazi River Bridge</strong>
+                                    <span class="text-gray-500 font-mono text-[10px]">2014 - 2015</span>
+                                </td>
+                                <td class="p-5 align-top border-l border-unicon-border font-medium">KZN Department Of Transport</td>
+                                <td class="p-5 align-top border-l border-unicon-border"><span class="text-unicon-green font-bold">Internal Engineering</span></td>
+                                <td class="p-5 align-top border-l border-unicon-border">
+                                    <span class="px-2 py-1 bg-gray-800 text-white rounded-sm text-[9px] uppercase font-bold tracking-widest mb-2 inline-block">Heavy Civils</span>
+                                    <p class="text-gray-600 text-xs">Construction of a Provincial Road Bridge over the Mkomazi River along the Lower Loteni Road. Heavy reinforced abutments.</p>
+                                    <span class="text-[9px] font-bold uppercase tracking-widest text-unicon-black mt-2 block">Status: Complete</span>
+                                </td>
+                            </tr>
+
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <div class="mt-12 flex justify-between">
+                <a href="/projects/active" class="px-8 py-4 bg-white border border-unicon-border text-unicon-black font-bold uppercase tracking-widest text-xs hover:bg-unicon-slate transition-colors flex items-center gap-3">
+                    <i class="fa-solid fa-arrow-left"></i> 2020s
+                </a>
+                <a href="/projects/2000s" class="px-8 py-4 bg-unicon-black text-white font-bold uppercase tracking-widest text-xs hover:bg-unicon-green transition-colors flex items-center gap-3">
+                    View The 2000s <i class="fa-solid fa-arrow-right"></i>
+                </a>
+            </div>
+
+        </div>
+    </section>
+
+    <footer class="py-12 bg-white border-t border-unicon-border text-center">
+        <p class="text-[10px] text-gray-400 uppercase tracking-widest">© <span id="year-footer"></span> Unicon Construction SA. <br> <a href="/" class="text-unicon-green hover:underline">Return to Home</a></p>
+    </footer>
+
+    <script>
+        document.getElementById('year-footer').textContent = new Date().getFullYear();
+    </script>
+</body>
+</html>
