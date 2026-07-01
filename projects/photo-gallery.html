@@ -5,9 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Visual Archive & Project History | Unicon Construction</title>
     
-    <!-- ADVANCED SEO META TAGS -->
-    <meta name="description" content="Photographic archive of Unicon Construction's structural engineering, heavy civil, and turnkey projects. Featuring works alongside Axiom Architecture, Tusk Construction Support, and KZN Public Works.">
-    <meta name="keywords" content="Unicon Construction, KZN Public Works, Anglo American Platinum, Civil Engineering photos, Water Reservoirs, Nozaic & Westwood Consulting, Turnkey Construction, South Africa, Axiom Architecture, R&L Architects">
+    <meta name="description" content="Photographic archive of Unicon Construction's structural engineering, mass earthworks, heavy plant operations, and turnkey projects across Africa.">
+    <meta name="keywords" content="Unicon Construction, Heavy Earthworks, Excavators, Civil Engineering photos, Water Reservoirs, Plant Machinery, South Africa">
     
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
@@ -56,12 +55,11 @@
 </head>
 <body class="font-sans selection:bg-unicon-green selection:text-white" id="body">
 
-    <!-- HEADER -->
     <header class="relative pt-24 pb-16 border-b border-unicon-border bg-blueprint">
         <div class="max-w-[90rem] mx-auto px-6 sm:px-8 lg:px-12 relative z-10 animate-fade-up">
             <div class="mb-6">
-                <a href="/" class="text-unicon-green text-sm font-bold uppercase tracking-widest hover:text-unicon-black transition-colors inline-flex items-center gap-2">
-                    <i class="fa-solid fa-arrow-left"></i> Return Home
+                <a href="/projects.html" class="text-unicon-green text-sm font-bold uppercase tracking-widest hover:text-unicon-black transition-colors inline-flex items-center gap-2">
+                    <i class="fa-solid fa-arrow-left"></i> Back to Portfolio
                 </a>
             </div>
             
@@ -69,20 +67,17 @@
                 Visual <br><span class="text-unicon-green">Archive.</span>
             </h1>
             <p class="text-lg sm:text-xl font-light text-gray-600 max-w-3xl leading-relaxed border-t border-unicon-border pt-6">
-                A photographic record documenting 35 years of physical execution. Raw, unpolished captures from the site telling the story of Unicon's workforce, heavy plant operations, and structural milestones alongside our elite engineering partners.
+                A photographic record documenting 35 years of physical execution. Featuring our heavy plant fleet, structural concrete milestones, and mass earthworks deployed across Southern Africa.
             </p>
         </div>
     </header>
 
-    <!-- GALLERY GRID -->
     <section class="py-12 md:py-20 bg-white">
         <div class="max-w-[90rem] mx-auto px-4 sm:px-6 lg:px-8">
             
             <div id="gallery-grid" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 auto-rows-[250px] md:auto-rows-[300px]">
-                <!-- Images will be injected here by JavaScript -->
-            </div>
+                </div>
 
-            <!-- LOAD MORE BUTTON -->
             <div class="mt-16 text-center" id="load-more-container" style="display: none;">
                 <button onclick="loadMoreImages()" class="px-10 py-5 bg-unicon-black text-white font-bold uppercase tracking-widest text-xs hover:bg-unicon-green transition-all duration-300 shadow-xl inline-flex items-center gap-3">
                     <i class="fa-solid fa-images"></i> Load Additional Archives
@@ -92,7 +87,6 @@
         </div>
     </section>
 
-    <!-- LIGHTBOX OVERLAY -->
     <div id="lightbox" class="fixed inset-0 z-50 bg-black/95 lightbox-bg hidden flex flex-col opacity-0 transition-opacity duration-300">
         
         <div class="flex justify-between items-center p-6 shrink-0">
@@ -114,27 +108,49 @@
         </div>
     </div>
 
-    <!-- SEO DATA MATRIX (Hidden to users, readable by Googlebot) -->
     <div class="sr-only">
-        <h2>Unicon Construction Strategic Partnerships and Materials Index</h2>
-        <p>This image gallery depicts the high-quality construction works completed by Unicon Construction SA. The projects visualized here represent partnerships with premier South African clients including Anglo American Platinum, KZN Public Works, Tinley Leisure, JTR Ross Property, Dr & Mrs De scally, P Watcher, and Safal Steel.</p>
-        <p>Our execution standards are supported by elite architectural and engineering consultants such as Axiom Architecture, Visi Architects, R&L Architects, Allan Potter & Assoc Architect, Tusk Construction Support, Nozaic & Westwood Consulting, and JWE Africa.</p>
-        <p>Visualized materials and methods include: XYPEX Waterproofing, Post-Tensioned concrete cables, geomembrane liners, structural steel portal frames, high-density rebar, slip-form concrete, asphalt, and specialized brick and cement laying.</p>
+        <h2>Unicon Construction Earthworks & Fleet Index</h2>
+        <p>This image gallery depicts the heavy machinery and earthmoving works completed by Unicon Construction SA. The projects visualized here include mass earthworks, platform terracing, road profiling, and site preparation using our internal fleet.</p>
+        <p>Featured heavy plant equipment includes: Hyundai 220LC-9S Excavators, JCB excavators, John Deere E210 Excavators, Doosan earthmoving plant, and heavy impact rollers.</p>
     </div>
 
-    <!-- MASTER FOOTER -->
     <footer class="py-12 bg-white border-t border-unicon-border text-center">
-        <p class="text-[10px] text-gray-400 uppercase tracking-widest">© <span id="year-footer"></span> Unicon Construction SA. <br> <a href="/" class="text-unicon-green hover:underline mt-2 inline-block">Return to Home</a></p>
+        <p class="text-[10px] text-gray-400 uppercase tracking-widest">© <span id="year-footer"></span> Unicon Construction SA. <br> <a href="/index.html" class="text-unicon-green hover:underline mt-2 inline-block">Return to Home</a></p>
     </footer>
 
-    <!-- SCRIPTS -->
     <script>
         document.getElementById('year-footer').textContent = new Date().getFullYear();
 
+        // Combined Array of Original Photos + New Earthworks Photos
         const masterImageList = [
-            "https://raw.githubusercontent.com/chrisnott-unicon/bestphotos/main/Agrico_Pivot_Irrigation_System_20210830.jpg",
-            "https://raw.githubusercontent.com/chrisnott-unicon/bestphotos/main/Bridge-Construction-I-Beams-Erection-Crane-Uniconsa.jpg.jpg",
+            // NEW EARTHWORKS (Prioritized to front)
+            "https://raw.githubusercontent.com/chrisnott-unicon/Unicon-earthworks/main/unicon-construction-aerial-excavation-earthmoving-site-IMG_5067.JPG",
+            "https://raw.githubusercontent.com/chrisnott-unicon/Unicon-earthworks/main/Unicon-Construction-earthworks-site-preparation-heavy-machinery-DJI-20241016.JPG",
+            "https://raw.githubusercontent.com/chrisnott-unicon/Unicon-earthworks/main/unicon-construction-heavy-excavators-red-earth-mining-site-2016-06-16.jpg",
+            "https://raw.githubusercontent.com/chrisnott-unicon/Unicon-earthworks/main/Unicon-Construction-Earthworks-Heavy-Machinery-Site-Preparation-Impact-Roller-IMG-5595.jpg",
+            "https://raw.githubusercontent.com/chrisnott-unicon/Unicon-earthworks/main/unicon-construction-hyundai-220LC-9S-excavator-land-clearing-site-work.JPG",
+            "https://raw.githubusercontent.com/chrisnott-unicon/Unicon-earthworks/main/unicon-construction-doosan-excavators-earthmoving-site-south-africa.jpg",
+            "https://raw.githubusercontent.com/chrisnott-unicon/Unicon-earthworks/main/unicon-construction-jcb-excavator-river-bank-work-site-20171026.jpg",
+            "https://raw.githubusercontent.com/chrisnott-unicon/Unicon-earthworks/main/unicon-construction-john-deere-e210-excavator-digging-trench.jpg",
+            "https://raw.githubusercontent.com/chrisnott-unicon/Unicon-earthworks/main/unicon-construction-agricultural-terracing-earthworks-site-dji-20241120.JPG",
+            "https://raw.githubusercontent.com/chrisnott-unicon/Unicon-earthworks/main/unicon-construction-excavator-building-foundation-site-development-2016.jpg",
+            "https://raw.githubusercontent.com/chrisnott-unicon/Unicon-earthworks/main/unicon-construction-jcb-excavator-digging-trench-dsc-0034.JPG",
+            "https://raw.githubusercontent.com/chrisnott-unicon/Unicon-earthworks/main/unicon-construction-hyundai-excavator-earthworks-site-preparation.PNG",
+            "https://raw.githubusercontent.com/chrisnott-unicon/Unicon-earthworks/main/unicon-construction-jcb-excavator-digging-earthwork-site.jpg",
+            "https://raw.githubusercontent.com/chrisnott-unicon/Unicon-earthworks/main/unicon-construction-deere-excavator-dirt-mound-site-prep.jpg",
+            "https://raw.githubusercontent.com/chrisnott-unicon/Unicon-earthworks/main/IMG-20180626-WA0013.jpg",
+            "https://raw.githubusercontent.com/chrisnott-unicon/Unicon-earthworks/main/IMG-20181023-WA0024.jpg",
+            "https://raw.githubusercontent.com/chrisnott-unicon/Unicon-earthworks/main/IMG_6867.PNG",
+            "https://raw.githubusercontent.com/chrisnott-unicon/Unicon-earthworks/main/IMG_6951.jpg",
+            "https://raw.githubusercontent.com/chrisnott-unicon/Unicon-earthworks/main/IMG_7982.jpg",
+            "https://raw.githubusercontent.com/chrisnott-unicon/Unicon-earthworks/main/IMG_8730.jpg",
+            "https://raw.githubusercontent.com/chrisnott-unicon/Unicon-earthworks/main/IMG_8732.jpg",
+            "https://raw.githubusercontent.com/chrisnott-unicon/Unicon-earthworks/main/IMG_9394.JPG",
+            
+            // ORIGINAL CORE PHOTOS
             "https://raw.githubusercontent.com/chrisnott-unicon/bestphotos/main/Circular_Concrete_Reservoir_Construction_20161123.jpg",
+            "https://raw.githubusercontent.com/chrisnott-unicon/bestphotos/main/Bridge-Construction-I-Beams-Erection-Crane-Uniconsa.jpg.jpg",
+            "https://raw.githubusercontent.com/chrisnott-unicon/bestphotos/main/Agrico_Pivot_Irrigation_System_20210830.jpg",
             "https://raw.githubusercontent.com/chrisnott-unicon/bestphotos/main/Clarifloculator_Reservoir_Construction_Site_Concrete_Structure_Rebar_Boyboyi_Port%20Shepstone_KZN_RSA_(2).jpg",
             "https://raw.githubusercontent.com/chrisnott-unicon/bestphotos/main/Concrete%20Bridge%20Construction%20-%20Unicon%20SA.jpg",
             "https://raw.githubusercontent.com/chrisnott-unicon/bestphotos/main/Construction-Site-Bidum-Geomembrane-Reedbeds-Wastewater%20Treatment-Club%20Med-Tinley%20Manor-Ballito-20250312.JPG",
@@ -154,15 +170,14 @@
             "https://raw.githubusercontent.com/chrisnott-unicon/bestphotos/main/Unicon_Construction_Workers_on_Concrete_Slab_Formwork.JPG",
             "https://raw.githubusercontent.com/chrisnott-unicon/bestphotos/main/Unicon_Curved-Formwork_Metal_Dome_Roof_Plate-Cladding_Building-Structure_Construction_South-Africa_20170325.jpg",
             "https://raw.githubusercontent.com/chrisnott-unicon/bestphotos/main/concrete-reservoir-construction-pumping-uniconsa-south-africa.jpg",
-            "https://raw.githubusercontent.com/chrisnott-unicon/bestphotos/main/construction-site-crane-building-scaffolding-Pietermaritzburg-Invesco%20Centre.JPG",
-            "https://raw.githubusercontent.com/chrisnott-unicon/bestphotos/main/construction-site-excavator-earthworks.jpg"
+            "https://raw.githubusercontent.com/chrisnott-unicon/bestphotos/main/construction-site-crane-building-scaffolding-Pietermaritzburg-Invesco%20Centre.JPG"
         ];
 
         const galleryGrid = document.getElementById('gallery-grid');
         const loadMoreBtn = document.getElementById('load-more-container');
         
         let currentItemIndex = 0; 
-        const itemsPerLoad = 12;
+        const itemsPerLoad = 12; // Adjusted to handle the massive new library smoothly
 
         function getOptimizedUrl(rawUrl) {
             const cleanUrl = rawUrl.replace(/^https?:\/\//, '');
@@ -174,6 +189,7 @@
 
             const optimizedUrl = getOptimizedUrl(rawUrl);
 
+            // Create a dynamic, masonry-style grid
             let layoutClasses = 'col-span-1 shadow-sm border border-unicon-border bg-gray-100';
             if (index % 7 === 0) layoutClasses = 'row-span-2 col-span-1 sm:col-span-2 md:col-span-2 shadow-sm border border-unicon-border bg-gray-100';
             else if (index % 5 === 0) layoutClasses = 'col-span-1 sm:col-span-2 md:col-span-2 shadow-sm border border-unicon-border bg-gray-100';
@@ -181,15 +197,15 @@
 
             return `
                 <div class="gallery-item opacity-0 group relative overflow-hidden cursor-zoom-in transition-opacity duration-700 ${layoutClasses}" 
-                     onclick="openLightbox('${rawUrl}', 'Unicon Project Masterfile #${index + 1} // SEO: Turnkey Structural Engineering')">
+                     onclick="openLightbox('${rawUrl}', 'Unicon Masterfile #${index + 1} // Heavy Plant & Execution')">
                     
                     <div class="skeleton-loader"></div>
                     
                     <img src="${optimizedUrl}" 
                          onload="this.classList.remove('opacity-0'); this.previousElementSibling.style.display='none';"
                          onerror="this.parentElement.classList.add('hidden-gallery-item')" 
-                         alt="Unicon Construction - Structural Engineering and Civil Works Archive" 
-                         class="w-full h-full object-cover transition-all duration-700 grayscale-[60%] group-hover:grayscale-0 group-hover:scale-105 opacity-0 relative z-10" 
+                         alt="Unicon Construction - Heavy Earthworks and Fleet Operations" 
+                         class="w-full h-full object-cover transition-all duration-700 grayscale-[40%] group-hover:grayscale-0 group-hover:scale-105 opacity-0 relative z-10" 
                          loading="lazy">
                          
                     <div class="grid-overlay absolute inset-0 flex flex-col justify-end p-5 z-20">
@@ -277,3 +293,16 @@
     </script>
 </body>
 </html>
+```
+
+### Strategic Placement for the Homepage
+With this incredible arsenal of heavy plant photos, I highly recommend we swap out the main hero image on your homepage (`index.html`) to visually anchor the fact that Unicon is an *earth-moving* powerhouse, not just a design firm.
+
+If you open your `index.html` file, look for this line (around line 348 in the HERO SECTION):
+```html
+<img src="https://raw.githubusercontent.com/chrisnott-unicon/bestphotos/main/unicon-construction-bridge-installation-crane-lift.jpg" ... >
+```
+
+Replace that image URL with this stunning aerial drone shot of the mass earthworks:
+```html
+<img src="https://raw.githubusercontent.com/chrisnott-unicon/Unicon-earthworks/main/unicon-construction-aerial-excavation-earthmoving-site-IMG_5067.JPG" ... >
