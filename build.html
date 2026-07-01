@@ -5,12 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
     
     <!-- SEO & OPEN GRAPH META TAGS -->
-    <title>Core Ethos & Values | Unicon Construction</title>
-    <meta name="description" content="Our business is built on uncompromising ethical standards, absolute transparency, environmental stewardship, and community empowerment since 1991.">
-    <meta property="og:title" content="Unicon Construction | Core Ethos">
-    <meta property="og:description" content="Built on integrity. Driven by purpose. SANS 10400 compliant civil works.">
-    <meta property="og:image" content="https://raw.githubusercontent.com/chrisnott-unicon/bestphotos/main/unicon-construction-aerial-excavation-earthmoving-site-IMG_5067.JPG">
-    <meta property="og:url" content="https://www.uniconsa.co.za/home/ethos.html">
+    <title>Construction & Physical Execution | Unicon Construction</title>
+    <meta name="description" content="Translating world-class engineering into immovable physical assets. Unicon deploys internal heavy plant for Civil, Mining, Renewable Energy, and Structural works.">
+    <meta property="og:title" content="Unicon Construction | Build & Execution Phase">
+    <meta property="og:description" content="Executing Heavy Civils, Bulk Water, Mining Infrastructure, and Renewables BoP.">
+    <meta property="og:image" content="https://raw.githubusercontent.com/chrisnott-unicon/bestphotos/main/Bridge-Construction-I-Beams-Erection-Crane-Uniconsa.jpg.jpg">
+    <meta property="og:url" content="https://www.uniconsa.co.za/build.html">
     <meta property="og:type" content="website">
 
     <!-- GLOBAL SITE TAG (gtag.js) -->
@@ -19,7 +19,8 @@
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
       gtag('js', new Date());
-      gtag('config', 'G-XXXXXXXXXX');
+      gtag('config', 'G-XXXXXXXXXX'); 
+      gtag('config', 'AW-XXXXXXXXXX'); 
     </script>
 
     <script src="https://cdn.tailwindcss.com"></script>
@@ -29,38 +30,26 @@
             theme: {
                 extend: {
                     colors: { unicon: { black: '#0a0a0a', dark: '#1c1c1c', slate: '#f4f4f5', green: '#475c4d', border: '#e5e7eb' } },
-                    fontFamily: { sans: ['"Century Gothic"', 'sans-serif'], mono: ['ui-monospace', 'monospace'] }
+                    fontFamily: { sans: ['"Century Gothic"', 'sans-serif'], mono: ['ui-monospace', 'monospace'] },
+                    letterSpacing: { tighter: '-0.04em', tight: '-0.02em', widest: '0.2em' }
                 }
             }
         }
     </script>
     <style>
         body { background-color: #ffffff; color: #0a0a0a; -webkit-font-smoothing: antialiased; margin: 0; padding: 0; overflow-x: hidden; }
-        .bg-blueprint { background-image: linear-gradient(to right, #f3f4f6 1px, transparent 1px), linear-gradient(to bottom, #f3f4f6 1px, transparent 1px); background-size: 4rem 4rem; }
+        .bg-blueprint { background-image: linear-gradient(to right, rgba(229, 231, 235, 0.4) 1px, transparent 1px), linear-gradient(to bottom, rgba(229, 231, 235, 0.4) 1px, transparent 1px); background-size: 4rem 4rem; }
         .bg-blueprint-dark { background-image: linear-gradient(to right, rgba(255,255,255,0.05) 1px, transparent 1px), linear-gradient(to bottom, rgba(255,255,255,0.05) 1px, transparent 1px); background-size: 4rem 4rem; }
-        .text-outline { color: transparent; -webkit-text-stroke: 1px #0a0a0a; }
+        .text-outline { color: transparent; -webkit-text-stroke: 1px #ffffff; }
         @keyframes fadeUp { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: translateY(0); } }
         .animate-fade-up { animation: fadeUp 1s cubic-bezier(0.16, 1, 0.3, 1) forwards; opacity: 0; }
         .delay-100 { animation-delay: 100ms; }
         .delay-200 { animation-delay: 200ms; }
-        .whatsapp-fab { 
-            position: fixed; 
-            bottom: calc(30px + env(safe-area-inset-bottom)); 
-            right: 30px; 
-            background-color: #25D366; 
-            color: white; 
-            width: 60px; 
-            height: 60px; 
-            border-radius: 50%; 
-            display: flex; 
-            align-items: center; 
-            justify-content: center; 
-            font-size: 32px; 
-            box-shadow: 0 4px 15px rgba(0,0,0,0.3); 
-            z-index: 99999; 
-            transition: transform 0.3s ease; 
-            text-decoration: none; 
-        }
+        .link-underline { position: relative; }
+        .link-underline::after { content: ''; position: absolute; width: 0; height: 1px; bottom: -2px; left: 0; background-color: #475c4d; transition: width 0.3s ease; }
+        .link-underline:hover::after { width: 100%; }
+        
+        .whatsapp-fab { position: fixed; bottom: calc(30px + env(safe-area-inset-bottom)); right: 30px; background-color: #25D366; color: white; width: 60px; height: 60px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 32px; box-shadow: 0 4px 15px rgba(0,0,0,0.3); z-index: 99999; transition: transform 0.3s ease; text-decoration: none; }
         .whatsapp-fab:hover { transform: scale(1.1); }
         .no-scrollbar::-webkit-scrollbar { display: none; }
         .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
@@ -69,7 +58,7 @@
 <body class="font-sans pt-16 sm:pt-20">
 
     <!-- WHATSAPP FLOATING CTA -->
-    <a href="https://wa.me/27664834709?text=Hello%20Unicon" target="_blank" class="whatsapp-fab" aria-label="Chat with us on WhatsApp">
+    <a href="https://wa.me/27664834709?text=Hello%20Unicon,%20I%20am%20interested%20in%20your%20Construction%20and%20Execution%20capabilities." target="_blank" class="whatsapp-fab" aria-label="Chat with us on WhatsApp">
         <i class="fa-brands fa-whatsapp"></i>
     </a>
 
@@ -77,42 +66,40 @@
     <nav id="navbar" class="fixed top-0 left-0 w-full z-[100] transition-all duration-300 bg-[#0a0a0a]/95 backdrop-blur-md border-b border-gray-800 py-3 sm:py-4">
         <div class="max-w-[90rem] mx-auto px-6 sm:px-8 lg:px-12 flex justify-between items-center">
             
-            <!-- Brand Logo -->
-            <a href="https://www.uniconsa.co.za/index.html" target="_top" class="flex items-center gap-4 group relative z-[110]">
-                <img src="https://raw.githubusercontent.com/chrisnott-unicon/UniconLogo/main/UniconBlk.png" alt="Unicon Logo" class="h-8 sm:h-10 w-auto invert brightness-0 transition-opacity group-hover:opacity-80">
-                <div class="h-6 w-[1px] bg-gray-700 hidden sm:block"></div>
+            <a href="https://www.uniconsa.co.za/index.html" target="_top" class="flex items-center gap-3 group relative z-[110]">
+                <img src="https://raw.githubusercontent.com/chrisnott-unicon/UniconLogo/main/UniconBlk.png" alt="Unicon Logo" class="h-6 sm:h-8 w-auto invert brightness-0 transition-opacity group-hover:opacity-80">
+                <span class="font-extrabold text-xl sm:text-2xl tracking-tighter uppercase text-white group-hover:text-unicon-green transition-colors">UNICON</span>
+                <div class="h-4 w-[1px] bg-gray-700"></div>
                 <span class="text-[8px] sm:text-[10px] font-mono text-unicon-green tracking-[0.2em] uppercase font-bold hidden sm:inline-block">EST. 1991</span>
             </a>
 
             <!-- Desktop Menu -->
             <div class="hidden lg:flex items-center gap-8">
-                <!-- Dropdown: Company -->
+                
                 <div class="relative group">
-                    <button class="text-xs font-bold uppercase tracking-widest text-unicon-green transition-colors py-2 flex items-center gap-1">Company <i class="fa-solid fa-chevron-down text-[9px] opacity-70"></i></button>
+                    <button class="text-xs font-bold uppercase tracking-widest text-white hover:text-unicon-green transition-colors py-2 flex items-center gap-1">Company <i class="fa-solid fa-chevron-down text-[9px] opacity-70"></i></button>
                     <div class="absolute top-full left-0 mt-4 w-48 bg-[#0a0a0a] border border-gray-800 shadow-2xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 translate-y-2 group-hover:translate-y-0">
                         <div class="absolute -top-4 left-0 w-full h-4 bg-transparent"></div>
                         <a href="https://www.uniconsa.co.za/home/about.html" target="_top" class="block px-5 py-3 text-[10px] uppercase tracking-widest text-gray-400 hover:text-white hover:bg-unicon-green/20 border-b border-gray-800">Profile</a>
                         <a href="https://www.uniconsa.co.za/home/history.html" target="_top" class="block px-5 py-3 text-[10px] uppercase tracking-widest text-gray-400 hover:text-white hover:bg-unicon-green/20 border-b border-gray-800">History</a>
                         <a href="https://www.uniconsa.co.za/home/team.html" target="_top" class="block px-5 py-3 text-[10px] uppercase tracking-widest text-gray-400 hover:text-white hover:bg-unicon-green/20 border-b border-gray-800">Workforce</a>
-                        <a href="https://www.uniconsa.co.za/home/ethos.html" target="_top" class="block px-5 py-3 text-[10px] uppercase tracking-widest text-unicon-green bg-[#111111] hover:text-white">Core Ethos</a>
+                        <a href="https://www.uniconsa.co.za/home/ethos.html" target="_top" class="block px-5 py-3 text-[10px] uppercase tracking-widest text-gray-400 hover:text-white hover:bg-unicon-green/20">Core Ethos</a>
                     </div>
                 </div>
 
-                <!-- Dropdown: Design -->
                 <div class="relative group">
                     <button class="text-xs font-bold uppercase tracking-widest text-white hover:text-unicon-green transition-colors py-2 flex items-center gap-1">Design <i class="fa-solid fa-chevron-down text-[9px] opacity-70"></i></button>
                     <div class="absolute top-full left-0 mt-4 w-52 bg-[#0a0a0a] border border-gray-800 shadow-2xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 translate-y-2 group-hover:translate-y-0">
                         <div class="absolute -top-4 left-0 w-full h-4 bg-transparent"></div>
                         <a href="https://www.uniconsa.co.za/design/architecture.html" target="_top" class="block px-5 py-3 text-[10px] uppercase tracking-widest text-gray-400 hover:text-white hover:bg-unicon-green/20 border-b border-gray-800">Architectural Plan</a>
-                        <a href="https://www.uniconsa.co.za/design/civil-engineering.html" target="_top" class="block px-5 py-3 text-[10px] uppercase tracking-widest text-gray-400 hover:text-white hover:bg-unicon-green/20 border-b border-gray-800">Civil Profiling</a>
+                        <a href="https://www.uniconsa.co.za/design/earthworks.html" target="_top" class="block px-5 py-3 text-[10px] uppercase tracking-widest text-gray-400 hover:text-white hover:bg-unicon-green/20 border-b border-gray-800">Civil Profiling</a>
                         <a href="https://www.uniconsa.co.za/design/structural.html" target="_top" class="block px-5 py-3 text-[10px] uppercase tracking-widest text-gray-400 hover:text-white hover:bg-unicon-green/20 border-b border-gray-800">Structural & MEP</a>
                         <a href="https://www.uniconsa.co.za/design/bim.html" target="_top" class="block px-5 py-3 text-[10px] uppercase tracking-widest text-gray-400 hover:text-white hover:bg-unicon-green/20">BIM & Constructability</a>
                     </div>
                 </div>
 
-                <!-- Dropdown: Build -->
                 <div class="relative group">
-                    <button class="text-xs font-bold uppercase tracking-widest text-white hover:text-unicon-green transition-colors py-2 flex items-center gap-1">Build <i class="fa-solid fa-chevron-down text-[9px] opacity-70"></i></button>
+                    <button class="text-xs font-bold uppercase tracking-widest text-unicon-green transition-colors py-2 flex items-center gap-1">Build <i class="fa-solid fa-chevron-down text-[9px] opacity-70"></i></button>
                     <div class="absolute top-full left-0 mt-4 w-60 bg-[#0a0a0a] border border-gray-800 shadow-2xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 translate-y-2 group-hover:translate-y-0">
                         <div class="absolute -top-4 left-0 w-full h-4 bg-transparent"></div>
                         <a href="https://www.uniconsa.co.za/build/water-engineering.html" target="_top" class="block px-5 py-3 text-[10px] uppercase tracking-widest text-gray-400 hover:text-white hover:bg-unicon-green/20 border-b border-gray-800">Bulk Water</a>
@@ -127,7 +114,6 @@
                     </div>
                 </div>
 
-                <!-- Dropdown: Manage -->
                 <div class="relative group">
                     <button class="text-xs font-bold uppercase tracking-widest text-white hover:text-unicon-green transition-colors py-2 flex items-center gap-1">Manage <i class="fa-solid fa-chevron-down text-[9px] opacity-70"></i></button>
                     <div class="absolute top-full left-0 mt-4 w-52 bg-[#0a0a0a] border border-gray-800 shadow-2xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 translate-y-2 group-hover:translate-y-0">
@@ -139,9 +125,8 @@
 
                 <a href="https://www.uniconsa.co.za/communications/insights.html" target="_top" class="text-xs font-bold uppercase tracking-widest text-white hover:text-unicon-green transition-colors py-2">Insights</a>
                 
-                <!-- Dropdown: Contact -->
                 <div class="relative group">
-                    <button class="text-xs font-bold uppercase tracking-widest text-white hover:text-unicon-green transition-colors py-2 flex items-center gap-1">Contact Us <i class="fa-solid fa-chevron-down text-[9px] opacity-70"></i></button>
+                    <button class="text-xs font-bold uppercase tracking-widest text-white hover:text-unicon-green transition-colors py-2 flex items-center gap-1">Contact <i class="fa-solid fa-chevron-down text-[9px] opacity-70"></i></button>
                     <div class="absolute top-full right-0 mt-4 w-48 bg-[#0a0a0a] border border-gray-800 shadow-2xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 translate-y-2 group-hover:translate-y-0">
                         <div class="absolute -top-4 right-0 w-full h-4 bg-transparent"></div>
                         <a href="https://www.uniconsa.co.za/contact.html" target="_top" class="block px-5 py-3 text-[10px] uppercase tracking-widest text-gray-400 hover:text-white hover:bg-unicon-green/20 border-b border-gray-800">Get In Touch</a>
@@ -152,9 +137,9 @@
                 </div>
             </div>
 
-            <!-- Mobile Toggle & Contact CTA -->
+            <!-- Mobile Toggle -->
             <div class="flex items-center gap-4 relative z-[110]">
-                <a href="https://www.uniconsa.co.za/contact.html" target="_top" class="hidden sm:inline-block px-5 py-2.5 bg-unicon-green text-white text-[10px] font-bold uppercase tracking-widest hover:bg-white hover:text-unicon-black transition-colors rounded-sm shadow-sm">
+                <a href="https://www.uniconsa.co.za/contact.html" target="_top" class="hidden sm:inline-block px-5 py-2.5 border border-unicon-green text-unicon-green text-[10px] font-bold uppercase tracking-widest hover:bg-unicon-green hover:text-white transition-colors">
                     Contact Us
                 </a>
                 <button id="mobile-menu-btn" class="lg:hidden text-white hover:text-unicon-green transition-colors p-2 focus:outline-none">
@@ -163,10 +148,9 @@
             </div>
         </div>
 
-        <!-- REBUILT NO-COLLAPSE MOBILE MENU OVERLAY -->
+        <!-- FLAT MOBILE MENU -->
         <div id="mobile-menu" class="fixed inset-y-0 right-0 w-80 bg-[#0a0a0a] z-[1000] transform translate-x-full transition-transform duration-300 overflow-y-auto lg:hidden pt-24 pb-12 px-6 border-l border-gray-800 shadow-2xl flex flex-col justify-between">
             <div class="flex flex-col space-y-6">
-                <!-- Company flat list -->
                 <div>
                     <h4 class="text-unicon-green text-[10px] uppercase font-mono tracking-widest border-b border-gray-800 pb-2 mb-3">Company</h4>
                     <div class="flex flex-col space-y-3 pl-2">
@@ -176,32 +160,29 @@
                         <a href="https://www.uniconsa.co.za/home/ethos.html" target="_top" class="text-sm font-bold uppercase tracking-wide text-white hover:text-unicon-green">Core Ethos</a>
                     </div>
                 </div>
-
-                <!-- Design flat list -->
                 <div>
                     <h4 class="text-unicon-green text-[10px] uppercase font-mono tracking-widest border-b border-gray-800 pb-2 mb-3">Design</h4>
                     <div class="flex flex-col space-y-3 pl-2">
                         <a href="https://www.uniconsa.co.za/design/architecture.html" target="_top" class="text-sm font-bold uppercase tracking-wide text-white hover:text-unicon-green">Architectural Plan</a>
-                        <a href="https://www.uniconsa.co.za/design/civil-engineering.html" target="_top" class="text-sm font-bold uppercase tracking-wide text-white hover:text-unicon-green">Civil Profiling</a>
+                        <a href="https://www.uniconsa.co.za/design/earthworks.html" target="_top" class="text-sm font-bold uppercase tracking-wide text-white hover:text-unicon-green">Civil Profiling</a>
                         <a href="https://www.uniconsa.co.za/design/structural.html" target="_top" class="text-sm font-bold uppercase tracking-wide text-white hover:text-unicon-green">Structural & MEP</a>
                         <a href="https://www.uniconsa.co.za/design/bim.html" target="_top" class="text-sm font-bold uppercase tracking-wide text-white hover:text-unicon-green">BIM & Constructability</a>
                     </div>
                 </div>
-
-                <!-- Build flat list -->
                 <div>
                     <h4 class="text-unicon-green text-[10px] uppercase font-mono tracking-widest border-b border-gray-800 pb-2 mb-3">Build</h4>
                     <div class="flex flex-col space-y-3 pl-2">
                         <a href="https://www.uniconsa.co.za/build/water-engineering.html" target="_top" class="text-sm font-bold uppercase tracking-wide text-white hover:text-unicon-green">Bulk Water</a>
                         <a href="https://www.uniconsa.co.za/build/civil-engineering.html" target="_top" class="text-sm font-bold uppercase tracking-wide text-white hover:text-unicon-green">Heavy Civils</a>
                         <a href="https://www.uniconsa.co.za/build/structural-engineering.html" target="_top" class="text-sm font-bold uppercase tracking-wide text-white hover:text-unicon-green">Structural Concrete</a>
+                        <a href="https://www.uniconsa.co.za/build/mining-infrastructure.html" target="_top" class="text-sm font-bold uppercase tracking-wide text-white hover:text-unicon-green">Mining Civils</a>
+                        <a href="https://www.uniconsa.co.za/build/renewable-energy.html" target="_top" class="text-sm font-bold uppercase tracking-wide text-white hover:text-unicon-green">Renewable Energy BoP</a>
+                        <a href="https://www.uniconsa.co.za/build/industrial-logistics.html" target="_top" class="text-sm font-bold uppercase tracking-wide text-white hover:text-unicon-green">Ports & Logistics</a>
                         <a href="https://www.uniconsa.co.za/build/agricultural-engineering.html" target="_top" class="text-sm font-bold uppercase tracking-wide text-white hover:text-unicon-green">Agricultural EPC</a>
                         <a href="https://www.uniconsa.co.za/build/general-building.html" target="_top" class="text-sm font-bold uppercase tracking-wide text-white hover:text-unicon-green">General Building</a>
                         <a href="https://www.uniconsa.co.za/projects.html" target="_top" class="text-sm font-bold uppercase tracking-wide text-unicon-green">Master Portfolio</a>
                     </div>
                 </div>
-
-                <!-- Manage flat list -->
                 <div>
                     <h4 class="text-unicon-green text-[10px] uppercase font-mono tracking-widest border-b border-gray-800 pb-2 mb-3">Manage & Connect</h4>
                     <div class="flex flex-col space-y-3 pl-2">
@@ -211,112 +192,309 @@
                     </div>
                 </div>
             </div>
-            
             <div class="mt-8 border-t border-gray-800 pt-6">
-                <a href="https://www.uniconsa.co.za/contact.html" target="_top" class="block w-full py-4 bg-unicon-green text-white text-center text-xs font-bold uppercase tracking-widest hover:bg-white hover:text-unicon-black transition-colors rounded-sm shadow-lg">
+                <a href="https://www.uniconsa.co.za/contact.html" target="_top" class="block w-full py-4 bg-unicon-green text-white text-center text-xs font-bold uppercase tracking-widest hover:bg-white hover:text-unicon-black transition-colors rounded-sm">
                     Contact Us
                 </a>
             </div>
         </div>
     </nav>
 
-    <!-- HERO SECTION -->
-    <header class="relative min-h-[75vh] flex flex-col justify-center border-b border-unicon-border bg-blueprint py-16 md:py-24 overflow-hidden">
-        <div class="max-w-[90rem] mx-auto px-6 sm:px-8 lg:px-12 w-full relative z-10">
-            
-            <div class="mb-8 animate-fade-up">
-                <span class="inline-flex items-center gap-2 py-1.5 px-4 border border-unicon-black text-[10px] md:text-xs font-bold uppercase tracking-widest text-unicon-black bg-white shadow-sm">
-                    Core Ethos
-                </span>
+    <!-- IMMERSIVE HERO SECTION -->
+    <header class="relative min-h-[85vh] flex flex-col justify-center border-b border-gray-800 bg-unicon-black pt-16 md:pt-24 overflow-hidden">
+        <div class="absolute inset-0 z-0">
+            <img src="https://raw.githubusercontent.com/chrisnott-unicon/bestphotos/main/Bridge-Construction-I-Beams-Erection-Crane-Uniconsa.jpg.jpg" alt="Unicon Heavy Plant Operations" class="w-full h-full object-cover opacity-[0.35] grayscale-[20%]">
+            <div class="absolute inset-0 bg-gradient-to-t from-unicon-black via-unicon-black/60 to-transparent"></div>
+        </div>
+
+        <div class="max-w-[90rem] mx-auto px-6 sm:px-8 lg:px-12 w-full relative z-10 text-white">
+            <div class="mb-8 animate-fade-up flex items-center gap-2 font-mono text-[9px] sm:text-[10px] uppercase tracking-widest font-bold">
+                <span class="bg-unicon-green text-white px-3 py-1">02. Execution Phase</span>
             </div>
             
-            <h1 class="text-[12vw] sm:text-[9vw] lg:text-[7rem] xl:text-[8rem] font-extrabold tracking-tighter leading-[0.85] mb-10 animate-fade-up delay-100 uppercase">
-                Grounded <br />
-                <span class="text-outline">Principles.</span>
+            <h1 class="text-[13vw] sm:text-[10vw] lg:text-[8vw] xl:text-[8.5rem] 2xl:text-[10rem] font-extrabold mb-10 animate-fade-up delay-100 uppercase leading-[0.85] tracking-tighter">
+                Physical <br />
+                <span class="text-outline">Reality.</span>
             </h1>
             
-            <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 mt-12 border-t border-unicon-border pt-10 animate-fade-up delay-200">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 md:gap-16 mt-12 border-t border-gray-800 pt-10 animate-fade-up delay-200">
                 <div class="lg:col-span-8 2xl:col-span-7">
-                    <p class="text-xl sm:text-2xl md:text-3xl font-light leading-relaxed text-unicon-dark max-w-3xl">
-                        Unicon's operations are governed by uncompromising ethical, safety, and quality constraints. We build sustainable infrastructure that empowers communities and preserves the natural landscape.
+                    <p class="text-xl md:text-2xl font-light leading-relaxed text-gray-300 max-w-3xl">
+                        Where design ends, deployment begins. Unicon translates world-class engineering into immovable physical assets. We deploy our <span class="text-unicon-green font-bold">internal heavy plant</span> and elite artisan workforce to deliver zero-failure tolerance across diverse industrial sectors.
                     </p>
+                </div>
+                <div class="lg:col-span-4 2xl:col-span-5 flex flex-col justify-center">
+                    <div class="border-l-4 border-unicon-green pl-6 py-2">
+                        <p class="text-xs text-gray-500 uppercase tracking-widest font-mono mb-2">Core Advantage</p>
+                        <h3 class="font-extrabold uppercase tracking-tight text-xl text-white">CIDB 7CE / 7GB Grading</h3>
+                    </div>
                 </div>
             </div>
         </div>
     </header>
 
-    <!-- COMPANY SUB-NAV -->
-    <nav class="bg-[#0a0a0a] border-b border-gray-800 sticky top-0 z-40 shadow-2xl">
-        <div class="max-w-[90rem] mx-auto px-0 sm:px-8 lg:px-12">
-            <ul class="flex items-center overflow-x-auto no-scrollbar snap-x">
-                <li class="snap-start shrink-0"><a href="/home/about.html" class="block py-4 px-6 text-[10px] font-bold uppercase tracking-[0.15em] text-gray-400 hover:text-white transition-colors whitespace-nowrap">Profile</a></li>
-                <li class="snap-start shrink-0"><a href="/home/history.html" class="block py-4 px-6 text-[10px] font-bold uppercase tracking-[0.15em] text-gray-400 hover:text-white transition-colors whitespace-nowrap">History</a></li>
-                <li class="snap-start shrink-0"><a href="/home/team.html" class="block py-4 px-6 text-[10px] font-bold uppercase tracking-[0.15em] text-gray-400 hover:text-white transition-colors whitespace-nowrap">Workforce</a></li>
-                <li class="snap-start shrink-0"><a href="/home/ethos.html" class="block py-4 px-6 text-[10px] font-bold uppercase tracking-[0.15em] text-unicon-green border-b-2 border-unicon-green whitespace-nowrap bg-[#111111]">Core Ethos</a></li>
+    <!-- STICKY SUB-NAV (EXPANDED TO ALL SECTORS) -->
+    <nav class="bg-[#0a0a0a] border-b border-gray-800 sticky top-0 z-50 shadow-2xl overflow-hidden">
+        <div class="max-w-[90rem] mx-auto px-0 sm:px-8 lg:px-12 relative">
+            <ul class="flex items-center overflow-x-auto no-scrollbar snap-x relative z-10">
+                <li class="snap-start shrink-0"><a href="https://www.uniconsa.co.za/build/water-engineering.html" target="_top" class="block py-4 px-6 text-[10px] font-bold uppercase tracking-[0.15em] text-gray-400 hover:text-white transition-colors whitespace-nowrap">Bulk Water</a></li>
+                <li class="snap-start shrink-0"><a href="https://www.uniconsa.co.za/build/civil-engineering.html" target="_top" class="block py-4 px-6 text-[10px] font-bold uppercase tracking-[0.15em] text-gray-400 hover:text-white transition-colors whitespace-nowrap">Heavy Civils</a></li>
+                <li class="snap-start shrink-0"><a href="https://www.uniconsa.co.za/build/mining-infrastructure.html" target="_top" class="block py-4 px-6 text-[10px] font-bold uppercase tracking-[0.15em] text-gray-400 hover:text-white transition-colors whitespace-nowrap">Mining</a></li>
+                <li class="snap-start shrink-0"><a href="https://www.uniconsa.co.za/build/renewable-energy.html" target="_top" class="block py-4 px-6 text-[10px] font-bold uppercase tracking-[0.15em] text-gray-400 hover:text-white transition-colors whitespace-nowrap">Renewables</a></li>
+                <li class="snap-start shrink-0"><a href="https://www.uniconsa.co.za/build/industrial-logistics.html" target="_top" class="block py-4 px-6 text-[10px] font-bold uppercase tracking-[0.15em] text-gray-400 hover:text-white transition-colors whitespace-nowrap">Logistics</a></li>
+                <li class="snap-start shrink-0"><a href="https://www.uniconsa.co.za/build/structural-engineering.html" target="_top" class="block py-4 px-6 text-[10px] font-bold uppercase tracking-[0.15em] text-gray-400 hover:text-white transition-colors whitespace-nowrap">Structural</a></li>
+                <li class="snap-start shrink-0"><a href="https://www.uniconsa.co.za/build/agricultural-engineering.html" target="_top" class="block py-4 px-6 text-[10px] font-bold uppercase tracking-[0.15em] text-gray-400 hover:text-white transition-colors whitespace-nowrap">Agri-Industrial</a></li>
             </ul>
         </div>
     </nav>
 
-    <!-- CORE PILLARS OF ETHOS -->
+    <!-- CORE DOMAINS -->
     <section class="py-20 md:py-32 bg-white border-b border-unicon-border bg-blueprint">
         <div class="max-w-[90rem] mx-auto px-6 sm:px-8 lg:px-12">
-            
-            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-20 items-start mb-20">
-                <div class="lg:col-span-5">
-                    <p class="text-unicon-green font-bold uppercase tracking-widest text-[10px] md:text-xs mb-3">Professional Quality</p>
-                    <h2 class="text-4xl sm:text-5xl font-extrabold tracking-tight uppercase leading-none mb-6">Built on <br><span class="text-unicon-green">Integrity.</span></h2>
-                    <p class="text-gray-600 font-light leading-relaxed mb-6 text-base md:text-lg">
-                        Since Tony Nott laid the first foundation brick in 1991, Unicon Construction has operated under a simple premise: a contract is a binding promise.
-                    </p>
-                    <p class="text-gray-600 font-light leading-relaxed text-base md:text-lg">
-                        We refuse to compromise on material specifications, structural safety, or labor transparency. We hold our suppliers, subcontractors, and management teams to the highest ethical and quality benchmarks in the industry.
-                    </p>
-                </div>
-
-                <div class="lg:col-span-7 grid grid-cols-1 sm:grid-cols-2 gap-6 md:gap-8">
-                    <!-- Ethical Conduct -->
-                    <div class="bg-white border border-unicon-border p-8 hover:border-unicon-green transition-all shadow-md">
-                        <i class="fa-solid fa-scale-balanced text-3xl text-unicon-green mb-5"></i>
-                        <h4 class="font-bold uppercase tracking-tight text-lg mb-3">Absolute Transparency</h4>
-                        <p class="text-xs text-gray-600 font-light leading-relaxed">No double-invoicing, no corner-cutting, and no hidden variations. We run open-book commercial accounting on all turnkey contracts, building ironclad professional trust with public and private developers alike.</p>
-                    </div>
-
-                    <!-- Environmental Duty -->
-                    <div class="bg-white border border-unicon-border p-8 hover:border-unicon-green transition-all shadow-md">
-                        <i class="fa-solid fa-leaf text-3xl text-unicon-green mb-5"></i>
-                        <h4 class="font-bold uppercase tracking-tight text-lg mb-3">Environmental Duty</h4>
-                        <p class="text-xs text-gray-600 font-light leading-relaxed">Heavy earthmoving fundamentally reshapes the landscape. We actively mitigate our environmental footprint, using specific silt-netting, careful topsoil preservation, and biosecure water runoff programs.</p>
-                    </div>
-
-                    <!-- Community Upliftment -->
-                    <div class="bg-white border border-unicon-border p-8 hover:border-unicon-green transition-all shadow-md">
-                        <i class="fa-solid fa-hands-holding-child text-3xl text-unicon-green mb-5"></i>
-                        <h4 class="font-bold uppercase tracking-tight text-lg mb-3">Social Investment</h4>
-                        <p class="text-xs text-gray-600 font-light leading-relaxed">We leave communities stronger than we found them. Sourcing local labor on every site and conducting direct, practical skill transfers turns our projects into long-term local assets.</p>
-                    </div>
-
-                    <!-- Client Trust -->
-                    <div class="bg-white border border-unicon-border p-8 hover:border-unicon-green transition-all shadow-md">
-                        <i class="fa-solid fa-shield-halved text-3xl text-unicon-green mb-5"></i>
-                        <h4 class="font-bold uppercase tracking-tight text-lg mb-3">Contract Compliance</h4>
-                        <p class="text-xs text-gray-600 font-light leading-relaxed">We strictly respect JBCC, GCC, and FIDIC frameworks. Our rigorous record-keeping protects our clients from legal scope creep and ensures absolute clarity during handovers.</p>
-                    </div>
-                </div>
-
+            <div class="mb-16 md:mb-20 text-center md:text-left">
+                <p class="text-unicon-green font-bold uppercase tracking-widest text-[10px] md:text-xs mb-3">Construction Domains</p>
+                <h2 class="text-4xl sm:text-5xl md:text-6xl font-extrabold tracking-tight uppercase leading-none">Core <br> Expertise.</h2>
+                <p class="text-gray-600 font-light leading-relaxed mt-6 max-w-3xl text-base md:text-lg">
+                    Unicon does not act as a mere broker of sub-contractors. We are primary builders. Explore the core operational domains where our site agents and heavy plant operators hold absolute control.
+                </p>
             </div>
 
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Water -->
+                <a href="https://www.uniconsa.co.za/build/water-engineering.html" target="_top" class="group bg-white border border-unicon-border overflow-hidden hover:border-unicon-green transition-all shadow-md flex flex-col">
+                    <div class="h-56 overflow-hidden relative">
+                        <img src="https://raw.githubusercontent.com/chrisnott-unicon/bestphotos/main/Circular_Concrete_Reservoir_Construction_20161123.jpg" class="w-full h-full object-cover grayscale-[40%] group-hover:grayscale-0 group-hover:scale-105 transition-all duration-700" alt="Reservoir Construction">
+                    </div>
+                    <div class="p-6 flex-grow flex flex-col">
+                        <span class="text-[9px] font-bold uppercase tracking-widest text-unicon-green mb-2 block">Liquid Retaining Works</span>
+                        <h3 class="font-extrabold uppercase tracking-tight text-2xl mb-3">Bulk Water</h3>
+                        <p class="text-sm text-gray-600 font-light leading-relaxed mb-auto">Construction of massive 40ML+ post-tensioned reservoirs, bulk pipelines, and municipal wastewater treatment plants.</p>
+                        <div class="mt-6 border-t border-unicon-border pt-4 text-xs font-bold uppercase tracking-widest text-unicon-black group-hover:text-unicon-green flex items-center gap-2">View Sector <i class="fa-solid fa-arrow-right"></i></div>
+                    </div>
+                </a>
+
+                <!-- Civils -->
+                <a href="https://www.uniconsa.co.za/build/civil-engineering.html" target="_top" class="group bg-white border border-unicon-border overflow-hidden hover:border-unicon-green transition-all shadow-md flex flex-col">
+                    <div class="h-56 overflow-hidden relative">
+                        <img src="https://raw.githubusercontent.com/chrisnott-unicon/bestphotos/main/Concrete%20Bridge%20Construction%20-%20Unicon%20SA.jpg" class="w-full h-full object-cover grayscale-[40%] group-hover:grayscale-0 group-hover:scale-105 transition-all duration-700" alt="Bridge Construction">
+                    </div>
+                    <div class="p-6 flex-grow flex flex-col">
+                        <span class="text-[9px] font-bold uppercase tracking-widest text-unicon-green mb-2 block">Transport & Earthworks</span>
+                        <h3 class="font-extrabold uppercase tracking-tight text-2xl mb-3">Heavy Civils</h3>
+                        <p class="text-sm text-gray-600 font-light leading-relaxed mb-auto">Execution of multi-span river bridges, highway culverts, and massive cut-to-fill platform terracing operations.</p>
+                        <div class="mt-6 border-t border-unicon-border pt-4 text-xs font-bold uppercase tracking-widest text-unicon-black group-hover:text-unicon-green flex items-center gap-2">View Sector <i class="fa-solid fa-arrow-right"></i></div>
+                    </div>
+                </a>
+
+                <!-- Structural -->
+                <a href="https://www.uniconsa.co.za/build/structural-engineering.html" target="_top" class="group bg-white border border-unicon-border overflow-hidden hover:border-unicon-green transition-all shadow-md flex flex-col">
+                    <div class="h-56 overflow-hidden relative">
+                        <img src="https://raw.githubusercontent.com/chrisnott-unicon/bestphotos/main/Unicon_Curved-Formwork_Metal_Dome_Roof_Plate-Cladding_Building-Structure_Construction_South-Africa_20170325.jpg" class="w-full h-full object-cover grayscale-[40%] group-hover:grayscale-0 group-hover:scale-105 transition-all duration-700" alt="Concrete Dome">
+                    </div>
+                    <div class="p-6 flex-grow flex flex-col">
+                        <span class="text-[9px] font-bold uppercase tracking-widest text-unicon-green mb-2 block">Vertical Frameworks</span>
+                        <h3 class="font-extrabold uppercase tracking-tight text-2xl mb-3">Structural Concrete</h3>
+                        <p class="text-sm text-gray-600 font-light leading-relaxed mb-auto">Highly complex pours including unsupported concrete dome roofs, dense rebar matrices, and heavy industrial machine bases.</p>
+                        <div class="mt-6 border-t border-unicon-border pt-4 text-xs font-bold uppercase tracking-widest text-unicon-black group-hover:text-unicon-green flex items-center gap-2">View Sector <i class="fa-solid fa-arrow-right"></i></div>
+                    </div>
+                </a>
+
+                <!-- Agricultural EPC -->
+                <a href="https://www.uniconsa.co.za/build/agricultural-engineering.html" target="_top" class="group bg-white border border-unicon-border overflow-hidden hover:border-unicon-green transition-all shadow-md flex flex-col">
+                    <div class="h-56 overflow-hidden relative">
+                        <img src="https://raw.githubusercontent.com/chrisnott-unicon/bestphotos/main/Agrico_Pivot_Irrigation_System_20210830.jpg" class="w-full h-full object-cover grayscale-[40%] group-hover:grayscale-0 group-hover:scale-105 transition-all duration-700" alt="Agri EPC">
+                    </div>
+                    <div class="p-6 flex-grow flex flex-col">
+                        <span class="text-[9px] font-bold uppercase tracking-widest text-unicon-green mb-2 block">Food Security Infrastructure</span>
+                        <h3 class="font-extrabold uppercase tracking-tight text-2xl mb-3">Agri-Industrial</h3>
+                        <p class="text-sm text-gray-600 font-light leading-relaxed mb-auto">Bridging raw landscape and industrial farming. Executing intensive animal rearing facilities, abattoirs, and irrigation networks.</p>
+                        <div class="mt-6 border-t border-unicon-border pt-4 text-xs font-bold uppercase tracking-widest text-unicon-black group-hover:text-unicon-green flex items-center gap-2">View Sector <i class="fa-solid fa-arrow-right"></i></div>
+                    </div>
+                </a>
+
+                <!-- General Building -->
+                <a href="https://www.uniconsa.co.za/build/general-building.html" target="_top" class="group bg-white border border-unicon-border overflow-hidden hover:border-unicon-green transition-all shadow-md flex flex-col">
+                    <div class="h-56 overflow-hidden relative">
+                        <img src="https://raw.githubusercontent.com/chrisnott-unicon/bestphotos/main/construction-site-crane-building-scaffolding-Pietermaritzburg-Invesco%20Centre.JPG" class="w-full h-full object-cover grayscale-[40%] group-hover:grayscale-0 group-hover:scale-105 transition-all duration-700" alt="Commercial Building">
+                    </div>
+                    <div class="p-6 flex-grow flex flex-col">
+                        <span class="text-[9px] font-bold uppercase tracking-widest text-unicon-green mb-2 block">Commercial & Institutional</span>
+                        <h3 class="font-extrabold uppercase tracking-tight text-2xl mb-3">General Building</h3>
+                        <p class="text-sm text-gray-600 font-light leading-relaxed mb-auto">Turnkey construction of multi-story shopping centers, deep basement parking slabs, and specialized healthcare suites.</p>
+                        <div class="mt-6 border-t border-unicon-border pt-4 text-xs font-bold uppercase tracking-widest text-unicon-black group-hover:text-unicon-green flex items-center gap-2">View Sector <i class="fa-solid fa-arrow-right"></i></div>
+                    </div>
+                </a>
+            </div>
         </div>
     </section>
 
-    <!-- FOOTER -->
-    <footer class="py-12 bg-white border-t border-unicon-border text-center">
-        <p class="text-[10px] text-gray-400 uppercase tracking-widest">© <span id="year-footer"></span> Unicon Construction SA. <br> <a href="https://www.uniconsa.co.za/index.html" class="text-unicon-green hover:underline mt-2 inline-block">Return to Home</a></p>
+    <!-- 4. HEAVY INDUSTRY EXPANSION -->
+    <section class="py-20 md:py-32 bg-unicon-black text-white border-t border-gray-800 bg-blueprint-dark relative">
+        <div class="max-w-[90rem] mx-auto px-6 sm:px-8 lg:px-12 relative z-10">
+            <div class="mb-16 md:mb-20 text-center md:text-left">
+                <p class="text-unicon-green font-bold uppercase tracking-widest text-[10px] md:text-xs mb-3">Strategic Expansion Sectors</p>
+                <h2 class="text-4xl sm:text-5xl md:text-6xl font-extrabold tracking-tight uppercase leading-none text-white">Heavy Industry <br>& Energy</h2>
+                <p class="text-gray-400 font-light leading-relaxed mt-6 max-w-3xl text-base md:text-lg">
+                    Leveraging our mastery in high-stress structural concrete and mass earthworks, Unicon actively executes critical Balance of Plant (BoP) infrastructure for the most demanding industrial and energy sectors in Africa.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Mining -->
+                <a href="https://www.uniconsa.co.za/build/mining-infrastructure.html" target="_top" class="group bg-[#111111] border border-gray-800 p-8 hover:border-unicon-green transition-all shadow-xl flex flex-col">
+                    <i class="fa-solid fa-helmet-safety text-4xl text-gray-600 group-hover:text-unicon-green transition-colors mb-6"></i>
+                    <h3 class="font-extrabold uppercase tracking-tight text-2xl mb-3 text-white">Mining Civils</h3>
+                    <p class="text-sm text-gray-400 font-light leading-relaxed mb-8 flex-grow">Executing severe-duty process plant foundations, tailings dams, and heavy haul roads under the strictest mining safety protocols.</p>
+                    <div class="border-t border-gray-800 pt-4 text-xs font-bold uppercase tracking-widest text-gray-500 group-hover:text-unicon-green flex items-center gap-2">Explore Mining <i class="fa-solid fa-arrow-right"></i></div>
+                </a>
+                <!-- Renewables -->
+                <a href="https://www.uniconsa.co.za/build/renewable-energy.html" target="_top" class="group bg-[#111111] border border-gray-800 p-8 hover:border-unicon-green transition-all shadow-xl flex flex-col">
+                    <i class="fa-solid fa-wind text-4xl text-gray-600 group-hover:text-unicon-green transition-colors mb-6"></i>
+                    <h3 class="font-extrabold uppercase tracking-tight text-2xl mb-3 text-white">Renewable BoP</h3>
+                    <p class="text-sm text-gray-400 font-light leading-relaxed mb-8 flex-grow">Civil Balance of Plant for utility-scale deployments, specializing in complex wind turbine gravity foundations and solar earthworks.</p>
+                    <div class="border-t border-gray-800 pt-4 text-xs font-bold uppercase tracking-widest text-gray-500 group-hover:text-unicon-green flex items-center gap-2">Explore Renewables <i class="fa-solid fa-arrow-right"></i></div>
+                </a>
+                <!-- Logistics -->
+                <a href="https://www.uniconsa.co.za/build/industrial-logistics.html" target="_top" class="group bg-[#111111] border border-gray-800 p-8 hover:border-unicon-green transition-all shadow-xl flex flex-col">
+                    <i class="fa-solid fa-ship text-4xl text-gray-600 group-hover:text-unicon-green transition-colors mb-6"></i>
+                    <h3 class="font-extrabold uppercase tracking-tight text-2xl mb-3 text-white">Ports & Logistics</h3>
+                    <p class="text-sm text-gray-400 font-light leading-relaxed mb-8 flex-grow">Constructing the arteries of commerce. We build heavy-duty port hardstands, cold-chain distribution centers, and mega-warehouses.</p>
+                    <div class="border-t border-gray-800 pt-4 text-xs font-bold uppercase tracking-widest text-gray-500 group-hover:text-unicon-green flex items-center gap-2">Explore Logistics <i class="fa-solid fa-arrow-right"></i></div>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- 5. SITE OPERATIONS -->
+    <section class="py-20 md:py-32 bg-white border-b border-unicon-border">
+        <div class="max-w-[90rem] mx-auto px-6 sm:px-8 lg:px-12">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-20 items-center">
+                <div class="lg:col-span-5">
+                    <p class="text-unicon-green font-bold uppercase tracking-widest text-[10px] md:text-xs mb-3">Operational Readiness</p>
+                    <h2 class="text-4xl sm:text-5xl font-extrabold tracking-tight uppercase leading-none mb-6">Logistics & <br> Execution.</h2>
+                    <p class="text-gray-600 font-light leading-relaxed mb-6 text-base md:text-lg">
+                        Executing multi-million Rand infrastructure in remote African locations requires more than blueprints. It requires an integrated supply chain, owned heavy machinery, and an artisan workforce ready to deploy.
+                    </p>
+                </div>
+                <div class="lg:col-span-7 grid grid-cols-1 sm:grid-cols-2 gap-6">
+                    <div class="bg-unicon-slate border border-unicon-border p-8 hover:border-unicon-green transition-colors duration-300 shadow-sm">
+                        <i class="fa-solid fa-truck-moving text-3xl text-unicon-green mb-5"></i>
+                        <h4 class="font-bold uppercase tracking-tight text-lg mb-3">Internal Plant Fleet</h4>
+                        <p class="text-sm text-gray-600 font-light leading-relaxed">By owning our own fleet of heavy earthmoving equipment and logistics vehicles, we eliminate reliance on third-party rentals and drastically reduce downtime.</p>
+                    </div>
+                    <div class="bg-unicon-slate border border-unicon-border p-8 hover:border-unicon-green transition-colors duration-300 shadow-sm">
+                        <i class="fa-solid fa-helmet-safety text-3xl text-unicon-green mb-5"></i>
+                        <h4 class="font-bold uppercase tracking-tight text-lg mb-3">Directly Employed Artisans</h4>
+                        <p class="text-sm text-gray-600 font-light leading-relaxed">Quality control is maintained because the men and women tying our rebar and pouring our concrete are directly employed, heavily trained Unicon personnel.</p>
+                    </div>
+                    <div class="bg-unicon-slate border border-unicon-border p-8 hover:border-unicon-green transition-colors duration-300 shadow-sm">
+                        <i class="fa-solid fa-map-location-dot text-3xl text-unicon-green mb-5"></i>
+                        <h4 class="font-bold uppercase tracking-tight text-lg mb-3">Remote Mobilization</h4>
+                        <p class="text-sm text-gray-600 font-light leading-relaxed">Our operational nodes are equipped to set up fully self-sufficient construction camps in hostile, off-grid environments anywhere in the SADC region.</p>
+                    </div>
+                    <div class="bg-unicon-slate border border-unicon-border p-8 hover:border-unicon-green transition-colors duration-300 shadow-sm">
+                        <i class="fa-solid fa-shield-virus text-3xl text-unicon-green mb-5"></i>
+                        <h4 class="font-bold uppercase tracking-tight text-lg mb-3">Strict Safety Protocols</h4>
+                        <p class="text-sm text-gray-600 font-light leading-relaxed">Our safety files and active site management comply with the highest international standards, resulting in our flawless Zero-Harm track record.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 6. CTA -->
+    <section class="py-24 bg-unicon-green text-white text-center border-t border-gray-800 bg-blueprint-dark">
+        <div class="max-w-4xl mx-auto px-6">
+            <h2 class="text-3xl sm:text-4xl md:text-5xl font-extrabold tracking-tight uppercase leading-none mb-6">Mobilize Our Fleet</h2>
+            <p class="text-white/90 font-light text-lg md:text-xl mb-10">Require a contractor with the capacity to physically execute your approved designs across any sector? Engage our operations desk.</p>
+            <a href="https://www.uniconsa.co.za/contact.html" target="_top" class="px-12 py-5 bg-unicon-black text-white font-bold uppercase tracking-widest text-sm hover:bg-white hover:text-unicon-black transition-colors inline-block shadow-lg border border-unicon-black">Contact Operations</a>
+        </div>
+    </section>
+
+    <!-- 7. MASTER FOOTER -->
+    <footer class="text-unicon-black pt-20 pb-10 bg-white">
+        <div class="max-w-[90rem] mx-auto px-6 sm:px-8 lg:px-12">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-12 lg:gap-16 mb-16">
+                <div class="lg:col-span-4">
+                    <div class="flex items-center gap-4 mb-8">
+                        <img src="https://raw.githubusercontent.com/chrisnott-unicon/UniconLogo/main/UniconBlk.png" alt="Unicon Construction Logo" class="h-10 md:h-12 w-auto">
+                        <div class="h-6 w-[1px] bg-unicon-border ml-2 hidden sm:block"></div>
+                        <span class="text-[10px] font-mono text-unicon-green tracking-[0.2em] uppercase font-bold hidden sm:block">EST. 1991</span>
+                    </div>
+                    <p class="text-gray-500 text-sm font-light leading-relaxed mb-10 max-w-sm">
+                        Uncompromising quality and engineering excellence in South Africa. Specialists in water retaining structures, civils, and turnkey construction.
+                    </p>
+                </div>
+                <div class="lg:col-span-2">
+                    <h4 class="text-[10px] font-bold uppercase tracking-[0.2em] text-unicon-green mb-8 border-l-2 border-unicon-green pl-3">Sectors</h4>
+                    <ul class="space-y-4 text-xs font-light text-gray-500">
+                        <li><a href="https://www.uniconsa.co.za/build/water-engineering.html" target="_top" class="hover:text-unicon-green transition-colors link-underline">Bulk Water</a></li>
+                        <li><a href="https://www.uniconsa.co.za/build/civil-engineering.html" target="_top" class="hover:text-unicon-green transition-colors link-underline">Civils & Earthworks</a></li>
+                        <li><a href="https://www.uniconsa.co.za/build/mining-infrastructure.html" target="_top" class="hover:text-unicon-green transition-colors link-underline">Mining Civils</a></li>
+                        <li><a href="https://www.uniconsa.co.za/build/renewable-energy.html" target="_top" class="hover:text-unicon-green transition-colors link-underline">Renewables BoP</a></li>
+                    </ul>
+                </div>
+                <div class="lg:col-span-2">
+                    <h4 class="text-[10px] font-bold uppercase tracking-[0.2em] text-unicon-green mb-8 border-l-2 border-unicon-green pl-3">Company</h4>
+                    <ul class="space-y-4 text-xs font-light text-gray-500">
+                        <li><a href="https://www.uniconsa.co.za/projects.html" target="_top" class="hover:text-unicon-green transition-colors link-underline">Past Projects</a></li>
+                        <li><a href="https://www.uniconsa.co.za/home/about.html" target="_top" class="hover:text-unicon-green transition-colors link-underline">Company Profile</a></li>
+                        <li><a href="https://www.uniconsa.co.za/contact.html" target="_top" class="hover:text-unicon-green transition-colors link-underline">Contact Us</a></li>
+                    </ul>
+                </div>
+                <div class="lg:col-span-4">
+                    <h4 class="text-[10px] font-bold uppercase tracking-[0.2em] text-unicon-green mb-8 border-l-2 border-unicon-green pl-3">Headquarters</h4>
+                    <div class="space-y-6">
+                        <div class="flex items-start gap-4">
+                            <i class="fa-solid fa-location-crosshairs text-unicon-green mt-1 text-sm opacity-70"></i>
+                            <div>
+                                <p class="text-xs font-bold text-unicon-black uppercase tracking-tight">Hilton / Pietermaritzburg</p>
+                                <p class="text-[10px] text-gray-500 font-light mt-1">KwaZulu-Natal, South Africa</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start gap-4">
+                            <i class="fa-solid fa-phone-volume text-unicon-green mt-1 text-sm opacity-70"></i>
+                            <div>
+                                <p class="text-[10px] text-gray-400 uppercase tracking-widest font-mono mb-1">Direct Contact</p>
+                                <a href="tel:+27664834709" target="_top" class="text-xs font-bold text-unicon-black hover:text-unicon-green transition-colors font-mono tracking-tighter">+27 66 483 4709</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="pt-8 border-t border-unicon-border flex flex-col md:flex-row justify-between items-center gap-6">
+                <div class="flex flex-wrap justify-center md:justify-start items-center gap-6">
+                    <p class="text-[10px] text-gray-400 uppercase tracking-widest">© 2026 Unicon Construction SA. CIDB 7CE/7GB.</p>
+                </div>
+                <div class="flex gap-4">
+                    <a href="https://www.linkedin.com/company/unicon-construction" target="_blank" class="text-gray-400 hover:text-unicon-green transition-colors"><i class="fa-brands fa-linkedin text-xl"></i></a>
+                    <a href="https://www.facebook.com/uniconconstruction" target="_blank" class="text-gray-400 hover:text-unicon-green transition-colors"><i class="fa-brands fa-facebook text-xl"></i></a>
+                </div>
+            </div>
+        </div>
     </footer>
 
+    <!-- POPIA BANNER -->
+    <div id="cookie-banner" class="fixed bottom-0 left-0 w-full bg-[#0a0a0a]/95 backdrop-blur-md border-t border-[#475c4d] z-[9999] transform translate-y-full transition-transform duration-500 flex flex-col sm:flex-row items-center justify-between p-4 sm:px-8 shadow-[0_-10px_30px_rgba(0,0,0,0.5)]">
+        <div class="flex items-start gap-4 mb-4 sm:mb-0">
+            <i class="fa-solid fa-cookie-bite text-[#475c4d] text-xl mt-1 hidden sm:block"></i>
+            <div>
+                <h4 class="text-white text-xs font-bold uppercase tracking-widest mb-1">Data & Privacy Control</h4>
+                <p class="text-gray-400 text-[10px] sm:text-xs font-light leading-relaxed max-w-3xl">
+                    Unicon Construction utilizes essential cookies and analytics to optimize user experience and track site performance. By proceeding, you consent to our digital privacy framework in accordance with the POPI Act.
+                </p>
+            </div>
+        </div>
+        <div class="flex gap-3 w-full sm:w-auto">
+            <button id="accept-cookies" class="flex-1 sm:flex-none px-6 py-2.5 bg-[#475c4d] text-white text-[10px] font-bold uppercase tracking-widest hover:bg-white hover:text-black transition-colors whitespace-nowrap rounded-sm">
+                Acknowledge & Accept
+            </button>
+        </div>
+    </div>
+
+    <!-- SCRIPTS -->
     <script>
         document.addEventListener('DOMContentLoaded', () => {
-            document.getElementById('year-footer').textContent = new Date().getFullYear();
-            
             const mobileBtn = document.getElementById('mobile-menu-btn');
             const mobileMenu = document.getElementById('mobile-menu');
             const mobileIcon = mobileBtn ? mobileBtn.querySelector('i') : null;
@@ -333,6 +511,28 @@
                     }
                 });
             }
+
+            const navbar = document.getElementById('navbar');
+            if(navbar) {
+                window.addEventListener('scroll', () => {
+                    if (window.scrollY > 50) {
+                        navbar.classList.add('shadow-2xl');
+                    } else {
+                        navbar.classList.remove('shadow-2xl');
+                    }
+                });
+            }
+
+            const cookieBanner = document.getElementById("cookie-banner");
+            const acceptBtn = document.getElementById("accept-cookies");
+
+            if (!localStorage.getItem("unicon_cookie_consent")) {
+                setTimeout(() => { cookieBanner.classList.remove("translate-y-full"); }, 1500);
+            }
+            acceptBtn.addEventListener("click", function() {
+                localStorage.setItem("unicon_cookie_consent", "true");
+                cookieBanner.classList.add("translate-y-full");
+            });
         });
     </script>
 </body>
