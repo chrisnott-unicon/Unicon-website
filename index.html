@@ -5,13 +5,33 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
     
     <!-- SEO & OPEN GRAPH META TAGS -->
-    <title>Our Team & Workforce | Unicon Construction</title>
-    <meta name="description" content="Unicon Construction's greatest asset is its highly trained regional workforce. SANS 10400 compliant, Level 2 B-BBEE, and dedicated to local community upskilling.">
-    <meta property="og:title" content="Unicon Construction | Workforce & Team">
-    <meta property="og:description" content="Directly employed site agents, heavy machinery operators, and skilled civil artisans.">
-    <meta property="og:image" content="https://raw.githubusercontent.com/chrisnott-unicon/bestphotos/main/unicon-construction-bridge-reinforcement-construction-site-south-africa.jpg">
-    <meta property="og:url" content="https://www.uniconsa.co.za/home/team.html">
+    <title>Unicon Construction - Design. Build. Manage. | Africa's Infrastructure Partner</title>
+    <meta name="description" content="Unicon Construction is a Level 2 B-BBEE Multi-Disciplined Turnkey EPC provider specializing in Heavy Civils, Bulk Water, and Agricultural Engineering across Africa.">
+    <meta name="keywords" content="Civil Engineering, Agricultural EPC, Bulk Water Infrastructure, Turnkey Construction, South Africa, KZN, JWE Africa, Concrete Reservoirs">
+    <meta property="og:title" content="Unicon Construction | Turnkey Civil & Agricultural Engineering">
+    <meta property="og:description" content="Level 2 B-BBEE Heavy Civil and Agricultural EPC Provider executing infrastructure across the African continent.">
+    <meta property="og:image" content="https://raw.githubusercontent.com/chrisnott-unicon/bestphotos/main/unicon-construction-bridge-installation-crane-lift.jpg">
+    <meta property="og:url" content="https://www.uniconsa.co.za">
     <meta property="og:type" content="website">
+
+    <!-- JSON-LD STRUCTURED DATA -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "GeneralContractor",
+      "name": "Unicon Construction (Pty) Ltd",
+      "image": "https://raw.githubusercontent.com/chrisnott-unicon/UniconLogo/main/UniconBlk.png",
+      "@id": "https://www.uniconsa.co.za",
+      "url": "https://www.uniconsa.co.za",
+      "telephone": "+27664834709",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Hilton",
+        "addressRegion": "KwaZulu-Natal",
+        "addressCountry": "ZA"
+      }
+    }
+    </script>
 
     <!-- GLOBAL SITE TAG (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
@@ -30,7 +50,10 @@
             theme: {
                 extend: {
                     colors: { unicon: { black: '#0a0a0a', dark: '#1c1c1c', slate: '#f4f4f5', green: '#475c4d', border: '#e5e7eb' } },
-                    fontFamily: { sans: ['"Century Gothic"', 'sans-serif'], mono: ['ui-monospace', 'monospace'] },
+                    fontFamily: { 
+                        sans: ['"Century Gothic"', 'sans-serif'],
+                        mono: ['ui-monospace', 'monospace']
+                    },
                     letterSpacing: { tighter: '-0.04em', tight: '-0.02em', widest: '0.2em' }
                 }
             }
@@ -38,12 +61,14 @@
     </script>
     <style>
         body { background-color: #ffffff; color: #0a0a0a; -webkit-font-smoothing: antialiased; margin: 0; padding: 0; overflow-x: hidden; }
-        .bg-blueprint { background-image: linear-gradient(to right, #f3f4f6 1px, transparent 1px), linear-gradient(to bottom, #f3f4f6 1px, transparent 1px); background-size: 4rem 4rem; }
-        .text-outline { color: transparent; -webkit-text-stroke: 1px #0a0a0a; }
+        .bg-pattern { background-image: radial-gradient(#e5e7eb 1px, transparent 1px); background-size: 20px 20px; }
+        
+        .timeline-line::before { content: ''; position: absolute; top: 0; bottom: 0; left: 24px; width: 2px; background-color: #e5e7eb; z-index: 0; }
+        
         @keyframes fadeUp { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: translateY(0); } }
         .animate-fade-up { animation: fadeUp 1s cubic-bezier(0.16, 1, 0.3, 1) forwards; opacity: 0; }
-        .delay-100 { animation-delay: 100ms; }
-        .delay-200 { animation-delay: 200ms; }
+        
+        /* Link Underline Hover */
         .link-underline { position: relative; }
         .link-underline::after { content: ''; position: absolute; width: 0; height: 1px; bottom: -2px; left: 0; background-color: #475c4d; transition: width 0.3s ease; }
         .link-underline:hover::after { width: 100%; }
@@ -70,15 +95,19 @@
         .whatsapp-fab:hover { transform: scale(1.1); }
         @keyframes pulse-dot { 0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.4); } 70% { transform: scale(1); box-shadow: 0 0 0 6px rgba(37, 211, 102, 0); } 100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(37, 211, 102, 0); } }
         .whatsapp-fab::after { content: ''; position: absolute; top: -5px; left: -5px; right: -5px; bottom: -5px; border-radius: 50%; border: 2px solid #25D366; animation: pulse-dot 2s infinite; opacity: 0; }
-
+        
         .no-scrollbar::-webkit-scrollbar { display: none; }
         .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+        
+        /* Hero Image Grid Styles */
+        .hero-img { transition: transform 0.7s ease, filter 0.7s ease; filter: grayscale(40%); }
+        .hero-img-container:hover .hero-img { transform: scale(1.05); filter: grayscale(0%); }
     </style>
 </head>
-<body class="font-sans pt-16 sm:pt-20">
+<body class="font-sans selection:bg-unicon-green selection:text-white">
 
     <!-- WHATSAPP FLOATING CTA -->
-    <a href="https://wa.me/27664834709?text=Hello%20Unicon,%20I%20am%20interested%20in%20your%20services." target="_blank" class="whatsapp-fab" aria-label="Chat with us on WhatsApp">
+    <a href="https://wa.me/27664834709?text=Hello%20Unicon,%20I%20would%20like%20to%20discuss%20a%20project." target="_blank" class="whatsapp-fab" aria-label="Chat with us on WhatsApp">
         <i class="fa-brands fa-whatsapp"></i>
     </a>
 
@@ -86,6 +115,7 @@
     <nav id="navbar" class="fixed top-0 left-0 w-full z-[100] transition-all duration-300 bg-[#0a0a0a]/95 backdrop-blur-md border-b border-gray-800 py-3 sm:py-4">
         <div class="max-w-[90rem] mx-auto px-6 sm:px-8 lg:px-12 flex justify-between items-center">
             
+            <!-- Brand Logo -->
             <a href="https://www.uniconsa.co.za/index.html" target="_top" class="flex items-center gap-4 group relative z-[110]">
                 <img src="https://raw.githubusercontent.com/chrisnott-unicon/UniconLogo/main/UniconBlk.png" alt="Unicon Logo" class="h-8 sm:h-10 w-auto invert brightness-0 transition-opacity group-hover:opacity-80">
                 <div class="h-6 w-[1px] bg-gray-700 hidden sm:block"></div>
@@ -96,12 +126,12 @@
             <div class="hidden lg:flex items-center gap-8">
                 <!-- Dropdown: Company -->
                 <div class="relative group">
-                    <button class="text-xs font-bold uppercase tracking-widest text-unicon-green transition-colors py-2 flex items-center gap-1">Company <i class="fa-solid fa-chevron-down text-[9px] opacity-70"></i></button>
+                    <button class="text-xs font-bold uppercase tracking-widest text-white hover:text-unicon-green transition-colors py-2 flex items-center gap-1">Company <i class="fa-solid fa-chevron-down text-[9px] opacity-70"></i></button>
                     <div class="absolute top-full left-0 mt-4 w-48 bg-[#0a0a0a] border border-gray-800 shadow-2xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 translate-y-2 group-hover:translate-y-0">
                         <div class="absolute -top-4 left-0 w-full h-4 bg-transparent"></div>
                         <a href="https://www.uniconsa.co.za/home/about.html" target="_top" class="block px-5 py-3 text-[10px] uppercase tracking-widest text-gray-400 hover:text-white hover:bg-unicon-green/20 border-b border-gray-800">Profile</a>
                         <a href="https://www.uniconsa.co.za/home/history.html" target="_top" class="block px-5 py-3 text-[10px] uppercase tracking-widest text-gray-400 hover:text-white hover:bg-unicon-green/20 border-b border-gray-800">History</a>
-                        <a href="https://www.uniconsa.co.za/home/team.html" target="_top" class="block px-5 py-3 text-[10px] uppercase tracking-widest text-unicon-green bg-[#111111] hover:text-white border-b border-gray-800">Workforce</a>
+                        <a href="https://www.uniconsa.co.za/home/team.html" target="_top" class="block px-5 py-3 text-[10px] uppercase tracking-widest text-gray-400 hover:text-white hover:bg-unicon-green/20 border-b border-gray-800">Workforce</a>
                         <a href="https://www.uniconsa.co.za/home/ethos.html" target="_top" class="block px-5 py-3 text-[10px] uppercase tracking-widest text-gray-400 hover:text-white hover:bg-unicon-green/20">Core Ethos</a>
                     </div>
                 </div>
@@ -149,7 +179,7 @@
                 
                 <!-- Dropdown: Contact -->
                 <div class="relative group">
-                    <button class="text-xs font-bold uppercase tracking-widest text-white hover:text-unicon-green transition-colors py-2 flex items-center gap-1">Contact <i class="fa-solid fa-chevron-down text-[9px] opacity-70"></i></button>
+                    <button class="text-xs font-bold uppercase tracking-widest text-white hover:text-unicon-green transition-colors py-2 flex items-center gap-1">Contact Us <i class="fa-solid fa-chevron-down text-[9px] opacity-70"></i></button>
                     <div class="absolute top-full right-0 mt-4 w-48 bg-[#0a0a0a] border border-gray-800 shadow-2xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 translate-y-2 group-hover:translate-y-0">
                         <div class="absolute -top-4 right-0 w-full h-4 bg-transparent"></div>
                         <a href="https://www.uniconsa.co.za/contact.html" target="_top" class="block px-5 py-3 text-[10px] uppercase tracking-widest text-gray-400 hover:text-white hover:bg-unicon-green/20 border-b border-gray-800">Get In Touch</a>
@@ -171,7 +201,7 @@
             </div>
         </div>
 
-        <!-- REBUILT NO-COLLAPSE MOBILE MENU OVERLAY -->
+        <!-- FLAT MOBILE MENU OVERLAY -->
         <div id="mobile-menu" class="fixed inset-y-0 right-0 w-80 bg-[#0a0a0a] z-[1000] transform translate-x-full transition-transform duration-300 overflow-y-auto lg:hidden pt-24 pb-12 px-6 border-l border-gray-800 shadow-2xl flex flex-col justify-between">
             <div class="flex flex-col space-y-6">
                 <!-- Company flat list -->
@@ -180,7 +210,7 @@
                     <div class="flex flex-col space-y-3 pl-2">
                         <a href="https://www.uniconsa.co.za/home/about.html" target="_top" class="text-sm font-bold uppercase tracking-wide text-white hover:text-unicon-green">Profile</a>
                         <a href="https://www.uniconsa.co.za/home/history.html" target="_top" class="text-sm font-bold uppercase tracking-wide text-white hover:text-unicon-green">History & Legacy</a>
-                        <a href="https://www.uniconsa.co.za/home/team.html" target="_top" class="text-sm font-bold uppercase tracking-wide text-unicon-green">Workforce</a>
+                        <a href="https://www.uniconsa.co.za/home/team.html" target="_top" class="text-sm font-bold uppercase tracking-wide text-white hover:text-unicon-green">Workforce</a>
                         <a href="https://www.uniconsa.co.za/home/ethos.html" target="_top" class="text-sm font-bold uppercase tracking-wide text-white hover:text-unicon-green">Core Ethos</a>
                     </div>
                 </div>
@@ -231,123 +261,339 @@
         </div>
     </nav>
 
-    <!-- HERO SECTION -->
-    <header class="relative min-h-[75vh] flex flex-col justify-center border-b border-unicon-border bg-blueprint pt-24 pb-16 overflow-hidden">
-        
-        <div class="absolute inset-0 z-0">
-            <img src="https://raw.githubusercontent.com/chrisnott-unicon/bestphotos/main/unicon-construction-bridge-reinforcement-construction-site-south-africa.jpg" class="w-full h-full object-cover opacity-15 grayscale" alt="Unicon Workforce">
-            <div class="absolute inset-0 bg-white/90"></div>
-            <div class="absolute inset-0 bg-blueprint z-0"></div>
-        </div>
-
+    <!-- 1. MULTI-PHOTO HERO SECTION -->
+    <header class="relative min-h-[90vh] md:min-h-screen flex flex-col justify-center border-b border-unicon-border bg-pattern pt-24 pb-16 overflow-hidden">
         <div class="max-w-[90rem] mx-auto px-6 sm:px-8 lg:px-12 w-full relative z-10">
             
-            <div class="mb-8 animate-fade-up">
-                <span class="inline-flex items-center gap-2 py-1.5 px-4 border border-unicon-black text-[10px] md:text-xs font-bold uppercase tracking-widest text-unicon-black bg-white shadow-sm">
-                    <span class="w-2 h-2 bg-unicon-green rounded-full animate-pulse"></span>
-                    Operational Workforce
-                </span>
-            </div>
-            
-            <h1 class="text-[12vw] sm:text-[9vw] lg:text-[7rem] xl:text-[8.5rem] font-extrabold tracking-tighter leading-[0.85] mb-10 animate-fade-up delay-100 uppercase">
-                Our <br />
-                <span class="text-outline">People.</span>
-            </h1>
-            
-            <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 mt-12 border-t border-unicon-border pt-10 animate-fade-up delay-200">
-                <div class="lg:col-span-8 2xl:col-span-7">
-                    <p class="text-xl md:text-2xl font-light leading-relaxed text-unicon-dark max-w-3xl">
-                        Unicon's greatest asset is its highly trained workforce. We scale our multidisciplinary teams dynamically to guarantee expert oversight, <span class="text-unicon-green font-bold">absolute safety</span>, and engineering precision on every active site.
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
+                
+                <!-- Left: Headline & Narrative -->
+                <div class="lg:col-span-6 animate-fade-up">
+                    <!-- Heritage Badge -->
+                    <div class="mb-8 inline-flex items-center gap-3 py-2 px-5 border border-unicon-green bg-unicon-green/10 text-unicon-green rounded-sm shadow-sm">
+                        <i class="fa-solid fa-award text-lg"></i>
+                        <span class="text-[10px] md:text-xs font-bold uppercase tracking-widest">35 Years of Engineering Excellence</span>
+                    </div>
+                    
+                    <!-- Headline -->
+                    <h1 class="text-[12vw] sm:text-[9vw] lg:text-[6.5rem] xl:text-[7.5rem] font-extrabold tracking-tighter leading-[0.85] mb-8 text-unicon-black uppercase">
+                        Building <br>
+                        South Africa's <br>
+                        <span class="text-unicon-green">Future.</span>
+                    </h1>
+                    
+                    <p class="text-lg sm:text-xl font-light leading-relaxed text-gray-700 max-w-2xl mb-10">
+                        Since 1991, Unicon Construction has been more than a heavy civil engineering firm. We are a dedicated team of South Africans building the critical infrastructure, water networks, and communities that move our nation forward.
                     </p>
+                    
+                    <div class="flex flex-col sm:flex-row gap-4">
+                        <a href="https://www.uniconsa.co.za/projects.html" target="_top" class="px-8 py-4 bg-unicon-green text-white font-bold uppercase tracking-widest text-sm hover:bg-unicon-black transition-colors duration-300 w-full sm:w-auto text-center rounded-sm">
+                            Explore Our Projects
+                        </a>
+                        <a href="https://www.uniconsa.co.za/contact.html" target="_top" class="px-8 py-4 bg-white text-unicon-black border border-unicon-black font-bold uppercase tracking-widest text-sm hover:bg-gray-50 transition-colors duration-300 w-full sm:w-auto text-center rounded-sm">
+                            Contact Us
+                        </a>
+                    </div>
+                    
+                    <!-- Mobile-Only Stat Bar -->
+                    <div class="flex lg:hidden gap-6 mt-10 border-t border-gray-200 pt-6">
+                        <div>
+                            <p class="text-2xl font-black text-unicon-black">CIDB 7CE</p>
+                            <p class="text-[9px] text-gray-500 uppercase tracking-widest font-bold">National Grading</p>
+                        </div>
+                        <div>
+                            <p class="text-2xl font-black text-unicon-black">Level 2</p>
+                            <p class="text-[9px] text-gray-500 uppercase tracking-widest font-bold">B-BBEE Contributor</p>
+                        </div>
+                    </div>
                 </div>
+
+                <!-- Right: High-End Masonry Photo Grid (Desktop Only) -->
+                <div class="hidden lg:block lg:col-span-6 h-full min-h-[600px] animate-fade-up" style="animation-delay: 200ms;">
+                    <div class="grid grid-cols-2 grid-rows-2 gap-4 h-full">
+                        
+                        <!-- Tall Image Left (Earthworks) -->
+                        <div class="row-span-2 col-span-1 rounded-sm overflow-hidden border border-gray-200 shadow-xl hero-img-container relative">
+                            <img src="https://raw.githubusercontent.com/chrisnott-unicon/Unicon-earthworks/main/unicon-construction-aerial-excavation-earthmoving-site-IMG_5067.JPG" alt="Mass Earthworks" class="hero-img w-full h-full object-cover">
+                            <div class="absolute bottom-4 left-4 bg-white/90 backdrop-blur-sm px-3 py-1 border border-gray-200 shadow-sm">
+                                <span class="text-[9px] font-bold uppercase tracking-widest text-unicon-black">Mass Earthworks</span>
+                            </div>
+                        </div>
+                        
+                        <!-- Top Right Image (Bridges/Civils) -->
+                        <div class="row-span-1 col-span-1 rounded-sm overflow-hidden border border-gray-200 shadow-xl hero-img-container relative">
+                            <img src="https://raw.githubusercontent.com/chrisnott-unicon/bestphotos/main/Concrete%20Bridge%20Construction%20-%20Unicon%20SA.jpg" alt="Civil Bridges" class="hero-img w-full h-full object-cover">
+                            <div class="absolute bottom-4 left-4 bg-white/90 backdrop-blur-sm px-3 py-1 border border-gray-200 shadow-sm">
+                                <span class="text-[9px] font-bold uppercase tracking-widest text-unicon-black">Civil Infrastructure</span>
+                            </div>
+                        </div>
+                        
+                        <!-- Bottom Right Image (Water/Reservoirs) -->
+                        <div class="row-span-1 col-span-1 rounded-sm overflow-hidden border border-gray-200 shadow-xl hero-img-container relative">
+                            <img src="https://raw.githubusercontent.com/chrisnott-unicon/bestphotos/main/Circular_Concrete_Reservoir_Construction_20161123.jpg" alt="40ML Reservoir" class="hero-img w-full h-full object-cover">
+                            <div class="absolute bottom-4 left-4 bg-white/90 backdrop-blur-sm px-3 py-1 border border-gray-200 shadow-sm">
+                                <span class="text-[9px] font-bold uppercase tracking-widest text-unicon-black">Bulk Water</span>
+                            </div>
+                        </div>
+
+                    </div>
+                    
+                    <!-- Desktop Stat Bar -->
+                    <div class="flex justify-end gap-8 mt-6">
+                        <div class="text-right">
+                            <p class="text-3xl font-black text-unicon-black tracking-tighter">Level 2</p>
+                            <p class="text-[9px] text-gray-500 uppercase tracking-widest font-bold mt-1">B-BBEE Contributor</p>
+                        </div>
+                        <div class="text-right">
+                            <p class="text-3xl font-black text-unicon-black tracking-tighter">CIDB 7CE</p>
+                            <p class="text-[9px] text-gray-500 uppercase tracking-widest font-bold mt-1">National Grading</p>
+                        </div>
+                    </div>
+                </div>
+
             </div>
         </div>
     </header>
 
-    <!-- WORKFORCE DEEP-DIVE -->
-    <section class="py-20 md:py-32 bg-white border-b border-unicon-border">
+    <!-- 2. THE UNICON STORY -->
+    <section class="py-20 md:py-32 bg-white border-b border-unicon-border relative">
         <div class="max-w-[90rem] mx-auto px-6 sm:px-8 lg:px-12">
-            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-20 items-start">
+            
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 md:gap-20">
                 
-                <div class="lg:col-span-5 relative lg:sticky lg:top-32">
-                    <p class="text-unicon-green font-bold uppercase tracking-widest text-[10px] md:text-xs mb-3">Site Personnel Structure</p>
+                <!-- Left: Sticky Narrative Headers -->
+                <div class="lg:col-span-5 lg:sticky lg:top-32 self-start">
+                    <p class="text-unicon-green font-bold uppercase tracking-widest text-[10px] md:text-xs mb-3">Our Heritage</p>
                     <h2 class="text-4xl sm:text-5xl md:text-6xl font-extrabold tracking-tight uppercase leading-none mb-6">
-                        Directly <br>Employed <br><span class="text-unicon-green">Experts.</span>
+                        35 Years of <br>Grounded <br><span class="text-unicon-green">Execution.</span>
                     </h2>
                     <p class="text-gray-600 font-light leading-relaxed mb-6 text-base md:text-lg">
-                        Brokered labor and rapid subcontracting models compromise structural safety. At Unicon, our core site teams—from heavy machinery operators to concrete formwork artisans—are directly employed and continuously trained on-site.
+                        We did not achieve three and a half decades of sustained growth by accident. We achieved it through uncompromising quality, hard work in hostile terrains, and fiercely protecting the men and women on our sites.
                     </p>
-                    <p class="text-gray-600 font-light leading-relaxed mb-8 text-base md:text-lg">
-                        This direct relationship builds a culture of ownership and pride. Sourcing labor locally for regional projects also ensures that we actively upskill the communities surrounding our structural sites, creating real, measurable local economic impact.
-                    </p>
+                    <a href="https://www.uniconsa.co.za/home/history.html" target="_top" class="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-widest text-unicon-black border-b-2 border-unicon-black pb-1 hover:text-unicon-green hover:border-unicon-green transition-colors mt-4">
+                        Read Our Full History <i class="fa-solid fa-arrow-right"></i>
+                    </a>
                 </div>
 
-                <div class="lg:col-span-7 grid grid-cols-1 sm:grid-cols-2 gap-6 md:gap-8">
-                    <!-- Card 1: Site Agents -->
-                    <div class="bg-unicon-slate border border-unicon-border p-8 hover:border-unicon-green transition-all shadow-sm">
-                        <i class="fa-solid fa-user-gear text-3xl text-unicon-green mb-5"></i>
-                        <h4 class="font-bold uppercase tracking-tight text-lg mb-3">Experienced Site Agents</h4>
-                        <p class="text-xs md:text-sm text-gray-600 font-light leading-relaxed">Our site agents bring decades of on-the-ground experience in South African civil engineering. They manage materials procurement, daily safety logs, and local community liaisons directly from our site offices.</p>
+                <!-- Right: Scrolling Narrative Blocks & Photos -->
+                <div class="lg:col-span-7 space-y-16">
+                    
+                    <!-- Story Block 1 -->
+                    <div>
+                        <div class="w-12 h-12 bg-gray-100 border border-gray-200 rounded-full flex items-center justify-center text-unicon-green mb-6">
+                            <span class="font-bold text-sm">'91</span>
+                        </div>
+                        <h3 class="text-2xl font-bold uppercase tracking-tight text-unicon-black mb-4">Humble Beginnings to Heavy Civils</h3>
+                        <p class="text-gray-600 font-light leading-relaxed mb-6">
+                            Founded by Tony Nott in 1991, our very first projects were deeply rooted in rural KwaZulu-Natal. By building desperately needed government clinics and educational campuses, we established a foundational commitment to community upliftment and zero-failure execution.
+                        </p>
+                        <p class="text-gray-600 font-light leading-relaxed mb-6">
+                            As our operational capacity grew, so did the scale of our impact. We transitioned into complex municipal infrastructure—dominating the sector in multi-span provincial bridges, highway embankments, and massive cut-to-fill earthworks utilizing our own internal plant fleet.
+                        </p>
+                        <img src="https://raw.githubusercontent.com/chrisnott-unicon/Unicon-earthworks/main/unicon-construction-john-deere-e210-excavator-digging-trench.jpg" alt="Unicon Earthworks 1991" class="w-full h-64 sm:h-80 object-cover rounded-sm border border-gray-200 shadow-sm grayscale hover:grayscale-0 transition-all duration-500">
                     </div>
 
-                    <!-- Card 2: Concrete Artisans -->
-                    <div class="bg-unicon-slate border border-unicon-border p-8 hover:border-unicon-green transition-all shadow-sm">
-                        <i class="fa-solid fa-screwdriver-wrench text-3xl text-unicon-green mb-5"></i>
-                        <h4 class="font-bold uppercase tracking-tight text-lg mb-3">Specialized Formwork Artisans</h4>
-                        <p class="text-xs md:text-sm text-gray-600 font-light leading-relaxed">Concrete pouring is an art. Our directly employed shuttering and steel-fixing artisans are highly skilled in SANS 10400 standards, ensuring structural concrete has maximum density and flawless finishes.</p>
+                    <!-- Story Block 2 -->
+                    <div>
+                        <div class="w-12 h-12 bg-gray-100 border border-gray-200 rounded-full flex items-center justify-center text-unicon-green mb-6">
+                            <i class="fa-solid fa-water"></i>
+                        </div>
+                        <h3 class="text-2xl font-bold uppercase tracking-tight text-unicon-black mb-4">Securing Water for Millions</h3>
+                        <p class="text-gray-600 font-light leading-relaxed mb-6">
+                            Today, Unicon is widely recognized across Southern Africa as a premier contractor for liquid-retaining structures. We execute massive 40-megalitre (40,000,000 liters) post-tensioned concrete reservoirs and highly complex wastewater treatment plants.
+                        </p>
+                        <p class="text-gray-600 font-light leading-relaxed mb-6">
+                            These mega-structures require absolute mastery of structural engineering. Our proprietary cast-in tie systems and advanced concrete shuttering techniques guarantee zero-leakage tolerances—securing clean, safe water for generations to come.
+                        </p>
+                        <img src="https://raw.githubusercontent.com/chrisnott-unicon/bestphotos/main/Unicon-Construction-Resources-Crane-Scaffolding-Concrete-Tank-Building-Element-September-2018.jpg" alt="Water Reservoir Build" class="w-full h-64 sm:h-80 object-cover rounded-sm border border-gray-200 shadow-sm grayscale hover:grayscale-0 transition-all duration-500">
                     </div>
 
-                    <!-- Card 3: Machine Operators -->
-                    <div class="bg-unicon-slate border border-unicon-border p-8 hover:border-unicon-green transition-all shadow-sm">
-                        <i class="fa-solid fa-truck-monster text-3xl text-unicon-green mb-5"></i>
-                        <h4 class="font-bold uppercase tracking-tight text-lg mb-3">Owned-Plant Operators</h4>
-                        <p class="text-xs md:text-sm text-gray-600 font-light leading-relaxed">By directly employing our excavator and roller operators, we maintain total control over bulk earthmoving. This reduces maintenance delays and ensures exact topographical grading.</p>
+                    <!-- Story Block 3 -->
+                    <div>
+                        <div class="w-12 h-12 bg-gray-100 border border-gray-200 rounded-full flex items-center justify-center text-unicon-green mb-6">
+                            <i class="fa-solid fa-compass-drafting"></i>
+                        </div>
+                        <h3 class="text-2xl font-bold uppercase tracking-tight text-unicon-black mb-4">The Turnkey Integration</h3>
+                        <p class="text-gray-600 font-light leading-relaxed mb-6">
+                            Recognizing the inherent delays in traditional construction models, we brought architectural and engineering design in-house. This allowed us to pioneer <strong>Design & Build (Turnkey)</strong> solutions for commercial and agricultural developers.
+                        </p>
+                        <p class="text-gray-600 font-light leading-relaxed">
+                            By integrating our structural engineers with our site agents from day one, we eliminate technical friction. Every blueprint is rigorously tested for real-world constructability before our heavy machinery even arrives on site.
+                        </p>
                     </div>
 
-                    <!-- Card 4: Health & Safety Officers -->
-                    <div class="bg-unicon-slate border border-unicon-border p-8 hover:border-unicon-green transition-all shadow-sm">
-                        <i class="fa-solid fa-shield-heart text-3xl text-unicon-green mb-5"></i>
-                        <h4 class="font-bold uppercase tracking-tight text-lg mb-3">Safety & OHS Officers</h4>
-                        <p class="text-xs md:text-sm text-gray-600 font-light leading-relaxed">Dedicated safety officers monitor daily toolbox talks and enforce zero-harm OHS Act regulations, ensuring every site member returns home safely at the end of their shift.</p>
-                    </div>
                 </div>
-
             </div>
+
         </div>
     </section>
 
-    <!-- HEALTH & SAFETY AS A CORE VALUE -->
-    <section class="py-20 md:py-32 bg-[#050505] text-white border-b border-gray-800">
+    <!-- 3. SECTOR EXPERTISE (QUICK LINKS) -->
+    <section class="py-20 bg-unicon-slate border-b border-unicon-border">
         <div class="max-w-[90rem] mx-auto px-6 sm:px-8 lg:px-12">
-            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 md:gap-16 items-center">
-                
-                <div class="relative h-[300px] sm:h-[400px] md:h-[500px] border border-gray-800 rounded-sm overflow-hidden shadow-2xl">
-                    <img src="https://raw.githubusercontent.com/chrisnott-unicon/bestphotos/main/Unicon_Construction_Workers_on_Concrete_Slab_Formwork.JPG" class="w-full h-full object-cover grayscale-[30%]" alt="Unicon Workers Tying Rebar">
-                    <div class="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent"></div>
-                </div>
-
-                <div>
-                    <span class="inline-block py-1.5 px-4 bg-unicon-green/20 border border-unicon-green text-[10px] font-bold uppercase tracking-widest mb-6 text-unicon-green shadow-sm">
-                        Zero Harm Principle
-                    </span>
-                    <h2 class="text-4xl sm:text-5xl font-extrabold uppercase leading-[0.9] mb-6 tracking-tight text-white">
-                        Every Worker. <br>Every Day. <br><span class="text-unicon-green">Zero Harm.</span>
-                    </h2>
-                    <p class="text-base md:text-lg text-gray-400 font-light leading-relaxed mb-6">
-                        Safety is not a box checking exercise at Unicon. It is the absolute prerequisite for any physical work. On high-elevation concrete pours and heavy earthmoving terracing sites, risk is managed meticulously.
+            <div class="text-center mb-16">
+                <p class="text-unicon-green font-bold uppercase tracking-widest text-[10px] md:text-xs mb-3">Core Disciplines</p>
+                <h2 class="text-3xl md:text-5xl font-extrabold tracking-tight uppercase">Sectors We Serve</h2>
+            </div>
+            
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8">
+                <!-- Sector 1 -->
+                <a href="https://www.uniconsa.co.za/build/water-engineering.html" target="_top" class="bg-white p-8 border border-unicon-border shadow-sm flex flex-col items-start hover:border-unicon-green transition-all group">
+                    <div class="w-12 h-12 bg-unicon-green/10 rounded-full flex items-center justify-center text-unicon-green mb-6 group-hover:scale-110 transition-transform">
+                        <i class="fa-solid fa-water text-xl"></i>
+                    </div>
+                    <h3 class="text-lg font-bold uppercase mb-3 text-unicon-black">Bulk Water</h3>
+                    <p class="text-gray-600 text-sm font-light leading-relaxed flex-grow">
+                        Execution of 40ML+ reservoirs, treatment plants, and cross-border supply networks.
                     </p>
-                    <p class="text-base md:text-lg text-gray-400 font-light leading-relaxed mb-8">
-                        Our safety officers administer site-specific safety files, conduct daily pre-shift toolbox talks, and strictly enforce the Occupational Health and Safety Act (OHSA) parameters, maintaining our unblemished zero lost-time injury (LTI) record.
-                    </p>
-                </div>
+                    <span class="text-[10px] font-bold uppercase tracking-widest text-unicon-green mt-6">View Capabilities <i class="fa-solid fa-arrow-right ml-1"></i></span>
+                </a>
 
+                <!-- Sector 2 -->
+                <a href="https://www.uniconsa.co.za/build/civil-engineering.html" target="_top" class="bg-white p-8 border border-unicon-border shadow-sm flex flex-col items-start hover:border-unicon-green transition-all group">
+                    <div class="w-12 h-12 bg-unicon-green/10 rounded-full flex items-center justify-center text-unicon-green mb-6 group-hover:scale-110 transition-transform">
+                        <i class="fa-solid fa-bridge-water text-xl"></i>
+                    </div>
+                    <h3 class="text-lg font-bold uppercase mb-3 text-unicon-black">Heavy Civils</h3>
+                    <p class="text-gray-600 text-sm font-light leading-relaxed flex-grow">
+                        River bridges, highway culverts, and massive cut-to-fill platform terracing operations.
+                    </p>
+                    <span class="text-[10px] font-bold uppercase tracking-widest text-unicon-green mt-6">View Capabilities <i class="fa-solid fa-arrow-right ml-1"></i></span>
+                </a>
+
+                <!-- Sector 3 -->
+                <a href="https://www.uniconsa.co.za/build/general-building.html" target="_top" class="bg-white p-8 border border-unicon-border shadow-sm flex flex-col items-start hover:border-unicon-green transition-all group">
+                    <div class="w-12 h-12 bg-unicon-green/10 rounded-full flex items-center justify-center text-unicon-green mb-6 group-hover:scale-110 transition-transform">
+                        <i class="fa-solid fa-building text-xl"></i>
+                    </div>
+                    <h3 class="text-lg font-bold uppercase mb-3 text-unicon-black">Turnkey Building</h3>
+                    <p class="text-gray-600 text-sm font-light leading-relaxed flex-grow">
+                        Design and construction of multi-story retail centres, medical suites, and industrial warehousing.
+                    </p>
+                    <span class="text-[10px] font-bold uppercase tracking-widest text-unicon-green mt-6">View Capabilities <i class="fa-solid fa-arrow-right ml-1"></i></span>
+                </a>
+
+                <!-- Sector 4 -->
+                <a href="https://www.uniconsa.co.za/build/agricultural-engineering.html" target="_top" class="bg-white p-8 border border-unicon-border shadow-sm flex flex-col items-start hover:border-unicon-green transition-all group">
+                    <div class="w-12 h-12 bg-unicon-green/10 rounded-full flex items-center justify-center text-unicon-green mb-6 group-hover:scale-110 transition-transform">
+                        <i class="fa-solid fa-tractor text-xl"></i>
+                    </div>
+                    <h3 class="text-lg font-bold uppercase mb-3 text-unicon-black">Agricultural EPC</h3>
+                    <p class="text-gray-600 text-sm font-light leading-relaxed flex-grow">
+                        Intensive animal rearing systems, automated mega-dairies, and food-grade processing plants.
+                    </p>
+                    <span class="text-[10px] font-bold uppercase tracking-widest text-unicon-green mt-6">View Capabilities <i class="fa-solid fa-arrow-right ml-1"></i></span>
+                </a>
             </div>
         </div>
     </section>
 
-    <!-- FOOTER -->
-    <footer class="py-12 bg-white border-t border-unicon-border text-center">
-        <p class="text-[10px] text-gray-400 uppercase tracking-widest">© <span id="year-footer"></span> Unicon Construction SA. <br> <a href="https://www.uniconsa.co.za/index.html" class="text-unicon-green hover:underline mt-2 inline-block">Return to Home</a></p>
+    <!-- 4. TEAM & WORKFORCE INTEGRATION -->
+    <section class="py-20 bg-unicon-black text-white relative overflow-hidden">
+        <div class="absolute inset-0 bg-[url('https://raw.githubusercontent.com/chrisnott-unicon/bestphotos/main/Unicon_Construction_Workers_on_Concrete_Slab_Formwork.JPG')] bg-cover bg-center opacity-10 grayscale"></div>
+        <div class="max-w-[90rem] mx-auto px-6 sm:px-8 lg:px-12 relative z-10 text-center">
+            <h2 class="text-3xl md:text-5xl font-extrabold tracking-tight uppercase mb-6">Powered by People.</h2>
+            <p class="text-gray-400 font-light text-lg mb-10 max-w-2xl mx-auto">
+                Our workforce is our foundation. We deploy dynamic engineering teams that prioritize absolute safety, continuous upskilling, and local community empowerment on every site.
+            </p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                <a href="https://www.uniconsa.co.za/home/team.html" target="_top" class="px-8 py-4 bg-unicon-green text-white font-bold uppercase tracking-widest text-sm hover:bg-white hover:text-unicon-black transition-colors rounded-sm shadow-lg">
+                    Meet the Workforce
+                </a>
+                <a href="https://www.uniconsa.co.za/home/ethos.html" target="_top" class="px-8 py-4 bg-transparent text-white border border-gray-600 font-bold uppercase tracking-widest text-sm hover:border-unicon-green transition-colors rounded-sm">
+                    Read Our Core Ethos
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- MASTER FOOTER -->
+    <footer class="py-20 pb-10 bg-white border-t border-unicon-border relative overflow-hidden">
+        <div class="max-w-[90rem] mx-auto px-6 sm:px-8 lg:px-12 relative z-10">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-12 lg:gap-16 mb-16">
+                <!-- Branding HUD -->
+                <div class="lg:col-span-4">
+                    <div class="flex items-center gap-4 mb-8">
+                        <img src="https://raw.githubusercontent.com/chrisnott-unicon/UniconLogo/main/UniconBlk.png" alt="Unicon Construction Logo" class="h-10 md:h-12 w-auto">
+                        <div class="h-6 w-[1px] bg-unicon-border ml-2 hidden sm:block"></div>
+                        <span class="text-[10px] font-mono text-unicon-green tracking-[0.2em] uppercase font-bold hidden sm:block">EST. 1991</span>
+                    </div>
+                    <p class="text-gray-500 text-sm font-light leading-relaxed mb-10 max-w-sm">
+                        Uncompromising structural integrity and engineering excellence since 1991. Specialists in liquid-retaining systems and turnkey infrastructure.
+                    </p>
+                </div>
+
+                <!-- Navigation Links -->
+                <div class="lg:col-span-2">
+                    <h4 class="text-[10px] font-bold uppercase tracking-[0.2em] text-unicon-green mb-8 border-l-2 border-unicon-green pl-3">Sectors</h4>
+                    <ul class="space-y-4 text-xs font-light text-gray-500">
+                        <li><a href="https://www.uniconsa.co.za/build/water-engineering.html" target="_top" class="hover:text-unicon-green transition-colors link-underline">Bulk Water</a></li>
+                        <li><a href="https://www.uniconsa.co.za/build/civil-engineering.html" target="_top" class="hover:text-unicon-green transition-colors link-underline">Civil Infrastructure</a></li>
+                        <li><a href="https://www.uniconsa.co.za/build/general-building.html" target="_top" class="hover:text-unicon-green transition-colors link-underline">General Building</a></li>
+                        <li><a href="https://www.uniconsa.co.za/build/agricultural-engineering.html" target="_top" class="hover:text-unicon-green transition-colors link-underline">Agriculture</a></li>
+                    </ul>
+                </div>
+
+                <div class="lg:col-span-2">
+                    <h4 class="text-[10px] font-bold uppercase tracking-[0.2em] text-unicon-green mb-8 border-l-2 border-unicon-green pl-3">Company</h4>
+                    <ul class="space-y-4 text-xs font-light text-gray-500">
+                        <li><a href="https://www.uniconsa.co.za/projects.html" target="_top" class="hover:text-unicon-green transition-colors link-underline">Project Database</a></li>
+                        <li><a href="https://www.uniconsa.co.za/home/history.html" target="_top" class="hover:text-unicon-green transition-colors link-underline">Company History</a></li>
+                        <li><a href="https://www.uniconsa.co.za/design/bim.html" target="_top" class="hover:text-unicon-green transition-colors link-underline">Digital Twins</a></li>
+                        <li><a href="https://www.uniconsa.co.za/contact.html" target="_top" class="hover:text-unicon-green transition-colors link-underline">Contact Us</a></li>
+                    </ul>
+                </div>
+
+                <!-- Headquarters Telemetry -->
+                <div class="lg:col-span-4">
+                    <h4 class="text-[10px] font-bold uppercase tracking-[0.2em] text-unicon-green mb-8 border-l-2 border-unicon-green pl-3">Headquarters</h4>
+                    <div class="space-y-6">
+                        <div class="flex items-start gap-4">
+                            <i class="fa-solid fa-location-crosshairs text-unicon-green mt-1 text-sm opacity-70"></i>
+                            <div>
+                                <p class="text-xs font-bold text-unicon-black uppercase tracking-tight">Hilton / Pietermaritzburg</p>
+                                <p class="text-[10px] text-gray-500 font-light mt-1">KwaZulu-Natal, South Africa</p>
+                                <a href="https://share.google/XC0JuqEbN4XYJeM5k" target="_blank" rel="noopener noreferrer" class="text-[9px] font-bold text-unicon-green uppercase tracking-widest mt-2 block hover:underline">View Map Location</a>
+                            </div>
+                        </div>
+                        <div class="flex items-start gap-4">
+                            <i class="fa-solid fa-phone-volume text-unicon-green mt-1 text-sm opacity-70"></i>
+                            <div>
+                                <p class="text-[10px] text-gray-400 uppercase tracking-widest font-mono mb-1">Direct Contact</p>
+                                <a href="tel:+27664834709" target="_top" class="text-xs font-bold text-unicon-black hover:text-unicon-green transition-colors font-mono tracking-tighter">+27 66 483 4709</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Bottom Compliance & Socials -->
+            <div class="pt-8 border-t border-unicon-border flex flex-col md:flex-row justify-between items-center gap-6">
+                <div class="flex flex-wrap justify-center md:justify-start items-center gap-6">
+                    <p class="text-[10px] text-gray-400 uppercase tracking-widest">© <span id="year-footer"></span> Unicon Construction SA</p>
+                    <div class="flex gap-3">
+                        <span class="text-[8px] text-gray-400 uppercase tracking-widest border border-unicon-border px-2 py-0.5 rounded-sm bg-white">CIDB: 7CE // 7GB</span>
+                        <span class="text-[8px] text-gray-400 uppercase tracking-widest border border-unicon-border px-2 py-0.5 rounded-sm bg-white">ISO 9001</span>
+                    </div>
+                </div>
+                
+                <div class="flex gap-6 items-center">
+                    <div class="flex gap-4 items-center">
+                        <a href="https://www.linkedin.com/company/unicon-construction" target="_blank" rel="noopener noreferrer" class="text-gray-400 hover:text-[#0a66c2] transition-colors" aria-label="LinkedIn">
+                            <i class="fa-brands fa-linkedin text-xl"></i>
+                        </a>
+                        <a href="https://www.facebook.com/uniconconstruction" target="_blank" rel="noopener noreferrer" class="text-gray-400 hover:text-[#1877f2] transition-colors" aria-label="Facebook">
+                            <i class="fa-brands fa-facebook text-xl"></i>
+                        </a>
+                    </div>
+                    <div class="w-[1px] h-6 bg-gray-300 hidden sm:block"></div>
+                    <p class="text-[9px] font-mono text-gray-400 uppercase tracking-tighter">
+                        Quality <span class="text-unicon-green font-bold">Construction</span>
+                    </p>
+                </div>
+            </div>
+
+        </div>
     </footer>
 
     <!-- POPIA COOKIE CONSENT BANNER -->
@@ -371,10 +617,11 @@
     <!-- SCRIPTS -->
     <script>
         document.addEventListener('DOMContentLoaded', () => {
+            // Set footer year
             const yearElem = document.getElementById('year-footer');
             if(yearElem) yearElem.textContent = new Date().getFullYear();
             
-            // Mobile Menu Toggle
+            // Mobile menu toggle
             const mobileBtn = document.getElementById('mobile-menu-btn');
             const mobileMenu = document.getElementById('mobile-menu');
             const mobileIcon = mobileBtn ? mobileBtn.querySelector('i') : null;
@@ -392,13 +639,28 @@
                 });
             }
 
+            // Navbar drop-shadow on scroll
+            const navbar = document.getElementById('navbar');
+            if(navbar) {
+                window.addEventListener('scroll', () => {
+                    if (window.scrollY > 50) {
+                        navbar.classList.add('shadow-2xl');
+                    } else {
+                        navbar.classList.remove('shadow-2xl');
+                    }
+                });
+            }
+
             // Cookie Banner Logic
             const cookieBanner = document.getElementById("cookie-banner");
             const acceptBtn = document.getElementById("accept-cookies");
 
             if (!localStorage.getItem("unicon_cookie_consent")) {
-                setTimeout(() => { cookieBanner.classList.remove("translate-y-full"); }, 1500);
+                setTimeout(() => {
+                    cookieBanner.classList.remove("translate-y-full");
+                }, 1500);
             }
+
             acceptBtn.addEventListener("click", function() {
                 localStorage.setItem("unicon_cookie_consent", "true");
                 cookieBanner.classList.add("translate-y-full");
