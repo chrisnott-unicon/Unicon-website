@@ -1,1 +1,4 @@
-User-agent: *Allow: /Sitemap: https://www.uniconsa.co.za/sitemap.xml
+User-agent: *
+Allow: /
+
+Sitemap: https://www.uniconsa.co.za/sitemap.xml
