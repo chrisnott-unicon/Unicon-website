@@ -1,140 +1,206 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
+  <!-- ROOT & MAIN NAVIGATION -->
   <url>
     <loc>https://www.uniconsa.co.za/</loc>
-    <lastmod>2026-06-30</lastmod>
+    <lastmod>2026-07-16</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>https://www.uniconsa.co.za/contact</loc>
-    <lastmod>2026-06-30</lastmod>
+    <loc>https://www.uniconsa.co.za/projects.html</loc>
+    <lastmod>2026-07-16</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://www.uniconsa.co.za/build.html</loc>
+    <lastmod>2026-07-16</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://www.uniconsa.co.za/design.html</loc>
+    <lastmod>2026-07-16</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://www.uniconsa.co.za/manage.html</loc>
+    <lastmod>2026-07-16</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://www.uniconsa.co.za/contact.html</loc>
+    <lastmod>2026-07-16</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
 
+  <!-- PROJECT ARCHIVES -->
   <url>
-    <loc>https://www.uniconsa.co.za/design</loc>
-    <lastmod>2026-06-30</lastmod>
-    <changefreq>monthly</changefreq>
+    <loc>https://www.uniconsa.co.za/projects-active.html</loc>
+    <lastmod>2026-07-16</lastmod>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://www.uniconsa.co.za/design/architecture</loc>
-    <lastmod>2026-06-30</lastmod>
+    <loc>https://www.uniconsa.co.za/projects-2010s.html</loc>
+    <lastmod>2026-07-16</lastmod>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://www.uniconsa.co.za/design/civil-engineering</loc>
-    <lastmod>2026-06-30</lastmod>
+    <loc>https://www.uniconsa.co.za/projects-2000s.html</loc>
+    <lastmod>2026-07-16</lastmod>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://www.uniconsa.co.za/design/structural-engineering</loc>
-    <lastmod>2026-06-30</lastmod>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://www.uniconsa.co.za/design/constructability</loc>
-    <lastmod>2026-06-30</lastmod>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://www.uniconsa.co.za/design/insights</loc>
-    <lastmod>2026-06-30</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-
-  <url>
-    <loc>https://www.uniconsa.co.za/build/water-engineering</loc>
-    <lastmod>2026-06-30</lastmod>
-    <priority>0.9</priority>
-  </url>
-  <url>
-    <loc>https://www.uniconsa.co.za/build/civil-engineering</loc>
-    <lastmod>2026-06-30</lastmod>
-    <priority>0.9</priority>
-  </url>
-  <url>
-    <loc>https://www.uniconsa.co.za/build/structural-engineering</loc>
-    <lastmod>2026-06-30</lastmod>
-    <priority>0.9</priority>
-  </url>
-  <url>
-    <loc>https://www.uniconsa.co.za/build/agricultural-engineering</loc>
-    <lastmod>2026-06-30</lastmod>
-    <priority>0.9</priority>
-  </url>
-  <url>
-    <loc>https://www.uniconsa.co.za/build/general-building</loc>
-    <lastmod>2026-06-30</lastmod>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://www.uniconsa.co.za/build/projects/project-gallery</loc>
-    <lastmod>2026-06-30</lastmod>
+    <loc>https://www.uniconsa.co.za/projects-1990s.html</loc>
+    <lastmod>2026-07-16</lastmod>
     <priority>0.8</priority>
   </url>
 
+  <!-- INSIGHTS & REPORTS -->
   <url>
-    <loc>https://www.uniconsa.co.za/manage/project-management</loc>
-    <lastmod>2026-06-30</lastmod>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://www.uniconsa.co.za/manage/facility-management</loc>
-    <lastmod>2026-06-30</lastmod>
-    <priority>0.8</priority>
-  </url>
-
-  <url>
-    <loc>https://www.uniconsa.co.za/communications/insights</loc>
-    <lastmod>2026-06-30</lastmod>
+    <loc>https://www.uniconsa.co.za/communications/insights.html</loc>
+    <lastmod>2026-07-16</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
-
   <url>
-    <loc>https://www.uniconsa.co.za/home/about</loc>
-    <lastmod>2026-06-30</lastmod>
+    <loc>https://www.uniconsa.co.za/communications/insights/jwe-partnership.html</loc>
+    <lastmod>2026-07-16</lastmod>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://www.uniconsa.co.za/home/history</loc>
-    <lastmod>2026-06-30</lastmod>
+    <loc>https://www.uniconsa.co.za/communications/insights/facility-management.html</loc>
+    <lastmod>2026-07-16</lastmod>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://www.uniconsa.co.za/home/team</loc>
-    <lastmod>2026-06-30</lastmod>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://www.uniconsa.co.za/home/ethos</loc>
-    <lastmod>2026-06-30</lastmod>
+    <loc>https://www.uniconsa.co.za/communications/insights/40ml-reservoirs.html</loc>
+    <lastmod>2026-07-16</lastmod>
     <priority>0.7</priority>
   </url>
 
+  <!-- DESIGN DIVISION -->
   <url>
-    <loc>https://www.uniconsa.co.za/contact/corporate-profile</loc>
-    <lastmod>2026-06-30</lastmod>
+    <loc>https://www.uniconsa.co.za/design/architecture.html</loc>
+    <lastmod>2026-07-16</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.uniconsa.co.za/design/civil-engineering.html</loc>
+    <lastmod>2026-07-16</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.uniconsa.co.za/design/structural-engineering.html</loc>
+    <lastmod>2026-07-16</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.uniconsa.co.za/design/constructability.html</loc>
+    <lastmod>2026-07-16</lastmod>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- BUILD DIVISION -->
+  <url>
+    <loc>https://www.uniconsa.co.za/build/water-engineering.html</loc>
+    <lastmod>2026-07-16</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.uniconsa.co.za/build/civil-engineering.html</loc>
+    <lastmod>2026-07-16</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.uniconsa.co.za/build/structural-engineering.html</loc>
+    <lastmod>2026-07-16</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.uniconsa.co.za/build/agricultural-engineering.html</loc>
+    <lastmod>2026-07-16</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.uniconsa.co.za/build/general-building.html</loc>
+    <lastmod>2026-07-16</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.uniconsa.co.za/build/mining-infrastructure.html</loc>
+    <lastmod>2026-07-16</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.uniconsa.co.za/build/renewable-energy.html</loc>
+    <lastmod>2026-07-16</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.uniconsa.co.za/build/industrial-logistics.html</loc>
+    <lastmod>2026-07-16</lastmod>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- MANAGE DIVISION -->
+  <url>
+    <loc>https://www.uniconsa.co.za/manage/project-management.html</loc>
+    <lastmod>2026-07-16</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.uniconsa.co.za/manage/facility-management.html</loc>
+    <lastmod>2026-07-16</lastmod>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- COMPANY / HOME -->
+  <url>
+    <loc>https://www.uniconsa.co.za/home/about.html</loc>
+    <lastmod>2026-07-16</lastmod>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.uniconsa.co.za/home/history.html</loc>
+    <lastmod>2026-07-16</lastmod>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.uniconsa.co.za/home/team.html</loc>
+    <lastmod>2026-07-16</lastmod>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.uniconsa.co.za/home/ethos.html</loc>
+    <lastmod>2026-07-16</lastmod>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- CONTACT / DOWNLOADS -->
+  <url>
+    <loc>https://www.uniconsa.co.za/contact/corporate-profile.html</loc>
+    <lastmod>2026-07-16</lastmod>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://www.uniconsa.co.za/contact/olive-cpm-overview</loc>
-    <lastmod>2026-06-30</lastmod>
+    <loc>https://www.uniconsa.co.za/contact/olive-cpm-overview.html</loc>
+    <lastmod>2026-07-16</lastmod>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://www.uniconsa.co.za/contact/supplier-network</loc>
-    <lastmod>2026-06-30</lastmod>
+    <loc>https://www.uniconsa.co.za/contact/supplier-network.html</loc>
+    <lastmod>2026-07-16</lastmod>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://www.uniconsa.co.za/contact/join-unicon</loc>
-    <lastmod>2026-06-30</lastmod>
+    <loc>https://www.uniconsa.co.za/contact/join-unicon.html</loc>
+    <lastmod>2026-07-16</lastmod>
     <priority>0.6</priority>
   </url>
 
