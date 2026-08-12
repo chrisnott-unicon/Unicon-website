@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Unicon Construction — Insights</title>
+    <link>https://www.uniconsa.co.za/communications/insights.html</link>
+    <atom:link href="https://www.uniconsa.co.za/communications/insights/feed.xml" rel="self" type="application/rss+xml"/>
+    <description>Field reports and engineering commentary from Unicon Construction — bulk water, heavy civils and turnkey infrastructure in Southern Africa.</description>
+    <language>en-ZA</language>
+    <copyright>Unicon Construction SA</copyright>
+    <lastBuildDate>Wed, 12 Aug 2026 10:56:48 +0200</lastBuildDate>
+    <item>
+      <title>The Critical Role of 40ML Reservoirs in African Water Security</title>
+      <link>https://www.uniconsa.co.za/communications/insights/40ml-reservoirs.html</link>
+      <guid isPermaLink="true">https://www.uniconsa.co.za/communications/insights/40ml-reservoirs.html</guid>
+      <pubDate>Wed, 24 Jun 2026 09:00:00 +0200</pubDate>
+      <category>Water Engineering</category>
+      <description>An in-depth look at the engineering requirements and post-tensioning techniques necessary to construct zero-leakage bulk water storage in hostile topographies.</description>
+    </item>
+    <item>
+      <title>Bridging Civil Mastery with Biological Harmony</title>
+      <link>https://www.uniconsa.co.za/communications/insights/jwe-partnership.html</link>
+      <guid isPermaLink="true">https://www.uniconsa.co.za/communications/insights/jwe-partnership.html</guid>
+      <pubDate>Thu, 18 Jun 2026 09:00:00 +0200</pubDate>
+      <category>Strategic Alliance</category>
+      <description>Unicon Construction formally details its strategic alliance with JWE Africa, bringing over 30 years of intensive animal rearing and agro-processing design expertise directly to the continent&#x27;s heavy EPC sector.</description>
+    </item>
+    <item>
+      <title>Launching 2027: Predictive Facility Management</title>
+      <link>https://www.uniconsa.co.za/communications/insights/facility-management.html</link>
+      <guid isPermaLink="true">https://www.uniconsa.co.za/communications/insights/facility-management.html</guid>
+      <pubDate>Wed, 10 Jun 2026 09:00:00 +0200</pubDate>
+      <category>Technology</category>
+      <description>Unicon previews its upcoming 2027 Facility Management division, utilizing IoT sensors and drone structural health audits to protect R100M+ assets.</description>
+    </item>
+  </channel>
+</rss>
