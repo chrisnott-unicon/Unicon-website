@@ -214,8 +214,18 @@ def scaffold(slug, title, category, summary, image):
     src = src.replace(old["description"], summary)
     src = src.replace(f'"{old["articleSection"]}"', f'"{category}"')
     src = src.replace(f">{old['articleSection']}<", f">{category}<")
+    # Dates appear in three forms: the ISO value in JSON-LD and <time datetime>,
+    # and a human-readable string in the hero. All three must move together, or
+    # the page shows one date and tells search engines another.
     src = src.replace(old["datePublished"], today)
-    src = src.replace(fmt_date(old["datePublished"]), fmt_date(today))
+    prev = datetime.strptime(old["datePublished"], "%Y-%m-%d")
+    now = datetime.strptime(today, "%Y-%m-%d")
+    for fmt in ("%d %B %Y", "%B %d, %Y", "%-d %B %Y", "%d/%m/%Y"):
+        try:
+            src = src.replace(prev.strftime(fmt), now.strftime(fmt))
+        except ValueError:
+            continue
+    src = re.sub(r'(<time datetime=")\d{4}-\d{2}-\d{2}(")', rf'\g<1>{today}\g<2>', src)
     src = src.replace(f"insights/{old['_slug']}.html", f"insights/{slug}.html")
 
     body = re.search(r'(<div class="max-w-\[50rem\] mx-auto px-6 sm:px-8 article-body">)(.*?)(\n\s*</div>\s*</article>)', src, re.S)
