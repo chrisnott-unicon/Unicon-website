@@ -1,0 +1,75 @@
+name: Insights check
+
+# Guards the Insights section on every pull request.
+#
+# Two things are enforced:
+#   1. Article metadata is valid and complete.
+#   2. An article carrying a named personal byline cannot be published
+#      until it has been reviewed and approved. This is what makes it safe
+#      for a real person's name to appear on the work.
+#
+# It also fails if the generated index or feed are out of date, so the
+# committed output always matches the articles.
+
+on:
+  pull_request:
+    paths:
+      - 'communications/**'
+      - 'tools/**'
+      - '.github/workflows/insights-check.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Validate article metadata and review status
+        run: python3 tools/insights.py check
+
+      - name: Regenerate index and feed
+        run: python3 tools/insights.py build
+
+      - name: Fail if generated output was not committed
+        run: |
+          if ! git diff --exit-code -- communications/; then
+            echo "::error::The index or feed is out of date. Run 'python3 tools/insights.py build' and commit the result."
+            exit 1
+          fi
+
+      - name: Check XML is well formed
+        run: |
+          python3 - <<'PY'
+          import xml.dom.minidom as m
+          for f in ("communications/insights/feed.xml", "sitemap.xml"):
+              m.parse(f)
+              print(f"ok  {f}")
+          PY
+
+      - name: Report unapproved drafts
+        run: |
+          python3 - <<'PY'
+          import importlib.util
+          spec = importlib.util.spec_from_file_location("ins", "tools/insights.py")
+          ins = importlib.util.module_from_spec(spec); spec.loader.exec_module(ins)
+          items = ins.load_all()
+          drafts = [a for a in items if a["_status"] != "approved"]
+          if drafts:
+              print("Awaiting review — these stay out of the index and feed until approved:")
+              for a in drafts:
+                  print(f"  - {a['_slug']}: {a['headline'][:70]}")
+              print()
+              print("To approve, set in the article head:")
+              print('  <meta name="unicon:review-status" content="approved">')
+              print('  <meta name="unicon:approved-by" content="Your Name">')
+          else:
+              print("No drafts pending.")
+          PY

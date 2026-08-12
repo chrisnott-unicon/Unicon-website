@@ -1,0 +1,79 @@
+{
+  "_comment": [
+    "Trigger sources for the Insights workflow. These feeds are used to spot news",
+    "worth commenting on — never to reproduce content. Headlines and links only.",
+    "Creamer Media titles (Engineering News, Mining Weekly) are largely paywalled;",
+    "treat them strictly as a signal that a topic is live.",
+    "",
+    "Feed URLs are best-effort and unverified from the authoring environment,",
+    "which cannot reach these hosts. Run 'python3 tools/scan_news.py --verify'",
+    "somewhere with open internet (the GitHub Action does this) to confirm each",
+    "one and prune what does not resolve."
+  ],
+  "sources": [
+    {
+      "name": "Engineering News",
+      "url": "https://www.engineeringnews.co.za/page/rss",
+      "weight": 1.0,
+      "note": "SA infrastructure, water, construction, tenders. Primary signal."
+    },
+    {
+      "name": "Mining Weekly",
+      "url": "https://www.miningweekly.com/page/rss",
+      "weight": 0.9,
+      "note": "Mining infrastructure. Unicon built Thabazimbi for Anglo American."
+    },
+    {
+      "name": "African Development Bank",
+      "url": "https://www.afdb.org/en/rss.xml",
+      "weight": 1.0,
+      "note": "Funding announcements precede tenders. Highest-value early warning."
+    },
+    {
+      "name": "Development Bank of Southern Africa",
+      "url": "https://www.dbsa.org/rss.xml",
+      "weight": 1.0,
+      "note": "SA infrastructure funding."
+    },
+    {
+      "name": "World Bank",
+      "url": "https://www.worldbank.org/en/news/all.rss",
+      "weight": 0.8,
+      "note": "Filter hard to Africa water and infrastructure."
+    },
+    {
+      "name": "IFC",
+      "url": "https://pressroom.ifc.org/all/rss.xml",
+      "weight": 0.7,
+      "note": "Private-sector infrastructure finance in Africa."
+    },
+    {
+      "name": "Farmer's Weekly",
+      "url": "https://www.farmersweekly.co.za/feed/",
+      "weight": 0.7,
+      "note": "Agri-processing, irrigation, dairy. Matches Bayonne Dairy and Mnqumashe abattoir."
+    }
+  ],
+  "keywords": {
+    "core": [
+      "reservoir", "bulk water", "water treatment", "wastewater", "wwtw", "pipeline",
+      "water infrastructure", "water scheme", "abstraction", "sanitation",
+      "post-tensioned", "liquid retaining", "dam", "borehole", "desalination"
+    ],
+    "strong": [
+      "bridge", "culvert", "earthworks", "civil engineering", "infrastructure",
+      "construction", "tender", "cidb", "municipal infrastructure", "road",
+      "irrigation", "abattoir", "agri-processing", "silo", "grain",
+      "concrete", "structural steel", "geomembrane"
+    ],
+    "context": [
+      "kwazulu-natal", "kzn", "durban", "pietermaritzburg", "limpopo",
+      "eastern cape", "south africa", "umgeni", "ugu", "department of water",
+      "dws", "treasury", "budget", "grant funding", "infrastructure fund"
+    ],
+    "exclude": [
+      "interior design", "fashion", "furniture", "art installation",
+      "celebrity", "penthouse", "renovation of a villa"
+    ]
+  }
+}

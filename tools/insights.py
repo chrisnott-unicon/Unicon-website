@@ -35,6 +35,13 @@ CARDS_END = "<!-- INSIGHTS:CARDS:END -->"
 
 REQUIRED = ("headline", "description", "datePublished", "image", "articleSection")
 
+# An article is only published once a human has reviewed and approved it.
+# Until then it stays out of the index and the feed, and CI fails if it
+# reaches main carrying a personal byline.
+REVIEW_META = 'unicon:review-status'
+APPROVER_META = 'unicon:approved-by'
+VALID_STATUS = ("draft", "approved")
+
 
 # ----------------------------------------------------------------- read
 
@@ -53,6 +60,10 @@ def read_meta(path: str) -> dict:
         except json.JSONDecodeError as exc:
             raise ValueError(f"{os.path.basename(path)}: invalid JSON-LD ({exc})") from exc
         if data.get("@type") == "Article":
+            st = re.search(rf'<meta name="{REVIEW_META}" content="(.*?)"', src)
+            ap = re.search(rf'<meta name="{APPROVER_META}" content="(.*?)"', src)
+            data["_status"] = (st.group(1).strip() if st else "draft")
+            data["_approver"] = (ap.group(1).strip() if ap else "")
             data["_slug"] = os.path.splitext(os.path.basename(path))[0]
             data["_path"] = path
             data["_url"] = f"{BASE}/communications/insights/{os.path.basename(path)}"
@@ -64,6 +75,10 @@ def load_all() -> list[dict]:
     items = [read_meta(p) for p in article_paths()]
     items.sort(key=lambda a: a["datePublished"], reverse=True)
     return items
+
+
+def published(items: list[dict]) -> list[dict]:
+    return [a for a in items if a.get("_status") == "approved"]
 
 
 def validate(items: list[dict]) -> list[str]:
@@ -79,6 +94,17 @@ def validate(items: list[dict]) -> list[str]:
             problems.append(f"{name}: datePublished must be YYYY-MM-DD, got {d!r}")
         if len(a.get("headline", "")) > 110:
             problems.append(f"{name}: headline exceeds 110 chars ({len(a['headline'])})")
+        st = a.get("_status", "draft")
+        if st not in VALID_STATUS:
+            problems.append(f"{name}: {REVIEW_META} must be one of {VALID_STATUS}, got {st!r}")
+        author = a.get("author") or {}
+        is_person = author.get("@type") == "Person"
+        if st == "approved" and not a.get("_approver"):
+            problems.append(f"{name}: approved but no {APPROVER_META} recorded")
+        if is_person and st != "approved":
+            problems.append(
+                f"{name}: carries a personal byline ({author.get('name')}) but is not approved. "
+                f"A named byline may only be published after review.")
         if d in seen and d:
             pass  # same-day posts are fine
         seen[d] = name
@@ -200,8 +226,23 @@ def scaffold(slug, title, category, summary, image):
             "            <p>TODO: body.</p>\n"
         ) + src[body.end(2):]
 
+    # A new article is always a draft. It must never inherit the template's
+    # approved status, or the review gate would be bypassed on creation.
+    src = re.sub(rf'<meta name="{REVIEW_META}" content=".*?">',
+                 f'<meta name="{REVIEW_META}" content="draft">', src)
+    src = re.sub(rf'<meta name="{APPROVER_META}" content=".*?">',
+                 f'<meta name="{APPROVER_META}" content="">', src)
+    if REVIEW_META not in src:
+        src = src.replace('<link rel="canonical"',
+                          f'<meta name="{REVIEW_META}" content="draft">\n'
+                          f'    <meta name="{APPROVER_META}" content="">\n'
+                          '    <link rel="canonical"', 1)
+
     open(dest, "w", encoding="utf-8").write(src)
-    print(f"created {os.path.relpath(dest, ROOT)} — edit the body, then run: python3 tools/insights.py build")
+    print(f"created {os.path.relpath(dest, ROOT)} as a DRAFT.")
+    print("  1. edit the body")
+    print("  2. python3 tools/insights.py build")
+    print("  3. once reviewed, set review-status to approved and record the approver")
 
 
 # ----------------------------------------------------------------- cli
@@ -231,12 +272,19 @@ def main():
     if args.cmd == "check":
         print(f"{len(items)} article(s), all metadata valid:")
         for a in items:
-            print(f"  {a['datePublished']}  {a['articleSection']:<20} {a['headline'][:60]}")
+            flag = "live " if a["_status"] == "approved" else "DRAFT"
+            who = f"  approved by {a['_approver']}" if a["_approver"] else ""
+            print(f"  [{flag}] {a['datePublished']}  {a['articleSection']:<20} {a['headline'][:52]}{who}")
         return
 
+    live = published(items)
+    drafts = len(items) - len(live)
     changed = [name for name, did in
-               (("insights.html", build_index(items)), ("feed.xml", build_feed(items))) if did]
-    print(f"{len(items)} article(s). " + (f"Updated: {', '.join(changed)}" if changed else "Already up to date."))
+               (("insights.html", build_index(live)), ("feed.xml", build_feed(live))) if did]
+    msg = f"{len(live)} published"
+    if drafts:
+        msg += f", {drafts} awaiting review (excluded)"
+    print(msg + ". " + (f"Updated: {', '.join(changed)}" if changed else "Already up to date."))
 
 
 if __name__ == "__main__":
