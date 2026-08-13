@@ -1,0 +1,107 @@
+{
+  "_comment": "Derived summary of the project database, used to render home-page sections. Regenerate or edit by hand when the portfolio changes, then run: python3 tools/homepage.py build",
+  "totals": {
+    "projects": 91,
+    "first_year": 1991,
+    "latest_year": 2026,
+    "years_active": 35,
+    "delivered_value": "R1.5B+",
+    "cidb": "7CE / 7GB",
+    "bbbee": "Level 2"
+  },
+  "sectors": [
+    {
+      "label": "Bulk Water",
+      "count": 49,
+      "note": "reservoirs, treatment works, pipelines and wastewater"
+    },
+    {
+      "label": "Heavy Civils",
+      "count": 9,
+      "note": "provincial bridges, canals and mass earthworks"
+    },
+    {
+      "label": "Turnkey Building",
+      "count": 27,
+      "note": "retail, education, healthcare and residential"
+    },
+    {
+      "label": "Agricultural EPC",
+      "count": 6,
+      "note": "dairies, abattoirs and irrigation infrastructure"
+    }
+  ],
+  "repeat_clients": [
+    {
+      "name": "UGU District Municipality",
+      "contracts": 15
+    },
+    {
+      "name": "KZN Department of Transport",
+      "contracts": 7
+    },
+    {
+      "name": "Umgeni Water Board",
+      "contracts": 5
+    },
+    {
+      "name": "uMzinyathi District Municipality",
+      "contracts": 4
+    },
+    {
+      "name": "uThukela Water Board",
+      "contracts": 4
+    },
+    {
+      "name": "KZN Public Works",
+      "contracts": 4
+    },
+    {
+      "name": "Kokstad Local Municipality",
+      "contracts": 3
+    }
+  ],
+  "named_clients": [
+    "Anglo American",
+    "Nestlé SA",
+    "KZN Department of Transport",
+    "UGU District Municipality",
+    "Umgeni Water",
+    "Mangosuthu University",
+    "Coega Development Agency",
+    "Ezemvelo KZN Wildlife"
+  ],
+  "flagships": [
+    {
+      "name": "Thabazimbi 10ML Reservoir",
+      "client": "Anglo American",
+      "year": 2016,
+      "sector": "Bulk Water",
+      "detail": "Post-tensioned walls and a free-spanning dome roof with no column supports.",
+      "image": "Unicon_Water_Reservoir_Dome_Roof_Concrete_Construction_Roof_Structure_20170218_Mountain_Landscape.jpg",
+      "alt": "Reinforced concrete dome roof under construction on a circular water reservoir",
+      "verified": false
+    },
+    {
+      "name": "Tinley Manor WWTW",
+      "client": "Club Med resort development",
+      "year": 2024,
+      "sector": "Wastewater",
+      "detail": "New wastewater treatment works for the Club Med resort at Ballito.",
+      "image": "Construction-Site-Concrete-Pour-Reedbeds-Wastewater Treatment-Club Med-Tinley Manor-Ballito-20250312.JPG",
+      "alt": "Concrete pour for the reedbed wastewater treatment works at Club Med Tinley Manor",
+      "verified": true
+    },
+    {
+      "name": "Invesco Shopping Mall",
+      "client": "Invesco (Pty) Ltd",
+      "year": 2008,
+      "sector": "Commercial",
+      "detail": "17,000 m² over three storeys, with basement parking and all concrete structural works.",
+      "image": "construction-site-crane-building-scaffolding-Pietermaritzburg-Invesco Centre.JPG",
+      "alt": "Tower crane and scaffolding over the Invesco Centre construction site, Pietermaritzburg",
+      "verified": true
+    }
+  ],
+  "_privacy_note": "Repeat-client list is institutional only. Private individuals are excluded from public display."
+}
