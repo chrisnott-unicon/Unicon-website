@@ -1,0 +1,29 @@
+{
+  "_comment": [
+    "Job openings for the careers page. Add an entry to advertise a role, then run:",
+    "    python3 tools/careers.py build",
+    "",
+    "That regenerates the openings section on contact/join-unicon.html and emits",
+    "JobPosting structured data for each live role, which is what makes a listing",
+    "eligible to appear in Google's job results.",
+    "",
+    "Leave 'openings' empty when nothing is advertised. The page then shows a",
+    "no-current-openings state and invites speculative applications instead.",
+    "",
+    "Field notes:",
+    "  id           short slug, used as the anchor and the posting identifier",
+    "  title        the role as a candidate would search for it",
+    "  discipline   one of the disciplines listed on the page",
+    "  location     town and province",
+    "  type         FULL_TIME | PART_TIME | CONTRACTOR | TEMPORARY | INTERN",
+    "  posted       YYYY-MM-DD, the date the role went live",
+    "  closes       YYYY-MM-DD, or empty for open-ended",
+    "  summary      one or two sentences, shown on the card",
+    "  requirements list of strings",
+    "  responsibilities list of strings",
+    "",
+    "Salary is deliberately not a field. Publishing pay bands is a decision for",
+    "the business, not a default."
+  ],
+  "openings": []
+}
