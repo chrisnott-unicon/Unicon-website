@@ -45,19 +45,23 @@
       "contracts": 5
     },
     {
-      "name": "uMzinyathi District Municipality",
-      "contracts": 4
-    },
-    {
       "name": "uThukela Water Board",
-      "contracts": 4
+      "contracts": 5
     },
     {
       "name": "KZN Public Works",
       "contracts": 4
     },
     {
+      "name": "uMzinyathi District Municipality",
+      "contracts": 4
+    },
+    {
       "name": "Kokstad Local Municipality",
+      "contracts": 3
+    },
+    {
+      "name": "Msunduzi Local Municipality",
       "contracts": 3
     }
   ],
