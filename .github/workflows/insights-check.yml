@@ -62,6 +62,12 @@ jobs:
             exit 1
           fi
 
+      - name: Check the shared navigation and footer have not drifted
+        run: python3 tools/chrome.py check
+
+      - name: Check site-wide consistency and links
+        run: python3 tools/consistency.py
+
       - name: Check the sitemap has not drifted
         run: python3 tools/sitemap.py check
 

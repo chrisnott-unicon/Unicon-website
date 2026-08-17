@@ -360,6 +360,15 @@ ld = {"@context":"https://schema.org","@type":"CollectionPage",
 
 sector_counts = Counter(r["sector"] for r in recs)
 
+import sys
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+import chrome
+
+# The nav and footer are owned by tools/chrome.py so this page cannot drift
+# away from the rest of the site.
+NAV = chrome.NAV_START + "\n" + chrome.nav("projects.html") + "\n    " + chrome.NAV_END
+FOOTER = chrome.FOOT_START + "\n" + chrome.footer("projects.html") + "\n    " + chrome.FOOT_END
+
 HTML = f"""<!DOCTYPE html>
 <html lang="en" class="scroll-smooth">
 <head>
@@ -377,6 +386,14 @@ HTML = f"""<!DOCTYPE html>
     <meta name="description" content="Every Unicon project since 1991: post-tensioned reservoirs, water treatment works, provincial bridges and turnkey builds. Search {len(recs)} records by discipline.">
     <meta name="keywords" content="Unicon Construction Projects, Bulk Water Reservoirs, Post-Tensioned Reservoir, Water Treatment Works, Bridge Construction, Retail Centre Construction, South Africa, KwaZulu-Natal, UGU District Municipality, Umgeni Water">
     <link rel="canonical" href="{BASE}/projects.html">
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-TWWS9BQM18"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){{dataLayer.push(arguments);}}
+      gtag('js', new Date());
+      gtag('config', 'G-TWWS9BQM18');
+    </script>
+
     <link rel="icon" href="https://wsrv.nl/?url=raw.githubusercontent.com/chrisnott-unicon/UniconLogo/main/UniconBlk.png&amp;w=64&amp;h=64&amp;fit=contain&amp;output=png">
     <meta property="og:title" content="Unicon Construction | Master Project Database">
     <meta property="og:description" content="{len(recs)} projects delivered since 1991 — bulk water, heavy civils and turnkey construction across Southern Africa.">
@@ -408,8 +425,8 @@ HTML = f"""<!DOCTYPE html>
         .clamp-3 {{ display:-webkit-box; -webkit-line-clamp:2; -webkit-box-orient:vertical; overflow:hidden; }}
         .chip.is-active {{ background-color:#475c4d; border-color:#475c4d; color:#fff; }}
         .search-input:focus {{ box-shadow:0 0 15px rgba(71,92,77,.3); }}
-        .whatsapp-fab {{ position:fixed; bottom:calc(30px + env(safe-area-inset-bottom)); right:30px; background-color:#25D366; color:#fff; width:56px; height:56px; border-radius:50%; display:flex; align-items:center; justify-content:center; font-size:28px; box-shadow:0 4px 15px rgba(0,0,0,.4); z-index:90; transition:transform .3s ease; text-decoration:none; }}
-        .whatsapp-fab:hover {{ transform:scale(1.1); }}
+        .whatsapp-fab {{ position: fixed; bottom: calc(30px + env(safe-area-inset-bottom) + var(--fab-lift, 0px)); right: 30px; background-color: #25D366; color: white; width: 60px; height: 60px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 32px; box-shadow: 0 4px 15px rgba(0,0,0,0.3); z-index: 9998; transition: transform 0.3s ease, bottom 0.3s ease; text-decoration: none; }}
+        .whatsapp-fab:hover {{ transform: scale(1.1); }}
         @media (prefers-reduced-motion: reduce) {{ .animate-fade-up {{ animation:none; opacity:1; }} * {{ transition-duration:.01ms !important; }} }}
     </style>
 </head>
@@ -420,40 +437,7 @@ HTML = f"""<!DOCTYPE html>
 
     <a href="https://wa.me/27664834709?text=Hello%20Unicon,%20I%20would%20like%20to%20discuss%20a%20project." target="_blank" rel="noopener noreferrer" class="whatsapp-fab" aria-label="Chat with us on WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
 
-    <nav id="navbar" class="fixed left-0 top-0 z-[100] w-full border-b border-gray-800 bg-[#0a0a0a]/95 py-3 backdrop-blur-md sm:py-4">
-        <div class="mx-auto flex max-w-[90rem] items-center justify-between px-6 sm:px-8 lg:px-12">
-            <a href="{BASE}/index.html" target="_top" class="group relative z-[110] flex items-center gap-4">
-                <img src="https://wsrv.nl/?url=raw.githubusercontent.com/chrisnott-unicon/UniconLogo/main/UniconBlk.png&amp;w=200&amp;output=webp" alt="Unicon Construction logo" class="h-8 w-auto brightness-0 invert transition-opacity group-hover:opacity-80 sm:h-10">
-                <div class="hidden h-6 w-px bg-gray-700 sm:block"></div>
-                <span class="hidden font-mono text-[8px] font-bold uppercase tracking-[0.2em] text-unicon-green sm:inline-block sm:text-[10px]">EST. 1991</span>
-            </a>
-            <div class="hidden items-center gap-8 lg:flex">
-                <a href="{BASE}/home/about.html" target="_top" class="py-2 text-xs font-bold uppercase tracking-widest text-white transition-colors hover:text-unicon-green">Company</a>
-                <a href="{BASE}/design.html" target="_top" class="py-2 text-xs font-bold uppercase tracking-widest text-white transition-colors hover:text-unicon-green">Design</a>
-                <a href="{BASE}/build.html" target="_top" class="py-2 text-xs font-bold uppercase tracking-widest text-white transition-colors hover:text-unicon-green">Build</a>
-                <a href="{BASE}/manage.html" target="_top" class="py-2 text-xs font-bold uppercase tracking-widest text-white transition-colors hover:text-unicon-green">Manage</a>
-                <a href="{BASE}/communications/insights.html" target="_top" class="py-2 text-xs font-bold uppercase tracking-widest text-white transition-colors hover:text-unicon-green">Insights</a>
-                <a href="{BASE}/projects.html" target="_top" aria-current="page" class="py-2 text-xs font-bold uppercase tracking-widest text-unicon-green transition-colors hover:text-white">Portfolio</a>
-            </div>
-            <div class="relative z-[110] flex items-center gap-4">
-                <a href="{BASE}/contact.html" target="_top" class="hidden rounded-sm bg-unicon-green px-5 py-2.5 text-[10px] font-bold uppercase tracking-widest text-white transition-colors hover:bg-white hover:text-unicon-black sm:inline-block">Contact Us</a>
-                <button id="mobile-menu-btn" class="p-2 text-white transition-colors hover:text-unicon-green focus:outline-none lg:hidden" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="mobile-menu"><i class="fa-solid fa-bars text-xl"></i></button>
-            </div>
-        </div>
-        <div id="mobile-menu" class="absolute left-0 top-full hidden w-full flex-col border-b border-gray-800 bg-[#0a0a0a]/97 p-6 shadow-xl backdrop-blur-md lg:hidden">
-            <div class="flex flex-col space-y-4">
-                <a href="{BASE}/home/about.html" target="_top" class="text-sm font-bold uppercase tracking-wide text-white hover:text-unicon-green">Company</a>
-                <a href="{BASE}/design.html" target="_top" class="text-sm font-bold uppercase tracking-wide text-white hover:text-unicon-green">Design</a>
-                <a href="{BASE}/build.html" target="_top" class="text-sm font-bold uppercase tracking-wide text-white hover:text-unicon-green">Build</a>
-                <a href="{BASE}/manage.html" target="_top" class="text-sm font-bold uppercase tracking-wide text-white hover:text-unicon-green">Manage</a>
-                <a href="{BASE}/communications/insights.html" target="_top" class="text-sm font-bold uppercase tracking-wide text-white hover:text-unicon-green">Insights</a>
-                <a href="{BASE}/projects.html" target="_top" class="text-sm font-bold uppercase tracking-wide text-unicon-green">Portfolio</a>
-                <a href="{BASE}/contact/supplier-network.html" target="_top" class="text-sm font-bold uppercase tracking-wide text-white hover:text-unicon-green">Vendor Network</a>
-                <a href="{BASE}/contact/join-unicon.html" target="_top" class="text-sm font-bold uppercase tracking-wide text-white hover:text-unicon-green">Careers</a>
-            </div>
-            <a href="{BASE}/contact.html" target="_top" class="mt-6 block rounded-sm bg-unicon-green py-4 text-center text-xs font-bold uppercase tracking-widest text-white transition-colors hover:bg-white hover:text-unicon-black">Contact Us</a>
-        </div>
-    </nav>
+{NAV}
 
     <header class="relative overflow-hidden border-b border-gray-800 bg-blueprint-dark pb-16 pt-32 md:pb-24 md:pt-40">
         <div class="absolute inset-0 opacity-[0.13]">
@@ -660,67 +644,7 @@ HTML = f"""<!DOCTYPE html>
         </div>
     </section>
 
-    <footer class="relative overflow-hidden border-t border-unicon-border bg-white pb-10 pt-20 text-unicon-black">
-        <div class="relative z-10 mx-auto max-w-[90rem] px-6 sm:px-8 lg:px-12">
-            <div class="mb-16 grid grid-cols-1 gap-12 md:grid-cols-2 lg:grid-cols-12 lg:gap-16">
-                <div class="lg:col-span-4">
-                    <div class="mb-8 flex items-center gap-4">
-                        <img src="https://wsrv.nl/?url=raw.githubusercontent.com/chrisnott-unicon/UniconLogo/main/UniconBlk.png&amp;w=300&amp;output=webp" alt="Unicon Construction logo" class="h-10 w-auto md:h-12">
-                        <div class="ml-2 hidden h-6 w-px bg-unicon-border sm:block"></div>
-                        <span class="hidden font-mono text-[10px] font-bold uppercase tracking-[0.2em] text-unicon-green sm:block">EST. 1991</span>
-                    </div>
-                    <p class="mb-10 max-w-sm text-sm font-light leading-relaxed text-gray-500">Uncompromising structural integrity and engineering excellence since 1991. Specialists in liquid-retaining systems and turnkey infrastructure.</p>
-                </div>
-                <div class="lg:col-span-2">
-                    <h3 class="mb-8 border-l-2 border-unicon-green pl-3 text-[10px] font-bold uppercase tracking-[0.2em] text-unicon-green">Sectors</h3>
-                    <ul class="space-y-4 text-xs font-light text-gray-500">
-                        <li><a href="{BASE}/build/water-engineering.html" target="_top" class="transition-colors hover:text-unicon-green">Bulk Water</a></li>
-                        <li><a href="{BASE}/build/civil-engineering.html" target="_top" class="transition-colors hover:text-unicon-green">Civil Infrastructure</a></li>
-                        <li><a href="{BASE}/build/general-building.html" target="_top" class="transition-colors hover:text-unicon-green">General Building</a></li>
-                        <li><a href="{BASE}/build/agricultural-engineering.html" target="_top" class="transition-colors hover:text-unicon-green">Agriculture</a></li>
-                    </ul>
-                </div>
-                <div class="lg:col-span-2">
-                    <h3 class="mb-8 border-l-2 border-unicon-green pl-3 text-[10px] font-bold uppercase tracking-[0.2em] text-unicon-green">Company</h3>
-                    <ul class="space-y-4 text-xs font-light text-gray-500">
-                        <li><a href="{BASE}/projects.html" target="_top" class="transition-colors hover:text-unicon-green">Project Database</a></li>
-                        <li><a href="{BASE}/home/history.html" target="_top" class="transition-colors hover:text-unicon-green">Company History</a></li>
-                        <li><a href="{BASE}/design/constructability.html" target="_top" class="transition-colors hover:text-unicon-green">BIM &amp; Constructability</a></li>
-                        <li><a href="{BASE}/contact/join-unicon.html" target="_top" class="transition-colors hover:text-unicon-green">Careers</a></li>
-                        <li><a href="{BASE}/contact.html" target="_top" class="transition-colors hover:text-unicon-green">Contact Us</a></li>
-                    </ul>
-                </div>
-                <div class="lg:col-span-4">
-                    <h3 class="mb-8 border-l-2 border-unicon-green pl-3 text-[10px] font-bold uppercase tracking-[0.2em] text-unicon-green">Headquarters</h3>
-                    <div class="space-y-6">
-                        <div class="flex items-start gap-4">
-                            <i class="fa-solid fa-location-crosshairs mt-1 text-sm text-unicon-green opacity-70"></i>
-                            <div><p class="text-xs font-bold uppercase tracking-tight text-unicon-black">Hilton / Pietermaritzburg</p>
-                            <p class="mt-1 text-[10px] font-light text-gray-500">KwaZulu-Natal, South Africa</p></div>
-                        </div>
-                        <div class="flex items-start gap-4">
-                            <i class="fa-solid fa-phone-volume mt-1 text-sm text-unicon-green opacity-70"></i>
-                            <div><p class="mb-1 font-mono text-[10px] uppercase tracking-widest text-gray-400">Direct Contact</p>
-                            <a href="tel:+27664834709" class="font-mono text-xs font-bold tracking-tighter text-unicon-black transition-colors hover:text-unicon-green">+27 66 483 4709</a></div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="flex flex-col items-center justify-between gap-6 border-t border-unicon-border pt-8 md:flex-row">
-                <div class="flex flex-wrap items-center justify-center gap-6 md:justify-start">
-                    <p class="text-[10px] uppercase tracking-widest text-gray-400">© <span id="year-footer"></span> Unicon Construction SA</p>
-                    <div class="flex gap-3">
-                        <span class="rounded-sm border border-unicon-border bg-white px-2 py-0.5 text-[8px] uppercase tracking-widest text-gray-400">CIDB: 7CE // 7GB</span>
-                        <span class="rounded-sm border border-unicon-border bg-white px-2 py-0.5 text-[8px] uppercase tracking-widest text-gray-400">ISO 9001</span>
-                    </div>
-                </div>
-                <div class="flex items-center gap-4">
-                    <a href="https://www.linkedin.com/company/unicon-construction" target="_blank" rel="noopener noreferrer" class="text-gray-400 transition-colors hover:text-[#0a66c2]" aria-label="Unicon on LinkedIn"><i class="fa-brands fa-linkedin text-xl"></i></a>
-                    <a href="https://www.facebook.com/uniconconstruction" target="_blank" rel="noopener noreferrer" class="text-gray-400 transition-colors hover:text-[#1877f2]" aria-label="Unicon on Facebook"><i class="fa-brands fa-facebook text-xl"></i></a>
-                </div>
-            </div>
-        </div>
-    </footer>
+{FOOTER}
 
     <div id="lightbox" class="fixed inset-0 z-[200] hidden items-center justify-center bg-black/95 p-4 backdrop-blur-sm" role="dialog" aria-modal="true" aria-label="Enlarged project photograph">
         <button type="button" id="lightboxClose" class="absolute right-5 top-5 p-3 text-2xl text-white transition-colors hover:text-unicon-green" aria-label="Close image viewer"><i class="fa-solid fa-xmark"></i></button>
@@ -735,17 +659,37 @@ HTML = f"""<!DOCTYPE html>
         var y = document.getElementById('year-footer');
         if (y) y.textContent = new Date().getFullYear();
 
+        // The nav comes from tools/chrome.py and is a slide-in drawer, so this
+        // must toggle the transform the way every other page does.
         var btn = document.getElementById('mobile-menu-btn');
         var menu = document.getElementById('mobile-menu');
         if (btn && menu) {{
             btn.addEventListener('click', function () {{
-                var open = menu.classList.toggle('hidden') === false;
-                menu.classList.toggle('flex', open);
-                btn.setAttribute('aria-expanded', String(open));
+                var closed = menu.classList.toggle('translate-x-full');
+                btn.setAttribute('aria-expanded', String(!closed));
                 var i = btn.querySelector('i');
-                i.classList.toggle('fa-bars', !open);
-                i.classList.toggle('fa-xmark', open);
+                i.classList.toggle('fa-bars', closed);
+                i.classList.toggle('fa-xmark', !closed);
             }});
+        }}
+
+        var banner = document.getElementById('cookie-banner');
+        var accept = document.getElementById('accept-cookies');
+        function lift() {{
+            document.documentElement.style.setProperty('--fab-lift',
+                banner && !banner.classList.contains('translate-y-full')
+                    ? banner.offsetHeight + 16 + 'px' : '0px');
+        }}
+        if (banner && accept) {{
+            if (!localStorage.getItem('unicon_cookie_consent')) {{
+                setTimeout(function () {{ banner.classList.remove('translate-y-full'); lift(); }}, 1500);
+            }}
+            accept.addEventListener('click', function () {{
+                localStorage.setItem('unicon_cookie_consent', 'true');
+                banner.classList.add('translate-y-full');
+                lift();
+            }});
+            window.addEventListener('resize', lift);
         }}
 
         var cards = Array.prototype.slice.call(document.querySelectorAll('.project-card'));
@@ -826,6 +770,26 @@ HTML = f"""<!DOCTYPE html>
         }});
     }});
     </script>
+
+    <!-- POPIA BANNER -->
+    <div id="cookie-banner" class="fixed bottom-0 left-0 w-full bg-[#0a0a0a]/95 backdrop-blur-md border-t border-[#475c4d] z-[9999] transform translate-y-full transition-transform duration-500 flex flex-col sm:flex-row items-center justify-between p-4 sm:px-8 shadow-[0_-10px_30px_rgba(0,0,0,0.5)]">
+        <div class="flex items-start gap-4 mb-4 sm:mb-0">
+            <i class="fa-solid fa-cookie-bite text-[#475c4d] text-xl mt-1 hidden sm:block"></i>
+            <div>
+                <h4 class="text-white text-xs font-bold uppercase tracking-widest mb-1">Data & Privacy Control</h4>
+                <p class="text-gray-400 text-[10px] sm:text-xs font-light leading-relaxed max-w-3xl">
+                    Unicon Construction utilizes essential cookies and analytics to optimize user experience and track site performance. By proceeding, you consent to our digital privacy framework in accordance with the POPI Act.
+                </p>
+            </div>
+        </div>
+        <div class="flex gap-3 w-full sm:w-auto">
+            <button id="accept-cookies" class="flex-1 sm:flex-none px-6 py-2.5 bg-[#475c4d] text-white text-[10px] font-bold uppercase tracking-widest hover:bg-white hover:text-black transition-colors whitespace-nowrap rounded-sm">
+                Acknowledge & Accept
+            </button>
+        </div>
+    </div>
+
+    <!-- SCRIPTS -->
 </body>
 </html>
 """
