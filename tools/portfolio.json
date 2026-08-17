@@ -1,7 +1,7 @@
 {
   "_comment": "Derived summary of the project database, used to render home-page sections. Regenerate or edit by hand when the portfolio changes, then run: python3 tools/homepage.py build",
   "totals": {
-    "projects": 91,
+    "projects": 92,
     "first_year": 1991,
     "latest_year": 2026,
     "years_active": 35,
@@ -12,7 +12,7 @@
   "sectors": [
     {
       "label": "Bulk Water",
-      "count": 49,
+      "count": 50,
       "note": "reservoirs, treatment works, pipelines and wastewater"
     },
     {
@@ -103,5 +103,6 @@
       "verified": true
     }
   ],
-  "_privacy_note": "Repeat-client list is institutional only. Private individuals are excluded from public display."
+  "_privacy_note": "Repeat-client list is institutional only. Private individuals are excluded from public display.",
+  "_source_note": "Derived from the project database export of 94 rows (92 complete or in progress; 1 suspended and 1 cancelled excluded)."
 }
