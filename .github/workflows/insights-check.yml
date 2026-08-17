@@ -14,7 +14,8 @@ name: Insights check
 on:
   pull_request:
     paths:
-      - 'communications/**'
+      - '**.html'
+      - 'sitemap.xml'
       - 'tools/**'
       - '.github/workflows/insights-check.yml'
   workflow_dispatch:
@@ -44,6 +45,9 @@ jobs:
             echo "::error::The index or feed is out of date. Run 'python3 tools/insights.py build' and commit the result."
             exit 1
           fi
+
+      - name: Check the sitemap has not drifted
+        run: python3 tools/sitemap.py check
 
       - name: Check XML is well formed
         run: |
