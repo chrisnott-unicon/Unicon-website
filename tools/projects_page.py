@@ -448,6 +448,8 @@ HTML = f"""<!DOCTYPE html>
                 <a href="{BASE}/manage.html" target="_top" class="text-sm font-bold uppercase tracking-wide text-white hover:text-unicon-green">Manage</a>
                 <a href="{BASE}/communications/insights.html" target="_top" class="text-sm font-bold uppercase tracking-wide text-white hover:text-unicon-green">Insights</a>
                 <a href="{BASE}/projects.html" target="_top" class="text-sm font-bold uppercase tracking-wide text-unicon-green">Portfolio</a>
+                <a href="{BASE}/contact/supplier-network.html" target="_top" class="text-sm font-bold uppercase tracking-wide text-white hover:text-unicon-green">Vendor Network</a>
+                <a href="{BASE}/contact/join-unicon.html" target="_top" class="text-sm font-bold uppercase tracking-wide text-white hover:text-unicon-green">Careers</a>
             </div>
             <a href="{BASE}/contact.html" target="_top" class="mt-6 block rounded-sm bg-unicon-green py-4 text-center text-xs font-bold uppercase tracking-widest text-white transition-colors hover:bg-white hover:text-unicon-black">Contact Us</a>
         </div>
@@ -653,7 +655,7 @@ HTML = f"""<!DOCTYPE html>
             </div>
             <div class="flex w-full flex-col gap-4 sm:flex-row md:w-auto">
                 <a href="{BASE}/contact.html" target="_top" class="whitespace-nowrap border border-unicon-black bg-unicon-black px-8 py-4 text-center text-xs font-bold uppercase tracking-widest text-white shadow-xl transition-all hover:bg-white hover:text-unicon-black"><i class="fa-solid fa-paper-plane mr-2"></i> Contact Us</a>
-                <a href="{BASE}/contact/corporate-profile.html" target="_top" class="whitespace-nowrap border border-unicon-black px-8 py-4 text-center text-xs font-bold uppercase tracking-widest text-unicon-black transition-all hover:bg-unicon-black hover:text-white"><i class="fa-solid fa-download mr-2"></i> Corporate Profile</a>
+                <a href="{BASE}/home/about.html" target="_top" class="whitespace-nowrap border border-unicon-black px-8 py-4 text-center text-xs font-bold uppercase tracking-widest text-unicon-black transition-all hover:bg-unicon-black hover:text-white"><i class="fa-solid fa-building-columns mr-2"></i> Company Profile</a>
             </div>
         </div>
     </section>
@@ -684,6 +686,7 @@ HTML = f"""<!DOCTYPE html>
                         <li><a href="{BASE}/projects.html" target="_top" class="transition-colors hover:text-unicon-green">Project Database</a></li>
                         <li><a href="{BASE}/home/history.html" target="_top" class="transition-colors hover:text-unicon-green">Company History</a></li>
                         <li><a href="{BASE}/design/constructability.html" target="_top" class="transition-colors hover:text-unicon-green">BIM &amp; Constructability</a></li>
+                        <li><a href="{BASE}/contact/join-unicon.html" target="_top" class="transition-colors hover:text-unicon-green">Careers</a></li>
                         <li><a href="{BASE}/contact.html" target="_top" class="transition-colors hover:text-unicon-green">Contact Us</a></li>
                     </ul>
                 </div>
