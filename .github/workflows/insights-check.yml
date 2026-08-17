@@ -46,6 +46,18 @@ jobs:
             exit 1
           fi
 
+      - name: Regenerate the project page and home-page sections
+        run: |
+          python3 tools/projects_page.py
+          python3 tools/homepage.py build
+
+      - name: Fail if generated pages were not committed
+        run: |
+          if ! git diff --exit-code -- projects.html index.html; then
+            echo "::error::projects.html or index.html is out of date. Run 'python3 tools/projects_page.py' and 'python3 tools/homepage.py build', then commit."
+            exit 1
+          fi
+
       - name: Check the sitemap has not drifted
         run: python3 tools/sitemap.py check
 
