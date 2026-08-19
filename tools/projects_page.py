@@ -84,6 +84,26 @@ def fixtitle(s):
 def fixname(s):
     return NAME_FIX.get(s, s)
 
+# A private homeowner is not a corporate reference and their name does not
+# belong on a public page. Individuals are shown as "Private client".
+PRIVATE_CLIENT = re.compile(r"^(dr|mr|mrs|ms|prof)[\s.&]|&\s*mrs", re.IGNORECASE)
+
+
+# Client-side privacy guard: a private individual's name or home address must
+# never reach the public page, even if a future export reintroduces it.
+NAMED_INDIVIDUAL = re.compile(r"\s*\bfor\s+(Dr|Mr|Mrs|Ms|Prof)\b[^,.(]*", re.IGNORECASE)
+STREET_ADDRESS = re.compile(r"\bNo\.?\s?\d+\s+[A-Z][a-z]+s?\s+(Rd|Road|St|Street|Ave|Avenue|Drive|Cres(cent)?)\b")
+
+
+def scrub(text):
+    return STREET_ADDRESS.sub("a property", NAMED_INDIVIDUAL.sub("", text or ""))
+
+
+def employer_of(r):
+    n = clean(r.get("Project Employer"))
+    return "Private client" if n and PRIVATE_CLIENT.search(n) else n
+
+
 SECTORS = ["Bulk Water","Wastewater","Bridges & Heavy Civils","Commercial & Retail",
            "Industrial & Agri-Processing","Education","Healthcare","Residential & Estate"]
 ICON = {"Bulk Water":"fa-water","Wastewater":"fa-recycle","Bridges & Heavy Civils":"fa-bridge-water",
@@ -225,10 +245,10 @@ for r in DB:
         name=name, raw_name=raw_name, sector=sec, year=y,
         decade=f"{(y//10)*10}s" if y else "",
         status=status, band=r["_band"],
-        employer=fixname(clean(r.get("Project Employer"))) or "—",
+        employer=fixname(employer_of(r)) or "—",
         consultant=fixname(clean(r.get("Consultant Company"))) or "—",
         appt=clean(r.get("Appointment Type")), fmt=clean(r.get("Contract Format")),
-        dur=dur, desc=clean(r.get("Description")),
+        dur=dur, desc=scrub(clean(r.get("Description"))),
         kw=clean(r.get("Project Keywords")),
         mats=clean(r.get("Branded products or materials used on ")),
         flagship=raw_name in FLAGSHIP, sig=SIG.get(raw_name, ""),
@@ -794,8 +814,10 @@ HTML = f"""<!DOCTYPE html>
 </html>
 """
 
-open(os.path.join(ROOT,"projects.html"),"w",encoding="utf-8").write(HTML)
-print("projects:",len(recs),"flagships:",nflag,"decades:",DECADES)
-print("sectors:",dict(sector_counts))
-print("verified photos:",sum(1 for r in recs if r["verified"]))
-print("bytes:",len(HTML))
+# Guarded so tools/build_pages.py can reuse sector_of() without rewriting the page.
+if __name__ == "__main__":
+    open(os.path.join(ROOT,"projects.html"),"w",encoding="utf-8").write(HTML)
+    print("projects:",len(recs),"flagships:",nflag,"decades:",DECADES)
+    print("sectors:",dict(sector_counts))
+    print("verified photos:",sum(1 for r in recs if r["verified"]))
+    print("bytes:",len(HTML))

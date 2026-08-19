@@ -1,0 +1,1303 @@
+{
+  "_comment": [
+    "Content for the eight Build capability pages. tools/build_pages.py renders",
+    "this into each page between the BUILD:BODY markers, and pulls the track",
+    "record straight out of tools/projects.json so the evidence on these pages",
+    "cannot drift away from the project database.",
+    "",
+    "'select' decides which projects count as evidence for a page:",
+    "  sectors  - sector names from tools/projects_page.py (the same classifier",
+    "             that drives projects.html, so the counts agree site-wide)",
+    "  any      - keywords matched against name, description and keywords",
+    "  employers- exact employer names",
+    "  exclude  - keywords that disqualify a match",
+    "",
+    "Where a page has little or no delivered work behind it, say so in",
+    "'evidence_note' rather than implying experience the database does not show."
+  ],
+  "water-engineering": {
+    "eyebrow": "Build Division",
+    "h1": [
+      "Water",
+      "Security."
+    ],
+    "lead": "Bulk water is the largest part of what Unicon does and has been since the mid-nineties. Reservoirs, treatment works, pump stations and pipelines &mdash; the structures that have to hold, and keep holding, for fifty years.",
+    "select": {
+      "sectors": [
+        "Bulk Water",
+        "Wastewater"
+      ]
+    },
+    "intro_heading": [
+      "Water-Retaining",
+      "Structures."
+    ],
+    "intro": [
+      "A water-retaining structure is unforgiving in a way an office block is not. It either holds or it does not, the defect shows up years after the contractor has left, and the repair costs more than the original pour. That is why our teams are built around concrete discipline rather than programme heroics: mix design, placement, curing, joint detailing and testing are the whole job.",
+      "We work as a principal contractor to consulting engineers across KwaZulu-Natal and the Eastern Cape, most often under the GCC suite for municipal and water board clients. Our people have poured circular and rectangular reservoirs, post-tensioned walls, dome roofs, contact tanks, clarifiers, filter beds and every chamber in between."
+    ],
+    "scope_heading": "What Our Water Teams Build.",
+    "scope_intro": "The scope below is work Unicon self-performs or directly controls on site. It is deliberately specific: a bill of quantities is priced line by line, and so is our capability.",
+    "scope": [
+      {
+        "icon": "fa-database",
+        "title": "Reservoirs & Storage",
+        "items": [
+          "Circular and rectangular reinforced concrete reservoirs",
+          "Post-tensioned circular walls with vertical and circumferential tendons",
+          "Concrete and steel-plate dome roofs, flat and beam-and-slab roof decks",
+          "Elevated tanks, break-pressure tanks and balancing dams",
+          "Reservoir refurbishment, crack injection and internal potable-grade linings",
+          "Roof waterproofing, access hatches, ladders, handrails and level instrumentation"
+        ]
+      },
+      {
+        "icon": "fa-filter",
+        "title": "Water Treatment Works",
+        "items": [
+          "Inlet works, flow-splitting chambers and flocculation basins",
+          "Sedimentation tanks, clarifiers and lamella settlers",
+          "Rapid gravity and pressure filter beds, backwash systems and underdrains",
+          "Chemical dosing buildings, bunded storage and dosing lines",
+          "Clear water sumps, contact tanks and chlorine contact channels",
+          "Sludge handling, thickeners, drying beds and return-water systems"
+        ]
+      },
+      {
+        "icon": "fa-recycle",
+        "title": "Wastewater & Sanitation",
+        "items": [
+          "Waste water treatment works: inlet screening, grit removal and balancing",
+          "Biological reactors, aeration basins, anoxic zones and secondary clarifiers",
+          "Package plants, oxidation ponds and maturation ponds",
+          "Sewer reticulation, rising mains, manholes and sewer pump stations",
+          "Odour control, effluent discharge structures and outfall works",
+          "Waste handling and treatment facilities for specialist waste streams"
+        ]
+      },
+      {
+        "icon": "fa-arrows-left-right",
+        "title": "Pipelines & Reticulation",
+        "items": [
+          "Bulk mains in steel, HDPE, uPVC, ductile iron and concrete pipe",
+          "Trenchless crossings, thrust blocks, anchor blocks and pipe bridges",
+          "Valve, meter, air-valve and scour chambers",
+          "Pressure testing, disinfection, swabbing and commissioning",
+          "Reticulation networks, connections and standpipes",
+          "Road, rail and river crossings with sleeved or encased carriers"
+        ]
+      },
+      {
+        "icon": "fa-gears",
+        "title": "Pump Stations & Mechanical",
+        "items": [
+          "Wet-well and dry-well pump station structures",
+          "Pump bases, pipework, valves, manifolds and surge protection",
+          "Booster stations, abstraction works and river intakes",
+          "Motor control centres, standby generation and telemetry housings",
+          "Mechanical and electrical installation coordinated with specialist subcontractors",
+          "Wet testing, commissioning and operator handover"
+        ]
+      },
+      {
+        "icon": "fa-clipboard-check",
+        "title": "Quality & Handover",
+        "items": [
+          "Concrete cube testing, slump and temperature records for every pour",
+          "Watertightness testing of retaining structures to specification",
+          "Joint sealing, waterstop installation and defect-free construction joints",
+          "As-built survey, data books and operation and maintenance manuals",
+          "Defects liability support and planned maintenance returns",
+          "Health and safety file, environmental controls and rehabilitation"
+        ]
+      }
+    ],
+    "method_heading": "How A Reservoir Actually Gets Built.",
+    "method": [
+      {
+        "n": "01",
+        "t": "Site establishment and setting out",
+        "d": "Access, laydown, batching arrangements and survey control. On rural sites this includes water supply for the works itself, which is often the first thing we have to solve."
+      },
+      {
+        "n": "02",
+        "t": "Bulk earthworks and founding",
+        "d": "Excavation to founding level, inspection with the engineer, blinding and any founding improvement. Nothing is poured until the founding is signed off."
+      },
+      {
+        "n": "03",
+        "t": "Floor and wall construction",
+        "d": "Base slab in panels with waterstops, then walls in lifts with purpose-made formwork. Mix design, placement rate, vibration and curing are controlled to the specification, not to the programme."
+      },
+      {
+        "n": "04",
+        "t": "Post-tensioning where specified",
+        "d": "Tendon installation, stressing to the designed force with recorded elongations, and grouting. Stressing records form part of the handover pack."
+      },
+      {
+        "n": "05",
+        "t": "Roof and finishes",
+        "d": "Dome, flat or beam-and-slab roof, waterproofing, hatches, ladders, handrails, ventilation and level instrumentation."
+      },
+      {
+        "n": "06",
+        "t": "Testing and commissioning",
+        "d": "Fill, stand and watertightness test against the specified drop, disinfection where potable, then wet commissioning with the client's operators present."
+      }
+    ],
+    "plant": [
+      "Purpose-made circular and panel wall formwork systems",
+      "Concrete placing plant, pumps, vibrators and curing equipment",
+      "Excavators, TLBs, rollers and compaction plant",
+      "Mobile cranes and telehandlers for roof and plant installation",
+      "Pipe-laying, welding and pressure-testing equipment",
+      "Site laboratory arrangements and independent cube testing"
+    ],
+    "related": [
+      [
+        "Structural Concrete",
+        "build/structural-engineering.html",
+        "The post-tensioning and formwork capability behind these structures."
+      ],
+      [
+        "Civil Design",
+        "design/civil-engineering.html",
+        "In-house civil design and constructability review before a pour."
+      ],
+      [
+        "Facility Management",
+        "manage/facility-management.html",
+        "Planned maintenance once the works are in service."
+      ]
+    ],
+    "cta": [
+      "Planning A Water Project?",
+      "Send us the drawings or the scope and we will come back with the engineer who would run the job, not a salesperson.",
+      "Discuss A Water Project"
+    ]
+  },
+  "civil-engineering": {
+    "eyebrow": "Build Division",
+    "h1": [
+      "Transport &",
+      "Earthworks."
+    ],
+    "lead": "Provincial bridges, river crossings, canals and mass earthworks. Work that gets built in a live river, under traffic, or in a season that will not wait.",
+    "select": {
+      "sectors": [
+        "Bridges & Heavy Civils"
+      ]
+    },
+    "intro_heading": [
+      "Heavy Civils",
+      "In The Field."
+    ],
+    "intro": [
+      "Heavy civils is the discipline where the site dictates the method. A river bridge is governed by the flood season, a road widening by the traffic accommodation, a canal by the irrigation calendar. Our long relationship with the KZN Department of Transport has been built on getting those constraints right before the first machine moves.",
+      "The scope runs from bulk earthworks and layerworks through to the finished deck: substructure, superstructure, approach works, guardrails and rehabilitation. We work almost entirely under the GCC suite, priced to SANS 1200 and constructed to the provincial standard specifications."
+    ],
+    "scope_heading": "What Our Civils Teams Build.",
+    "scope_intro": "Every item below is scope our own teams have executed on provincial and municipal contracts.",
+    "scope": [
+      {
+        "icon": "fa-bridge",
+        "title": "Bridges & River Crossings",
+        "items": [
+          "Reinforced concrete river bridges, pedestrian bridges and stock crossings",
+          "Bridge widening and deck extension under live traffic",
+          "Piled, spread-footing and caisson foundations in river beds",
+          "Abutments, wing walls, piers, headstocks and bearing shelves",
+          "In-situ and precast deck construction, parapets and expansion joints",
+          "Causeways, low-level drifts and vented crossings"
+        ]
+      },
+      {
+        "icon": "fa-mountain",
+        "title": "Earthworks & Layerworks",
+        "items": [
+          "Bulk excavation, cut-to-fill and mass earthworks platforms",
+          "Selected, subbase and base layerworks to specified density",
+          "Rock excavation, blasting through approved subcontract, and rippable cut",
+          "Terracing, benching and slope stabilisation",
+          "Gabion, reno-mattress and retaining structures",
+          "Topsoil stripping, stockpiling and site rehabilitation"
+        ]
+      },
+      {
+        "icon": "fa-road",
+        "title": "Roads & Access",
+        "items": [
+          "Access roads, haul roads and internal estate roads",
+          "Surfacing: seal, asphalt and concrete paving through specialist subcontract",
+          "Kerbing, channels, sidewalks and traffic islands",
+          "Guardrails, road furniture, signage and road markings",
+          "Traffic accommodation, detours and stop-and-go management",
+          "Road rehabilitation, patching and shoulder repair"
+        ]
+      },
+      {
+        "icon": "fa-water-ladder",
+        "title": "Canals & Drainage",
+        "items": [
+          "Lined and unlined irrigation and drainage canals",
+          "Stormwater reticulation, catchpits, headwalls and outlet structures",
+          "Culverts: box, portal and pipe, cast in situ or precast",
+          "Attenuation ponds, energy dissipators and scour protection",
+          "River training, erosion protection and gabion revetments",
+          "Subsoil drainage, fin drains and French drains"
+        ]
+      },
+      {
+        "icon": "fa-trowel-bricks",
+        "title": "Services & Relocations",
+        "items": [
+          "Wet and dry services relocation ahead of road and bridge works",
+          "Water and sewer diversions under municipal supervision",
+          "Sleeves, ducts and cable crossings",
+          "Coordination with electricity, telecoms and pipeline authorities",
+          "Temporary supply maintenance during diversion",
+          "As-built recording of relocated services"
+        ]
+      },
+      {
+        "icon": "fa-helmet-safety",
+        "title": "Working In Live Conditions",
+        "items": [
+          "Traffic accommodation designs and approved TMPs",
+          "River works programmed around flood season and gauged flows",
+          "Coffer dams, dewatering and temporary works design",
+          "Environmental management plans and watercourse protection",
+          "Community liaison, local labour and local subcontract obligations",
+          "Night work and weekend possessions where the route cannot be closed"
+        ]
+      }
+    ],
+    "method_heading": "Building A Bridge In A Live River.",
+    "method": [
+      {
+        "n": "01",
+        "t": "Programme against the season",
+        "d": "Substructure work in a river bed is scheduled into the low-flow window. Getting that wrong costs a season, so it is decided before tender price is confirmed."
+      },
+      {
+        "n": "02",
+        "t": "Temporary works and diversion",
+        "d": "Coffer dams, diversion channels and dewatering designed and signed off, with traffic accommodation in place before the road is touched."
+      },
+      {
+        "n": "03",
+        "t": "Foundations and substructure",
+        "d": "Excavation to founding, inspection, then bases, piers, abutments and wing walls. Founding conditions in a river bed frequently differ from the borehole log, so early exposure matters."
+      },
+      {
+        "n": "04",
+        "t": "Deck construction",
+        "d": "Falsework or precast beams, deck reinforcement and pour, then parapets, joints, surfacing and drainage."
+      },
+      {
+        "n": "05",
+        "t": "Approaches and reinstatement",
+        "d": "Approach fills, layerworks, guardrails, road furniture, then rehabilitation of the working area and river bed."
+      }
+    ],
+    "plant": [
+      "Excavators, dozers, graders, rollers and articulated dump trucks",
+      "Concrete placing plant and mobile cranes for deck and beam work",
+      "Dewatering pumps, well-points and coffer dam materials",
+      "Falsework and deck formwork systems",
+      "Survey instruments and machine-control setting out",
+      "Traffic accommodation equipment and temporary signage"
+    ],
+    "related": [
+      [
+        "Bulk Water",
+        "build/water-engineering.html",
+        "Pipelines, crossings and pump stations on the same corridors."
+      ],
+      [
+        "Structural Concrete",
+        "build/structural-engineering.html",
+        "Deck, pier and abutment concrete."
+      ],
+      [
+        "Civil Design",
+        "design/civil-engineering.html",
+        "Constructability review and temporary works thinking."
+      ]
+    ],
+    "cta": [
+      "Have A Civils Package To Price?",
+      "Send the drawings and the site constraints. We will tell you honestly whether the programme is achievable before we price it.",
+      "Discuss A Civils Project"
+    ]
+  },
+  "structural-engineering": {
+    "eyebrow": "Build Division",
+    "h1": [
+      "Structural",
+      "Concrete."
+    ],
+    "lead": "Reinforced and post-tensioned concrete, formwork engineering and the finishes that decide whether a structure lasts thirty years or thirteen.",
+    "select": {
+      "any": [
+        "post-tension",
+        "post tension",
+        "dome",
+        "silo",
+        "suspended slab",
+        "tower"
+      ],
+      "sectors": [
+        "Bridges & Heavy Civils"
+      ]
+    },
+    "intro_heading": [
+      "Concrete Is",
+      "The Product."
+    ],
+    "intro": [
+      "Most of what Unicon builds is concrete, and most of that concrete has to be watertight, load-bearing or both. Over thirty-five years the company has specialised in the harder end of that: circular post-tensioned walls, dome roofs, suspended decks and liquid-retaining structures where the specification allows almost no crack width.",
+      "Structural concrete is not a separate division so much as the discipline underneath the water, civils and building teams. The same supervisors, formwork systems and testing regime move between a reservoir, a bridge deck and a suspended slab in a shopping centre."
+    ],
+    "scope_heading": "The Concrete Work We Self-Perform.",
+    "scope_intro": "Concrete is where we keep the work in-house rather than subcontract it, because it is where the risk sits.",
+    "scope": [
+      {
+        "icon": "fa-circle-notch",
+        "title": "Post-Tensioned Structures",
+        "items": [
+          "Circular post-tensioned reservoir walls, vertical and circumferential",
+          "Tendon installation, ducting, anchorages and stressing to recorded elongation",
+          "Grouting, anchorage protection and stressing records for handover",
+          "Post-tensioned suspended slabs and transfer structures",
+          "Coordination with specialist PT designers and suppliers",
+          "Load testing and monitoring where specified"
+        ]
+      },
+      {
+        "icon": "fa-cube",
+        "title": "Reinforced Concrete Frames",
+        "items": [
+          "Bases, pile caps, ground beams and raft foundations",
+          "Columns, beams, shear walls and cores",
+          "Suspended slabs: flat, ribbed, coffered and beam-and-slab",
+          "Stairs, lift shafts, ramps and plant plinths",
+          "Retaining walls, basement structures and tanking",
+          "Precast elements, erection and structural connections"
+        ]
+      },
+      {
+        "icon": "fa-layer-group",
+        "title": "Formwork & Falsework",
+        "items": [
+          "Purpose-made circular and curved wall formwork",
+          "Panel and climbing systems for tall lifts",
+          "Soffit and table forms for suspended slabs",
+          "Dome and shell formwork, including plate-clad metal domes",
+          "Falsework design, propping and back-propping to load",
+          "Off-shutter and fair-face finishes to specified tolerance"
+        ]
+      },
+      {
+        "icon": "fa-flask-vial",
+        "title": "Mix Design & Testing",
+        "items": [
+          "Mix designs for durability, watertightness and workability, not just strength",
+          "Trial mixes and trial panels ahead of critical pours",
+          "Slump, temperature and cube testing on every structural pour",
+          "Hot and cold weather concreting procedures",
+          "Curing regimes matched to element and exposure",
+          "Independent laboratory testing and result trending"
+        ]
+      },
+      {
+        "icon": "fa-bars-staggered",
+        "title": "Reinforcement & Steel",
+        "items": [
+          "Cut-and-bend rebar scheduling, fixing and cover control",
+          "Mesh, couplers, starter bars and lap arrangements",
+          "Structural steel frames, portal frames and roof structures",
+          "Holding-down bolts, base plates and grouting",
+          "Steel-plate dome and cladding installation",
+          "Corrosion protection and galvanising through approved suppliers"
+        ]
+      },
+      {
+        "icon": "fa-shield",
+        "title": "Durability & Repair",
+        "items": [
+          "Waterstops, construction joints and movement joint detailing",
+          "Joint sealants, bearings and expansion provision",
+          "Crack injection, epoxy repair and concrete rehabilitation",
+          "Potable-grade internal linings and protective coatings",
+          "Cathodic and surface protection where specified",
+          "Structural investigation and remedial method statements"
+        ]
+      }
+    ],
+    "method_heading": "Why The Pour Is Planned Before It Is Poured.",
+    "method": [
+      {
+        "n": "01",
+        "t": "Method statement and pour plan",
+        "d": "Sequence, joint positions, placement rate, plant, standby plant and labour are agreed with the engineer in writing before the pour is booked."
+      },
+      {
+        "n": "02",
+        "t": "Formwork and reinforcement check",
+        "d": "Formwork alignment, tie positions, cover, joint preparation and waterstops are inspected and signed. This is the last moment anything can be fixed cheaply."
+      },
+      {
+        "n": "03",
+        "t": "Placement",
+        "d": "Continuous placement at the agreed rate with correct vibration, controlled lift heights and monitored temperature. A pour that stops halfway makes a joint nobody designed."
+      },
+      {
+        "n": "04",
+        "t": "Curing",
+        "d": "Curing starts immediately and runs for the specified period. On water-retaining work this is the single most common cause of defects elsewhere, and we treat it accordingly."
+      },
+      {
+        "n": "05",
+        "t": "Strip, inspect, record",
+        "d": "Strike to the agreed strength, inspect the finish, record the cube results and close out the pour in the quality file."
+      }
+    ],
+    "plant": [
+      "Circular, curved, panel and climbing formwork systems",
+      "Concrete pumps, placing booms, skips and poker vibrators",
+      "Mobile and tower cranes, telehandlers and material hoists",
+      "Rebar fixing, cutting and bending equipment",
+      "Curing equipment, covers and temperature monitoring",
+      "Survey and setting-out instruments for tolerance control"
+    ],
+    "related": [
+      [
+        "Bulk Water",
+        "build/water-engineering.html",
+        "Where most of our post-tensioned work is built."
+      ],
+      [
+        "Structural & MEP Design",
+        "design/structural-engineering.html",
+        "In-house structural design and detailing."
+      ],
+      [
+        "BIM & Constructability",
+        "design/constructability.html",
+        "Buildability review before the formwork is ordered."
+      ]
+    ],
+    "cta": [
+      "Need Concrete Done Properly?",
+      "If the structure has to hold water, carry load or be built to a tolerance, talk to us before the method is fixed.",
+      "Discuss A Concrete Package"
+    ]
+  },
+  "general-building": {
+    "eyebrow": "Build Division",
+    "h1": [
+      "Vertical",
+      "Infrastructure."
+    ],
+    "lead": "Retail centres, schools, clinics, offices and homes. The company started with rural clinics and classrooms in 1991 and has kept a building team ever since.",
+    "select": {
+      "sectors": [
+        "Commercial & Retail",
+        "Education",
+        "Healthcare",
+        "Residential & Estate"
+      ]
+    },
+    "intro_heading": [
+      "Buildings, End",
+      "To End."
+    ],
+    "intro": [
+      "Unicon's first contracts were clinics and schools for KZN Public Works. Building work has stayed part of the business ever since, and it is the side of the company that runs under the JBCC suite rather than GCC &mdash; shopping centres, tertiary education facilities, medical suites, offices and private homes.",
+      "Because the same company also does the civils, a building contract that involves platform earthworks, bulk services, stormwater or a reservoir does not need a second contractor. That is usually where the programme is won or lost on a greenfield site."
+    ],
+    "scope_heading": "What Our Building Teams Deliver.",
+    "scope_intro": "From platform to practical completion, including the site works most building contractors subcontract out.",
+    "scope": [
+      {
+        "icon": "fa-shop",
+        "title": "Retail & Commercial",
+        "items": [
+          "Shopping centres, retail blocks and anchor tenant shells",
+          "Tenant installations, fit-outs and shopfronts",
+          "Offices, showrooms, restaurants and fuel station forecourts",
+          "Parking decks, surface parking, access and traffic circulation",
+          "Signage pylons, canopies and external works",
+          "Phased construction and trading-hours work in live centres"
+        ]
+      },
+      {
+        "icon": "fa-graduation-cap",
+        "title": "Education",
+        "items": [
+          "Classroom blocks, laboratories and specialist teaching space",
+          "Administration buildings, libraries and media centres",
+          "Student centres, halls and ablution blocks",
+          "Sports facilities, hard courts and external works",
+          "Additions and alterations on operating campuses",
+          "Phased handover around academic terms"
+        ]
+      },
+      {
+        "icon": "fa-house-medical",
+        "title": "Healthcare",
+        "items": [
+          "Clinics, community health centres and medical suites",
+          "Consulting rooms, treatment areas and support accommodation",
+          "Imaging rooms with the shielding and structural provision they require",
+          "Medical gas, standby power and specialist services coordination",
+          "Infection-control and biosecurity requirements during construction",
+          "Works in operating facilities without closing them"
+        ]
+      },
+      {
+        "icon": "fa-building",
+        "title": "Structure & Envelope",
+        "items": [
+          "Reinforced concrete and structural steel frames",
+          "Masonry, cladding, curtain walling and glazing",
+          "Roofing: sheet, tile, flat and specialist waterproofed decks",
+          "Windows, doors, ironmongery and shopfront systems",
+          "Screeds, plaster, tiling, ceilings and dry walling",
+          "Painting, joinery and specialist finishes"
+        ]
+      },
+      {
+        "icon": "fa-plug",
+        "title": "Services & Compliance",
+        "items": [
+          "Electrical reticulation, lighting, standby power and distribution",
+          "Plumbing, drainage, hot water and fire installations",
+          "HVAC and mechanical ventilation through specialist subcontract",
+          "Fire detection, suppression and rational fire design compliance",
+          "SANS 10400 national building regulation compliance and council sign-off",
+          "Occupation certificates, COCs and statutory close-out"
+        ]
+      },
+      {
+        "icon": "fa-mountain-sun",
+        "title": "Site & External Works",
+        "items": [
+          "Platform earthworks, terracing and retaining structures",
+          "Bulk and internal water, sewer, stormwater and electrical services",
+          "Access roads, paving, kerbing and parking",
+          "Boundary walls, fencing, access control and guardhouses",
+          "Landscaping, irrigation and site rehabilitation",
+          "Attenuation, stormwater management and municipal approvals"
+        ]
+      }
+    ],
+    "method_heading": "How A Building Contract Runs.",
+    "method": [
+      {
+        "n": "01",
+        "t": "Pre-construction",
+        "d": "Constructability review of the drawings, procurement schedule, long-lead identification and a programme built around the real approval dates, not optimistic ones."
+      },
+      {
+        "n": "02",
+        "t": "Platform and substructure",
+        "d": "Earthworks, founding, bulk services and the structure below ground. Most programme slippage on greenfield building work starts here."
+      },
+      {
+        "n": "03",
+        "t": "Structure and envelope",
+        "d": "Frame, roof and envelope to get the building watertight as early as possible, so the finishing trades are not working in the weather."
+      },
+      {
+        "n": "04",
+        "t": "Services and finishes",
+        "d": "Services first-fix through to final, finishes in a sequence that does not double-handle, and quality inspections trade by trade rather than at the end."
+      },
+      {
+        "n": "05",
+        "t": "Commissioning and handover",
+        "d": "Testing, COCs, statutory sign-off, snagging with the professional team, O&M manuals and the defects liability period."
+      }
+    ],
+    "plant": [
+      "Mobile cranes, tower cranes and telehandlers",
+      "Scaffolding, access towers and edge protection",
+      "Concrete placing plant and formwork systems",
+      "Earthmoving and compaction plant for platform works",
+      "Site accommodation, hoarding and security",
+      "Established subcontract base across the finishing trades"
+    ],
+    "related": [
+      [
+        "Architectural Plan",
+        "design/architecture.html",
+        "In-house architectural design and council submission."
+      ],
+      [
+        "Structural Concrete",
+        "build/structural-engineering.html",
+        "Frames, slabs and structure."
+      ],
+      [
+        "Project Management",
+        "manage/project-management.html",
+        "Construction management and contract administration."
+      ]
+    ],
+    "cta": [
+      "Have A Building To Put Up?",
+      "Retail, institutional, healthcare or residential &mdash; send us the drawings and we will tell you what it really takes to build.",
+      "Discuss A Building Project"
+    ]
+  },
+  "industrial-logistics": {
+    "eyebrow": "Build Division",
+    "h1": [
+      "Industrial &",
+      "Logistics."
+    ],
+    "lead": "Factories, depots, processing plants and the hardstands, foundations and services that make them work.",
+    "select": {
+      "sectors": [
+        "Industrial & Agri-Processing"
+      ],
+      "exclude": [
+        "abattoir",
+        "dairy",
+        "milking",
+        "saw mill"
+      ],
+      "employers": [
+        "Safal Steel",
+        "Nestle SA (Pty) Ltd"
+      ]
+    },
+    "evidence_note": "Industrial work is a smaller part of our record than water and civils. The projects below are the ones the database actually shows, and the capability behind them is the same heavy-civil and structural capability that has delivered the rest of the portfolio.",
+    "intro_heading": [
+      "Plants That",
+      "Have To Run."
+    ],
+    "intro": [
+      "Industrial work is judged on two things: whether the floor and foundations take the loads they were designed for, and whether construction interrupts production. Both are civil engineering problems more than building problems, which is why an industrial client tends to get the civils team rather than the building team.",
+      "Unicon has built and extended factories, depots and processing facilities, including work carried out inside operating plants where the client could not stop running. That kind of contract lives on sequencing, isolation and clean handover of each area."
+    ],
+    "scope_heading": "What We Build For Industry.",
+    "scope_intro": "Heavy floors, heavy foundations, and the services around them.",
+    "scope": [
+      {
+        "icon": "fa-industry",
+        "title": "Plant & Factory Works",
+        "items": [
+          "Factory extensions, upgrades and new production halls",
+          "Machine foundations, plinths and vibration-isolated bases",
+          "Heavy-duty industrial floor slabs with specified flatness and abrasion resistance",
+          "Pipe racks, gantries, platforms and access steelwork",
+          "Process bunding, chemical containment and drainage separation",
+          "Works inside operating plants with staged shutdowns and isolation"
+        ]
+      },
+      {
+        "icon": "fa-warehouse",
+        "title": "Warehousing & Distribution",
+        "items": [
+          "Warehouse structures, portal frames and cladding",
+          "Racking-ready floor slabs and joint layouts",
+          "Loading docks, dock levellers, aprons and canopies",
+          "Cold storage structures, insulated panel systems and floor build-ups",
+          "Office and ablution accommodation within the shell",
+          "Fire installations, sprinkler provision and compliance"
+        ]
+      },
+      {
+        "icon": "fa-truck-ramp-box",
+        "title": "Yards & Hardstands",
+        "items": [
+          "Heavy-duty concrete and paved hardstands for truck and container loads",
+          "Truck circulation, turning circles and marshalling areas",
+          "Weighbridge foundations and pits",
+          "Fuel bays, wash bays and oil separators",
+          "Access control, gatehouses, fencing and perimeter works",
+          "Stormwater management, attenuation and discharge compliance"
+        ]
+      },
+      {
+        "icon": "fa-droplet",
+        "title": "Industrial Water & Effluent",
+        "items": [
+          "Process water storage, reservoirs and tank farms",
+          "Fire water storage and pump house structures",
+          "Effluent handling, balancing tanks and treatment structures",
+          "Trade effluent compliance works and discharge monitoring points",
+          "Clean-in-place and wash-down drainage",
+          "Water reticulation, boreholes and abstraction works"
+        ]
+      },
+      {
+        "icon": "fa-bolt",
+        "title": "Power & Services",
+        "items": [
+          "Substation and MCC building structures",
+          "Cable trenching, sleeves, ducting and cable racks",
+          "Standby generation bases, bunds and exhaust provision",
+          "Compressed air, steam and process pipework support",
+          "Lighting, small power and reticulation through specialist subcontract",
+          "Instrumentation, telemetry and control room accommodation"
+        ]
+      },
+      {
+        "icon": "fa-clipboard-list",
+        "title": "Working In A Live Plant",
+        "items": [
+          "Shutdown planning and hour-by-hour programmes",
+          "Permit-to-work systems and lock-out procedures",
+          "Dust, noise and contamination control adjacent to production",
+          "Food-grade and hygiene requirements where relevant",
+          "Segregation of construction and operational traffic",
+          "Area-by-area handback with sign-off"
+        ]
+      }
+    ],
+    "method_heading": "Building Around Production.",
+    "method": [
+      {
+        "n": "01",
+        "t": "Understand the operation first",
+        "d": "What cannot stop, what can be isolated and when. The programme is written around the plant's constraints, not the other way round."
+      },
+      {
+        "n": "02",
+        "t": "Enabling and temporary works",
+        "d": "Access, segregation, temporary services and protection of running equipment before construction starts."
+      },
+      {
+        "n": "03",
+        "t": "Foundations and floors",
+        "d": "Founding, machine bases and slabs, with the load cases and tolerances confirmed against the equipment supplier's data rather than assumed."
+      },
+      {
+        "n": "04",
+        "t": "Structure, envelope and services",
+        "d": "Frame, cladding and services, sequenced so that each area can be handed back as it completes."
+      },
+      {
+        "n": "05",
+        "t": "Commissioning support",
+        "d": "Support to the equipment installers, grouting, alignment and final handover with the operations team present."
+      }
+    ],
+    "plant": [
+      "Concrete placing plant, laser screeds and power floats for industrial floors",
+      "Mobile cranes and telehandlers for structure and equipment setting",
+      "Earthmoving and compaction plant for platforms and hardstands",
+      "Survey equipment for floor flatness and equipment setting-out",
+      "Dust suppression, screening and containment",
+      "Site accommodation and permit-controlled access management"
+    ],
+    "related": [
+      [
+        "Heavy Civils",
+        "build/civil-engineering.html",
+        "The earthworks and hardstand capability behind industrial yards."
+      ],
+      [
+        "Structural Concrete",
+        "build/structural-engineering.html",
+        "Machine foundations and heavy floors."
+      ],
+      [
+        "Agricultural EPC",
+        "build/agricultural-engineering.html",
+        "Processing facilities on the agricultural side."
+      ]
+    ],
+    "cta": [
+      "Extending Or Building A Plant?",
+      "Tell us what cannot stop running. That is usually the constraint that decides the programme and the price.",
+      "Discuss An Industrial Project"
+    ]
+  },
+  "agricultural-engineering": {
+    "eyebrow": "Build Division",
+    "h1": [
+      "Agricultural",
+      "Engineering."
+    ],
+    "lead": "Abattoirs, dairies, processing lines and farm infrastructure &mdash; built to the standards a regulator will actually inspect.",
+    "select": {
+      "any": [
+        "abattoir",
+        "dairy",
+        "milking",
+        "saw mill",
+        "farm",
+        "irrigation",
+        "agri",
+        "canal"
+      ],
+      "limit": 10
+    },
+    "evidence_note": "Agricultural work is a specialised, smaller part of our record. The projects below are what the database shows, and they range from a high-throughput abattoir to farm infrastructure and irrigation canal work.",
+    "intro_heading": [
+      "Agriculture Is",
+      "A Regulated Build."
+    ],
+    "intro": [
+      "A processing facility is not a shed. An abattoir is graded and inspected, a dairy has hygiene and effluent requirements written into its operating licence, and a facility that cannot pass inspection cannot trade. That turns an agricultural project into a compliance exercise as much as a construction one.",
+      "Unicon has delivered a high-throughput abattoir for a provincial department, dairy and farm infrastructure, a saw mill processing line and irrigation canal work. The common thread is a client who needs the facility to work operationally on day one, not just to be complete."
+    ],
+    "scope_heading": "What We Build For Agriculture.",
+    "scope_intro": "Processing, storage, water and the farm infrastructure around them.",
+    "scope": [
+      {
+        "icon": "fa-drumstick-bite",
+        "title": "Abattoirs & Processing",
+        "items": [
+          "Abattoir structures: lairage, slaughter floor, chillers and despatch",
+          "Hygienic finishes, coving, wash-down surfaces and drainage falls",
+          "Cold rooms, freezer rooms and insulated panel systems",
+          "Rail systems, hoists and equipment support structures coordinated with suppliers",
+          "Effluent handling, blood and paunch separation and treatment",
+          "Grading, inspection and licensing requirements built into the works"
+        ]
+      },
+      {
+        "icon": "fa-cow",
+        "title": "Dairies & Livestock",
+        "items": [
+          "Milking parlours, collecting yards and holding areas",
+          "Bulk milk tank rooms, plant rooms and wash-up areas",
+          "Feed storage, silage bunkers and mixing areas",
+          "Livestock handling: crushes, races, loading ramps and pens",
+          "Shade structures, housing and ventilation",
+          "Wash-down water recovery and effluent management"
+        ]
+      },
+      {
+        "icon": "fa-warehouse",
+        "title": "Storage & Handling",
+        "items": [
+          "Pack houses, grading halls and dispatch areas",
+          "Grain and feed storage, silo bases and conveyor supports",
+          "Cold chain storage and controlled-atmosphere rooms",
+          "Chemical and fertiliser stores with bunding and separation",
+          "Workshops, implement sheds and fuel storage",
+          "Weighbridges, hardstands and truck circulation"
+        ]
+      },
+      {
+        "icon": "fa-faucet-drip",
+        "title": "Farm Water & Irrigation",
+        "items": [
+          "Farm dams, storage reservoirs and balancing dams",
+          "Irrigation canals, lined channels and distribution structures",
+          "Pump stations, abstraction works and river intakes",
+          "Mainline and reticulation pipework to pivots and blocks",
+          "Boreholes, tanks, troughs and stock water reticulation",
+          "Drainage canals, flood protection and erosion control"
+        ]
+      },
+      {
+        "icon": "fa-road",
+        "title": "Farm Infrastructure",
+        "items": [
+          "Farm and estate access roads, causeways and drifts",
+          "Driveway upgrades, hardstands and yard surfacing",
+          "Farm houses, cottages, staff housing and renovations",
+          "Fencing, gates, access control and security",
+          "Electrical reticulation, standby power and solar-ready provision",
+          "Stormwater, culverts and contour works"
+        ]
+      },
+      {
+        "icon": "fa-certificate",
+        "title": "Compliance & Handover",
+        "items": [
+          "Facility layouts driven by the operating and grading requirements",
+          "Food-safe materials, finishes and drainage detailing",
+          "Environmental authorisation and water use compliance support",
+          "Effluent discharge compliance and monitoring provision",
+          "Commissioning with the operator and the inspecting authority",
+          "Operation and maintenance documentation for the facility"
+        ]
+      }
+    ],
+    "method_heading": "Getting A Facility Licensed, Not Just Built.",
+    "method": [
+      {
+        "n": "01",
+        "t": "Start from the operating requirement",
+        "d": "Throughput, grading level, hygiene zoning and effluent limits determine the layout. Fixing these late is the most expensive mistake on an agri project."
+      },
+      {
+        "n": "02",
+        "t": "Coordinate the equipment early",
+        "d": "Rails, chillers, tanks and process lines have bases, service points and tolerances. We work off the supplier's data, not a generic drawing."
+      },
+      {
+        "n": "03",
+        "t": "Build the shell and the falls",
+        "d": "Structure, envelope and the drainage falls and coving that make a wash-down facility work. Falls cannot be corrected afterwards."
+      },
+      {
+        "n": "04",
+        "t": "Services, effluent and finishes",
+        "d": "Water, power, refrigeration, effluent and hygienic finishes, installed in the sequence that keeps the finished surfaces intact."
+      },
+      {
+        "n": "05",
+        "t": "Commission with the inspector",
+        "d": "Wet commissioning, hygiene sign-off and handover with the operator and the authority in the room."
+      }
+    ],
+    "plant": [
+      "Concrete placing plant and power floats for hygienic floor finishes",
+      "Earthmoving and compaction plant for platforms, dams and canals",
+      "Mobile cranes and telehandlers for panel and equipment installation",
+      "Pipe-laying, welding and pressure-testing equipment",
+      "Survey equipment for drainage falls and canal grade",
+      "Established subcontract base in refrigeration and food-grade finishes"
+    ],
+    "related": [
+      [
+        "Industrial & Logistics",
+        "build/industrial-logistics.html",
+        "Processing and storage on the industrial side."
+      ],
+      [
+        "Bulk Water",
+        "build/water-engineering.html",
+        "Dams, pump stations and reticulation."
+      ],
+      [
+        "Heavy Civils",
+        "build/civil-engineering.html",
+        "Canals, roads and earthworks."
+      ]
+    ],
+    "cta": [
+      "Planning An Agri Facility?",
+      "Tell us the throughput and the grading you need to hold. The building follows from there.",
+      "Discuss An Agri Project"
+    ]
+  },
+  "mining-infrastructure": {
+    "eyebrow": "Build Division",
+    "h1": [
+      "Mining",
+      "Infrastructure."
+    ],
+    "lead": "Water infrastructure and heavy civils for mining and heavy industry, built to the standard a mine's own engineering department will audit.",
+    "select": {
+      "employers": [
+        "Anglo American",
+        "Safal Steel"
+      ],
+      "any": [
+        "mine",
+        "colliery",
+        "smelter"
+      ]
+    },
+    "evidence_note": "Our mining record is specific rather than broad: a 10ML post-tensioned reservoir with a dome roof for Anglo American at Thabazimbi, and works for Safal Steel at Cato Ridge. What we bring to a mine is the water and heavy-concrete capability behind the rest of this portfolio, not a claim to be a mining contractor.",
+    "intro_heading": [
+      "What A Mine",
+      "Actually Needs."
+    ],
+    "intro": [
+      "Mines do not usually need a contractor to mine. They need someone who can build the water storage, the pipelines, the heavy foundations and the platforms that keep the operation running &mdash; and who will work to the mine's permit system without argument.",
+      "That is where Unicon fits. The 10ML post-tensioned reservoir with a dome roof at Thabazimbi for Anglo American is the same structure type we have built repeatedly for water boards and municipalities, delivered to a mining client's standards and audit regime."
+    ],
+    "scope_heading": "What We Build On A Mine.",
+    "scope_intro": "Water, concrete and earthworks &mdash; the infrastructure around the operation.",
+    "scope": [
+      {
+        "icon": "fa-database",
+        "title": "Mine Water Infrastructure",
+        "items": [
+          "Raw, process and potable water reservoirs, including post-tensioned structures",
+          "Dome and flat roof storage with access, ventilation and instrumentation",
+          "Pump stations, booster stations and abstraction works",
+          "Bulk pipelines, reticulation and pressure testing",
+          "Fire water storage and pump house structures",
+          "Dust suppression supply and wash-down water systems"
+        ]
+      },
+      {
+        "icon": "fa-recycle",
+        "title": "Water Management & Compliance",
+        "items": [
+          "Dirty water containment, pollution control dams and cut-off drains",
+          "Silt traps, settlers and sediment control structures",
+          "Effluent handling and treatment structures",
+          "Separation of clean and dirty water systems",
+          "Water use licence infrastructure and monitoring points",
+          "Rehabilitation and closure-related water works"
+        ]
+      },
+      {
+        "icon": "fa-cube",
+        "title": "Heavy Concrete & Foundations",
+        "items": [
+          "Plant, crusher, mill and conveyor foundations",
+          "Machine bases, plinths and vibration-critical structures",
+          "Retaining walls, bunds and containment structures",
+          "Silos, bins and hopper support structures",
+          "Workshop, store and change-house buildings",
+          "Substation and MCC building structures"
+        ]
+      },
+      {
+        "icon": "fa-mountain",
+        "title": "Earthworks & Platforms",
+        "items": [
+          "Bulk earthworks, terracing and plant platforms",
+          "Haul road construction, upgrading and drainage",
+          "Stockpile pads, ROM pads and hardstands",
+          "Slope stabilisation, gabions and erosion protection",
+          "Trenching for pipelines, cables and services",
+          "Site rehabilitation and reshaping"
+        ]
+      },
+      {
+        "icon": "fa-helmet-safety",
+        "title": "Working To Mine Standards",
+        "items": [
+          "Mine Health and Safety Act compliance and site-specific inductions",
+          "Permit-to-work, isolation and lock-out systems",
+          "Vehicle and pedestrian segregation on operating sites",
+          "Fatigue management and shift arrangements where required",
+          "Client audit participation and corrective action close-out",
+          "Environmental controls to the mine's authorisation conditions"
+        ]
+      },
+      {
+        "icon": "fa-clipboard-check",
+        "title": "Quality & Assurance",
+        "items": [
+          "Concrete testing, cube results and pour records for every structure",
+          "Watertightness testing of retaining structures",
+          "Weld, coating and NDT records through approved subcontractors",
+          "Survey verification and as-built documentation",
+          "Data books, O&M manuals and handover packs",
+          "Defects liability support during operation"
+        ]
+      }
+    ],
+    "method_heading": "How We Work On An Operating Site.",
+    "method": [
+      {
+        "n": "01",
+        "t": "Induction and permit systems first",
+        "d": "Nothing moves until our people are inducted and the permit, isolation and access arrangements are agreed with the mine's own systems."
+      },
+      {
+        "n": "02",
+        "t": "Plan around production",
+        "d": "Access routes, delivery windows and lifting operations are programmed so that construction traffic never competes with mine traffic."
+      },
+      {
+        "n": "03",
+        "t": "Build to the mine's specification",
+        "d": "Mining clients audit. Method statements, testing and records are prepared to be inspected, not to be filed."
+      },
+      {
+        "n": "04",
+        "t": "Test and commission",
+        "d": "Watertightness, pressure and functional testing with the mine's engineering department present."
+      },
+      {
+        "n": "05",
+        "t": "Hand over a documented asset",
+        "d": "As-builts, data books and O&M documentation that the mine's asset register can actually use."
+      }
+    ],
+    "plant": [
+      "Purpose-made circular and panel formwork for reservoir walls",
+      "Post-tensioning capability through established specialist suppliers",
+      "Concrete placing plant, pumps and curing equipment",
+      "Earthmoving, compaction and haul road plant",
+      "Mobile cranes for dome, plant and steelwork installation",
+      "Pipe-laying, welding and pressure-testing equipment"
+    ],
+    "related": [
+      [
+        "Bulk Water",
+        "build/water-engineering.html",
+        "The reservoir and pipeline capability a mine draws on."
+      ],
+      [
+        "Structural Concrete",
+        "build/structural-engineering.html",
+        "Post-tensioned walls, domes and heavy foundations."
+      ],
+      [
+        "Industrial & Logistics",
+        "build/industrial-logistics.html",
+        "Plant civils and hardstands."
+      ]
+    ],
+    "cta": [
+      "Infrastructure On A Mine?",
+      "Water storage, pipelines or heavy foundations &mdash; send us the scope and the site standards you work to.",
+      "Discuss A Mining Project"
+    ]
+  },
+  "renewable-energy": {
+    "eyebrow": "Build Division",
+    "h1": [
+      "Renewable Energy",
+      "Civils."
+    ],
+    "lead": "Balance-of-plant civil works for generation projects: platforms, foundations, hardstands, access roads and site water.",
+    "select": {
+      "any": [
+        "__none__"
+      ]
+    },
+    "evidence_note": "We have not yet delivered a renewable energy generation project, and we are not going to imply otherwise. What this page sets out is the civil scope on a solar, wind or biomass site and the comparable work behind it &mdash; mass earthworks, heavy foundations, access roads, hardstands and water infrastructure that Unicon has been building since 1991. If you are assembling a balance-of-plant package, judge us on that record rather than on a logo wall.",
+    "intro_heading": [
+      "Balance Of Plant",
+      "Is Civils."
+    ],
+    "intro": [
+      "On a renewable energy project the generation equipment comes from the technology supplier. What is left is a civil engineering contract: platform earthworks over a large footprint, several hundred foundations built to tight tolerance, access roads that carry abnormal loads, cable trenching, hardstands and the water infrastructure that keeps the site operating.",
+      "That work is not new to us, even though the application is. Mass earthworks, bridge and plant foundations, haul roads, hardstands and reservoirs are the daily business of the civils and water teams. The honest position is that we bring thirty-five years of heavy civil delivery to a sector we have not yet built in &mdash; which is why we would expect to be judged on the underlying work rather than on sector references we do not have."
+    ],
+    "scope_heading": "The Civil Scope On A Generation Site.",
+    "scope_intro": "This is the balance-of-plant scope we are equipped and graded to carry out.",
+    "scope": [
+      {
+        "icon": "fa-mountain",
+        "title": "Site Preparation & Earthworks",
+        "items": [
+          "Vegetation clearing, topsoil stripping and stockpiling",
+          "Bulk earthworks, cut-to-fill and platform grading over large footprints",
+          "Terracing, benching and slope stabilisation",
+          "Geotechnical verification and founding improvement",
+          "Erosion protection, contour works and stormwater management",
+          "Site rehabilitation and reinstatement"
+        ]
+      },
+      {
+        "icon": "fa-cube",
+        "title": "Foundations & Structures",
+        "items": [
+          "Repetitive pad, pile-cap and ballast foundations to tight tolerance",
+          "Tracker and module support foundations, driven or cast",
+          "Inverter, transformer and battery container plinths",
+          "Substation structures, cable basements and earthing provision",
+          "Control room, workshop, store and gatehouse buildings",
+          "Fencing foundations, gates and perimeter works"
+        ]
+      },
+      {
+        "icon": "fa-road",
+        "title": "Access & Hardstands",
+        "items": [
+          "Site access roads designed for abnormal and crane loads",
+          "Internal service roads, turning circles and passing bays",
+          "Crane pads and assembly hardstands",
+          "Laydown areas, storage yards and construction platforms",
+          "Culverts, drifts, drainage and road furniture",
+          "Traffic accommodation and route condition surveys"
+        ]
+      },
+      {
+        "icon": "fa-bolt",
+        "title": "Cabling & Reticulation Civils",
+        "items": [
+          "Cable trenching, bedding, backfill and warning tape",
+          "Ducts, sleeves, draw pits and cable troughs",
+          "Road and watercourse crossings for cabling",
+          "Earthing trenches and earth mat installation",
+          "Marker posts, route recording and as-built survey",
+          "Coordination with the electrical installer's programme"
+        ]
+      },
+      {
+        "icon": "fa-droplet",
+        "title": "Site Water & Services",
+        "items": [
+          "Raw and potable water storage tanks and reservoirs",
+          "Boreholes, abstraction, pumping and reticulation",
+          "Module wash-down water supply and recovery",
+          "Fire water storage and pump house structures",
+          "Sanitation, package treatment and effluent handling",
+          "Dust suppression supply during construction and operation"
+        ]
+      },
+      {
+        "icon": "fa-helmet-safety",
+        "title": "Delivery & Compliance",
+        "items": [
+          "Environmental authorisation conditions and ECO coordination",
+          "Local content, local labour and local enterprise obligations",
+          "Community liaison and local subcontractor development",
+          "Health and safety systems to the client's and the Act's requirements",
+          "Quality records, survey verification and as-built documentation",
+          "Interface management with the technology supplier and EPC"
+        ]
+      }
+    ],
+    "method_heading": "How We Would Approach A Balance-Of-Plant Package.",
+    "method": [
+      {
+        "n": "01",
+        "t": "Geotechnical reality first",
+        "d": "Foundation quantities on a generation site are driven by ground conditions across a large footprint. We would want the geotechnical picture verified before the foundation method is fixed."
+      },
+      {
+        "n": "02",
+        "t": "Set up for repetition",
+        "d": "Several hundred near-identical foundations is a production problem. The gain is in the jig, the sequence and the survey control, not in working faster."
+      },
+      {
+        "n": "03",
+        "t": "Access before volume",
+        "d": "Access roads and hardstands are built to carry the heaviest delivery on the project, early, because everything else depends on them."
+      },
+      {
+        "n": "04",
+        "t": "Interface with the technology supplier",
+        "d": "Tolerances, setting-out and handover of foundations are agreed with the equipment supplier in writing before the first pour."
+      },
+      {
+        "n": "05",
+        "t": "Local content done properly",
+        "d": "Local labour and enterprise obligations are met with real packages and real support on site, which is how we already work on municipal contracts."
+      }
+    ],
+    "plant": [
+      "Excavators, dozers, graders, rollers and articulated dump trucks",
+      "Concrete placing plant, batching arrangements and curing equipment",
+      "Trenching plant and pipe-laying equipment",
+      "Mobile cranes and telehandlers",
+      "Survey and machine-control setting-out for repetitive foundations",
+      "Water tankers and dust suppression equipment"
+    ],
+    "related": [
+      [
+        "Heavy Civils",
+        "build/civil-engineering.html",
+        "The earthworks, roads and foundations record behind this."
+      ],
+      [
+        "Structural Concrete",
+        "build/structural-engineering.html",
+        "Foundation and plinth concrete."
+      ],
+      [
+        "Bulk Water",
+        "build/water-engineering.html",
+        "Site water storage and reticulation."
+      ]
+    ],
+    "cta": [
+      "Assembling A Balance-Of-Plant Package?",
+      "We will tell you plainly what we have built and what would be a first for us. Send the scope and judge the fit yourself.",
+      "Discuss A BoP Package"
+    ]
+  }
+}
