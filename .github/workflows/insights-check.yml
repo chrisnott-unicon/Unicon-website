@@ -65,6 +65,9 @@ jobs:
       - name: Check the shared navigation and footer have not drifted
         run: python3 tools/chrome.py check
 
+      - name: Check the Build capability pages match the project database
+        run: python3 tools/build_pages.py check
+
       - name: Check site-wide consistency and links
         run: python3 tools/consistency.py
 
