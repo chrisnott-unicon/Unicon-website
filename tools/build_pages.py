@@ -7,9 +7,11 @@ that drives projects.html, so the counts and the named clients on a capability
 page always agree with the project database rather than being typed in by hand
 and slowly going stale.
 
-Where a page has little or no delivered work behind it - renewable energy in
-particular - the content carries an 'evidence_note' saying so. Do not replace
-that with an implied track record.
+A page may set 'record_heading' and 'record_intro' to describe its evidence
+accurately - the renewable energy page shows comparable heavy-civil contracts
+under a heading that says so, rather than presenting them as sector work.
+Where a page has little delivered work behind it, 'evidence_note' states that
+plainly. Neither mechanism exists to imply a track record that is not there.
 
 Usage:
     python3 tools/build_pages.py build     regenerate the eight pages
@@ -264,9 +266,9 @@ def record(slug, c, picked, all_rows):
         <div class="mx-auto max-w-[90rem] px-6 sm:px-8 lg:px-12">
             <div class="mb-12 max-w-3xl">
                 <p class="mb-3 font-mono text-[10px] uppercase tracking-widest text-unicon-green">Track Record</p>
-                <h2 class="text-3xl font-extrabold uppercase leading-none tracking-tight sm:text-4xl md:text-5xl">What We Have Actually Built.</h2>
+                <h2 class="text-3xl font-extrabold uppercase leading-none tracking-tight sm:text-4xl md:text-5xl">{c.get("record_heading", "What We Have Actually Built.")}</h2>
                 <p class="mt-6 text-base font-light leading-relaxed text-gray-600 md:text-lg">
-                    Straight from our project database, not a brochure. Contract values are shown as bands.
+                    {c.get("record_intro", "Straight from our project database, not a brochure. Contract values are shown as bands.")}
                 </p>{note_html}
             </div>
             <div class="mb-12 grid grid-cols-2 gap-8 lg:grid-cols-4">{stat_html}

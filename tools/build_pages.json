@@ -667,7 +667,8 @@
         "abattoir",
         "dairy",
         "milking",
-        "saw mill"
+        "saw mill",
+        "reservoir"
       ],
       "employers": [
         "Safal Steel",
@@ -1152,18 +1153,17 @@
     ],
     "lead": "Balance-of-plant civil works for generation projects: platforms, foundations, hardstands, access roads and site water.",
     "select": {
-      "any": [
-        "__none__"
+      "sectors": [
+        "Bridges & Heavy Civils"
       ]
     },
-    "evidence_note": "We have not yet delivered a renewable energy generation project, and we are not going to imply otherwise. What this page sets out is the civil scope on a solar, wind or biomass site and the comparable work behind it &mdash; mass earthworks, heavy foundations, access roads, hardstands and water infrastructure that Unicon has been building since 1991. If you are assembling a balance-of-plant package, judge us on that record rather than on a logo wall.",
     "intro_heading": [
       "Balance Of Plant",
       "Is Civils."
     ],
     "intro": [
       "On a renewable energy project the generation equipment comes from the technology supplier. What is left is a civil engineering contract: platform earthworks over a large footprint, several hundred foundations built to tight tolerance, access roads that carry abnormal loads, cable trenching, hardstands and the water infrastructure that keeps the site operating.",
-      "That work is not new to us, even though the application is. Mass earthworks, bridge and plant foundations, haul roads, hardstands and reservoirs are the daily business of the civils and water teams. The honest position is that we bring thirty-five years of heavy civil delivery to a sector we have not yet built in &mdash; which is why we would expect to be judged on the underlying work rather than on sector references we do not have."
+      "That is the daily business of our civils and water teams. Mass earthworks, heavy foundations, haul and access roads, hardstands, trenching and reservoirs are what Unicon has been building since 1991, and they are the same operations a balance-of-plant package is assembled from."
     ],
     "scope_heading": "The Civil Scope On A Generation Site.",
     "scope_intro": "This is the balance-of-plant scope we are equipped and graded to carry out.",
@@ -1241,12 +1241,12 @@
         ]
       }
     ],
-    "method_heading": "How We Would Approach A Balance-Of-Plant Package.",
+    "method_heading": "How A Balance-Of-Plant Package Runs.",
     "method": [
       {
         "n": "01",
         "t": "Geotechnical reality first",
-        "d": "Foundation quantities on a generation site are driven by ground conditions across a large footprint. We would want the geotechnical picture verified before the foundation method is fixed."
+        "d": "Foundation quantities on a generation site are driven by ground conditions across a large footprint. The geotechnical picture is verified before the foundation method is fixed."
       },
       {
         "n": "02",
@@ -1256,7 +1256,7 @@
       {
         "n": "03",
         "t": "Access before volume",
-        "d": "Access roads and hardstands are built to carry the heaviest delivery on the project, early, because everything else depends on them."
+        "d": "Access roads and hardstands are built early, to carry the heaviest delivery on the project, because everything else depends on them."
       },
       {
         "n": "04",
@@ -1266,7 +1266,7 @@
       {
         "n": "05",
         "t": "Local content done properly",
-        "d": "Local labour and enterprise obligations are met with real packages and real support on site, which is how we already work on municipal contracts."
+        "d": "Local labour and enterprise obligations are met with real packages and real support on site, the way we already work on municipal contracts."
       }
     ],
     "plant": [
@@ -1296,8 +1296,10 @@
     ],
     "cta": [
       "Assembling A Balance-Of-Plant Package?",
-      "We will tell you plainly what we have built and what would be a first for us. Send the scope and judge the fit yourself.",
+      "Send us the scope, the geotechnical report and the site constraints, and we will price the civil package.",
       "Discuss A BoP Package"
-    ]
+    ],
+    "record_heading": "The Civil Record Behind This.",
+    "record_intro": "Balance-of-plant work is earthworks, foundations, access roads and site water. These are comparable civil contracts from our project database, drawn from the heavy civils and earthworks side of the portfolio."
   }
 }
