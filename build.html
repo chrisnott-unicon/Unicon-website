@@ -79,7 +79,6 @@
             
             <a href="https://www.uniconsa.co.za/index.html" target="_top" class="flex items-center gap-3 group relative z-[110]">
                 <img src="https://wsrv.nl/?url=raw.githubusercontent.com/chrisnott-unicon/UniconLogo/main/UniconBlk.png&w=150&output=webp" alt="Unicon Logo" class="h-6 sm:h-8 w-auto invert brightness-0 transition-opacity group-hover:opacity-80">
-                <span class="font-extrabold text-xl sm:text-2xl tracking-tighter uppercase text-white group-hover:text-unicon-green transition-colors">UNICON</span>
                 <div class="h-4 w-[1px] bg-gray-700"></div>
                 <span class="text-[8px] sm:text-[10px] font-mono text-unicon-green tracking-[0.2em] uppercase font-bold hidden sm:inline-block">EST. 1991</span>
             </a>
@@ -160,7 +159,7 @@
         </div>
 
         <!-- REBUILT NO-COLLAPSE MOBILE MENU OVERLAY -->
-        <div id="mobile-menu" class="fixed inset-y-0 right-0 w-80 bg-[#0a0a0a] z-[1000] transform translate-x-full transition-transform duration-300 overflow-y-auto lg:hidden pt-24 pb-12 px-6 border-l border-gray-800 shadow-2xl flex flex-col justify-between">
+        <div id="mobile-menu" class="fixed inset-y-0 right-0 w-80 bg-[#0a0a0a] z-[100000] transform translate-x-full transition-transform duration-300 overflow-y-auto lg:hidden pt-24 pb-12 px-6 border-l border-gray-800 shadow-2xl flex flex-col justify-between">
             <div class="flex flex-col space-y-6">
                 <!-- Company flat list -->
                 <div>
@@ -513,7 +512,15 @@
             const mobileMenu = document.getElementById('mobile-menu');
             const mobileIcon = mobileBtn ? mobileBtn.querySelector('i') : null;
             if(mobileBtn && mobileMenu) {
-                mobileBtn.addEventListener('click', () => {
+                const closeMobileMenu = () => {
+                    mobileMenu.classList.add('translate-x-full');
+                    if(mobileIcon) {
+                        mobileIcon.classList.remove('fa-xmark');
+                        mobileIcon.classList.add('fa-bars');
+                    }
+                };
+                mobileBtn.addEventListener('click', (e) => {
+                    e.stopPropagation();
                     mobileMenu.classList.toggle('translate-x-full');
                     if(mobileMenu.classList.contains('translate-x-full')) {
                         mobileIcon.classList.remove('fa-xmark');
@@ -521,6 +528,12 @@
                     } else {
                         mobileIcon.classList.remove('fa-bars');
                         mobileIcon.classList.add('fa-xmark');
+                    }
+                });
+                mobileMenu.querySelectorAll('a').forEach((link) => link.addEventListener('click', closeMobileMenu));
+                document.addEventListener('click', (e) => {
+                    if (!mobileMenu.classList.contains('translate-x-full') && !mobileMenu.contains(e.target) && !mobileBtn.contains(e.target)) {
+                        closeMobileMenu();
                     }
                 });
             }

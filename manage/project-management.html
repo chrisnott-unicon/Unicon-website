@@ -54,7 +54,7 @@
     <nav id="navbar" class="fixed top-0 left-0 w-full z-[100] transition-all duration-300 bg-[#0a0a0a]/95 backdrop-blur-md border-b border-gray-800 py-4">
         <div class="max-w-[90rem] mx-auto px-6 sm:px-8 lg:px-12 flex justify-between items-center">
             <a href="/" target="_top" class="flex items-center gap-3 group relative z-[110]">
-                <span class="font-extrabold text-xl sm:text-2xl tracking-tighter uppercase text-white group-hover:text-unicon-green transition-colors">UNICON</span>
+                <img src="https://wsrv.nl/?url=raw.githubusercontent.com/chrisnott-unicon/UniconLogo/main/UniconBlk.png&w=150&output=webp" alt="Unicon Logo" class="h-6 sm:h-8 w-auto invert brightness-0 transition-opacity group-hover:opacity-80">
                 <div class="h-4 w-[1px] bg-gray-700"></div>
                 <span class="text-[8px] sm:text-[10px] font-mono text-unicon-green tracking-[0.2em] uppercase font-bold hidden sm:inline-block">EST. 1991</span>
             </a>
@@ -75,9 +75,18 @@
             </div>
             
             <!-- Mobile Toggle -->
-            <button id="mobile-menu-btn" class="lg:hidden text-white hover:text-unicon-green transition-colors p-2">
+            <button id="mobile-menu-btn" class="lg:hidden text-white hover:text-unicon-green transition-colors p-2" aria-label="Toggle mobile menu">
                 <i class="fa-solid fa-bars text-xl"></i>
             </button>
+        </div>
+
+        <div id="mobile-menu" class="hidden lg:hidden absolute top-full left-0 w-full bg-[#0a0a0a]/95 backdrop-blur-md border-b border-gray-800 shadow-xl flex-col p-6 z-[110]">
+            <div class="flex flex-col space-y-3">
+                <a href="/manage/project-management" target="_top" class="text-sm font-bold uppercase tracking-wide text-unicon-green">Project Management</a>
+                <a href="/manage/facility-management" target="_top" class="text-sm font-bold uppercase tracking-wide text-white hover:text-unicon-green">Facility Management</a>
+                <a href="/build/water-engineering" target="_top" class="text-sm font-bold uppercase tracking-wide text-white hover:text-unicon-green">Build</a>
+                <a href="/contact" target="_top" class="text-sm font-bold uppercase tracking-wide text-white hover:text-unicon-green">Contact</a>
+            </div>
         </div>
     </nav>
 
@@ -168,6 +177,45 @@
             <a href="/contact" target="_top" class="px-10 py-5 bg-unicon-green text-white font-bold uppercase tracking-widest text-xs hover:bg-white hover:text-unicon-black transition-colors inline-block">Consult Management Desk</a>
         </div>
     </section>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const mobileBtn = document.getElementById('mobile-menu-btn');
+            const mobileMenu = document.getElementById('mobile-menu');
+            const mobileIcon = mobileBtn ? mobileBtn.querySelector('i') : null;
+
+            if (mobileBtn && mobileMenu) {
+                const closeMobileMenu = () => {
+                    mobileMenu.classList.add('hidden');
+                    mobileMenu.classList.remove('flex');
+                    if (mobileIcon) {
+                        mobileIcon.classList.remove('fa-xmark');
+                        mobileIcon.classList.add('fa-bars');
+                    }
+                };
+                mobileBtn.addEventListener('click', (e) => {
+                    e.stopPropagation();
+                    mobileMenu.classList.toggle('hidden');
+                    mobileMenu.classList.toggle('flex');
+                    if (mobileIcon) {
+                        if (mobileMenu.classList.contains('hidden')) {
+                            mobileIcon.classList.remove('fa-xmark');
+                            mobileIcon.classList.add('fa-bars');
+                        } else {
+                            mobileIcon.classList.remove('fa-bars');
+                            mobileIcon.classList.add('fa-xmark');
+                        }
+                    }
+                });
+                mobileMenu.querySelectorAll('a').forEach((link) => link.addEventListener('click', closeMobileMenu));
+                document.addEventListener('click', (e) => {
+                    if (!mobileMenu.classList.contains('hidden') && !mobileMenu.contains(e.target) && !mobileBtn.contains(e.target)) {
+                        closeMobileMenu();
+                    }
+                });
+            }
+        });
+    </script>
 
 </body>
 </html>
