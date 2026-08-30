@@ -126,11 +126,24 @@ def e(s: str) -> str:
     return html.escape(str(s), quote=True)
 
 
+def cdn(url: str, width: int = 800) -> str:
+    """Serve a raw.githubusercontent image resized/WebP'd through wsrv.nl.
+
+    The JSON-LD `image` stays the original URL (search engines and link
+    previews fetch it directly); only the rendered card <img> is proxied.
+    """
+    if url.startswith("https://raw.githubusercontent.com/"):
+        from urllib.parse import quote
+        bare = quote(url[len("https://"):], safe=":/%")
+        return f"https://wsrv.nl/?url={bare}&w={width}&output=webp&q=75"
+    return url
+
+
 def card(a: dict) -> str:
     return f"""
                 <article class="bg-white border border-unicon-border flex flex-col hover:border-unicon-green transition-colors shadow-sm group">
                     <div class="h-64 overflow-hidden relative">
-                        <img src="{e(a['image'])}" loading="lazy" decoding="async" class="w-full h-full object-cover grayscale-[40%] group-hover:grayscale-0 group-hover:scale-105 transition-all duration-700" alt="{e(a.get('imageAlt') or a['headline'])}">
+                        <img src="{e(cdn(a['image']))}" loading="lazy" decoding="async" class="w-full h-full object-cover grayscale-[40%] group-hover:grayscale-0 group-hover:scale-105 transition-all duration-700" alt="{e(a.get('imageAlt') or a['headline'])}">
                         <div class="absolute top-4 left-4 bg-unicon-green text-white text-[9px] font-bold uppercase tracking-widest px-3 py-1 shadow-md">{e(a['articleSection'])}</div>
                     </div>
                     <div class="p-8 flex flex-col flex-grow">
