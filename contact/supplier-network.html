@@ -1,14 +1,6 @@
 <!DOCTYPE html>
 <html lang="en" class="scroll-smooth">
 <head>
-    <!-- Google Tag Manager -->
-    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-    })(window,document,'script','dataLayer','GTM-59TZ364B');</script>
-    <!-- End Google Tag Manager -->
-
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
     
@@ -112,11 +104,6 @@
     </script>
 </head>
 <body class="font-sans selection:bg-unicon-green selection:text-white pt-16 sm:pt-20">
-    <!-- Google Tag Manager (noscript) -->
-    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-59TZ364B"
-    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-    <!-- End Google Tag Manager (noscript) -->
-
     <a href="https://wa.me/27664834709?text=Hello%20Unicon%2C%20I%20would%20like%20to%20register%20as%20a%20vendor." target="_blank" rel="noopener noreferrer" class="whatsapp-fab" aria-label="Chat with us on WhatsApp">
         <i class="fa-brands fa-whatsapp"></i>
     </a>
@@ -583,6 +570,7 @@
 
                         <div id="form-container" class="flex-grow">
                             <form id="vendorForm" class="space-y-6">
+                                <input type="hidden" name="_subject" value="Website enquiry: Supplier / Vendor Registration">
                                 <div class="hp-gate"><input type="text" name="bot_trap" tabindex="-1" autocomplete="off"></div>
                                 <input type="hidden" name="form_type" value="Vendor Registration">
 
@@ -919,6 +907,69 @@
                 window.addEventListener('resize', lift);
             }
         });
+    </script>
+    <script>
+    // Restores the human-verification gate and Formspree submission for the
+    // vendor form; as shipped the submit button never left its disabled state
+    // and no registration could be sent.
+    document.addEventListener('DOMContentLoaded', function () {
+        var form = document.getElementById('vendorForm');
+        var toggle = document.getElementById('humanToggle');
+        var submitBtn = document.getElementById('submitBtn');
+        var statusText = document.getElementById('toggleStatusText');
+        var icon = document.getElementById('toggleIcon');
+        if (!form || !toggle || !submitBtn) return;
+
+        toggle.addEventListener('change', function () {
+            var ok = toggle.checked;
+            submitBtn.disabled = !ok;
+            submitBtn.classList.toggle('cursor-not-allowed', !ok);
+            submitBtn.classList.toggle('bg-gray-200', !ok);
+            submitBtn.classList.toggle('text-gray-400', !ok);
+            submitBtn.classList.toggle('bg-unicon-black', ok);
+            submitBtn.classList.toggle('text-white', ok);
+            submitBtn.innerHTML = ok
+                ? 'Submit Registration <i class="fa-solid fa-paper-plane"></i>'
+                : 'Transmission Locked <i class="fa-solid fa-lock text-[10px]"></i>';
+            if (statusText) {
+                statusText.textContent = ok ? 'Verified' : 'Unverified';
+                statusText.classList.toggle('text-red-500', !ok);
+                statusText.classList.toggle('text-unicon-green', ok);
+            }
+            if (icon) {
+                icon.classList.toggle('fa-robot', !ok);
+                icon.classList.toggle('fa-user-check', ok);
+                icon.classList.toggle('text-unicon-green', ok);
+                icon.classList.toggle('text-gray-300', !ok);
+            }
+        });
+
+        form.addEventListener('submit', function (e) {
+            e.preventDefault();
+            if (!toggle.checked) return;
+            if (form.elements['bot_trap'] && form.elements['bot_trap'].value !== '') return;
+            submitBtn.disabled = true;
+            submitBtn.innerHTML = 'Submitting... <i class="fa-solid fa-spinner fa-spin"></i>';
+            fetch('https://formspree.io/f/xpqoanel', {
+                method: 'POST',
+                body: new FormData(form),
+                headers: { 'Accept': 'application/json' }
+            }).then(function (res) {
+                if (res.ok) {
+                    if (typeof gtag === 'function') gtag('event', 'generate_lead', { method: 'vendor_form' });
+                    document.getElementById('form-container').classList.add('hidden-state');
+                    document.getElementById('successState').classList.remove('hidden-state');
+                    form.reset();
+                } else {
+                    submitBtn.disabled = false;
+                    submitBtn.innerHTML = 'Submission Failed. Retry?';
+                }
+            }).catch(function () {
+                submitBtn.disabled = false;
+                submitBtn.innerHTML = 'Network Error. Retry?';
+            });
+        });
+    });
     </script>
 </body>
 </html>
