@@ -274,5 +274,18 @@
         });
     </script>
 
+
+    <script>
+    document.addEventListener('DOMContentLoaded', function () {
+        if (typeof gtag !== 'function') return;
+        document.querySelectorAll('a[href^="tel:"], a[href^="mailto:"], a[href*="wa.me/"]').forEach(function (a) {
+            a.addEventListener('click', function () {
+                var h = a.getAttribute('href') || '';
+                var method = h.indexOf('tel:') === 0 ? 'phone' : (h.indexOf('mailto:') === 0 ? 'email' : 'whatsapp');
+                gtag('event', 'contact_click', { method: method, page_path: location.pathname });
+            });
+        });
+    });
+    </script>
 </body>
 </html>
