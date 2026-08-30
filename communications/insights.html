@@ -74,7 +74,6 @@
         <div class="max-w-[90rem] mx-auto px-6 sm:px-8 lg:px-12 flex justify-between items-center">
             <a href="https://www.uniconsa.co.za/" target="_top" class="flex items-center gap-3 group relative z-[110]">
                 <img src="https://raw.githubusercontent.com/chrisnott-unicon/UniconLogo/main/UniconBlk.png" alt="Unicon Construction Logo" class="h-6 sm:h-8 w-auto invert brightness-0 transition-opacity group-hover:opacity-80">
-                <span class="font-extrabold text-xl sm:text-2xl tracking-tighter uppercase text-white group-hover:text-unicon-green transition-colors">UNICON</span>
                 <div class="h-4 w-[1px] bg-gray-700"></div>
                 <span class="text-[8px] sm:text-[10px] font-mono text-unicon-green tracking-[0.2em] uppercase font-bold hidden sm:inline-block">EST. 1991</span>
             </a>
@@ -159,7 +158,7 @@
         </div>
 
         <!-- Mobile menu -->
-        <div id="mobile-menu" class="fixed inset-y-0 right-0 w-80 max-w-[85vw] bg-[#0a0a0a] z-[1000] transform translate-x-full transition-transform duration-300 overflow-y-auto lg:hidden pt-24 pb-12 px-6 border-l border-gray-800 shadow-2xl flex flex-col justify-between">
+        <div id="mobile-menu" class="fixed inset-y-0 right-0 w-80 max-w-[85vw] bg-[#0a0a0a] z-[10000] transform translate-x-full transition-transform duration-300 overflow-y-auto lg:hidden pt-24 pb-12 px-6 border-l border-gray-800 shadow-2xl flex flex-col justify-between">
             <div class="flex flex-col space-y-6">
                 <!-- Company -->
                 <div>
@@ -473,14 +472,28 @@
             const mobileMenu = document.getElementById('mobile-menu');
             const mobileIcon = mobileBtn ? mobileBtn.querySelector('i') : null;
             if (mobileBtn && mobileMenu) {
-                mobileBtn.addEventListener('click', () => {
-                    const open = mobileMenu.classList.toggle('translate-x-full');
-                    mobileBtn.setAttribute('aria-expanded', String(!open));
+                const setMenu = (closed) => {
+                    mobileMenu.classList.toggle('translate-x-full', closed);
+                    mobileBtn.setAttribute('aria-expanded', String(!closed));
                     if (mobileIcon) {
-                        mobileIcon.classList.toggle('fa-xmark', !open);
-                        mobileIcon.classList.toggle('fa-bars', open);
+                        mobileIcon.classList.toggle('fa-xmark', !closed);
+                        mobileIcon.classList.toggle('fa-bars', closed);
+                    }
+                };
+                mobileBtn.addEventListener('click', (e) => {
+                    e.stopPropagation();
+                    setMenu(!mobileMenu.classList.contains('translate-x-full'));
+                });
+                // Tapping a link or anywhere outside should dismiss the panel;
+                // without this the only way out is finding the hamburger again.
+                mobileMenu.querySelectorAll('a').forEach((a) => a.addEventListener('click', () => setMenu(true)));
+                document.addEventListener('click', (e) => {
+                    if (!mobileMenu.classList.contains('translate-x-full')
+                        && !mobileMenu.contains(e.target) && !mobileBtn.contains(e.target)) {
+                        setMenu(true);
                     }
                 });
+                document.addEventListener('keydown', (e) => { if (e.key === 'Escape') setMenu(true); });
             }
 
             // Keep the WhatsApp button clear of the consent banner, which
