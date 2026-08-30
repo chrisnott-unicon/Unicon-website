@@ -93,7 +93,10 @@ FOOTER_COMPANY = [
     ("Contact Us", "contact.html"),
 ]
 
-LOGO = "https://raw.githubusercontent.com/chrisnott-unicon/UniconLogo/main/UniconBlk.png"
+# Served through the wsrv.nl image CDN: resized and WebP-encoded rather than
+# the full-resolution PNG, and cached at the edge instead of hitting
+# raw.githubusercontent.com on every page view.
+LOGO = "https://wsrv.nl/?url=raw.githubusercontent.com/chrisnott-unicon/UniconLogo/main/UniconBlk.png&w=200&output=webp&q=75"
 MAP = "https://share.google/XC0JuqEbN4XYJeM5k"
 PHONE_HREF = "tel:+27664834709"
 PHONE_TEXT = "+27 66 483 4709"
@@ -129,7 +132,6 @@ def nav(page: str) -> str:
         '        <div class="max-w-[90rem] mx-auto px-6 sm:px-8 lg:px-12 flex justify-between items-center">',
         f'            <a href="{u("index.html")}" target="_top" class="flex items-center gap-3 group relative z-[110]">',
         f'                <img src="{LOGO}" alt="Unicon Construction Logo" class="h-6 sm:h-8 w-auto invert brightness-0 transition-opacity group-hover:opacity-80">',
-        '                <span class="font-extrabold text-xl sm:text-2xl tracking-tighter uppercase text-white group-hover:text-unicon-green transition-colors">UNICON</span>',
         '                <div class="h-4 w-[1px] bg-gray-700"></div>',
         '                <span class="text-[8px] sm:text-[10px] font-mono text-unicon-green tracking-[0.2em] uppercase font-bold hidden sm:inline-block">EST. 1991</span>',
         '            </a>',
@@ -170,7 +172,7 @@ def nav(page: str) -> str:
         '        </div>',
         '',
         '        <!-- Mobile menu -->',
-        '        <div id="mobile-menu" class="fixed inset-y-0 right-0 w-80 max-w-[85vw] bg-[#0a0a0a] z-[1000] transform translate-x-full transition-transform duration-300 overflow-y-auto lg:hidden pt-24 pb-12 px-6 border-l border-gray-800 shadow-2xl flex flex-col justify-between">',
+        '        <div id="mobile-menu" class="fixed inset-y-0 right-0 w-80 max-w-[85vw] bg-[#0a0a0a] z-[10000] transform translate-x-full transition-transform duration-300 overflow-y-auto lg:hidden pt-24 pb-12 px-6 border-l border-gray-800 shadow-2xl flex flex-col justify-between">',
         '            <div class="flex flex-col space-y-6">',
     ]
     for label, hub, subs in MENU:
