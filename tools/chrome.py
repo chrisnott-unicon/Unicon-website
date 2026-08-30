@@ -93,7 +93,10 @@ FOOTER_COMPANY = [
     ("Contact Us", "contact.html"),
 ]
 
-LOGO = "https://raw.githubusercontent.com/chrisnott-unicon/UniconLogo/main/UniconBlk.png"
+# Served through the wsrv.nl image CDN: resized and WebP-encoded rather than
+# the full-resolution PNG, and cached at the edge instead of hitting
+# raw.githubusercontent.com on every page view.
+LOGO = "https://wsrv.nl/?url=raw.githubusercontent.com/chrisnott-unicon/UniconLogo/main/UniconBlk.png&w=200&output=webp&q=75"
 MAP = "https://share.google/XC0JuqEbN4XYJeM5k"
 PHONE_HREF = "tel:+27664834709"
 PHONE_TEXT = "+27 66 483 4709"

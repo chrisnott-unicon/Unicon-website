@@ -25,6 +25,11 @@
       gtag('config', 'G-TWWS9BQM18');
     </script>
 
+    <link rel="preconnect" href="https://cdn.tailwindcss.com">
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
+    <link rel="preconnect" href="https://wsrv.nl">
+    <link rel="dns-prefetch" href="https://raw.githubusercontent.com">
+    <link rel="dns-prefetch" href="https://www.googletagmanager.com">
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
     <script>
@@ -82,7 +87,7 @@
     <nav id="navbar" class="fixed top-0 left-0 w-full z-[100] transition-all duration-300 bg-[#0a0a0a]/95 backdrop-blur-md border-b border-gray-800 py-3 sm:py-4">
         <div class="max-w-[90rem] mx-auto px-6 sm:px-8 lg:px-12 flex justify-between items-center">
             <a href="https://www.uniconsa.co.za/" target="_top" class="flex items-center gap-3 group relative z-[110]">
-                <img src="https://raw.githubusercontent.com/chrisnott-unicon/UniconLogo/main/UniconBlk.png" alt="Unicon Construction Logo" class="h-6 sm:h-8 w-auto invert brightness-0 transition-opacity group-hover:opacity-80">
+                <img src="https://wsrv.nl/?url=raw.githubusercontent.com/chrisnott-unicon/UniconLogo/main/UniconBlk.png&w=200&output=webp&q=75" alt="Unicon Construction Logo" class="h-6 sm:h-8 w-auto invert brightness-0 transition-opacity group-hover:opacity-80">
                 <div class="h-4 w-[1px] bg-gray-700"></div>
                 <span class="text-[8px] sm:text-[10px] font-mono text-unicon-green tracking-[0.2em] uppercase font-bold hidden sm:inline-block">EST. 1991</span>
             </a>
@@ -310,7 +315,7 @@
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-12 lg:gap-16 mb-16">
                 <div class="lg:col-span-4">
                     <div class="flex items-center gap-4 mb-8">
-                        <img src="https://raw.githubusercontent.com/chrisnott-unicon/UniconLogo/main/UniconBlk.png" alt="Unicon Construction Logo" class="h-10 md:h-12 w-auto">
+                        <img src="https://wsrv.nl/?url=raw.githubusercontent.com/chrisnott-unicon/UniconLogo/main/UniconBlk.png&w=200&output=webp&q=75" alt="Unicon Construction Logo" class="h-10 md:h-12 w-auto">
                         <div class="h-6 w-[1px] bg-unicon-border ml-2"></div>
                         <span class="text-[10px] font-mono text-unicon-green tracking-[0.2em] uppercase font-bold">EST. 1991</span>
                     </div>
@@ -656,6 +661,21 @@
             }
         });
     </script>
+    <script>
+    // Phone, WhatsApp and email are the main enquiry routes besides the form;
+    // without this none of them are visible in analytics. Runs inline at end of
+    // body (DOM already parsed) so the page keeps a single DOMContentLoaded.
+    (function () {
+        if (typeof gtag !== 'function') return;
+        document.querySelectorAll('a[href^="tel:"], a[href^="mailto:"], a[href*="wa.me/"]').forEach(function (a) {
+            a.addEventListener('click', function () {
+                var h = a.getAttribute('href') || '';
+                var m = h.indexOf('tel:') === 0 ? 'phone' : (h.indexOf('mailto:') === 0 ? 'email' : 'whatsapp');
+                gtag('event', 'contact_click', { method: m, page_path: location.pathname });
+            });
+        });
+    })();
+    </script>
 </body>
 </html>
 ```
@@ -665,9 +685,9 @@ With this incredible arsenal of heavy plant photos, I highly recommend we swap o
 
 If you open your `index.html` file, look for this line (around line 348 in the HERO SECTION):
 ```html
-<img src="https://raw.githubusercontent.com/chrisnott-unicon/bestphotos/main/unicon-construction-bridge-installation-crane-lift.jpg" ... >
+<img decoding="async" fetchpriority="high" src="https://wsrv.nl/?url=raw.githubusercontent.com/chrisnott-unicon/bestphotos/main/unicon-construction-bridge-installation-crane-lift.jpg&w=1400&output=webp&q=75" ... >
 ```
 
 Replace that image URL with this stunning aerial drone shot of the mass earthworks:
 ```html
-<img src="https://raw.githubusercontent.com/chrisnott-unicon/Unicon-earthworks/main/unicon-construction-aerial-excavation-earthmoving-site-IMG_5067.JPG" ... >
+<img decoding="async" loading="lazy" src="https://wsrv.nl/?url=raw.githubusercontent.com/chrisnott-unicon/Unicon-earthworks/main/unicon-construction-aerial-excavation-earthmoving-site-IMG_5067.JPG&w=1400&output=webp&q=75" ... >

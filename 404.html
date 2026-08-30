@@ -17,6 +17,11 @@
       gtag('config', 'G-TWWS9BQM18');
     </script>
 
+    <link rel="preconnect" href="https://cdn.tailwindcss.com">
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
+    <link rel="preconnect" href="https://wsrv.nl">
+    <link rel="dns-prefetch" href="https://raw.githubusercontent.com">
+    <link rel="dns-prefetch" href="https://www.googletagmanager.com">
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
     <script>
@@ -80,5 +85,20 @@
             </div>
         </div>
     </main>
+    <script>
+    // Phone, WhatsApp and email are the main enquiry routes besides the form;
+    // without this none of them are visible in analytics. Runs inline at end of
+    // body (DOM already parsed) so the page keeps a single DOMContentLoaded.
+    (function () {
+        if (typeof gtag !== 'function') return;
+        document.querySelectorAll('a[href^="tel:"], a[href^="mailto:"], a[href*="wa.me/"]').forEach(function (a) {
+            a.addEventListener('click', function () {
+                var h = a.getAttribute('href') || '';
+                var m = h.indexOf('tel:') === 0 ? 'phone' : (h.indexOf('mailto:') === 0 ? 'email' : 'whatsapp');
+                gtag('event', 'contact_click', { method: m, page_path: location.pathname });
+            });
+        });
+    })();
+    </script>
 </body>
 </html>
