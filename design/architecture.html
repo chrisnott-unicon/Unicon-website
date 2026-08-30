@@ -4,6 +4,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Architectural Planning | Unicon Construction</title>
+    <meta name="description" content="Architectural planning and design-and-build documentation for turnkey projects — concept, council submission and construction drawings from the contractor that builds the work.">
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-TWWS9BQM18"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-TWWS9BQM18');
+    </script>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
     <script>
@@ -20,9 +28,15 @@
         .no-scrollbar::-webkit-scrollbar { display: none; }
         @keyframes fadeUp { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: translateY(0); } }
         .animate-fade-up { animation: fadeUp 1s cubic-bezier(0.16, 1, 0.3, 1) forwards; opacity: 0; }
+        .whatsapp-fab { position: fixed; bottom: calc(30px + env(safe-area-inset-bottom)); right: 30px; background-color: #25D366; color: white; width: 60px; height: 60px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 32px; box-shadow: 0 4px 15px rgba(0,0,0,0.3); z-index: 99999; transition: transform 0.3s ease; text-decoration: none; }
+        .whatsapp-fab:hover { transform: scale(1.1); }
     </style>
 </head>
 <body class="font-sans pt-16 sm:pt-20">
+
+    <a href="https://wa.me/27664834709?text=Hello%20Unicon,%20I%20would%20like%20to%20discuss%20Architectural%20Planning." target="_blank" class="whatsapp-fab" aria-label="Chat with us on WhatsApp">
+        <i class="fa-brands fa-whatsapp"></i>
+    </a>
 
     <nav id="navbar" class="fixed top-0 left-0 w-full z-[100] transition-all duration-300 bg-[#0a0a0a]/95 backdrop-blur-md border-b border-gray-800 py-3 sm:py-4">
         <div class="max-w-[90rem] mx-auto px-6 sm:px-8 lg:px-12 flex justify-between items-center">
@@ -122,6 +136,32 @@
             <a href="/contact.html" class="px-10 py-4 bg-unicon-green text-white font-bold uppercase tracking-widest text-xs hover:bg-white hover:text-unicon-black transition-colors">Book a Consultation</a>
         </div>
     </section>
+
+
+    <!-- TENDER / TURNKEY CTA -->
+    <section class="py-16 bg-unicon-slate border-t border-unicon-border">
+        <div class="max-w-4xl mx-auto px-6 text-center">
+            <p class="text-[10px] font-mono text-unicon-green uppercase tracking-[0.3em] font-bold mb-4">Design-and-Build // Turnkey EPC</p>
+            <h2 class="text-2xl sm:text-3xl font-extrabold tracking-tight uppercase leading-none mb-4 text-unicon-black">One Team From Drawing To Handover.</h2>
+            <p class="text-gray-600 font-light text-base mb-8 max-w-2xl mx-auto">Our design division works inside the same company that builds the work — CIDB 7CE // 7GB graded, Level 2 B-BBEE. Invite Unicon to tender or appoint us turnkey.</p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
+                <a href="/contact.html" class="px-8 py-4 bg-unicon-black text-white font-bold uppercase tracking-widest text-xs hover:bg-unicon-green transition-colors inline-block w-full sm:w-auto">Invite Unicon to Tender</a>
+                <a href="tel:+27664834709" class="px-8 py-4 border border-unicon-border bg-white text-unicon-black font-bold uppercase tracking-widest text-xs hover:border-unicon-green hover:text-unicon-green transition-colors inline-block w-full sm:w-auto"><i class="fa-solid fa-phone mr-2"></i>+27 66 483 4709</a>
+            </div>
+        </div>
+    </section>
+
+    <footer class="py-10 bg-white border-t border-unicon-border text-center">
+        <p class="text-[10px] text-gray-400 uppercase tracking-widest">© <span id="year-footer"></span> Unicon Construction SA &nbsp;//&nbsp; CIDB 7CE // 7GB &nbsp;//&nbsp; Level 2 B-BBEE</p>
+        <p class="mt-3 text-[10px] uppercase tracking-widest space-x-4">
+            <a href="/index.html" class="text-unicon-green hover:underline">Home</a>
+            <a href="/design.html" class="text-unicon-green hover:underline">Design Division</a>
+            <a href="/projects.html" class="text-unicon-green hover:underline">Portfolio</a>
+            <a href="/contact.html" class="text-unicon-green hover:underline">Contact</a>
+        </p>
+    </footer>
+
+    <script>document.getElementById('year-footer').textContent = new Date().getFullYear();</script>
 
 </body>
 </html>
