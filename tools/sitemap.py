@@ -80,11 +80,24 @@ def canonical_target(path: str) -> str | None:
     return m.group(1).replace(BASE + "/", "").replace(BASE, "")
 
 
+def is_unapproved_draft(path: str) -> bool:
+    if not path.startswith("communications/insights/"):
+        return False
+    src = open(os.path.join(ROOT, path), encoding="utf-8").read()
+    m = re.search(r'<meta name="unicon:review-status" content="([^"]*)"', src)
+    return bool(m) and m.group(1) != "approved"
+
+
 def pages() -> list[str]:
     found = []
     for f in glob.glob(os.path.join(ROOT, "**", "*.html"), recursive=True):
         rel = os.path.relpath(f, ROOT).replace(os.sep, "/")
         if rel in EXCLUDE:
+            continue
+        # An Insights article awaiting review is a real file on a static host,
+        # so it is reachable by anyone with the URL. Advertising it in the
+        # sitemap would invite Google to index it before a human approved it.
+        if is_unapproved_draft(rel):
             continue
         target = canonical_target(rel)
         # "" is the canonical form of index.html

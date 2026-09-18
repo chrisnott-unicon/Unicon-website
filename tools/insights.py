@@ -10,7 +10,7 @@ Usage:
     python3 tools/insights.py check     validate every article's metadata
     python3 tools/insights.py build     regenerate the index cards and feed.xml
     python3 tools/insights.py new --slug <slug> --title "..." --category "..." \
-                                  --summary "..." --image <url>
+                                  --summary "..." --image <url> [--page-title "..."]
 """
 from __future__ import annotations
 
@@ -105,6 +105,19 @@ def validate(items: list[dict]) -> list[str]:
             problems.append(
                 f"{name}: carries a personal byline ({author.get('name')}) but is not approved. "
                 f"A named byline may only be published after review.")
+        # A draft carries noindex so it cannot be indexed before review. That
+        # tag has to come off when it is approved, or the published article
+        # stays invisible to search.
+        src = open(a["_path"], encoding="utf-8").read()
+        noindex = 'name="robots"' in src and "noindex" in src
+        if st == "approved" and noindex:
+            problems.append(
+                f"{name}: approved but still carries <meta name=\"robots\" content=\"noindex\">. "
+                f"Remove it, or the article will never appear in search.")
+        if st != "approved" and not noindex:
+            problems.append(
+                f"{name}: is a draft but has no noindex tag, so a crawler that finds "
+                f"the URL may index it before review.")
         if d in seen and d:
             pass  # same-day posts are fine
         seen[d] = name
@@ -214,7 +227,8 @@ def build_feed(items: list[dict]) -> bool:
 TEMPLATE_SOURCE = os.path.join(ARTICLE_DIR, "40ml-reservoirs.html")
 
 
-def scaffold(slug, title, category, summary, image):
+def scaffold(slug, title, category, summary, image, page_title=None):
+    page_title = page_title or f"{title} | Unicon"
     dest = os.path.join(ARTICLE_DIR, f"{slug}.html")
     if os.path.exists(dest):
         raise SystemExit(f"{dest} already exists")
@@ -222,9 +236,25 @@ def scaffold(slug, title, category, summary, image):
     today = datetime.now(SAST).strftime("%Y-%m-%d")
     old = read_meta(TEMPLATE_SOURCE)
 
+    # The image appears twice: the original URL in the JSON-LD and og:image, and
+    # the CDN form of it in the rendered <img>. Replacing only the first leaves
+    # the new article showing the template's photograph.
     src = src.replace(old["image"], image)
+    cdn_path = old["image"].replace("https://raw.githubusercontent.com/", "")
+    src = src.replace(cdn_path, image.replace("https://raw.githubusercontent.com/", ""))
+
     src = src.replace(old["headline"], title)
     src = src.replace(old["description"], summary)
+
+    # <title>, og:description and the hero standfirst are written by hand in the
+    # template and do not repeat the headline, so a plain replace never reaches
+    # them. Left alone they ship the previous article's words.
+    src = re.sub(r"<title>.*?</title>", f"<title>{page_title}</title>", src, count=1, flags=re.S)
+    src = re.sub(r'(<p class="text-lg md:text-xl text-gray-300 font-light leading-relaxed '
+                 r'border-l-4 border-unicon-green pl-4">\s*\n\s*)[^<]*',
+                 lambda m: m.group(1) + summary, src, count=1)
+    src = re.sub(r'(<meta property="og:description" content=")[^"]*(">)',
+                 lambda m: m.group(1) + summary + m.group(2), src, count=1)
     src = src.replace(f'"{old["articleSection"]}"', f'"{category}"')
     src = src.replace(f">{old['articleSection']}<", f">{category}<")
     # Dates appear in three forms: the ISO value in JSON-LD and <time datetime>,
@@ -241,7 +271,14 @@ def scaffold(slug, title, category, summary, image):
     src = re.sub(r'(<time datetime=")\d{4}-\d{2}-\d{2}(")', rf'\g<1>{today}\g<2>', src)
     src = src.replace(f"insights/{old['_slug']}.html", f"insights/{slug}.html")
 
-    body = re.search(r'(<div class="max-w-\[50rem\] mx-auto px-6 sm:px-8 article-body">)(.*?)(\n\s*</div>\s*</article>)', src, re.S)
+    # The template wraps its prose in <article class="...article-body">. This
+    # regex looked for a <div>, never matched, and so every new article shipped
+    # carrying the whole of the template article's body copy.
+    body = re.search(r'(<article class="max-w-\[50rem\] mx-auto px-6 sm:px-8 article-body">)'
+                     r'(.*?)(\n\s*</article>)', src, re.S)
+    if not body:
+        raise SystemExit("could not find the article body in the template - "
+                         "check the container markup in " + TEMPLATE_SOURCE)
     if body:
         src = src[:body.start(2)] + (
             "\n\n            <p>TODO: opening paragraph.</p>\n\n"
@@ -262,6 +299,10 @@ def scaffold(slug, title, category, summary, image):
                           '    <link rel="canonical"', 1)
 
     open(dest, "w", encoding="utf-8").write(src)
+    if len(page_title) > 60:
+        print(f"WARNING: <title> is {len(page_title)} characters, over the 60-character limit "
+              f"tools/consistency.py enforces. Pass --page-title with something shorter.",
+              file=sys.stderr)
     print(f"created {os.path.relpath(dest, ROOT)} as a DRAFT.")
     print("  1. edit the body")
     print("  2. python3 tools/insights.py build")
@@ -278,10 +319,14 @@ def main():
     n = sub.add_parser("new")
     for f in ("slug", "title", "category", "summary", "image"):
         n.add_argument(f"--{f}", required=True)
+    n.add_argument("--page-title",
+                   help="<title> text; defaults to '<headline> | Unicon' and must stay "
+                        "under the 60 characters tools/consistency.py enforces")
     args = ap.parse_args()
 
     if args.cmd == "new":
-        scaffold(args.slug, args.title, args.category, args.summary, args.image)
+        scaffold(args.slug, args.title, args.category, args.summary, args.image,
+                 args.page_title)
         return
 
     items = load_all()
