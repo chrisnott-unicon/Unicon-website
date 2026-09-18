@@ -89,8 +89,15 @@ def e(x) -> str:
 
 
 def img(pair, cls, eager=False):
+    """Serve through the image CDN, as the rest of the site does.
+
+    Emitting the raw githubusercontent URL here would reinstate the
+    full-resolution original on every build and undo the performance pass.
+    """
     src, alt = pair
-    return (f'<img src="{RAW}{src}" alt="{e(alt)}" class="{cls}" '
+    cdn = f"https://wsrv.nl/?url=raw.githubusercontent.com/chrisnott-unicon/{src}&w=1400&output=webp&q=75"
+    priority = 'fetchpriority="high" ' if eager else ""
+    return (f'<img {priority}src="{cdn}" alt="{e(alt)}" class="{cls}" '
             f'loading="{"eager" if eager else "lazy"}" decoding="async">')
 
 

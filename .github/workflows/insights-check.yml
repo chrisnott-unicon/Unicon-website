@@ -68,6 +68,9 @@ jobs:
       - name: Check the Build capability pages match the project database
         run: python3 tools/build_pages.py check
 
+      - name: Check the structured data has not drifted
+        run: python3 tools/schema.py check
+
       - name: Check site-wide consistency and links
         run: python3 tools/consistency.py
 

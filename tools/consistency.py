@@ -129,6 +129,15 @@ def main() -> None:
         if 'href="whatsapp://' in s:
             fails.append(f"{f}: whatsapp:// link - desktop browsers ignore it, use https://wa.me/")
 
+        # The button sits on top of the consent banner unless it is lifted out of
+        # the way, which costs the banner part of its Accept button on mobile.
+        if "whatsapp-fab" in s and 'id="cookie-banner"' in s:
+            if "var(--fab-lift" not in s:
+                fails.append(f"{f}: WhatsApp button does not reserve room for the consent banner "
+                             f"(missing var(--fab-lift) in its CSS rule)")
+            elif "'--fab-lift'" not in s and '"--fab-lift"' not in s:
+                fails.append(f"{f}: nothing sets --fab-lift, so the WhatsApp button never moves")
+
     if fails:
         print(f"{len(fails)} consistency problem(s):", file=sys.stderr)
         for x in fails:
