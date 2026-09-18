@@ -52,7 +52,7 @@
         .link-underline::after { content: ''; position: absolute; width: 0; height: 1px; bottom: -2px; left: 0; background-color: #475c4d; transition: width 0.3s ease; }
         .link-underline:hover::after { width: 100%; }
         
-        .whatsapp-fab { position: fixed; bottom: calc(30px + env(safe-area-inset-bottom)); right: 30px; background-color: #25D366; color: white; width: 60px; height: 60px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 32px; box-shadow: 0 4px 15px rgba(0,0,0,0.3); z-index: 99999; transition: transform 0.3s ease; text-decoration: none; }
+        .whatsapp-fab { position: fixed; bottom: calc(30px + env(safe-area-inset-bottom) + var(--fab-lift, 0px)); right: 30px; background-color: #25D366; color: white; width: 60px; height: 60px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 32px; box-shadow: 0 4px 15px rgba(0,0,0,0.3); z-index: 9998; transition: transform 0.3s ease, bottom 0.3s ease; text-decoration: none; }
         .whatsapp-fab:hover { transform: scale(1.1); }
         .no-scrollbar::-webkit-scrollbar { display: none; }
         .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
@@ -132,7 +132,8 @@
                         <div class="absolute -top-4 left-0 w-full h-4 bg-transparent"></div>
                         <a href="https://www.uniconsa.co.za/design/architecture.html" target="_top" class="block px-5 py-3 text-[10px] uppercase tracking-widest text-gray-400 hover:text-white hover:bg-unicon-green/20 border-b border-gray-800">Architectural Plan</a>
                         <a href="https://www.uniconsa.co.za/design/civil-engineering.html" target="_top" class="block px-5 py-3 text-[10px] uppercase tracking-widest text-gray-400 hover:text-white hover:bg-unicon-green/20 border-b border-gray-800">Civil Profiling</a>
-                        <a href="https://www.uniconsa.co.za/design/structural-engineering.html" target="_top" class="block px-5 py-3 text-[10px] uppercase tracking-widest text-gray-400 hover:text-white hover:bg-unicon-green/20 border-b border-gray-800">Structural & MEP</a>
+                        <a href="https://www.uniconsa.co.za/design/structural-engineering.html" target="_top" class="block px-5 py-3 text-[10px] uppercase tracking-widest text-gray-400 hover:text-white hover:bg-unicon-green/20 border-b border-gray-800">Structural Design</a>
+                        <a href="https://www.uniconsa.co.za/design/mechanical-electrical-engineering-mep.html" target="_top" class="block px-5 py-3 text-[10px] uppercase tracking-widest text-gray-400 hover:text-white hover:bg-unicon-green/20 border-b border-gray-800">Mechanical & Electrical</a>
                         <a href="https://www.uniconsa.co.za/design/constructability.html" target="_top" class="block px-5 py-3 text-[10px] uppercase tracking-widest text-gray-400 hover:text-white hover:bg-unicon-green/20">BIM & Constructability</a>
                     </div>
                 </div>
@@ -212,7 +213,8 @@
                     <div class="flex flex-col space-y-3 pl-2">
                         <a href="https://www.uniconsa.co.za/design/architecture.html" target="_top" class="text-sm font-bold uppercase tracking-wide text-white hover:text-unicon-green">Architectural Plan</a>
                         <a href="https://www.uniconsa.co.za/design/civil-engineering.html" target="_top" class="text-sm font-bold uppercase tracking-wide text-white hover:text-unicon-green">Civil Profiling</a>
-                        <a href="https://www.uniconsa.co.za/design/structural-engineering.html" target="_top" class="text-sm font-bold uppercase tracking-wide text-white hover:text-unicon-green">Structural & MEP</a>
+                        <a href="https://www.uniconsa.co.za/design/structural-engineering.html" target="_top" class="text-sm font-bold uppercase tracking-wide text-white hover:text-unicon-green">Structural Design</a>
+                        <a href="https://www.uniconsa.co.za/design/mechanical-electrical-engineering-mep.html" target="_top" class="text-sm font-bold uppercase tracking-wide text-white hover:text-unicon-green">Mechanical & Electrical</a>
                         <a href="https://www.uniconsa.co.za/design/constructability.html" target="_top" class="text-sm font-bold uppercase tracking-wide text-white hover:text-unicon-green">BIM & Constructability</a>
                     </div>
                 </div>
@@ -349,7 +351,7 @@
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-12 lg:gap-16 mb-16">
                 <div class="lg:col-span-4">
                     <div class="flex items-center gap-4 mb-8">
-                        <img src="https://wsrv.nl/?url=raw.githubusercontent.com/chrisnott-unicon/UniconLogo/main/UniconBlk.png&w=200&output=webp&q=75" alt="Unicon Construction Logo" class="h-10 md:h-12 w-auto">
+                        <img src="https://wsrv.nl/?url=raw.githubusercontent.com/chrisnott-unicon/UniconLogo/main/UniconBlk.png&w=200&output=webp&q=75" alt="Unicon Construction Logo" class="h-10 md:h-12 w-auto" loading="lazy" decoding="async">
                         <div class="h-6 w-[1px] bg-unicon-border ml-2"></div>
                         <span class="text-[10px] font-mono text-unicon-green tracking-[0.2em] uppercase font-bold">EST. 1991</span>
                     </div>
@@ -502,16 +504,26 @@
             }
 
             // Cookie Banner Logic
-            const cookieBanner = document.getElementById("cookie-banner");
-            const acceptBtn = document.getElementById("accept-cookies");
-
-            if (!localStorage.getItem("unicon_cookie_consent")) {
-                setTimeout(() => { cookieBanner.classList.remove("translate-y-full"); }, 1500);
+            // Keep the WhatsApp button clear of the consent banner, which
+            // otherwise sits underneath it and loses part of its Accept button.
+            const banner = document.getElementById('cookie-banner');
+            const acceptBtn = document.getElementById('accept-cookies');
+            const lift = () => {
+                document.documentElement.style.setProperty(
+                    '--fab-lift', banner && !banner.classList.contains('translate-y-full')
+                        ? banner.offsetHeight + 16 + 'px' : '0px');
+            };
+            if (banner && acceptBtn) {
+                if (!localStorage.getItem('unicon_cookie_consent')) {
+                    setTimeout(() => { banner.classList.remove('translate-y-full'); lift(); }, 1500);
+                }
+                acceptBtn.addEventListener('click', () => {
+                    localStorage.setItem('unicon_cookie_consent', 'true');
+                    banner.classList.add('translate-y-full');
+                    lift();
+                });
+                window.addEventListener('resize', lift);
             }
-            acceptBtn.addEventListener("click", function() {
-                localStorage.setItem("unicon_cookie_consent", "true");
-                cookieBanner.classList.add("translate-y-full");
-            });
         });
     </script>
 

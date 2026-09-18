@@ -42,7 +42,8 @@ MENU = [
     ("Design", "design.html", [
         ("Architectural Plan", "design/architecture.html"),
         ("Civil Profiling", "design/civil-engineering.html"),
-        ("Structural & MEP", "design/structural-engineering.html"),
+        ("Structural Design", "design/structural-engineering.html"),
+        ("Mechanical & Electrical", "design/mechanical-electrical-engineering-mep.html"),
         ("BIM & Constructability", "design/constructability.html"),
     ]),
     ("Build", "build.html", [
@@ -213,7 +214,7 @@ def footer(page: str) -> str:
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-12 lg:gap-16 mb-16">
                 <div class="lg:col-span-4">
                     <div class="flex items-center gap-4 mb-8">
-                        <img src="{LOGO}" alt="Unicon Construction Logo" class="h-10 md:h-12 w-auto">
+                        <img src="{LOGO}" alt="Unicon Construction Logo" class="h-10 md:h-12 w-auto" loading="lazy" decoding="async">
                         <div class="h-6 w-[1px] bg-unicon-border ml-2"></div>
                         <span class="text-[10px] font-mono text-unicon-green tracking-[0.2em] uppercase font-bold">EST. 1991</span>
                     </div>
