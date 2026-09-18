@@ -49,11 +49,14 @@ jobs:
       - name: Validate job openings
         run: python3 tools/careers.py check
 
-      - name: Regenerate the project page, home page and careers page
+      - name: Regenerate the generated pages
         run: |
           python3 tools/projects_page.py
           python3 tools/homepage.py build
           python3 tools/careers.py build
+          # projects_page.py rewrites projects.html wholesale, so the structured
+          # data has to be laid back down after it, not before.
+          python3 tools/schema.py build
 
       - name: Fail if generated pages were not committed
         run: |

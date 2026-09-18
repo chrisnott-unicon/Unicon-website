@@ -17,6 +17,11 @@ Types already hand-authored on a page (the home page's GeneralContractor, the
 project database's CollectionPage, the FAQ on the vendor page) are left alone
 and never duplicated.
 
+Run this after any generator that rewrites a whole page. tools/projects_page.py
+regenerates projects.html from its template, so a block written before it runs
+is discarded; the pipeline order is projects_page, homepage, careers, insights,
+chrome, build_pages, schema, sitemap.
+
 Usage:
     python3 tools/schema.py build     write the blocks
     python3 tools/schema.py check     fail if any page is out of date
