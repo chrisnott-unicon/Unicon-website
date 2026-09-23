@@ -227,8 +227,9 @@ def build_feed(items: list[dict]) -> bool:
 TEMPLATE_SOURCE = os.path.join(ARTICLE_DIR, "40ml-reservoirs.html")
 
 
-def scaffold(slug, title, category, summary, image, page_title=None):
+def scaffold(slug, title, category, summary, image, page_title=None, image_alt=None):
     page_title = page_title or f"{title} | Unicon"
+    image_alt = image_alt or title
     dest = os.path.join(ARTICLE_DIR, f"{slug}.html")
     if os.path.exists(dest):
         raise SystemExit(f"{dest} already exists")
@@ -242,6 +243,16 @@ def scaffold(slug, title, category, summary, image, page_title=None):
     src = src.replace(old["image"], image)
     cdn_path = old["image"].replace("https://raw.githubusercontent.com/", "")
     src = src.replace(cdn_path, image.replace("https://raw.githubusercontent.com/", ""))
+
+    # The hero <img> carries alt text written for the template's photograph.
+    # Left alone, every new article describes a picture it is not showing.
+    src = re.sub(r'(<img[^>]*?fetchpriority="high"[^>]*?alt=")[^"]*(")',
+                 lambda m: m.group(1) + html.escape(image_alt, quote=True) + m.group(2),
+                 src, count=1)
+    alt_json = html.escape(image_alt, quote=True)
+    src = re.sub(r'\n(\s*)"image": "',
+                 lambda m: f'\n{m.group(1)}"imageAlt": "{alt_json}",\n{m.group(1)}"image": "',
+                 src, count=1)
 
     src = src.replace(old["headline"], title)
     src = src.replace(old["description"], summary)
@@ -292,6 +303,12 @@ def scaffold(slug, title, category, summary, image, page_title=None):
                  f'<meta name="{REVIEW_META}" content="draft">', src)
     src = re.sub(rf'<meta name="{APPROVER_META}" content=".*?">',
                  f'<meta name="{APPROVER_META}" content="">', src)
+    # A draft must not be indexable. validate() enforces this in both
+    # directions, so the tag goes on at creation and comes off at approval.
+    if 'name="robots"' not in src:
+        src = src.replace('<link rel="canonical"',
+                          '<meta name="robots" content="noindex">\n    <link rel="canonical"', 1)
+
     if REVIEW_META not in src:
         src = src.replace('<link rel="canonical"',
                           f'<meta name="{REVIEW_META}" content="draft">\n'
@@ -319,6 +336,9 @@ def main():
     n = sub.add_parser("new")
     for f in ("slug", "title", "category", "summary", "image"):
         n.add_argument(f"--{f}", required=True)
+    n.add_argument("--image-alt",
+                   help="alt text for the hero image and the index card; "
+                        "defaults to the headline, which describes the article, not the photograph")
     n.add_argument("--page-title",
                    help="<title> text; defaults to '<headline> | Unicon' and must stay "
                         "under the 60 characters tools/consistency.py enforces")
@@ -326,7 +346,7 @@ def main():
 
     if args.cmd == "new":
         scaffold(args.slug, args.title, args.category, args.summary, args.image,
-                 args.page_title)
+                 args.page_title, args.image_alt)
         return
 
     items = load_all()
