@@ -241,8 +241,12 @@ def scaffold(slug, title, category, summary, image, page_title=None, image_alt=N
     # the CDN form of it in the rendered <img>. Replacing only the first leaves
     # the new article showing the template's photograph.
     src = src.replace(old["image"], image)
-    cdn_path = old["image"].replace("https://raw.githubusercontent.com/", "")
-    src = src.replace(cdn_path, image.replace("https://raw.githubusercontent.com/", ""))
+    # The rendered hero <img> goes through the image CDN, but only an image
+    # hosted on raw.githubusercontent.com can. Rewrite the whole src rather than
+    # patching the path inside it: a URL hosted anywhere else used to be spliced
+    # in after the CDN's host prefix, which 404s.
+    src = re.sub(r'(<img[^>]*?fetchpriority="high"[^>]*?\ssrc=")[^"]*(")',
+                 lambda m: m.group(1) + cdn(image, 1400) + m.group(2), src, count=1)
 
     # The hero <img> carries alt text written for the template's photograph.
     # Left alone, every new article describes a picture it is not showing.
