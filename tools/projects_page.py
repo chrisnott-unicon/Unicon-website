@@ -18,7 +18,7 @@ def _load():
     data = json.load(open(os.path.join(ROOT, "tools", "projects.json"), encoding="utf-8"))["projects"]
     return [{
         "No.": p["no"], "Project Name": p["name"], "Description": p["description"],
-        "Start": p["start"], "Duration (M)": p["duration_months"],
+        "Start": p["start"] or p["complete"], "Duration (M)": p["duration_months"],
         "Appointment Type": p["appointment"], "Contract Format": p["contract_format"],
         "Status": p["status"], "Project Employer": p["employer"],
         "Consultant Company": p["consultant"], "Project Keywords": p["keywords"],

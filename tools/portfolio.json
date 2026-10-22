@@ -2,7 +2,7 @@
   "_comment": "Derived summary of the project database, used to render home-page sections. Regenerate or edit by hand when the portfolio changes, then run: python3 tools/homepage.py build",
   "totals": {
     "projects": 106,
-    "listed": 109,
+    "listed": 111,
     "first_year": 1991,
     "latest_year": 2026,
     "years_active": 35,
