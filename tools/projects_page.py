@@ -115,6 +115,7 @@ ICON = {"Bulk Water":"fa-water","Wastewater":"fa-recycle","Bridges & Heavy Civil
 def sector_of(r):
     t = (clean(r.get("Project Name")) + " " + clean(r.get("Project Keywords")) + " " + clean(r.get("Description"))).lower()
     def has(*w): return any(x in t for x in w)
+    if has("jwe africa"): return "Commercial & Retail" if "showroom" in t else "Industrial & Agri-Processing"
     if has("wwtw","sewer","sewerage","effluent","waste water","wastewater","medical waste"): return "Wastewater"
     if has("school","college","university","student centre","media centre","classroom"):     return "Education"
     if has("clinic","hospital","medical suite","veterinary","mri","ct scanner","x-ray"):      return "Healthcare"
@@ -268,6 +269,8 @@ def note(r):
     return "" if r["verified"] else "\n            <!-- photo: representative of this discipline, not a verified photograph of this project -->"
 
 def meta_row(label, value):
+    if not value:
+        return ""
     return (f'<div class="flex justify-between gap-3"><dt class="font-mono text-[9px] uppercase tracking-widest text-gray-500">{label}</dt>'
             f'<dd class="text-right text-[10px] font-bold text-gray-200">{e(value)}</dd></div>')
 

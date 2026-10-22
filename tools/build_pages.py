@@ -253,10 +253,10 @@ def record(slug, c, picked, all_rows):
 
     rows = "".join(f'''
                         <tr class="border-b border-unicon-border last:border-0">
-                            <td class="py-3 pr-4 font-mono text-[11px] text-gray-500">{e(r["year"])}</td>
+                            <td class="py-3 pr-4 font-mono text-[11px] text-gray-500">{e(r["year"]) or "&mdash;"}</td>
                             <td class="py-3 pr-4 text-sm font-bold uppercase tracking-tight text-unicon-black">{e(r["name"])}</td>
                             <td class="py-3 pr-4 text-xs font-light text-gray-600">{e(r["employer"])}</td>
-                            <td class="py-3 text-right font-mono text-[10px] uppercase tracking-widest text-unicon-green">{e(r["band"])}</td>
+                            <td class="py-3 text-right font-mono text-[10px] uppercase tracking-widest text-unicon-green">{e(r["band"]) or "&mdash;"}</td>
                         </tr>''' for r in picked[:12])
 
     top = "".join(f'<span class="border border-unicon-border bg-white px-3 py-1.5 text-[10px] font-bold uppercase '
