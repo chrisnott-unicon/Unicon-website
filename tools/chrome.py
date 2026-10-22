@@ -122,6 +122,9 @@ def section_of(page: str) -> str | None:
         d = os.path.dirname(hub)
         if d and page.startswith(d + "/"):
             return label
+    for label, hub, subs in MENU:                       # e.g. projects/<name>.html under Portfolio
+        if any(os.path.dirname(sp) and page.startswith(os.path.dirname(sp) + "/") for _, sp in subs):
+            return label
     return None
 
 

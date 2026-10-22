@@ -130,6 +130,7 @@ def render_flagship(d: dict) -> str:
                         <p class="text-[10px] font-mono uppercase tracking-widest text-gray-400">{f['year']} · {e(f['client'])}</p>
                         <h3 class="mt-2 text-xl font-bold uppercase tracking-tight text-unicon-black">{e(f['name'])}</h3>
                         <p class="mt-3 text-sm font-light leading-relaxed text-gray-600">{e(f['detail'])}</p>
+                        {f'<a href="{BASE}/projects/{f["page"]}.html" target="_top" class="mt-4 inline-block text-[10px] font-bold uppercase tracking-widest text-unicon-green hover:text-unicon-black transition-colors">View project <i class="fa-solid fa-arrow-right ml-1"></i></a>' if f.get('page') else ''}
                     </div>
                 </article>""")
     return f"""

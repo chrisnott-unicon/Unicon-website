@@ -1,0 +1,763 @@
+{
+  "_comment": "Curated content for the eight flagship project pages. Structured facts (dates, contract form, appointment, band, employer) are read from tools/projects.json by name, so they cannot drift from the database; everything else is written here. Privacy rules of the public repo apply: no monetary values (bands only), no contact names, phone numbers or email addresses, nothing from disputes, legal or financial-account material. Brands are listed only where the project database or a project document evidences them. Representative photographs are labelled as such. Then run: python3 tools/project_pages.py build",
+  "thabazimbi-10ml-dome-roof-reservoir": {
+    "db": "Thabazimbi 10ML Reservoir with Dome Roof",
+    "title": "Thabazimbi 10ML Dome Roof Reservoir | Unicon",
+    "description": "10 ML post-tensioned concrete reservoir with a column-free dome roof at Thabazimbi, Limpopo, built by Unicon under a GCC 2010 full contract.",
+    "h1": [
+      "Thabazimbi",
+      "10ML Reservoir."
+    ],
+    "eyebrow": "Bulk Water / Limpopo",
+    "location": "Thabazimbi, Limpopo",
+    "sector": "Bulk Water",
+    "status_label": "Complete",
+    "lead": "A 10 megalitre reinforced concrete reservoir with post-tensioned walls and a free-spanning dome roof, delivered by Unicon as principal contractor for Anglo American at Thabazimbi.",
+    "image": {
+      "src": "bestphotos/main/Unicon_Water_Reservoir_Dome_Roof_Concrete_Construction_Roof_Structure_20170218_Mountain_Landscape.jpg",
+      "alt": "Reinforced concrete dome roof under construction on a circular water reservoir",
+      "verified": false
+    },
+    "overview": [
+      "Thabazimbi is a mining town in the Limpopo bushveld, and water storage there has to be reliable for people and industry alike. Unicon was appointed on a full contract to build a 10 ML reinforced concrete reservoir with post-tensioned circular walls and a dome roof that spans the whole tank without a single internal column.",
+      "A column-free dome keeps the floor of the tank clear, removes the leak paths that roof columns create and gives a roof that is structurally efficient over a large diameter. It is also among the least forgiving things to build in concrete: the walls are stressed with post-tensioning tendons, the roof is formed and poured as a single geometric shell, and every pour has to be tested, recorded and signed off before the next one starts."
+    ],
+    "scope": [
+      {
+        "title": "Recorded scope",
+        "items": [
+          "10 ML reinforced concrete reservoir",
+          "Post-tensioned concrete walls",
+          "Free-spanning dome roof with no column supports",
+          "Connecting pipework and chambers"
+        ]
+      },
+      {
+        "title": "Unicon's standard controls on this type of work",
+        "items": [
+          "Concrete cube testing, slump and temperature records for every pour",
+          "Watertightness testing of the completed reservoir",
+          "As-built records and handover"
+        ]
+      }
+    ],
+    "brands": [
+      {
+        "name": "Anglo American",
+        "role": "Client",
+        "note": "Global mining group; the client on this contract."
+      },
+      {
+        "name": "Tusk Construction Support Services",
+        "role": "Consultant",
+        "note": "Appointed consultant on the contract."
+      }
+    ],
+    "capabilities": [
+      [
+        "Bulk Water Construction",
+        "build/water-engineering.html"
+      ],
+      [
+        "Structural Concrete",
+        "build/structural-engineering.html"
+      ],
+      [
+        "Mining Infrastructure",
+        "build/mining-infrastructure.html"
+      ]
+    ],
+    "related": [
+      "tinley-manor-wwtw-club-med",
+      "makhathini-drainage-canal-jozini"
+    ],
+    "faq": [
+      {
+        "q": "What is a post-tensioned concrete reservoir?",
+        "a": "The circular wall contains steel tendons that are tensioned after the concrete has gained strength. This pre-compresses the wall so it stays in compression when the stored water pushes outwards, which keeps cracking, and therefore leakage, under control."
+      },
+      {
+        "q": "Why build a dome roof without columns?",
+        "a": "With no internal columns the roof is a self-supporting shell. The tank floor stays clear, there are fewer penetrations to waterproof, and the structure is efficient over a large span. It does demand precise formwork and disciplined concrete placement."
+      },
+      {
+        "q": "Was Unicon the principal contractor on this reservoir?",
+        "a": "Yes. Unicon held the full contract under GCC 2010 (General Conditions of Contract for Construction Works), taking responsibility for the programme, the quality of the concrete works and the subcontractors."
+      },
+      {
+        "q": "Does Unicon build water reservoirs for mines and municipalities?",
+        "a": "Yes. Reservoirs and bulk water works are the largest part of the Unicon portfolio, with fifty projects in the project database for municipalities, water boards and industrial clients."
+      }
+    ],
+    "wa": "Hello Unicon, I would like to discuss a reservoir project similar to Thabazimbi."
+  },
+  "tinley-manor-wwtw-club-med": {
+    "db": "Tinley Manor WWTW (Club Med Resort)",
+    "title": "Tinley Manor WWTW for Club Med Resort | Unicon",
+    "description": "New wastewater treatment works with reedbeds for the Club Med resort development at Tinley Manor, Ballito, built by Unicon under a GCC 2015 full contract.",
+    "h1": [
+      "Tinley Manor",
+      "Wastewater Works."
+    ],
+    "eyebrow": "Wastewater / Ballito, KwaZulu-Natal",
+    "location": "Tinley Manor, Ballito, KwaZulu-Natal",
+    "sector": "Wastewater",
+    "status_label": "",
+    "lead": "A new wastewater treatment works, including reedbeds, built by Unicon as principal contractor to serve the Club Med resort development on the KwaZulu-Natal North Coast.",
+    "image": {
+      "src": "bestphotos/main/Construction-Site-Concrete-Pour-Reedbeds-Wastewater%20Treatment-Club%20Med-Tinley%20Manor-Ballito-20250312.JPG",
+      "alt": "Concrete pour for the reedbed wastewater treatment works at Club Med Tinley Manor, Ballito",
+      "verified": true
+    },
+    "overview": [
+      "A resort of this size needs its own sanitation infrastructure, and it needs it ready before the doors open. Unicon was appointed on a full contract to construct the proposed new wastewater treatment works for the Club Med hotel development at Tinley Manor, near Ballito.",
+      "The works combine reinforced concrete process structures with pipework, valves, pumps and steel, and include reedbed treatment cells. The programme was short, about five months, which made early procurement of pumps and valves and tight coordination of concrete pours the critical path."
+    ],
+    "scope": [
+      {
+        "title": "Recorded scope",
+        "items": [
+          "New wastewater treatment works for the Club Med hotel development",
+          "Reedbed treatment cells, with concrete pours placed in March 2025",
+          "Concrete structures, pipework, valves, pumps and steelwork",
+          "Programme of about five months from October 2024"
+        ]
+      },
+      {
+        "title": "Unicon's standard controls on this type of work",
+        "items": [
+          "Concrete cube testing and records for every pour",
+          "Watertightness testing of liquid-retaining structures",
+          "As-built records and handover"
+        ]
+      }
+    ],
+    "brands": [
+      {
+        "name": "Club Med",
+        "role": "Resort operator",
+        "note": "International resort brand; the works serve its hotel development at Tinley Manor."
+      },
+      {
+        "name": "Tinley Leisure",
+        "role": "Employer",
+        "note": "Development company for the resort."
+      }
+    ],
+    "capabilities": [
+      [
+        "Bulk Water and Wastewater",
+        "build/water-engineering.html"
+      ],
+      [
+        "Structural Concrete",
+        "build/structural-engineering.html"
+      ],
+      [
+        "Project Management",
+        "manage/project-management.html"
+      ]
+    ],
+    "related": [
+      "thabazimbi-10ml-dome-roof-reservoir",
+      "makhathini-drainage-canal-jozini"
+    ],
+    "faq": [
+      {
+        "q": "What does a wastewater treatment works for a resort involve?",
+        "a": "Reinforced concrete treatment structures, interconnecting pipework, pumps and valves, and the treatment process itself. At Tinley Manor this includes reedbeds, which treat effluent biologically in planted, lined cells."
+      },
+      {
+        "q": "What contract form was used?",
+        "a": "GCC 2015, the General Conditions of Contract for Construction Works, on a full contract. Unicon was the principal contractor and carried programme, quality and subcontractor coordination."
+      },
+      {
+        "q": "Can Unicon build treatment works for private developers as well as municipalities?",
+        "a": "Yes. Most Unicon wastewater work has been for municipalities and water boards, but the same disciplines apply to private developments, where the works usually have to be ready before the buildings they serve."
+      }
+    ],
+    "wa": "Hello Unicon, I would like to discuss a wastewater treatment works similar to Tinley Manor."
+  },
+  "howick-on-main-retail-centre": {
+    "db": "Howick Main - New Retail Centre",
+    "title": "Howick on Main Retail Centre Construction | Unicon",
+    "description": "7,600 m² Howick on Main shopping centre with Checkers, Dis-Chem, Ocean Basket, Spur, Mugg & Bean and Mr Price, managed by Unicon under JBCC 6.2.",
+    "h1": [
+      "Howick",
+      "On Main."
+    ],
+    "eyebrow": "Retail / Howick, KwaZulu-Natal",
+    "location": "Howick, KwaZulu-Natal Midlands",
+    "sector": "Retail",
+    "status_label": "",
+    "lead": "A 7,600 m² retail centre with Checkers, Dis-Chem, Ocean Basket, Spur, Mugg & Bean and Mr Price as anchor tenants, delivered by Unicon as construction manager to a design by Visi Architects.",
+    "image": {
+      "src": "bestphotos/main/Unicon-Construction-Resources-Steel-Frame-Building-Site-Groundwork-2026-05-08.JPG",
+      "alt": "Structural steel frame rising over groundworks",
+      "verified": false
+    },
+    "overview": [
+      "Howick on Main is a new 7,600 m² retail centre in the KwaZulu-Natal Midlands. Its anchor tenants are some of South Africa's best-known national brands, and each brings its own fit-out requirements, opening date and landlord obligations.",
+      "Unicon was appointed here as construction manager under JBCC Series 6.2, not as a lump-sum main contractor. In that role Unicon's job is to plan the programme, manage the trade contractors, control cost and quality and keep the centre moving towards a fixed trading date. It is the appointment most often used on retail developments where tenant requirements are still evolving while the structure goes up."
+    ],
+    "scope": [
+      {
+        "title": "Recorded scope",
+        "items": [
+          "New retail centre of approximately 7,600 m² with Checkers, Dis-Chem, Mr Price, Ocean Basket, Spur and Mugg & Bean as anchor tenants",
+          "Construction in steel, concrete, brick, glass and roofing",
+          "Architectural design by Visi Architects",
+          "Programme of 17 months from June 2023"
+        ]
+      },
+      {
+        "title": "What a construction management appointment covers",
+        "items": [
+          "Programme planning and tracking across all trades",
+          "Appointment, coordination and supervision of trade contractors",
+          "Cost control and reporting against the budget",
+          "Health, safety and quality management on site"
+        ]
+      }
+    ],
+    "brands": [
+      {
+        "name": "Checkers",
+        "role": "Anchor tenant",
+        "note": "National supermarket brand of the Shoprite Group."
+      },
+      {
+        "name": "Dis-Chem",
+        "role": "Anchor tenant",
+        "note": "National pharmacy and health retailer."
+      },
+      {
+        "name": "Mr Price",
+        "role": "Anchor tenant",
+        "note": "National fashion and homeware retailer."
+      },
+      {
+        "name": "Ocean Basket",
+        "role": "Anchor tenant",
+        "note": "National seafood restaurant franchise."
+      },
+      {
+        "name": "Spur",
+        "role": "Anchor tenant",
+        "note": "National steakhouse franchise."
+      },
+      {
+        "name": "Mugg & Bean",
+        "role": "Anchor tenant",
+        "note": "National coffee-shop franchise."
+      },
+      {
+        "name": "Visi Architects",
+        "role": "Architect",
+        "note": "Designers of the centre."
+      }
+    ],
+    "capabilities": [
+      [
+        "General Building",
+        "build/general-building.html"
+      ],
+      [
+        "Construction Project Management",
+        "manage/project-management.html"
+      ],
+      [
+        "Structural Concrete",
+        "build/structural-engineering.html"
+      ]
+    ],
+    "related": [
+      "invesco-shopping-mall-pietermaritzburg",
+      "mut-student-centre-umlazi"
+    ],
+    "faq": [
+      {
+        "q": "What is the difference between a full contract and construction management?",
+        "a": "On a full contract the contractor holds one agreement with the employer and takes responsibility for delivering the whole building for the agreed price. As construction manager the contractor plans and manages the trade contractors on the employer's behalf, with cost and programme control, which gives the employer more visibility and flexibility while the design is still developing."
+      },
+      {
+        "q": "Which national brands trade at Howick on Main?",
+        "a": "The anchor tenants are Checkers, Dis-Chem, Mr Price, Ocean Basket, Spur and Mugg & Bean."
+      },
+      {
+        "q": "Does Unicon build shopping centres in KwaZulu-Natal?",
+        "a": "Yes. Unicon has delivered retail centres in Howick and Pietermaritzburg, including the 17,000 m² Invesco centre, as well as education and healthcare buildings."
+      },
+      {
+        "q": "Which JBCC edition was used?",
+        "a": "JBCC Series 6.2, the current Joint Building Contracts Committee agreement."
+      }
+    ],
+    "wa": "Hello Unicon, I would like to discuss a retail centre project similar to Howick on Main.",
+    "employer_label": "Private developer"
+  },
+  "mnqumashe-high-throughput-abattoir": {
+    "db": "Mnqumashe High Throughput Abattoir",
+    "title": "Mnqumashe High Throughput Abattoir | Unicon",
+    "description": "High throughput cattle and sheep abattoir near Butterworth, Eastern Cape: demolition, platforms, portal-frame steel and mechanical install. Unicon, JBCC.",
+    "h1": [
+      "Mnqumashe",
+      "Abattoir."
+    ],
+    "eyebrow": "Agricultural EPC / Butterworth, Eastern Cape",
+    "location": "Mnqumashe, near Butterworth, Eastern Cape",
+    "sector": "Agricultural",
+    "status_label": "Complete",
+    "lead": "A new high throughput cattle and sheep abattoir in the Eastern Cape: demolition of the old building, cut-to-fill platforms, portal-frame steel structures and a full services and mechanical equipment installation.",
+    "image": {
+      "src": "bestphotos/main/Unicon-Manitou-Telehandler-Steel-Structure-Construction-Resource-Product-Building-Element-20190228.jpg",
+      "alt": "Telehandler positioning steel structure",
+      "verified": false
+    },
+    "overview": [
+      "The Mnqumashe abattoir, in the Mnquma Local Municipality near Butterworth, is a high throughput facility for cattle and sheep. It sits in the R50M+ value band and is among the most complex projects in the Unicon portfolio, because an abattoir is a building and a production line at the same time: floors fall to drains, surfaces are washable, and every service has to land exactly where the equipment needs it.",
+      "Unicon was appointed on a full contract under JBCC Series 5. The work began with demolition of the existing building and earthworks to form new cut-to-fill platforms, followed by the portal-frame steel structure and the installation of all services and mechanical equipment."
+    ],
+    "scope": [
+      {
+        "title": "Recorded scope",
+        "items": [
+          "Demolition of the existing building",
+          "Cut-to-fill earthworks forming new platforms",
+          "New facility in portal-frame structural steel",
+          "Installation of all services",
+          "Installation of the mechanical equipment",
+          "Concrete works and pipework"
+        ]
+      },
+      {
+        "title": "Contract and programme",
+        "items": [
+          "JBCC Series 5 full contract, 29 months from October 2017",
+          "Quantity surveying by LDM Quantity Surveying",
+          "R50M+ value band"
+        ]
+      }
+    ],
+    "brands": [
+      {
+        "name": "Department of Rural Development and Land Reform",
+        "role": "Employer",
+        "note": "National department; the abattoir is in the Eastern Cape."
+      },
+      {
+        "name": "LDM Quantity Surveying",
+        "role": "Quantity surveyor",
+        "note": "Appointed quantity surveyor on the contract."
+      }
+    ],
+    "capabilities": [
+      [
+        "Agricultural Engineering and EPC",
+        "build/agricultural-engineering.html"
+      ],
+      [
+        "General Building",
+        "build/general-building.html"
+      ],
+      [
+        "Heavy Civil Engineering",
+        "build/civil-engineering.html"
+      ]
+    ],
+    "related": [
+      "nestle-coffee-factory-upgrade",
+      "makhathini-drainage-canal-jozini"
+    ],
+    "faq": [
+      {
+        "q": "What makes an abattoir harder to build than a standard industrial building?",
+        "a": "Hygiene and process drive everything. Floors must fall to drains, surfaces must be impervious and washable, and the building has to be finished around the equipment, which means civil, steel and mechanical trades are tightly coordinated."
+      },
+      {
+        "q": "Did Unicon install the mechanical equipment?",
+        "a": "Yes. The scope covered all services and the abattoir mechanical equipment."
+      },
+      {
+        "q": "Does Unicon build agricultural and food-processing facilities?",
+        "a": "Yes. Agricultural EPC includes dairies, abattoirs, packhouses and irrigation infrastructure. Mnqumashe sits alongside food-industry work for Nestlé."
+      },
+      {
+        "q": "What contract form was used?",
+        "a": "JBCC Series 5, as a full contract in which Unicon was the principal contractor."
+      }
+    ],
+    "wa": "Hello Unicon, I would like to discuss an abattoir or agri-processing project similar to Mnqumashe."
+  },
+  "invesco-shopping-mall-pietermaritzburg": {
+    "db": "Invesco Shopping Mall – PMB",
+    "title": "Invesco Shopping Mall Pietermaritzburg | Unicon",
+    "description": "17,000 m² three-storey Invesco retail centre in Pietermaritzburg with basement parking. Unicon built all concrete structure works in a JV, JBCC Series 4.",
+    "h1": [
+      "Invesco",
+      "Shopping Mall."
+    ],
+    "eyebrow": "Retail / Pietermaritzburg, KwaZulu-Natal",
+    "location": "Pietermaritzburg, KwaZulu-Natal",
+    "sector": "Retail",
+    "status_label": "Complete",
+    "lead": "A 17,000 m² three-storey retail centre with basement parking, ground-floor shops and first-floor offices and restaurants, delivered in joint venture with Carlos Da Costa Building, with Unicon constructing all the concrete structure.",
+    "image": {
+      "src": "bestphotos/main/construction-site-crane-building-scaffolding-Pietermaritzburg-Invesco%20Centre.JPG",
+      "alt": "Tower crane and scaffolding over the Invesco Centre construction site, Pietermaritzburg",
+      "verified": true
+    },
+    "overview": [
+      "The Invesco Centre in Pietermaritzburg is a three-storey retail building of roughly 17,000 m². It combines basement parking, ground-floor shop space and first-floor office and restaurant space, a stacked layout that puts the weight of the structure squarely on the concrete frame.",
+      "Unicon took the contract in a joint venture with Carlos Da Costa Building and constructed all of the concrete structural works. The programme ran for twenty months, from April 2008, under JBCC Series 4."
+    ],
+    "scope": [
+      {
+        "title": "Recorded scope",
+        "items": [
+          "New three-storey retail centre of approximately 17,000 m²",
+          "Basement parking, ground-floor shop space and first-floor office and restaurant space",
+          "All concrete structure works, with formwork, steel reinforcement and concrete",
+          "Joint venture with Carlos Da Costa Building"
+        ]
+      },
+      {
+        "title": "Contract and programme",
+        "items": [
+          "JBCC Series 4 full contract, 20 months from April 2008",
+          "R20-50M value band"
+        ]
+      }
+    ],
+    "brands": [
+      {
+        "name": "Invesco",
+        "role": "Employer",
+        "note": "The employer on the contract."
+      },
+      {
+        "name": "Carlos Da Costa Building",
+        "role": "Joint venture partner",
+        "note": "Building contractor in the joint venture with Unicon."
+      }
+    ],
+    "capabilities": [
+      [
+        "General Building",
+        "build/general-building.html"
+      ],
+      [
+        "Structural Concrete",
+        "build/structural-engineering.html"
+      ],
+      [
+        "Project Management",
+        "manage/project-management.html"
+      ]
+    ],
+    "related": [
+      "howick-on-main-retail-centre",
+      "mut-student-centre-umlazi"
+    ],
+    "faq": [
+      {
+        "q": "What did Unicon build at the Invesco Centre?",
+        "a": "All of the concrete structure of a three-storey building of about 17,000 m² with basement parking, delivered in joint venture with Carlos Da Costa Building."
+      },
+      {
+        "q": "Does Unicon work in joint venture?",
+        "a": "Yes, where a project suits it. Joint ventures allow each partner to carry the trades it is strongest in, and Unicon's structural concrete capability is typically what it brings."
+      },
+      {
+        "q": "Can Unicon build basement parking and multi-storey concrete frames?",
+        "a": "Yes. Basement parking and multi-storey reinforced concrete structure are in the recorded scope at the Invesco Centre, and structural concrete is a core Unicon capability."
+      },
+      {
+        "q": "What contract form was used?",
+        "a": "JBCC Series 4."
+      }
+    ],
+    "wa": "Hello Unicon, I would like to discuss a retail or multi-storey concrete project similar to the Invesco Centre."
+  },
+  "makhathini-drainage-canal-jozini": {
+    "db": "Makhathini Drainage Canal near Jozini",
+    "title": "Makhathini Drainage Canal, Jozini | Unicon",
+    "description": "4 km concrete-lined drainage canal for farmland on the Mjindi Plantations near Jozini, KwaZulu-Natal. Unicon full contract under GCC 2010.",
+    "h1": [
+      "Makhathini",
+      "Drainage Canal."
+    ],
+    "eyebrow": "Heavy Civils / Jozini, KwaZulu-Natal",
+    "location": "Makhathini Flats, near Jozini, KwaZulu-Natal",
+    "sector": "Heavy Civils",
+    "status_label": "Complete",
+    "lead": "Excavation and concrete lining of a 4 km drainage canal serving farmland on the Mjindi Plantations near Jozini, built by Unicon as principal contractor under GCC 2010.",
+    "image": {
+      "src": "bestphotos/main/Unicon_JCB_Excavator_Earthworks_Canal_RedSoil_Landscape_DSC_0034.JPG",
+      "alt": "Excavator shaping a canal through red soil",
+      "verified": false
+    },
+    "overview": [
+      "The Makhathini Flats in northern KwaZulu-Natal are fertile farmland that depends on managing water in both directions. Unicon excavated and lined a 4 km concrete drainage canal to carry water off the farmland of the Mjindi Plantations near Jozini.",
+      "A concrete canal is a long, thin project, so the work is about repeatability: setting out and excavating to line and level, then placing the lining consistently along the whole length. The contract ran for 24 months from November 2014 under GCC 2010."
+    ],
+    "scope": [
+      {
+        "title": "Recorded scope",
+        "items": [
+          "Excavation of approximately 4 km of canal",
+          "Concrete lining of the canal",
+          "Drainage of farmland on the Mjindi Plantations near Jozini",
+          "Materials: concrete and aggregate"
+        ]
+      },
+      {
+        "title": "Contract and programme",
+        "items": [
+          "GCC 2010 full contract, 24 months from November 2014",
+          "R20-50M value band"
+        ]
+      }
+    ],
+    "brands": [
+      {
+        "name": "Ezemvelo KZN Wildlife",
+        "role": "Employer",
+        "note": "KwaZulu-Natal's provincial conservation authority."
+      },
+      {
+        "name": "Mjindi Plantations",
+        "role": "Beneficiary farmland",
+        "note": "The farmland drained by the canal."
+      }
+    ],
+    "capabilities": [
+      [
+        "Heavy Civil Engineering",
+        "build/civil-engineering.html"
+      ],
+      [
+        "Agricultural Engineering and EPC",
+        "build/agricultural-engineering.html"
+      ],
+      [
+        "Bulk Water Construction",
+        "build/water-engineering.html"
+      ]
+    ],
+    "related": [
+      "thabazimbi-10ml-dome-roof-reservoir",
+      "mnqumashe-high-throughput-abattoir"
+    ],
+    "faq": [
+      {
+        "q": "How long is the Makhathini drainage canal?",
+        "a": "The canal Unicon excavated and lined is approximately 4 km long."
+      },
+      {
+        "q": "Why line a drainage canal with concrete?",
+        "a": "A concrete lining stops erosion and scour, holds the canal's shape and reduces maintenance, especially on flat farmland where water movement is slow and sediment builds up."
+      },
+      {
+        "q": "Does Unicon build canals and large earthworks projects?",
+        "a": "Yes. Canals, bulk earthworks, bridges and drainage structures sit within Unicon's heavy civils work, much of it for provincial and municipal clients."
+      },
+      {
+        "q": "What contract form was used?",
+        "a": "GCC 2010, General Conditions of Contract for Construction Works, as a full contract."
+      }
+    ],
+    "wa": "Hello Unicon, I would like to discuss a canal or heavy civils project similar to Makhathini."
+  },
+  "mut-student-centre-umlazi": {
+    "db": "Mangosuthu University of Technology – New Student Centre",
+    "title": "MUT Student Centre, Umlazi | Unicon Construction",
+    "description": "New Student Centre at Mangosuthu University of Technology, Umlazi, Durban: a 10-month JBCC Series 5 full contract delivered by Unicon.",
+    "h1": [
+      "MUT",
+      "Student Centre."
+    ],
+    "eyebrow": "Education / Umlazi, Durban",
+    "location": "Umlazi, Durban, KwaZulu-Natal",
+    "sector": "Education",
+    "status_label": "Complete",
+    "lead": "The new Student Centre at Mangosuthu University of Technology in Umlazi, Durban, built by Unicon as principal contractor in ten months under JBCC Series 5.",
+    "image": {
+      "src": "bestphotos/main/construction-site-crane-building-scaffolding-Pietermaritzburg-Invesco%20Centre.JPG",
+      "alt": "Tower crane and scaffolding over a multi-storey building site",
+      "verified": false
+    },
+    "overview": [
+      "Mangosuthu University of Technology is a public university in Umlazi, Durban. Its new Student Centre is a building that the whole campus uses day to day.",
+      "Unicon was appointed on a full contract under JBCC Series 5 and delivered the centre in ten months, from November 2016 to September 2017, in concrete, brick, steel, glass and roofing."
+    ],
+    "scope": [
+      {
+        "title": "Recorded scope",
+        "items": [
+          "Construction of the new Student Centre at the university's Umlazi campus",
+          "Concrete, brick, steel, glass and roofing"
+        ]
+      },
+      {
+        "title": "Contract and programme",
+        "items": [
+          "JBCC Series 5 full contract, 10 months from November 2016",
+          "Quantity surveying by LDM Quantity Surveying",
+          "R20-50M value band"
+        ]
+      }
+    ],
+    "brands": [
+      {
+        "name": "Mangosuthu University of Technology",
+        "role": "Employer",
+        "note": "Public university in Umlazi, Durban."
+      },
+      {
+        "name": "LDM Quantity Surveying",
+        "role": "Quantity surveyor",
+        "note": "Appointed quantity surveyor on the contract."
+      }
+    ],
+    "capabilities": [
+      [
+        "General Building",
+        "build/general-building.html"
+      ],
+      [
+        "Construction Project Management",
+        "manage/project-management.html"
+      ],
+      [
+        "Architectural Design",
+        "design/architecture.html"
+      ]
+    ],
+    "related": [
+      "howick-on-main-retail-centre",
+      "invesco-shopping-mall-pietermaritzburg"
+    ],
+    "faq": [
+      {
+        "q": "How long did the MUT Student Centre take to build?",
+        "a": "Ten months, from November 2016 to September 2017."
+      },
+      {
+        "q": "What contract form was used?",
+        "a": "JBCC Series 5, the Joint Building Contracts Committee Principal Building Agreement, as a full contract with Unicon as principal contractor."
+      },
+      {
+        "q": "Does Unicon build for universities and public institutions?",
+        "a": "Yes. Education buildings are part of Unicon's general building portfolio, alongside healthcare, retail and residential work."
+      },
+      {
+        "q": "Where is Mangosuthu University of Technology?",
+        "a": "In Umlazi, Durban, KwaZulu-Natal."
+      }
+    ],
+    "wa": "Hello Unicon, I would like to discuss an education or institutional building project similar to the MUT Student Centre."
+  },
+  "nestle-coffee-factory-upgrade": {
+    "db": "Nestle Coffee Factory – Upgrade & Additions",
+    "title": "Nestlé Coffee Factory Upgrade | Unicon Construction",
+    "description": "Upgrades and additions to the Nestlé coffee factory: evaporator building, cooling tower tanks, control rooms and 900 NB stormwater. Unicon, GCC 2004.",
+    "h1": [
+      "Nestlé",
+      "Coffee Factory."
+    ],
+    "eyebrow": "Industrial / Food Manufacturing",
+    "location": "",
+    "sector": "Industrial",
+    "status_label": "Complete",
+    "lead": "Upgrades and additions to the Nestlé coffee factory: a new evaporator building, extension of the tin can manufacturing room, switch control rooms, cooling tower tanks and large stormwater retention works, delivered by Unicon under GCC 2004.",
+    "image": {
+      "src": "bestphotos/main/unicon-construction-industrial-vessel-lift-installation.jpg",
+      "alt": "Crane lifting a large industrial vessel into position",
+      "verified": false
+    },
+    "overview": [
+      "Upgrading an existing food factory is a different discipline from building on an empty site. New structures have to tie into old ones, services have to be rerouted, and every demolition has to be planned around what stays.",
+      "Unicon was appointed on a full contract under GCC 2004 for upgrades and additions to the Nestlé coffee factory. The 24-month programme, from March 2008, combined demolition, new buildings, process-supporting structures and a substantial civil package for stormwater and retention."
+    ],
+    "scope": [
+      {
+        "title": "Buildings and structures",
+        "items": [
+          "Demolition of existing structures and construction of a new parking lot",
+          "New switch control rooms",
+          "Extension of the tin can manufacturing room",
+          "New evaporator building",
+          "Other upgrades, extensions and restorations"
+        ]
+      },
+      {
+        "title": "Tanks and external works",
+        "items": [
+          "New waste storage tanks",
+          "Cooling tower tanks",
+          "New terraces and external works"
+        ]
+      },
+      {
+        "title": "Pipework and stormwater",
+        "items": [
+          "All associated pipework",
+          "900 NB stormwater pipes",
+          "Large stormwater retention tanks"
+        ]
+      },
+      {
+        "title": "Contract and programme",
+        "items": [
+          "GCC 2004 full contract, 24 months from March 2008",
+          "R20-50M value band"
+        ]
+      }
+    ],
+    "brands": [
+      {
+        "name": "Nestlé",
+        "role": "Employer",
+        "note": "Global food and beverage company; Unicon has delivered work for Nestlé SA more than once, including milk depot alterations in 2003."
+      }
+    ],
+    "capabilities": [
+      [
+        "Industrial and Logistics Construction",
+        "build/industrial-logistics.html"
+      ],
+      [
+        "General Building",
+        "build/general-building.html"
+      ],
+      [
+        "Bulk Water and Wastewater",
+        "build/water-engineering.html"
+      ]
+    ],
+    "related": [
+      "mnqumashe-high-throughput-abattoir",
+      "mut-student-centre-umlazi"
+    ],
+    "faq": [
+      {
+        "q": "Does Unicon carry out upgrades to existing industrial facilities?",
+        "a": "Yes. The Nestlé coffee factory scope included demolition, extension of existing buildings, restorations and new process buildings, all of which have to tie into what is already there."
+      },
+      {
+        "q": "What was built at the Nestlé coffee factory?",
+        "a": "An evaporator building, switch control rooms, an extension to the tin can manufacturing room, cooling tower tanks, waste storage tanks, terraces, a new parking lot, large stormwater retention tanks and the associated pipework."
+      },
+      {
+        "q": "What contract form was used?",
+        "a": "GCC 2004, General Conditions of Contract for Construction Works, as a full contract."
+      },
+      {
+        "q": "Has Unicon worked for Nestlé before?",
+        "a": "Yes. Unicon also carried out alterations and extensions to the Nestlé milk depot in 2003 and 2004."
+      }
+    ],
+    "wa": "Hello Unicon, I would like to discuss an industrial or food-factory upgrade project similar to the Nestlé coffee factory."
+  }
+}

@@ -81,6 +81,12 @@ ABOUT = {
 }
 
 
+def project_pages() -> dict:
+    """Flagship project pages: projects/<slug>.html -> their content."""
+    data = json.load(open(os.path.join(ROOT, "tools", "project_pages.json"), encoding="utf-8"))
+    return {f"projects/{k}.html": v for k, v in data.items() if not k.startswith("_")}
+
+
 def url(p: str) -> str:
     return f"{BASE}/" + ("" if p == "index.html" else p)
 
@@ -149,7 +155,7 @@ def blocks_for(page: str, s: str) -> list:
     have = existing_types(s)
     out = []
 
-    crumbs = breadcrumb(page)
+    crumbs = [] if page in project_pages() else breadcrumb(page)
     if crumbs and "BreadcrumbList" not in have:
         out.append({"@context": "https://schema.org", "@type": "BreadcrumbList",
                     "itemListElement": crumbs})
@@ -170,6 +176,23 @@ def blocks_for(page: str, s: str) -> list:
         if cat:
             d["hasOfferCatalog"] = cat
         out.append(d)
+
+    pp = project_pages().get(page)
+    if pp:
+        name = " ".join(pp["h1"]).rstrip(".")
+        out.append({"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [
+            {"@type": "ListItem", "position": 1, "name": "Home", "item": url("index.html")},
+            {"@type": "ListItem", "position": 2, "name": "Portfolio", "item": url("projects.html")},
+            {"@type": "ListItem", "position": 3, "name": name, "item": url(page)}]})
+        out.append({"@context": "https://schema.org", "@type": "WebPage",
+                    "name": title_of(s), "description": meta(s, "description"), "url": url(page),
+                    "isPartOf": {"@id": ORG_ID}, "about": {"@type": "Thing", "name": pp["db"],
+                                                            "description": pp["lead"]},
+                    "publisher": {"@id": ORG_ID}})
+        out.append({"@context": "https://schema.org", "@type": "FAQPage",
+                    "mainEntity": [{"@type": "Question", "name": f["q"],
+                                    "acceptedAnswer": {"@type": "Answer", "text": f["a"]}}
+                                   for f in pp["faq"]]})
 
     if page in COLLECTIONS and "CollectionPage" not in have:
         out.append({"@context": "https://schema.org", "@type": "CollectionPage",

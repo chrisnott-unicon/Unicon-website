@@ -71,6 +71,9 @@ jobs:
       - name: Check the Build capability pages match the project database
         run: python3 tools/build_pages.py check
 
+      - name: Check the flagship project pages match the project database
+        run: python3 tools/project_pages.py check
+
       - name: Check the structured data has not drifted
         run: python3 tools/schema.py check
 

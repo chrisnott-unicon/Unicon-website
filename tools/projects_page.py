@@ -29,6 +29,8 @@ import html, urllib.parse, datetime
 from collections import Counter
 
 BASE = "https://www.uniconsa.co.za"
+PAGES = {v["db"]: k for k, v in json.load(open(os.path.join(ROOT, "tools", "project_pages.json"),
+                                                  encoding="utf-8")).items() if not k.startswith("_")}
 DB = _load()
 
 # Privacy: 'Contact', 'Email', and phone columns are deliberately NOT read here.
@@ -297,6 +299,7 @@ for r in [x for x in recs if x["flagship"]]:
                 {meta_row("Contract scale", r["band"])}
                 {meta_row("Duration", r["dur"] + " months") if r["dur"] else ""}
               </dl>
+              {f'<a href="{BASE}/projects/{PAGES[r["raw_name"]]}.html" target="_top" class="mt-4 inline-block font-mono text-[10px] font-bold uppercase tracking-widest text-unicon-green transition-colors hover:text-white">Full project page <i class="fa-solid fa-arrow-right ml-1"></i></a>' if r["raw_name"] in PAGES else ""}
             </div>
           </article>""")
 
