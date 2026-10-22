@@ -1,13 +1,12 @@
 {
   "_comment": "Derived summary of the project database, used to render home-page sections. Regenerate or edit by hand when the portfolio changes, then run: python3 tools/homepage.py build",
   "totals": {
-    "projects": 92,
+    "projects": 91,
+    "listed": 94,
     "first_year": 1991,
     "latest_year": 2026,
     "years_active": 35,
-    "delivered_value": "R1.5B+",
-    "cidb": "7CE / 7GB",
-    "bbbee": "Level 2"
+    "delivered_value": "R1.2B+"
   },
   "sectors": [
     {

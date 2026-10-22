@@ -54,7 +54,7 @@ def render_stats(d: dict) -> str:
         (str(t["projects"]), "Projects Delivered"),
         (str(t["years_active"]), "Years Executing"),
         (t["delivered_value"], "Delivered Value"),
-        (f"CIDB {t['cidb'].split(' /')[0]}", "National Grading"),
+        ("JBCC & GCC", "Contract Forms"),
     ]
     tiles = "".join(f"""
                 <div class="bg-white p-6 md:p-8 text-center sm:text-left">
@@ -142,7 +142,7 @@ def render_flagship(d: dict) -> str:
                     <h2 id="flagship-heading" class="text-3xl md:text-5xl font-extrabold tracking-tight uppercase">Recent Flagships.</h2>
                 </div>
                 <a href="{BASE}/projects.html" target="_top" class="shrink-0 text-[10px] font-bold uppercase tracking-widest text-unicon-green hover:text-unicon-black transition-colors">
-                    All {d['totals']['projects']} projects <i class="fa-solid fa-arrow-right ml-1"></i>
+                    All {d['totals']['listed']} projects <i class="fa-solid fa-arrow-right ml-1"></i>
                 </a>
             </div>
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">{''.join(cards)}

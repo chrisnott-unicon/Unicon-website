@@ -92,6 +92,10 @@ def month(s: str) -> str:
     return date(int(y), int(m), 1).strftime("%b %Y")
 
 
+def appt_label(c, r) -> str:
+    return c.get("appointment_label") or APPOINTMENT[r["appointment"]]["label"]
+
+
 def contract_note(fmt: str) -> str:
     for key, text in CONTRACT:
         if fmt.startswith(key):
@@ -122,7 +126,7 @@ def cdn(src: str, w: int = 1400) -> str:
 
 def facts(c, r):
     rows = [
-        ("Appointment", APPOINTMENT[r["appointment"]]["label"]),
+        ("Appointment", appt_label(c, r)),
         ("Contract form", r["contract_format"]),
         ("Programme", f"{month(r['start'])} to {month(r['complete'])} ({r['duration_months']} months)"),
         ("Value band", r["band"].replace("-", "–")),
@@ -140,7 +144,7 @@ def facts(c, r):
 def hero(slug, c, r):
     chips = " ".join(
         f'<span class="border border-unicon-border bg-white px-3 py-1 font-mono text-[10px] uppercase tracking-widest text-gray-600">{e(t)}</span>'
-        for t in (APPOINTMENT[r["appointment"]]["label"], r["contract_format"], c["sector"]))
+        for t in (appt_label(c, r), r["contract_format"], c["sector"]))
     h1 = c["h1"]
     return f'''    <header class="relative overflow-hidden border-b border-unicon-border bg-blueprint pb-16 pt-20 md:pb-24 md:pt-28">
         <div class="absolute inset-0 z-0">
@@ -205,7 +209,9 @@ def overview(c, r):
 
 
 def appointment(c, r):
-    a = APPOINTMENT[r["appointment"]]
+    a = dict(APPOINTMENT[r["appointment"]])
+    a["label"] = appt_label(c, r)
+    a["text"] = c.get("appointment_text") or a["text"]
     note = contract_note(r["contract_format"])
     lt, lp = a["link"]
     return f'''    <section id="appointment" class="scroll-mt-24 border-b border-unicon-border bg-unicon-slate py-16 md:py-24">

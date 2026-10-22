@@ -374,7 +374,7 @@ def capacity(c, all_rows):
                         <p class="mb-4 font-mono text-[9px] uppercase tracking-widest text-gray-400">Contract Form</p>
                         <ul class="text-sm font-light">{form_html}</ul>
                         <p class="mt-8 text-xs font-light leading-relaxed text-gray-400">
-                            CIDB 7CE and 7GB. B-BBEE Level 2 contributor. Work is measured and constructed to
+                            Work is measured and constructed to
                             the SANS 1200 and SANS 2001 series, with building work to SANS 10400.
                         </p>
                     </div>
@@ -464,7 +464,7 @@ def hub(content, rows) -> str:
                     <p class="mb-5 flex-grow text-sm font-light leading-relaxed text-gray-600">{blurb}</p>
                     {tag}
                 </a>'''
-    total = len(rows)
+    total = sum(1 for r in rows if r["status"] == "Complete")
     return f'''    <section class="border-b border-unicon-border bg-unicon-slate py-16 md:py-24">
         <div class="mx-auto max-w-[90rem] px-6 sm:px-8 lg:px-12">
             <div class="mb-12 max-w-3xl">

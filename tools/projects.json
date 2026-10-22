@@ -1511,6 +1511,38 @@
    "keywords": "Shell Fuel, Fuel Station, Turnkey EPC, Demolishment, Upgrade, Okay Express, Drive-through, Bulk Earthworks, Hilton, Howick, South Africa, Construction, Engineering, Building, Design, Architecture",
    "materials": "Shell, Okay Express",
    "band": "R20–50M"
+  },
+  {
+   "no": 95,
+   "name": "Mageza Astron Service Station - Sweetwaters",
+   "description": "Construction management of a new service station at Sweetwaters, Pietermaritzburg, including bulk earthworks and the building and finishes works.",
+   "start": "2023-05-01",
+   "complete": "2024-04-30",
+   "duration_months": "12",
+   "appointment": "Construction Management",
+   "contract_format": "JBCC",
+   "status": "Complete",
+   "employer": "Mageza Service Station CC",
+   "consultant": "Skyline Construction Management",
+   "keywords": "Mageza Astron Service Station, Astron Energy, Service Station, Fuel Station, Forecourt, Earthworks, Sweetwaters, Pietermaritzburg, Construction Management, JBCC",
+   "materials": "Concrete, steel, glass, fuel tanks, pumps",
+   "band": "R5–20M"
+  },
+  {
+   "no": 96,
+   "name": "Avenue Residential Estate - Six Units",
+   "description": "High-spec residential units on the Avenues estate in Hilton for JT Property group, designed by Axiom Architecture.",
+   "start": "2023-06-01",
+   "complete": "2024-11-30",
+   "duration_months": "17",
+   "appointment": "Construction Management",
+   "contract_format": "JBCC Series 6.2",
+   "status": "Complete",
+   "employer": "Hilton Devco (Pty) Ltd",
+   "consultant": "Skyline Projects",
+   "keywords": "Avenue Residential Estate, Six Units, Hi-spec, Residential Units, Hilton, JT Property group, Axiom Architecture, Construction Management",
+   "materials": "Brick, cement, timber, roofing, glass",
+   "band": "R20–50M"
   }
  ]
 }

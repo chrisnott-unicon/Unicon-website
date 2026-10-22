@@ -120,7 +120,7 @@ def sector_of(r):
     if has("clinic","hospital","medical suite","veterinary","mri","ct scanner","x-ray"):      return "Healthcare"
     if has("bridge","canal","drainage","road bridge","services relocation","rti lot"):        return "Bridges & Heavy Civils"
     if has("abattoir","factory","steel","saw mill","depot","dairy","milking"):                return "Industrial & Agri-Processing"
-    if has("mall","retail","shopping","fitout","fuel station","restaurant","shop","woolworths"): return "Commercial & Retail"
+    if has("mall","retail","shopping","fitout","fuel station","restaurant","shop","woolworths","service station"): return "Commercial & Retail"
     if has("reservoir","water scheme","wtw","water treatment","pipeline","abstraction","filter",
            "waterworks","storage dam","bpt","water storage","water supply","chambers","pump station"): return "Bulk Water"
     if has("house","residential","housing","cottage","farm","driveway","estate"):             return "Residential & Estate"
@@ -261,6 +261,7 @@ recs.sort(key=lambda x: (-x["year"], x["name"]))
 DECADES = sorted({r["decade"] for r in recs if r["decade"]}, reverse=True)
 BANDS = ["R50M+","R20–50M","R5–20M","Under R5M"]
 nflag = sum(1 for r in recs if r["flagship"])
+NDONE = sum(1 for r in recs if r["status"] == "Complete")
 top_clients = Counter(r["employer"] for r in recs).most_common(6)
 
 def note(r):
@@ -419,7 +420,7 @@ HTML = f"""<!DOCTYPE html>
 
     <link rel="icon" href="https://wsrv.nl/?url=raw.githubusercontent.com/chrisnott-unicon/UniconLogo/main/UniconBlk.png&amp;w=64&amp;h=64&amp;fit=contain&amp;output=png">
     <meta property="og:title" content="Unicon Construction | Master Project Database">
-    <meta property="og:description" content="{len(recs)} projects delivered since 1991 — bulk water, heavy civils and turnkey construction across Southern Africa.">
+    <meta property="og:description" content="{NDONE} projects delivered since 1991 — bulk water, heavy civils and turnkey construction across Southern Africa.">
     <meta property="og:image" content="https://raw.githubusercontent.com/chrisnott-unicon/bestphotos/main/unicon-construction-bridge-installation-crane-lift.jpg">
     <meta property="og:url" content="{BASE}/projects.html">
     <meta property="og:type" content="website">
@@ -476,13 +477,13 @@ HTML = f"""<!DOCTYPE html>
                 Built to <br><span class="text-outline">Outlast.</span>
             </h1>
             <p class="mt-8 max-w-3xl text-lg font-light leading-relaxed text-gray-400 md:text-xl">
-                Every project Unicon has delivered since 1991 — {len(recs)} of them. Post-tensioned reservoirs holding megalitres without a drop lost, provincial bridges over live rivers, water schemes that reached communities who had none. Start with the flagships, then search the full record.
+                Every project Unicon has delivered since 1991 — {NDONE} of them, with {len(recs) - NDONE} more under way. Post-tensioned reservoirs holding megalitres without a drop lost, provincial bridges over live rivers, water schemes that reached communities who had none. Start with the flagships, then search the full record.
             </p>
             <div class="mt-12 grid grid-cols-2 gap-px overflow-hidden rounded-sm border border-gray-800 bg-gray-800 sm:grid-cols-4">
-                <div class="bg-[#0a0a0a] p-5"><p class="text-2xl font-black tracking-tighter text-white md:text-3xl">{len(recs)}</p><p class="mt-1 font-mono text-[9px] uppercase tracking-widest text-gray-500">Projects Delivered</p></div>
+                <div class="bg-[#0a0a0a] p-5"><p class="text-2xl font-black tracking-tighter text-white md:text-3xl">{NDONE}</p><p class="mt-1 font-mono text-[9px] uppercase tracking-widest text-gray-500">Projects Delivered</p></div>
                 <div class="bg-[#0a0a0a] p-5"><p class="text-2xl font-black tracking-tighter text-white md:text-3xl">35</p><p class="mt-1 font-mono text-[9px] uppercase tracking-widest text-gray-500">Years Executing</p></div>
-                <div class="bg-[#0a0a0a] p-5"><p class="text-2xl font-black tracking-tighter text-unicon-green md:text-3xl">R1.5B+</p><p class="mt-1 font-mono text-[9px] uppercase tracking-widest text-gray-500">Delivered Value</p></div>
-                <div class="bg-[#0a0a0a] p-5"><p class="text-2xl font-black tracking-tighter text-white md:text-3xl">CIDB 7CE</p><p class="mt-1 font-mono text-[9px] uppercase tracking-widest text-gray-500">National Grading</p></div>
+                <div class="bg-[#0a0a0a] p-5"><p class="text-2xl font-black tracking-tighter text-unicon-green md:text-3xl">R1.2B+</p><p class="mt-1 font-mono text-[9px] uppercase tracking-widest text-gray-500">Delivered Value</p></div>
+                <div class="bg-[#0a0a0a] p-5"><p class="text-2xl font-black tracking-tighter text-white md:text-3xl">JBCC &amp; GCC</p><p class="mt-1 font-mono text-[9px] uppercase tracking-widest text-gray-500">Contract Forms</p></div>
             </div>
         </div>
     </header>

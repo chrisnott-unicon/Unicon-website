@@ -12,14 +12,14 @@
     "location": "Thabazimbi, Limpopo",
     "sector": "Bulk Water",
     "status_label": "Complete",
-    "lead": "A 10 megalitre reinforced concrete reservoir with post-tensioned walls and a free-spanning dome roof, delivered by Unicon as principal contractor for Anglo American at Thabazimbi.",
+    "lead": "A 10 megalitre reinforced concrete reservoir with post-tensioned walls and a free-spanning dome roof, built by Unicon at Thabazimbi, Limpopo.",
     "image": {
       "src": "bestphotos/main/Unicon_Water_Reservoir_Dome_Roof_Concrete_Construction_Roof_Structure_20170218_Mountain_Landscape.jpg",
       "alt": "Reinforced concrete dome roof under construction on a circular water reservoir",
       "verified": false
     },
     "overview": [
-      "Thabazimbi is a mining town in the Limpopo bushveld, and water storage there has to be reliable for people and industry alike. Unicon was appointed on a full contract to build a 10 ML reinforced concrete reservoir with post-tensioned circular walls and a dome roof that spans the whole tank without a single internal column.",
+      "Thabazimbi is a mining town in the Limpopo bushveld, and water storage there has to be reliable for people and industry alike. Unicon built a 10 ML reinforced concrete reservoir with post-tensioned circular walls and a dome roof that spans the whole tank without a single internal column.",
       "A column-free dome keeps the floor of the tank clear, removes the leak paths that roof columns create and gives a roof that is structurally efficient over a large diameter. It is also among the least forgiving things to build in concrete: the walls are stressed with post-tensioning tendons, the roof is formed and poured as a single geometric shell, and every pour has to be tested, recorded and signed off before the next one starts."
     ],
     "scope": [
@@ -44,7 +44,7 @@
     "brands": [
       {
         "name": "Anglo American",
-        "role": "Client",
+        "role": "Employer (project record)",
         "note": "Global mining group; the client on this contract."
       },
       {
@@ -81,15 +81,17 @@
         "a": "With no internal columns the roof is a self-supporting shell. The tank floor stays clear, there are fewer penetrations to waterproof, and the structure is efficient over a large span. It does demand precise formwork and disciplined concrete placement."
       },
       {
-        "q": "Was Unicon the principal contractor on this reservoir?",
-        "a": "Yes. Unicon held the full contract under GCC 2010 (General Conditions of Contract for Construction Works), taking responsibility for the programme, the quality of the concrete works and the subcontractors."
+        "q": "What was Unicon's scope on this reservoir?",
+        "a": "Unicon built the whole reservoir structure and its connecting pipework and chambers under GCC 2010 (General Conditions of Contract for Construction Works), carrying responsibility for the concrete works, the programme and the quality of its work."
       },
       {
         "q": "Does Unicon build water reservoirs for mines and municipalities?",
         "a": "Yes. Reservoirs and bulk water works are the largest part of the Unicon portfolio, with fifty projects in the project database for municipalities, water boards and industrial clients."
       }
     ],
-    "wa": "Hello Unicon, I would like to discuss a reservoir project similar to Thabazimbi."
+    "wa": "Hello Unicon, I would like to discuss a reservoir project similar to Thabazimbi.",
+    "appointment_label": "Full Contract (construction scope)",
+    "appointment_text": "Unicon is appointed to carry out the whole of the construction scope under one contract. We price the work, carry the programme and quality risk of our own works, procure and manage our subcontractors and hand over completed works. The contract may sit directly with the employer or under a main contractor or joint venture, which is common on larger public and mining projects."
   },
   "tinley-manor-wwtw-club-med": {
     "db": "Tinley Manor WWTW (Club Med Resort)",
@@ -273,7 +275,7 @@
     ],
     "related": [
       "invesco-shopping-mall-pietermaritzburg",
-      "mut-student-centre-umlazi"
+      "nestle-coffee-factory-upgrade"
     ],
     "faq": [
       {
@@ -316,7 +318,7 @@
     },
     "overview": [
       "The Mnqumashe abattoir, in the Mnquma Local Municipality near Butterworth, is a high throughput facility for cattle and sheep. It sits in the R50M+ value band and is among the most complex projects in the Unicon portfolio, because an abattoir is a building and a production line at the same time: floors fall to drains, surfaces are washable, and every service has to land exactly where the equipment needs it.",
-      "Unicon was appointed on a full contract under JBCC Series 5. The work began with demolition of the existing building and earthworks to form new cut-to-fill platforms, followed by the portal-frame steel structure and the installation of all services and mechanical equipment."
+      "Unicon carried out the works under JBCC Series 5. The work began with demolition of the existing building and earthworks to form new cut-to-fill platforms, followed by the portal-frame steel structure and the installation of all services and mechanical equipment."
     ],
     "scope": [
       {
@@ -384,10 +386,12 @@
       },
       {
         "q": "What contract form was used?",
-        "a": "JBCC Series 5, as a full contract in which Unicon was the principal contractor."
+        "a": "JBCC Series 5, with Unicon carrying out the full scope of the works."
       }
     ],
-    "wa": "Hello Unicon, I would like to discuss an abattoir or agri-processing project similar to Mnqumashe."
+    "wa": "Hello Unicon, I would like to discuss an abattoir or agri-processing project similar to Mnqumashe.",
+    "appointment_label": "Full Contract (construction scope)",
+    "appointment_text": "Unicon is appointed to carry out the whole of the construction scope under one contract. We price the work, carry the programme and quality risk of our own works, procure and manage our subcontractors and hand over completed works. The contract may sit directly with the employer or under a main contractor or joint venture, which is common on larger public and mining projects."
   },
   "invesco-shopping-mall-pietermaritzburg": {
     "db": "Invesco Shopping Mall – PMB",
@@ -457,7 +461,7 @@
     ],
     "related": [
       "howick-on-main-retail-centre",
-      "mut-student-centre-umlazi"
+      "nestle-coffee-factory-upgrade"
     ],
     "faq": [
       {
@@ -482,7 +486,7 @@
   "makhathini-drainage-canal-jozini": {
     "db": "Makhathini Drainage Canal near Jozini",
     "title": "Makhathini Drainage Canal, Jozini | Unicon",
-    "description": "4 km concrete-lined drainage canal for farmland on the Mjindi Plantations near Jozini, KwaZulu-Natal. Unicon full contract under GCC 2010.",
+    "description": "4 km concrete-lined drainage canal for farmland on the Mjindi Plantations near Jozini, KwaZulu-Natal, carried out by Unicon under GCC 2010.",
     "h1": [
       "Makhathini",
       "Drainage Canal."
@@ -490,8 +494,8 @@
     "eyebrow": "Heavy Civils / Jozini, KwaZulu-Natal",
     "location": "Makhathini Flats, near Jozini, KwaZulu-Natal",
     "sector": "Heavy Civils",
-    "status_label": "Complete",
-    "lead": "Excavation and concrete lining of a 4 km drainage canal serving farmland on the Mjindi Plantations near Jozini, built by Unicon as principal contractor under GCC 2010.",
+    "status_label": "",
+    "lead": "Excavation and concrete lining of a 4 km drainage canal serving farmland on the Mjindi Plantations near Jozini, carried out by Unicon under GCC 2010.",
     "image": {
       "src": "bestphotos/main/Unicon_JCB_Excavator_Earthworks_Canal_RedSoil_Landscape_DSC_0034.JPG",
       "alt": "Excavator shaping a canal through red soil",
@@ -567,96 +571,9 @@
         "a": "GCC 2010, General Conditions of Contract for Construction Works, as a full contract."
       }
     ],
-    "wa": "Hello Unicon, I would like to discuss a canal or heavy civils project similar to Makhathini."
-  },
-  "mut-student-centre-umlazi": {
-    "db": "Mangosuthu University of Technology – New Student Centre",
-    "title": "MUT Student Centre, Umlazi | Unicon Construction",
-    "description": "New Student Centre at Mangosuthu University of Technology, Umlazi, Durban: a 10-month JBCC Series 5 full contract delivered by Unicon.",
-    "h1": [
-      "MUT",
-      "Student Centre."
-    ],
-    "eyebrow": "Education / Umlazi, Durban",
-    "location": "Umlazi, Durban, KwaZulu-Natal",
-    "sector": "Education",
-    "status_label": "Complete",
-    "lead": "The new Student Centre at Mangosuthu University of Technology in Umlazi, Durban, built by Unicon as principal contractor in ten months under JBCC Series 5.",
-    "image": {
-      "src": "bestphotos/main/construction-site-crane-building-scaffolding-Pietermaritzburg-Invesco%20Centre.JPG",
-      "alt": "Tower crane and scaffolding over a multi-storey building site",
-      "verified": false
-    },
-    "overview": [
-      "Mangosuthu University of Technology is a public university in Umlazi, Durban. Its new Student Centre is a building that the whole campus uses day to day.",
-      "Unicon was appointed on a full contract under JBCC Series 5 and delivered the centre in ten months, from November 2016 to September 2017, in concrete, brick, steel, glass and roofing."
-    ],
-    "scope": [
-      {
-        "title": "Recorded scope",
-        "items": [
-          "Construction of the new Student Centre at the university's Umlazi campus",
-          "Concrete, brick, steel, glass and roofing"
-        ]
-      },
-      {
-        "title": "Contract and programme",
-        "items": [
-          "JBCC Series 5 full contract, 10 months from November 2016",
-          "Quantity surveying by LDM Quantity Surveying",
-          "R20-50M value band"
-        ]
-      }
-    ],
-    "brands": [
-      {
-        "name": "Mangosuthu University of Technology",
-        "role": "Employer",
-        "note": "Public university in Umlazi, Durban."
-      },
-      {
-        "name": "LDM Quantity Surveying",
-        "role": "Quantity surveyor",
-        "note": "Appointed quantity surveyor on the contract."
-      }
-    ],
-    "capabilities": [
-      [
-        "General Building",
-        "build/general-building.html"
-      ],
-      [
-        "Construction Project Management",
-        "manage/project-management.html"
-      ],
-      [
-        "Architectural Design",
-        "design/architecture.html"
-      ]
-    ],
-    "related": [
-      "howick-on-main-retail-centre",
-      "invesco-shopping-mall-pietermaritzburg"
-    ],
-    "faq": [
-      {
-        "q": "How long did the MUT Student Centre take to build?",
-        "a": "Ten months, from November 2016 to September 2017."
-      },
-      {
-        "q": "What contract form was used?",
-        "a": "JBCC Series 5, the Joint Building Contracts Committee Principal Building Agreement, as a full contract with Unicon as principal contractor."
-      },
-      {
-        "q": "Does Unicon build for universities and public institutions?",
-        "a": "Yes. Education buildings are part of Unicon's general building portfolio, alongside healthcare, retail and residential work."
-      },
-      {
-        "q": "Where is Mangosuthu University of Technology?",
-        "a": "In Umlazi, Durban, KwaZulu-Natal."
-      }
-    ],
-    "wa": "Hello Unicon, I would like to discuss an education or institutional building project similar to the MUT Student Centre."
+    "wa": "Hello Unicon, I would like to discuss a canal or heavy civils project similar to Makhathini.",
+    "appointment_label": "Full Contract (construction scope)",
+    "appointment_text": "Unicon is appointed to carry out the whole of the construction scope under one contract. We price the work, carry the programme and quality risk of our own works, procure and manage our subcontractors and hand over completed works. The contract may sit directly with the employer or under a main contractor or joint venture, which is common on larger public and mining projects."
   },
   "nestle-coffee-factory-upgrade": {
     "db": "Nestle Coffee Factory – Upgrade & Additions",
@@ -738,7 +655,7 @@
     ],
     "related": [
       "mnqumashe-high-throughput-abattoir",
-      "mut-student-centre-umlazi"
+      "invesco-shopping-mall-pietermaritzburg"
     ],
     "faq": [
       {
