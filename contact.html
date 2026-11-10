@@ -55,8 +55,6 @@
         .hidden-state { display: none !important; }
         
         /* Verification Slider */
-        .verify-slider { -webkit-appearance: none; width: 100%; height: 44px; background: #f4f4f5; outline: none; border: 1px solid #e5e7eb; cursor: pointer; border-radius: 2px; }
-        .verify-slider::-webkit-slider-thumb { -webkit-appearance: none; appearance: none; width: 90px; height: 42px; background: #0a0a0a; border: none; cursor: pointer; display: flex; align-items: center; justify-content: center; transition: background-color 0.3s; }
         @keyframes success-pop { 0% { transform: scale(0.9); opacity: 0; } 100% { transform: scale(1); opacity: 1; } }
         .animate-success { animation: success-pop 0.5s cubic-bezier(0.16, 1, 0.3, 1) forwards; }
         .hp-gate { position: absolute; left: -5000px; top: -5000px; opacity: 0; pointer-events: none; }
@@ -388,55 +386,98 @@
                         <div class="bg-unicon-black text-white px-6 py-4 flex justify-between items-center shrink-0 relative z-30">
                             <div class="flex items-center gap-3">
                                 <i class="fa-solid fa-shield-halved text-unicon-green text-sm"></i>
-                                <span class="text-[10px] font-mono uppercase tracking-[0.2em]" id="terminal-label">Secure_contact_V4.exe</span>
+                                <span class="text-[10px] font-mono uppercase tracking-[0.2em]" id="terminal-label">Project enquiry</span>
                             </div>
                             <div class="w-1.5 h-1.5 rounded-full bg-unicon-green animate-pulse"></div>
                         </div>
                         <!-- Input State -->
                         <div class="p-6 sm:p-10 bg-white flex-grow flex flex-col justify-center relative z-30" id="form-container">
-                            <form id="contactForm" class="space-y-6">
-                                
-                                <div class="hp-gate"><input type="text" name="bot_trap" tabindex="-1" autocomplete="off"></div>
+                            <form id="contactForm" class="space-y-6" novalidate>
+
+                                <div class="hp-gate" aria-hidden="true"><label>Leave this field empty<input type="text" name="bot_trap" tabindex="-1" autocomplete="off"></label></div>
+                                <input type="hidden" name="form_loaded_at" id="formLoadedAt" value="">
+
+                                <p class="text-sm font-light leading-relaxed text-gray-600">
+                                    Tell us about the project and we will reply within <strong class="font-bold text-unicon-black">one business day</strong>. Fields marked <span class="text-unicon-green font-bold">*</span> are required.
+                                </p>
+
+                                <div id="formError" class="hidden border border-red-200 bg-red-50 px-4 py-3 text-sm text-red-700" role="alert"></div>
+
                                 <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
                                     <div>
-                                        <label class="block text-[9px] font-mono uppercase tracking-widest text-gray-400 mb-1.5">Requester_Identity</label>
-                                        <input type="text" name="name" placeholder="NAME / COMPANY" class="w-full bg-unicon-slate border-b border-unicon-border focus:border-unicon-green px-4 py-3 outline-none transition-colors text-xs font-bold uppercase tracking-tight rounded-none" required>
+                                        <label for="f-name" class="block text-[11px] font-bold uppercase tracking-widest text-unicon-black mb-2">Your name <span class="text-unicon-green" aria-hidden="true">*</span></label>
+                                        <input type="text" id="f-name" name="name" autocomplete="name" required aria-required="true" aria-describedby="e-name" class="w-full bg-white border border-unicon-border focus:border-unicon-green focus:ring-1 focus:ring-unicon-green px-4 py-3 outline-none transition-colors text-sm text-unicon-black rounded-sm placeholder:text-gray-400 placeholder:font-light" placeholder="First and last name">
+                                        <p id="e-name" class="mt-1.5 text-[11px] font-bold text-red-600 hidden"></p>
                                     </div>
                                     <div>
-                                        <label class="block text-[9px] font-mono uppercase tracking-widest text-gray-400 mb-1.5">Return_Protocol</label>
-                                        <input type="email" name="email" placeholder="EMAIL@DOMAIN.CO.ZA" class="w-full bg-unicon-slate border-b border-unicon-border focus:border-unicon-green px-4 py-3 outline-none transition-colors text-xs font-bold uppercase tracking-tight rounded-none" required>
+                                        <label for="f-company" class="block text-[11px] font-bold uppercase tracking-widest text-unicon-black mb-2">Company <span class="font-normal text-gray-400 tracking-normal">(optional)</span></label>
+                                        <input type="text" id="f-company" name="company" autocomplete="organization" class="w-full bg-white border border-unicon-border focus:border-unicon-green focus:ring-1 focus:ring-unicon-green px-4 py-3 outline-none transition-colors text-sm text-unicon-black rounded-sm placeholder:text-gray-400 placeholder:font-light" placeholder="Organisation or municipality">
                                     </div>
                                 </div>
-                                <div>
-                                    <label class="block text-[9px] font-mono uppercase tracking-widest text-gray-400 mb-1.5">Enquiry_Type</label>
-                                    <select name="_subject" required class="w-full bg-unicon-slate border-b border-unicon-border focus:border-unicon-green px-4 py-3 outline-none transition-colors text-xs font-bold uppercase tracking-tight rounded-none cursor-pointer">
-                                        <option value="Website enquiry: Invitation to Tender">Invitation to Tender</option>
-                                        <option value="Website enquiry: EPC / Turnkey Appointment">EPC / Turnkey Appointment</option>
-                                        <option value="Website enquiry: Project or Technical Query">Project / Technical Query</option>
-                                        <option value="Website enquiry: JV or Partnership Proposal">JV / Partnership Proposal</option>
-                                        <option value="Website enquiry: General">General Enquiry</option>
-                                    </select>
+
+                                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                                    <div>
+                                        <label for="f-email" class="block text-[11px] font-bold uppercase tracking-widest text-unicon-black mb-2">Email <span class="text-unicon-green" aria-hidden="true">*</span></label>
+                                        <input type="email" id="f-email" name="email" autocomplete="email" required aria-required="true" aria-describedby="e-email" class="w-full bg-white border border-unicon-border focus:border-unicon-green focus:ring-1 focus:ring-unicon-green px-4 py-3 outline-none transition-colors text-sm text-unicon-black rounded-sm placeholder:text-gray-400 placeholder:font-light" placeholder="you@company.co.za">
+                                        <p id="e-email" class="mt-1.5 text-[11px] font-bold text-red-600 hidden"></p>
+                                    </div>
+                                    <div>
+                                        <label for="f-phone" class="block text-[11px] font-bold uppercase tracking-widest text-unicon-black mb-2">Phone <span class="font-normal text-gray-400 tracking-normal">(optional)</span></label>
+                                        <input type="tel" id="f-phone" name="phone" autocomplete="tel" inputmode="tel" class="w-full bg-white border border-unicon-border focus:border-unicon-green focus:ring-1 focus:ring-unicon-green px-4 py-3 outline-none transition-colors text-sm text-unicon-black rounded-sm placeholder:text-gray-400 placeholder:font-light" placeholder="+27 ...">
+                                    </div>
                                 </div>
-                                <div>
-                                    <label class="block text-[9px] font-mono uppercase tracking-widest text-gray-400 mb-1.5">Inquiry_Project Details</label>
-                                    <textarea name="message" rows="4" placeholder="PLEASE OUTLINE YOUR PROJECT SCOPE OR INQUIRY..." class="w-full bg-unicon-slate border-b border-unicon-border focus:border-unicon-green px-4 py-3 outline-none transition-colors text-xs font-light resize-none rounded-none" required></textarea>
+
+                                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                                    <div>
+                                        <label for="f-location" class="block text-[11px] font-bold uppercase tracking-widest text-unicon-black mb-2">Project location <span class="font-normal text-gray-400 tracking-normal">(optional)</span></label>
+                                        <input type="text" id="f-location" name="project_location" class="w-full bg-white border border-unicon-border focus:border-unicon-green focus:ring-1 focus:ring-unicon-green px-4 py-3 outline-none transition-colors text-sm text-unicon-black rounded-sm placeholder:text-gray-400 placeholder:font-light" placeholder="Town, province">
+                                    </div>
+                                    <div>
+                                        <label for="f-type" class="block text-[11px] font-bold uppercase tracking-widest text-unicon-black mb-2">What is this about? <span class="text-unicon-green" aria-hidden="true">*</span></label>
+                                        <select id="f-type" name="_subject" required aria-required="true" class="w-full bg-white border border-unicon-border focus:border-unicon-green focus:ring-1 focus:ring-unicon-green px-4 py-3 outline-none transition-colors text-sm text-unicon-black rounded-sm placeholder:text-gray-400 placeholder:font-light cursor-pointer">
+                                            <option value="Website enquiry: Invitation to tender" data-key="tender">Invitation to tender</option>
+                                            <option value="Website enquiry: Design and build (turnkey) project" data-key="turnkey">Design and build (turnkey) project</option>
+                                            <option value="Website enquiry: Bulk water or wastewater project" data-key="water">Bulk water or wastewater project</option>
+                                            <option value="Website enquiry: Civil engineering or earthworks project" data-key="civil">Civil engineering or earthworks project</option>
+                                            <option value="Website enquiry: Building project" data-key="building">Building project</option>
+                                            <option value="Website enquiry: Agricultural or industrial project" data-key="agri">Agricultural or industrial project</option>
+                                            <option value="Website enquiry: Question about a project or a technical query" data-key="technical">Question about a project or a technical query</option>
+                                            <option value="Website enquiry: Project or construction management appointment" data-key="manage">Project or construction management appointment</option>
+                                            <option value="Website enquiry: Joint venture or partnership" data-key="jv">Joint venture or partnership</option>
+                                            <option value="Website enquiry: Something else" data-key="other">Something else</option>
+                                        </select>
+                                    </div>
                                 </div>
+
+                                <div>
+                                    <label for="f-details" class="block text-[11px] font-bold uppercase tracking-widest text-unicon-black mb-2">Project details <span class="text-unicon-green" aria-hidden="true">*</span></label>
+                                    <textarea id="f-details" name="message" rows="5" required aria-required="true" aria-describedby="e-details" class="w-full bg-white border border-unicon-border focus:border-unicon-green focus:ring-1 focus:ring-unicon-green px-4 py-3 outline-none transition-colors text-sm text-unicon-black rounded-sm placeholder:text-gray-400 placeholder:font-light resize-none font-light" placeholder="What needs building, roughly when, and anything else that would help us answer properly."></textarea>
+                                    <p id="e-details" class="mt-1.5 text-[11px] font-bold text-red-600 hidden"></p>
+                                </div>
+
+                                <div>
+                                    <label for="f-docs" class="block text-[11px] font-bold uppercase tracking-widest text-unicon-black mb-2">Link to tender or drawing documents <span class="font-normal text-gray-400 tracking-normal">(optional)</span></label>
+                                    <input type="url" id="f-docs" name="document_link" aria-describedby="e-docs docs-help" class="w-full bg-white border border-unicon-border focus:border-unicon-green focus:ring-1 focus:ring-unicon-green px-4 py-3 outline-none transition-colors text-sm text-unicon-black rounded-sm placeholder:text-gray-400 placeholder:font-light" placeholder="https://...">
+                                    <p id="e-docs" class="mt-1.5 text-[11px] font-bold text-red-600 hidden"></p>
+                                    <p id="docs-help" class="mt-2 text-xs font-light text-gray-500">
+                                        Paste a link to a tender pack or drawing set, or email the documents to
+                                        <a href="mailto:info@uniconsa.co.za" class="font-bold text-unicon-green hover:underline">info@uniconsa.co.za</a>.
+                                        Please attach documents rather than linking to cloud storage that expires.
+                                    </p>
+                                </div>
+
                                 <div class="flex items-start gap-3 p-4 bg-unicon-slate border border-unicon-border">
-                                    <input type="checkbox" id="popi_consent" name="popi_consent" value="Consented" class="mt-1 accent-unicon-green w-4 h-4 cursor-pointer" required>
-                                    <label for="popi_consent" class="text-[9px] leading-relaxed text-gray-500 uppercase tracking-tighter">
-                                        I consent to data processing for technical inquiries. <span class="text-unicon-black font-bold">Unsolicited marketing lists prohibited.</span>
-                                    </label>
-                                </div>
-                                <!-- Verification Slider -->
-                                <div class="relative pt-2 group/slider">
-                                    <label class="block text-[9px] font-mono uppercase tracking-widest text-gray-400 mb-2 text-center">Human_Verification: Slide to Unlock</label>
-                                    <input type="range" min="0" max="100" value="0" id="verifySlider" class="verify-slider relative z-20">
-                                    <div class="absolute bottom-[14px] left-1/2 -translate-x-1/2 pointer-events-none opacity-20 group-hover/slider:opacity-50 transition-opacity z-10">
-                                        <span class="text-[10px] font-bold tracking-[4px]">>>>>>></span>
+                                    <input type="checkbox" id="popi_consent" name="popi_consent" value="Consented" class="mt-0.5 accent-unicon-green w-4 h-4 cursor-pointer shrink-0" required aria-required="true" aria-describedby="e-consent">
+                                    <div>
+                                        <label for="popi_consent" class="text-xs leading-relaxed text-gray-600 font-light">
+                                            I am happy for Unicon to use these details to answer my enquiry. We do not add anyone to a marketing list. <span class="text-unicon-green" aria-hidden="true">*</span>
+                                        </label>
+                                        <p id="e-consent" class="mt-1.5 text-[11px] font-bold text-red-600 hidden"></p>
                                     </div>
                                 </div>
-                                <button type="submit" id="submitBtn" disabled class="w-full py-5 bg-gray-200 text-gray-400 font-bold uppercase tracking-widest text-xs flex items-center justify-center gap-3 cursor-not-allowed transition-all shadow-sm">
-                                    Locked <i class="fa-solid fa-lock text-[10px]"></i>
+
+                                <button type="submit" id="submitBtn" class="w-full py-5 bg-unicon-black text-white font-bold uppercase tracking-widest text-xs flex items-center justify-center gap-3 cursor-pointer transition-colors shadow-lg hover:bg-unicon-green">
+                                    Send enquiry <i class="fa-solid fa-paper-plane text-[10px]"></i>
                                 </button>
                             </form>
                         </div>
@@ -445,25 +486,25 @@
                             <div class="w-20 h-20 bg-unicon-green text-white rounded-full flex items-center justify-center mb-8 shadow-xl shadow-unicon-green/20">
                                 <i class="fa-solid fa-check text-3xl"></i>
                             </div>
-                            <h3 class="text-2xl font-black uppercase tracking-tighter text-unicon-black mb-3">Transmission Sent</h3>
+                            <h3 class="text-2xl font-black uppercase tracking-tighter text-unicon-black mb-3">Thank you &mdash; enquiry sent</h3>
                             <p class="text-sm text-gray-500 font-light leading-relaxed max-w-[280px] mb-8">
-                                contact established. Your project Project Details has been successfully routed to the Engineering Office.
+                                It has gone to our engineering office in Hilton. Someone will come back to you within one business day. If it is urgent, call +27 66 483 4709.
                             </p>
                             <div class="w-full max-w-[200px] bg-gray-100 h-[2px] mb-4 relative overflow-hidden">
                                 <div class="absolute inset-0 bg-unicon-green w-full"></div>
                             </div>
-                            <p class="text-[9px] font-mono text-unicon-green uppercase font-bold tracking-widest">Status: Transmission_Confirmed</p>
+                            
                             
                             <button onclick="location.reload()" class="mt-12 text-[10px] font-bold uppercase tracking-[0.2em] text-gray-400 hover:text-unicon-black transition-colors border-b border-gray-200 pb-1">
-                                New Transmission
+                                Send another enquiry
                             </button>
                         </div>
                         <!-- Bottom Status Bar -->
                         <div class="px-8 pb-8 bg-white shrink-0 relative z-30">
                             <div class="pt-6 border-t border-unicon-border flex justify-between items-end">
                                 <div class="font-mono text-[7px] text-gray-400 uppercase space-y-1 tracking-widest">
-                                    <p>Encrypted_By: Unicon_SA</p>
-                                    <p id="status-text">Status: <span class="text-unicon-green animate-pulse">System_Ready</span></p>
+                                    <p>Reply within one business day</p>
+                                    <p id="status-text">Ready when you are</p>
                                 </div>
                                 <div class="text-right">
                                     <span class="font-black text-xl tracking-tighter uppercase text-unicon-black">UNICON</span>
@@ -655,41 +696,120 @@
         });
     </script>
     <script>
-    // Restores the slider gate and Formspree submission that were dropped when
-    // this page's inline script was rewritten; without them the form cannot be
-    // submitted at all — the button stays disabled and nothing is ever sent.
+    // The enquiry form. Plain validation with messages next to the field that
+    // failed, a hidden honeypot plus a minimum fill time instead of a slider
+    // (both work with a keyboard and on a phone), and the two GA4 key events:
+    // form_start the first time someone types, generate_lead on a successful send.
     (function () {
         var form = document.getElementById('contactForm');
-        var slider = document.getElementById('verifySlider');
         var submitBtn = document.getElementById('submitBtn');
+        var formError = document.getElementById('formError');
         var statusText = document.getElementById('status-text');
         var terminalLabel = document.getElementById('terminal-label');
-        if (!form || !slider || !submitBtn) return;
+        var loadedAt = document.getElementById('formLoadedAt');
+        if (!form || !submitBtn) return;
 
-        var unlocked = false;
-        var unlock = function () {
-            if (parseInt(slider.value, 10) > 92) {
-                unlocked = true;
-                slider.disabled = true;
-                submitBtn.disabled = false;
-                submitBtn.classList.remove('bg-gray-200', 'text-gray-400', 'cursor-not-allowed');
-                submitBtn.classList.add('bg-unicon-black', 'text-white', 'hover:bg-unicon-green', 'shadow-lg');
-                submitBtn.innerHTML = 'Transmit Enquiry <i class="fa-solid fa-paper-plane"></i>';
-            } else {
-                slider.value = 0;
+        // Every sector and project page ends with a "Discuss a project" link
+        // carrying ?about=, so the enquiry type is already right when the form
+        // opens and the visitor has one less thing to choose.
+        (function () {
+            var want = new URLSearchParams(location.search).get('about');
+            if (!want) return;
+            var sel = document.getElementById('f-type');
+            if (!sel) return;
+            for (var i = 0; i < sel.options.length; i++) {
+                if (sel.options[i].getAttribute('data-key') === want) { sel.selectedIndex = i; return; }
+            }
+        })();
+
+        var started = Date.now();
+        if (loadedAt) loadedAt.value = String(started);
+
+        // form_start: once, the first time the visitor actually engages.
+        var startFired = false;
+        form.addEventListener('input', function () {
+            if (startFired) return;
+            startFired = true;
+            if (typeof gtag === 'function') gtag('event', 'form_start', { form_id: 'contact_enquiry' });
+        });
+
+        var fieldError = function (input, id, message) {
+            var p = document.getElementById(id);
+            if (p) { p.textContent = message; p.classList.toggle('hidden', !message); }
+            if (input) {
+                input.setAttribute('aria-invalid', message ? 'true' : 'false');
+                input.classList.toggle('border-red-500', !!message);
             }
         };
-        slider.addEventListener('change', unlock);
-        slider.addEventListener('touchend', unlock);
-        slider.addEventListener('mouseup', unlock);
+
+        var checks = function () {
+            var name = form.elements['name'];
+            var email = form.elements['email'];
+            var details = form.elements['message'];
+            var docs = form.elements['document_link'];
+            var consent = form.elements['popi_consent'];
+            var problems = [];
+
+            fieldError(name, 'e-name', '');
+            fieldError(email, 'e-email', '');
+            fieldError(details, 'e-details', '');
+            fieldError(docs, 'e-docs', '');
+            fieldError(consent, 'e-consent', '');
+
+            if (!name.value.trim()) {
+                fieldError(name, 'e-name', 'Please tell us your name.');
+                problems.push(name);
+            }
+            if (!email.value.trim()) {
+                fieldError(email, 'e-email', 'Please give us an email address so we can reply.');
+                problems.push(email);
+            } else if (!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(email.value.trim())) {
+                fieldError(email, 'e-email', 'That email address does not look right. Please check it.');
+                problems.push(email);
+            }
+            if (!details.value.trim()) {
+                fieldError(details, 'e-details', 'Please tell us a little about the project.');
+                problems.push(details);
+            }
+            if (docs && docs.value.trim() && !/^https?:\/\/\S+$/i.test(docs.value.trim())) {
+                fieldError(docs, 'e-docs', 'Please paste a full link starting with http:// or https://, or leave this blank.');
+                problems.push(docs);
+            }
+            if (!consent.checked) {
+                fieldError(consent, 'e-consent', 'Please tick this so we may reply to you.');
+                problems.push(consent);
+            }
+            return problems;
+        };
+
+        var showFormError = function (message) {
+            if (!formError) return;
+            formError.innerHTML = message;
+            formError.classList.remove('hidden');
+        };
 
         form.addEventListener('submit', function (e) {
             e.preventDefault();
-            if (!unlocked) return;
+            if (formError) formError.classList.add('hidden');
+
+            var problems = checks();
+            if (problems.length) {
+                showFormError('Please check the highlighted ' + (problems.length === 1 ? 'field' : 'fields') + ' and send again.');
+                problems[0].focus();
+                return;
+            }
+
+            // Spam checks: the honeypot must stay empty, and a real person takes
+            // more than a couple of seconds to fill this in.
             if (form.elements['bot_trap'] && form.elements['bot_trap'].value !== '') return;
+            if (Date.now() - started < 3000) {
+                showFormError('That was very quick. Please take a moment and send again.');
+                return;
+            }
+
             submitBtn.disabled = true;
-            submitBtn.innerHTML = 'Transmitting... <i class="fa-solid fa-spinner fa-spin"></i>';
-            if (statusText) statusText.innerHTML = 'Status: <span class="text-yellow-500 animate-pulse">Routing_Data...</span>';
+            submitBtn.innerHTML = 'Sending... <i class="fa-solid fa-spinner fa-spin text-[10px]"></i>';
+            if (statusText) statusText.textContent = 'Sending your enquiry...';
 
             fetch('https://formspree.io/f/xpqoanel', {
                 method: 'POST',
@@ -700,38 +820,42 @@
                     if (typeof gtag === 'function') gtag('event', 'generate_lead', { method: 'contact_form' });
                     document.getElementById('form-container').classList.add('hidden-state');
                     document.getElementById('successState').classList.remove('hidden-state');
-                    if (terminalLabel) terminalLabel.innerText = 'Confirmation_Receipt';
-                    if (statusText) statusText.innerHTML = 'Status: <span class="text-unicon-green">Contact_Complete</span>';
+                    if (terminalLabel) terminalLabel.innerText = 'Enquiry sent';
+                    if (statusText) statusText.textContent = 'Enquiry sent';
                     form.reset();
                 } else {
                     submitBtn.disabled = false;
-                    submitBtn.innerHTML = 'Transmission Failed. Retry?';
-                    submitBtn.classList.add('bg-red-600');
-                    if (statusText) statusText.innerHTML = 'Status: <span class="text-red-500">Error_Transmission_Failed</span>';
+                    submitBtn.innerHTML = 'Send enquiry <i class="fa-solid fa-paper-plane text-[10px]"></i>';
+                    showFormError('Sorry, that did not go through. Please try once more, or email us at '
+                        + '<a href="mailto:info@uniconsa.co.za" class="font-bold underline">info@uniconsa.co.za</a>.');
+                    if (statusText) statusText.textContent = 'Could not send';
                 }
             }).catch(function () {
                 submitBtn.disabled = false;
-                submitBtn.innerHTML = 'Network Error. Retry?';
-                submitBtn.classList.add('bg-red-600');
-                if (statusText) statusText.innerHTML = 'Status: <span class="text-red-500">Error_Network</span>';
+                submitBtn.innerHTML = 'Send enquiry <i class="fa-solid fa-paper-plane text-[10px]"></i>';
+                showFormError('We could not reach our server, which usually means the connection dropped. '
+                    + 'Please try again, or email us at '
+                    + '<a href="mailto:info@uniconsa.co.za" class="font-bold underline">info@uniconsa.co.za</a>.');
+                if (statusText) statusText.textContent = 'Could not send';
             });
         });
     })();
     </script>
+<!-- CHROME:TRACKING:START - generated by tools/chrome.py, do not edit by hand -->
     <script>
-    // Phone, WhatsApp and email are the main enquiry routes besides the form;
-    // without this none of them are visible in analytics. Runs inline at end of
-    // body (DOM already parsed) so the page keeps a single DOMContentLoaded.
     (function () {
-        if (typeof gtag !== 'function') return;
-        document.querySelectorAll('a[href^="tel:"], a[href^="mailto:"], a[href*="wa.me/"]').forEach(function (a) {
-            a.addEventListener('click', function () {
-                var h = a.getAttribute('href') || '';
-                var m = h.indexOf('tel:') === 0 ? 'phone' : (h.indexOf('mailto:') === 0 ? 'email' : 'whatsapp');
-                gtag('event', 'contact_click', { method: m, page_path: location.pathname });
-            });
-        });
+        document.addEventListener('click', function (ev) {
+            var a = ev.target && ev.target.closest ? ev.target.closest('a[href]') : null;
+            if (!a || typeof gtag !== 'function') return;
+            var h = a.getAttribute('href') || '';
+            var m = h.indexOf('tel:') === 0 ? 'phone'
+                  : h.indexOf('mailto:') === 0 ? 'email'
+                  : h.indexOf('wa.me/') > -1 ? 'whatsapp' : null;
+            if (!m) return;
+            gtag('event', 'contact_click', { method: m, page_path: location.pathname });
+        }, true);
     })();
     </script>
+    <!-- CHROME:TRACKING:END -->
 </body>
 </html>

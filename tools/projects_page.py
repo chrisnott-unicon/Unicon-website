@@ -395,6 +395,11 @@ import chrome
 # away from the rest of the site.
 NAV = chrome.NAV_START + "\n" + chrome.nav("projects.html") + "\n    " + chrome.NAV_END
 FOOTER = chrome.FOOT_START + "\n" + chrome.footer("projects.html") + "\n    " + chrome.FOOT_END
+# The contact_click key event is owned by chrome.py too. This page is rewritten
+# whole on every run, so a block that is not placed here is simply lost - which
+# is how it went missing from this page once already.
+TRACKING = chrome.TRACK_START + "\n" + chrome.tracking() + "\n    " + chrome.TRACK_END
+ENQUIRY = chrome.ENQ_START + "\n" + chrome.enquiry("projects.html") + "\n    " + chrome.ENQ_END
 
 HTML = f"""<!DOCTYPE html>
 <html lang="en" class="scroll-smooth">
@@ -671,7 +676,9 @@ HTML = f"""<!DOCTYPE html>
         </div>
     </section>
 
-{FOOTER}
+{ENQUIRY}
+
+    {FOOTER}
 
     <div id="lightbox" class="fixed inset-0 z-[200] hidden items-center justify-center bg-black/95 p-4 backdrop-blur-sm" role="dialog" aria-modal="true" aria-label="Enlarged project photograph">
         <button type="button" id="lightboxClose" class="absolute right-5 top-5 p-3 text-2xl text-white transition-colors hover:text-unicon-green" aria-label="Close image viewer"><i class="fa-solid fa-xmark"></i></button>
@@ -816,7 +823,7 @@ HTML = f"""<!DOCTYPE html>
         </div>
     </div>
 
-    <!-- SCRIPTS -->
+    {TRACKING}
 </body>
 </html>
 """

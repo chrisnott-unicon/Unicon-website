@@ -36,6 +36,11 @@ REQUIRED = {
     r'property="og:title"': "Open Graph title",
     r'<script async src="https://www\.googletagmanager\.com/gtag/js': "GA4 tag",
     r"document\.addEventListener\('DOMContentLoaded'": "shared script",
+    # contact_click is a GA4 key event. It used to be pasted in by hand and one
+    # generator quietly dropped it, so the block is owned by chrome.py and its
+    # presence is asserted here.
+    r"<!-- CHROME:TRACKING:START": "contact_click tracking block",
+    r"'contact_click'": "contact_click event",
 }
 
 

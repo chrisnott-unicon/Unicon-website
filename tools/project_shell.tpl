@@ -69,6 +69,8 @@
 
     @@BODY@@
 
+    @@ENQUIRY@@
+
     @@FOOTER@@
 
     <!-- POPIA BANNER -->
@@ -144,20 +146,6 @@
             }
         });
     </script>
-    <script>
-    // Phone, WhatsApp and email are the main enquiry routes besides the form;
-    // without this none of them are visible in analytics. Runs inline at end of
-    // body (DOM already parsed) so the page keeps a single DOMContentLoaded.
-    (function () {
-        if (typeof gtag !== 'function') return;
-        document.querySelectorAll('a[href^="tel:"], a[href^="mailto:"], a[href*="wa.me/"]').forEach(function (a) {
-            a.addEventListener('click', function () {
-                var h = a.getAttribute('href') || '';
-                var m = h.indexOf('tel:') === 0 ? 'phone' : (h.indexOf('mailto:') === 0 ? 'email' : 'whatsapp');
-                gtag('event', 'contact_click', { method: m, page_path: location.pathname });
-            });
-        });
-    })();
-    </script>
+    @@TRACKING@@
 </body>
 </html>
