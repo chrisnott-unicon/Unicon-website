@@ -69,6 +69,8 @@
 
     @@BODY@@
 
+    @@ENQUIRY@@
+
     @@FOOTER@@
 
     <!-- POPIA BANNER -->

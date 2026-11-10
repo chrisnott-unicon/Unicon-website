@@ -435,15 +435,16 @@
                                     <div>
                                         <label for="f-type" class="block text-[11px] font-bold uppercase tracking-widest text-unicon-black mb-2">What is this about? <span class="text-unicon-green" aria-hidden="true">*</span></label>
                                         <select id="f-type" name="_subject" required aria-required="true" class="w-full bg-white border border-unicon-border focus:border-unicon-green focus:ring-1 focus:ring-unicon-green px-4 py-3 outline-none transition-colors text-sm text-unicon-black rounded-sm placeholder:text-gray-400 placeholder:font-light cursor-pointer">
-                                            <option value="Website enquiry: Invitation to tender">Invitation to tender</option>
-                                            <option value="Website enquiry: Design and build (turnkey) project">Design and build (turnkey) project</option>
-                                            <option value="Website enquiry: Bulk water or wastewater project">Bulk water or wastewater project</option>
-                                            <option value="Website enquiry: Civil engineering or earthworks project">Civil engineering or earthworks project</option>
-                                            <option value="Website enquiry: Building project">Building project</option>
-                                            <option value="Website enquiry: Agricultural or industrial project">Agricultural or industrial project</option>
-                                            <option value="Website enquiry: Question about a project or a technical query">Question about a project or a technical query</option>
-                                            <option value="Website enquiry: Joint venture or partnership">Joint venture or partnership</option>
-                                            <option value="Website enquiry: Something else">Something else</option>
+                                            <option value="Website enquiry: Invitation to tender" data-key="tender">Invitation to tender</option>
+                                            <option value="Website enquiry: Design and build (turnkey) project" data-key="turnkey">Design and build (turnkey) project</option>
+                                            <option value="Website enquiry: Bulk water or wastewater project" data-key="water">Bulk water or wastewater project</option>
+                                            <option value="Website enquiry: Civil engineering or earthworks project" data-key="civil">Civil engineering or earthworks project</option>
+                                            <option value="Website enquiry: Building project" data-key="building">Building project</option>
+                                            <option value="Website enquiry: Agricultural or industrial project" data-key="agri">Agricultural or industrial project</option>
+                                            <option value="Website enquiry: Question about a project or a technical query" data-key="technical">Question about a project or a technical query</option>
+                                            <option value="Website enquiry: Project or construction management appointment" data-key="manage">Project or construction management appointment</option>
+                                            <option value="Website enquiry: Joint venture or partnership" data-key="jv">Joint venture or partnership</option>
+                                            <option value="Website enquiry: Something else" data-key="other">Something else</option>
                                         </select>
                                     </div>
                                 </div>
@@ -707,6 +708,19 @@
         var terminalLabel = document.getElementById('terminal-label');
         var loadedAt = document.getElementById('formLoadedAt');
         if (!form || !submitBtn) return;
+
+        // Every sector and project page ends with a "Discuss a project" link
+        // carrying ?about=, so the enquiry type is already right when the form
+        // opens and the visitor has one less thing to choose.
+        (function () {
+            var want = new URLSearchParams(location.search).get('about');
+            if (!want) return;
+            var sel = document.getElementById('f-type');
+            if (!sel) return;
+            for (var i = 0; i < sel.options.length; i++) {
+                if (sel.options[i].getAttribute('data-key') === want) { sel.selectedIndex = i; return; }
+            }
+        })();
 
         var started = Date.now();
         if (loadedAt) loadedAt.value = String(started);
