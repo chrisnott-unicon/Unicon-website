@@ -107,6 +107,7 @@ LOGO = "https://wsrv.nl/?url=raw.githubusercontent.com/chrisnott-unicon/UniconLo
 MAP = "https://share.google/XC0JuqEbN4XYJeM5k"
 PHONE_HREF = "tel:+27664834709"
 PHONE_TEXT = "+27 66 483 4709"
+EMAIL = "info@uniconsa.co.za"
 
 DROP_ITEM = ("block px-5 py-3 text-[10px] uppercase tracking-widest text-gray-400 "
              "hover:text-white hover:bg-unicon-green/20")
@@ -278,6 +279,13 @@ def footer(page: str) -> str:
                             <div>
                                 <p class="text-[10px] text-gray-400 uppercase tracking-widest font-mono mb-1">Direct Contact</p>
                                 <a href="{PHONE_HREF}" class="text-xs font-bold text-unicon-black hover:text-unicon-green transition-colors font-mono tracking-tighter">{PHONE_TEXT}</a>
+                            </div>
+                        </div>
+                        <div class="flex items-start gap-4">
+                            <i class="fa-solid fa-envelope text-unicon-green mt-1 text-sm opacity-70"></i>
+                            <div>
+                                <p class="text-[10px] text-gray-400 uppercase tracking-widest font-mono mb-1">Enquiries</p>
+                                <a href="mailto:{EMAIL}" class="text-xs font-bold text-unicon-black hover:text-unicon-green transition-colors tracking-tight">{EMAIL}</a>
                             </div>
                         </div>
                     </div>

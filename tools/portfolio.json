@@ -76,7 +76,8 @@
   ],
   "flagships": [
     {
-      "name": "Thabazimbi 10ML Reservoir", "page": "thabazimbi-10ml-dome-roof-reservoir",
+      "name": "Thabazimbi 10ML Reservoir",
+      "page": "thabazimbi-10ml-dome-roof-reservoir",
       "client": "Anglo American",
       "year": 2016,
       "sector": "Bulk Water",
@@ -86,7 +87,8 @@
       "verified": false
     },
     {
-      "name": "Tinley Manor WWTW", "page": "tinley-manor-wwtw-club-med",
+      "name": "Tinley Manor WWTW",
+      "page": "tinley-manor-wwtw-club-med",
       "client": "Club Med resort development",
       "year": 2024,
       "sector": "Wastewater",
@@ -96,7 +98,8 @@
       "verified": true
     },
     {
-      "name": "Invesco Shopping Mall", "page": "invesco-shopping-mall-pietermaritzburg",
+      "name": "Invesco Shopping Mall",
+      "page": "invesco-shopping-mall-pietermaritzburg",
       "client": "Invesco (Pty) Ltd",
       "year": 2008,
       "sector": "Commercial",
