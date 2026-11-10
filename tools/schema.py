@@ -97,6 +97,26 @@ def existing_types(s: str) -> set:
     return set(re.findall(r'"@type"\s*:\s*"([^"]+)"', outside))
 
 
+def top_types(s: str) -> set:
+    """Types of the TOP-LEVEL node of each block outside our generated one.
+
+    existing_types() sees every nested @type, so an Article whose author and
+    publisher are Organization objects looked as though it already carried the
+    organisation node and was skipped. Only a top-level node counts.
+    """
+    outside = re.sub(re.escape(START) + r".*?" + re.escape(END), "", s, flags=re.S)
+    out = set()
+    for block in re.findall(r'<script type="application/ld\+json">(.*?)</script>', outside, re.S):
+        try:
+            d = json.loads(block)
+        except Exception:
+            continue
+        for node in (d.get("@graph") or [d]):
+            if isinstance(node, dict) and node.get("@type"):
+                out.add(node["@type"])
+    return out
+
+
 def breadcrumb(page: str):
     """Home > Section > Page, derived from the navigation menu."""
     items = [{"@type": "ListItem", "position": 1, "name": "Home", "item": url("index.html")}]
@@ -151,9 +171,39 @@ def title_of(s: str) -> str:
     return m.group(1) if m else ""
 
 
+# The organisation node. It was declared once, on the home page, and referenced
+# by @id from everywhere else - correct linked-data practice, but it means a
+# crawler landing on a sector page from search sees a reference to an entity it
+# has never read. The same node (same @id, so still one entity) now goes on
+# every content page.
+def organization() -> dict:
+    return {
+        "@context": "https://schema.org",
+        "@type": "GeneralContractor",
+        "@id": ORG_ID,
+        "name": "Unicon Construction (Pty) Ltd",
+        "alternateName": "Unicon Construction SA",
+        "url": f"{BASE}/",
+        "logo": LOGO,
+        "image": LOGO,
+        "telephone": "+27664834709",
+        "email": "info@uniconsa.co.za",
+        "foundingDate": "1991",
+        "address": {"@type": "PostalAddress", "addressLocality": "Hilton",
+                    "addressRegion": "KwaZulu-Natal", "addressCountry": "ZA"},
+        "hasMap": MAP,
+        "areaServed": [{"@type": "AdministrativeArea", "name": a} for a in AREA_SERVED],
+        "sameAs": ["https://www.linkedin.com/company/unicon-construction",
+                   "https://www.facebook.com/uniconconstruction"],
+    }
+
+
 def blocks_for(page: str, s: str) -> list:
     have = existing_types(s)
     out = []
+
+    if not top_types(s) & {"GeneralContractor", "Organization", "LocalBusiness"}:
+        out.append(organization())
 
     crumbs = [] if page in project_pages() else breadcrumb(page)
     if crumbs and "BreadcrumbList" not in have:
@@ -203,6 +253,14 @@ def blocks_for(page: str, s: str) -> list:
         out.append({"@context": "https://schema.org", "@type": "AboutPage",
                     "name": title_of(s), "description": meta(s, "description"),
                     "url": url(page), "about": {"@id": ORG_ID}})
+
+    if page.startswith("communications/insights/") and "BreadcrumbList" not in have:
+        out.append({"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [
+            {"@type": "ListItem", "position": 1, "name": "Home", "item": f"{BASE}/"},
+            {"@type": "ListItem", "position": 2, "name": "Insights",
+             "item": f"{BASE}/communications/insights.html"},
+            {"@type": "ListItem", "position": 3, "name": title_of(s), "item": url(page)},
+        ]})
 
     if page == "contact.html" and "ContactPage" not in have:
         out.append({"@context": "https://schema.org", "@type": "ContactPage",

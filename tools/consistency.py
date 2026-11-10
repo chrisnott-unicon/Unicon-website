@@ -69,12 +69,26 @@ class Balance(HTMLParser):
             self.errors.append(f"stray </{tag}>")
 
 
+def portfolio_totals() -> list[str]:
+    """The home page showed 91 in one place and 94 in another, which reads as a
+    contradiction. Both were right - 91 complete, 94 listed including the three
+    in progress - but nothing tied either to the database, so either could rot.
+    """
+    import collections
+    rows = json.load(open("tools/projects.json", encoding="utf-8"))["projects"]
+    st = collections.Counter(r.get("status", "") for r in rows)
+    want = {"projects": st["Complete"], "listed": st["Complete"] + st["In Progress"]}
+    have = json.load(open("tools/portfolio.json", encoding="utf-8"))["totals"]
+    return [f"tools/portfolio.json: totals.{k} is {have.get(k)}, the project database says {v}"
+            for k, v in want.items() if have.get(k) != v]
+
+
 def main() -> None:
     os.chdir(ROOT)
     files = sorted(f.replace(os.sep, "/") for f in glob.glob("**/*.html", recursive=True))
     local = set(files)
     dirs = {os.path.dirname(f) for f in files if os.path.dirname(f)}
-    fails: list[str] = []
+    fails: list[str] = portfolio_totals()
     content = 0
 
     for f in files:

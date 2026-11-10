@@ -107,6 +107,7 @@ LOGO = "https://wsrv.nl/?url=raw.githubusercontent.com/chrisnott-unicon/UniconLo
 MAP = "https://share.google/XC0JuqEbN4XYJeM5k"
 PHONE_HREF = "tel:+27664834709"
 PHONE_TEXT = "+27 66 483 4709"
+EMAIL = "info@uniconsa.co.za"
 
 DROP_ITEM = ("block px-5 py-3 text-[10px] uppercase tracking-widest text-gray-400 "
              "hover:text-white hover:bg-unicon-green/20")
@@ -280,6 +281,13 @@ def footer(page: str) -> str:
                                 <a href="{PHONE_HREF}" class="text-xs font-bold text-unicon-black hover:text-unicon-green transition-colors font-mono tracking-tighter">{PHONE_TEXT}</a>
                             </div>
                         </div>
+                        <div class="flex items-start gap-4">
+                            <i class="fa-solid fa-envelope text-unicon-green mt-1 text-sm opacity-70"></i>
+                            <div>
+                                <p class="text-[10px] text-gray-400 uppercase tracking-widest font-mono mb-1">Enquiries</p>
+                                <a href="mailto:{EMAIL}" class="text-xs font-bold text-unicon-black hover:text-unicon-green transition-colors tracking-tight">{EMAIL}</a>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -348,6 +356,58 @@ SECTOR_KEYS = {
 PROJECT_PAGES = json.load(open(os.path.join(ROOT, "tools", "project_pages.json"), encoding="utf-8"))
 
 
+# An article ends and the reader is left on a page with no next step. Each one
+# now finishes with the projects behind it and the same enquiry strip the
+# sector pages carry. The project lists are asserted against the files they
+# name; the enquiry type comes from the article's own category.
+ARTICLE_PROJECTS = {
+    "40ml-reservoirs": ["thabazimbi-10ml-dome-roof-reservoir"],
+    "water-treatment-works-upgrade": ["tinley-manor-wwtw-club-med"],
+    "el-nino-dry-season-water-infrastructure": ["thabazimbi-10ml-dome-roof-reservoir",
+                                                "tinley-manor-wwtw-club-med"],
+    "rural-bridges-and-drainage": ["makhathini-drainage-canal-jozini"],
+    "municipal-elections-and-the-long-record": ["makhathini-drainage-canal-jozini"],
+    "facility-management": ["invesco-shopping-mall-pietermaritzburg"],
+}
+ARTICLE_KEYS = {
+    "Bulk Water": ("water", "bulk water"),
+    "Water Engineering": ("water", "bulk water"),
+    "Heavy Civils": ("civil", "heavy civils"),
+    "Public Infrastructure": ("tender", ""),
+    "Technology": ("manage", "project management"),
+    "Strategic Alliance": ("tender", ""),
+    "Our People": ("tender", ""),
+    "Community": ("tender", ""),
+}
+
+
+def article_category(page: str) -> str:
+    src = open(os.path.join(ROOT, page), encoding="utf-8").read()
+    m = re.search(r'"articleSection":\s*"([^"]+)"', src)
+    return m.group(1) if m else ""
+
+
+def article_projects(page: str) -> str:
+    slug = page[len("communications/insights/"):-len(".html")]
+    cards = []
+    for s in ARTICLE_PROJECTS.get(slug, []):
+        p = PROJECT_PAGES[s]
+        cards.append(f'''
+                <a href="{BASE}/projects/{s}.html" target="_top" class="group border border-gray-700 bg-unicon-dark p-6 transition-colors hover:border-unicon-green">
+                    <p class="font-mono text-[9px] uppercase tracking-widest text-unicon-green">{p["sector"]} &middot; Case study</p>
+                    <h3 class="mt-2 text-lg font-bold uppercase tracking-tight text-white group-hover:text-unicon-green">{p["db"]}</h3>
+                    <p class="mt-2 text-sm font-light leading-relaxed text-gray-400">{p.get("location") or ""}</p>
+                </a>''')
+    if not cards:
+        return ""
+    return f'''            <div class="mb-12 border-b border-gray-800 pb-12">
+                <p class="mb-5 font-mono text-[10px] uppercase tracking-widest text-unicon-green">The Work Behind This</p>
+                <div class="grid grid-cols-1 gap-5 md:grid-cols-2">{"".join(cards)}
+                </div>
+            </div>
+'''
+
+
 def enquiry_key(page: str) -> tuple[str, str] | None:
     """(enquiry-type key, words for the sentence) for a page, or None for pages
     that do not get the block."""
@@ -357,6 +417,11 @@ def enquiry_key(page: str) -> tuple[str, str] | None:
         return ("turnkey", "design and build")
     if page.startswith("manage/"):
         return ("manage", "project management")
+    if page.startswith("communications/insights/"):
+        cat = article_category(page)
+        if cat and cat not in ARTICLE_KEYS:
+            raise SystemExit(f"{page}: article category {cat!r} has no entry in ARTICLE_KEYS")
+        return ARTICLE_KEYS.get(cat, ("tender", ""))
     if page.startswith("projects/"):
         slug = page[len("projects/"):-len(".html")]
         c = PROJECT_PAGES.get(slug)
@@ -380,9 +445,10 @@ def enquiry(page: str) -> str:
             if not words else
             f"If you have a {words} project coming up, tell us what you are planning. "
             f"We reply within one business day.")
+    projects = article_projects(page) if page.startswith("communications/insights/") else ""
     return f"""    <section class="bg-unicon-black text-white" aria-labelledby="enquiry-heading">
         <div class="max-w-[90rem] mx-auto px-6 sm:px-8 lg:px-12 py-14 md:py-16">
-            <div class="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-8">
+{projects}            <div class="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-8">
                 <div class="max-w-2xl">
                     <h2 id="enquiry-heading" class="text-2xl md:text-3xl font-extrabold uppercase tracking-tight">Talk to us about your project</h2>
                     <p class="mt-3 text-sm md:text-base font-light leading-relaxed text-gray-300">{line}</p>

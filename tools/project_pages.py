@@ -128,6 +128,28 @@ def cdn(src: str, w: int = 1400) -> str:
     return f"https://wsrv.nl/?url=raw.githubusercontent.com/chrisnott-unicon/{src}&w={w}&output=webp&q=75"
 
 
+# A case study should lead back to the capability it demonstrates: a reader who
+# has just read about a 10ML dome roof should be one click from the reservoir
+# page, not back at the database. The map is asserted, so a new sector name
+# stops the build rather than quietly dropping the link.
+SECTOR_PAGES = {
+    "Bulk Water": "build/water-engineering.html",
+    "Wastewater": "build/water-engineering.html",
+    "Heavy Civils": "build/civil-engineering.html",
+    "Retail": "build/general-building.html",
+    "Agricultural": "build/agricultural-engineering.html",
+    "Industrial": "build/industrial-logistics.html",
+}
+
+
+def sector_link(sector: str) -> str:
+    if sector not in SECTOR_PAGES:
+        raise SystemExit(f"sector {sector!r} has no capability page in SECTOR_PAGES")
+    return (f'<a href="{BASE}/{SECTOR_PAGES[sector]}" target="_top" '
+            f'class="text-unicon-black underline decoration-unicon-green decoration-2 '
+            f'underline-offset-4 hover:text-unicon-green">{e(sector)}</a>')
+
+
 def facts(c, r):
     rows = [
         ("Appointment", appt_label(c, r)),
@@ -135,7 +157,7 @@ def facts(c, r):
         ("Programme", f"{month(r['start'])} to {month(r['complete'])} ({r['duration_months']} months)"),
         ("Value band", r["band"].replace("-", "–")),
         ("Employer", c.get("employer_label") or (c["brands"][0]["name"] if c["brands"][0]["role"] in ("Client", "Employer") else r["employer"])),
-        ("Sector", c["sector"]),
+        ("Sector", sector_link(c["sector"])),
     ]
     if c["location"]:
         rows.insert(2, ("Location", c["location"]))
@@ -182,7 +204,7 @@ def overview(c, r):
     cells = "\n".join(
         f'''                    <div class="border border-unicon-border bg-white p-5">
                         <p class="font-mono text-[9px] uppercase tracking-widest text-unicon-green">{e(k)}</p>
-                        <p class="mt-2 text-sm font-bold uppercase tracking-tight text-unicon-black">{e(v)}</p>
+                        <p class="mt-2 text-sm font-bold uppercase tracking-tight text-unicon-black">{v if k == "Sector" else e(v)}</p>
                     </div>''' for k, v in facts(c, r))
     cap = ""
     if c["image"]["verified"]:

@@ -18,10 +18,10 @@
   "water-engineering": {
     "eyebrow": "Build Division",
     "h1": [
-      "Water",
-      "Security."
+      "Reservoir &",
+      "Water Treatment Works."
     ],
-    "lead": "Bulk water is the largest part of what Unicon does and has been since the mid-nineties. Reservoirs, treatment works, pump stations and pipelines &mdash; the structures that have to hold, and keep holding, for fifty years.",
+    "lead": "Unicon is a reservoir and water treatment works contractor based in KwaZulu-Natal. Bulk water is the largest part of what we do and has been since the mid-nineties &mdash; reservoirs, bulk water and wastewater treatment works, pump stations and pipelines. The structures that have to hold, and keep holding, for fifty years",
     "select": {
       "sectors": [
         "Bulk Water",
@@ -174,15 +174,26 @@
       "Planning A Water Project?",
       "Send us the drawings or the scope and we will come back with the engineer who would run the job, not a salesperson.",
       "Discuss A Water Project"
-    ]
+    ],
+    "related_work": {
+      "projects": [
+        "thabazimbi-10ml-dome-roof-reservoir",
+        "tinley-manor-wwtw-club-med"
+      ],
+      "articles": [
+        "40ml-reservoirs",
+        "water-treatment-works-upgrade",
+        "el-nino-dry-season-water-infrastructure"
+      ]
+    }
   },
   "civil-engineering": {
     "eyebrow": "Build Division",
     "h1": [
-      "Transport &",
-      "Earthworks."
+      "Bridges, Roads",
+      "& Earthworks."
     ],
-    "lead": "Provincial bridges, river crossings, canals and mass earthworks. Work that gets built in a live river, under traffic, or in a season that will not wait.",
+    "lead": "Unicon is a civil engineering contractor working out of Pietermaritzburg and across KwaZulu-Natal, from Durban to the rural districts. Provincial bridges, river crossings, canals and mass earthworks &mdash; work that gets built in a live river, under traffic, or in a season that will not wait",
     "select": {
       "sectors": [
         "Bridges & Heavy Civils"
@@ -329,15 +340,24 @@
       "Have A Civils Package To Price?",
       "Send the drawings and the site constraints. We will tell you honestly whether the programme is achievable before we price it.",
       "Discuss A Civils Project"
-    ]
+    ],
+    "related_work": {
+      "projects": [
+        "makhathini-drainage-canal-jozini"
+      ],
+      "articles": [
+        "rural-bridges-and-drainage",
+        "municipal-elections-and-the-long-record"
+      ]
+    }
   },
   "structural-engineering": {
     "eyebrow": "Build Division",
     "h1": [
-      "Structural",
-      "Concrete."
+      "Structural &",
+      "Post-Tensioned Concrete."
     ],
-    "lead": "Reinforced and post-tensioned concrete, formwork engineering and the finishes that decide whether a structure lasts thirty years or thirteen.",
+    "lead": "Reinforced and post-tensioned concrete contracting in KwaZulu-Natal: formwork engineering, water-retaining structures and the finishes that decide whether a structure lasts thirty years or thirteen.",
     "select": {
       "any": [
         "post-tension",
@@ -492,15 +512,23 @@
       "Need Concrete Done Properly?",
       "If the structure has to hold water, carry load or be built to a tolerance, talk to us before the method is fixed.",
       "Discuss A Concrete Package"
-    ]
+    ],
+    "related_work": {
+      "projects": [
+        "thabazimbi-10ml-dome-roof-reservoir"
+      ],
+      "articles": [
+        "40ml-reservoirs"
+      ]
+    }
   },
   "general-building": {
     "eyebrow": "Build Division",
     "h1": [
-      "Vertical",
-      "Infrastructure."
+      "Retail, Schools",
+      "& Clinics."
     ],
-    "lead": "Retail centres, schools, clinics, offices and homes. The company started with rural clinics and classrooms in 1991 and has kept a building team ever since.",
+    "lead": "Unicon is a building contractor in KwaZulu-Natal: retail centres, schools, clinics, offices and homes. The company started with rural clinics and classrooms in 1991 and has kept a building team ever since.",
     "select": {
       "sectors": [
         "Commercial & Retail",
@@ -650,15 +678,24 @@
       "Have A Building To Put Up?",
       "Retail, institutional, healthcare or residential &mdash; send us the drawings and we will tell you what it really takes to build.",
       "Discuss A Building Project"
-    ]
+    ],
+    "related_work": {
+      "projects": [
+        "invesco-shopping-mall-pietermaritzburg",
+        "howick-on-main-retail-centre"
+      ],
+      "articles": [
+        "facility-management"
+      ]
+    }
   },
   "industrial-logistics": {
     "eyebrow": "Build Division",
     "h1": [
-      "Industrial &",
-      "Logistics."
+      "Factories &",
+      "Logistics Buildings."
     ],
-    "lead": "Factories, depots, processing plants and the hardstands, foundations and services that make them work.",
+    "lead": "Industrial contracting in KwaZulu-Natal and beyond: factories, depots, processing plants and the hardstands, foundations and services that make them work.",
     "select": {
       "sectors": [
         "Industrial & Agri-Processing"
@@ -817,15 +854,23 @@
       "Extending Or Building A Plant?",
       "Tell us what cannot stop running. That is usually the constraint that decides the programme and the price.",
       "Discuss An Industrial Project"
-    ]
+    ],
+    "related_work": {
+      "projects": [
+        "nestle-coffee-factory-upgrade"
+      ],
+      "articles": [
+        "facility-management"
+      ]
+    }
   },
   "agricultural-engineering": {
     "eyebrow": "Build Division",
     "h1": [
-      "Agricultural",
-      "Engineering."
+      "Abattoirs &",
+      "Agricultural EPC."
     ],
-    "lead": "Abattoirs, dairies, processing lines and farm infrastructure &mdash; built to the standards a regulator will actually inspect.",
+    "lead": "Agricultural EPC and agri-processing contracting: abattoirs, dairies, processing lines and farm infrastructure &mdash; built to the standards a regulator will actually inspect.",
     "select": {
       "any": [
         "abattoir",
@@ -981,13 +1026,19 @@
       "Planning An Agri Facility?",
       "Tell us the throughput and the grading you need to hold. The building follows from there.",
       "Discuss An Agri Project"
-    ]
+    ],
+    "related_work": {
+      "projects": [
+        "mnqumashe-high-throughput-abattoir"
+      ],
+      "articles": []
+    }
   },
   "mining-infrastructure": {
     "eyebrow": "Build Division",
     "h1": [
-      "Mining",
-      "Infrastructure."
+      "Mining Water",
+      "& Heavy Civils."
     ],
     "lead": "Water infrastructure and heavy civils for mining and heavy industry, built to the standard a mine's own engineering department will audit.",
     "select": {
@@ -1143,13 +1194,19 @@
       "Infrastructure On A Mine?",
       "Water storage, pipelines or heavy foundations &mdash; send us the scope and the site standards you work to.",
       "Discuss A Mining Project"
-    ]
+    ],
+    "related_work": {
+      "projects": [
+        "thabazimbi-10ml-dome-roof-reservoir"
+      ],
+      "articles": []
+    }
   },
   "renewable-energy": {
     "eyebrow": "Build Division",
     "h1": [
       "Renewable Energy",
-      "Civils."
+      "Balance of Plant."
     ],
     "lead": "Balance-of-plant civil works for generation projects: platforms, foundations, hardstands, access roads and site water.",
     "select": {
@@ -1300,6 +1357,10 @@
       "Discuss A BoP Package"
     ],
     "record_heading": "The Civil Record Behind This.",
-    "record_intro": "Balance-of-plant work is earthworks, foundations, access roads and site water. These are comparable civil contracts from our project database, drawn from the heavy civils and earthworks side of the portfolio."
+    "record_intro": "Balance-of-plant work is earthworks, foundations, access roads and site water. These are comparable civil contracts from our project database, drawn from the heavy civils and earthworks side of the portfolio.",
+    "related_work": {
+      "projects": [],
+      "articles": []
+    }
   }
 }
