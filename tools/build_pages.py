@@ -384,6 +384,69 @@ def capacity(c, all_rows):
     </section>'''
 
 
+
+# --------------------------------------------------------- related work
+# The sector pages held attention in analytics (Bulk Water 54s, Civil 59s) but
+# only ever linked to the project database and the Insights hub, never to the
+# case study or the article that answers the question the reader has just
+# formed. Both lists are validated against the files they name, so a renamed
+# article or project page breaks the build instead of leaving a dead link.
+
+PROJECT_PAGES = json.load(open(os.path.join(ROOT, "tools", "project_pages.json"), encoding="utf-8"))
+
+
+def _articles():
+    spec = importlib.util.spec_from_file_location("ins", os.path.join(ROOT, "tools", "insights.py"))
+    mod = importlib.util.module_from_spec(spec)
+    spec.loader.exec_module(mod)
+    return {a["_slug"]: a for a in mod.load_all()}
+
+
+ARTICLES = _articles()
+
+
+def work(c):
+    rw = c.get("related_work") or {}
+    projects, articles = rw.get("projects", []), rw.get("articles", [])
+    if not projects and not articles:
+        return ""
+
+    cards = []
+    for slug in projects:
+        p = PROJECT_PAGES[slug]
+        where = p.get("location") or ""
+        cards.append(f'''
+                <a href="{BASE}/projects/{slug}.html" target="_top" class="group flex flex-col border border-unicon-border bg-white p-8 transition-colors hover:border-unicon-green">
+                    <p class="mb-3 font-mono text-[9px] uppercase tracking-widest text-unicon-green">Case study</p>
+                    <h3 class="mb-2 font-bold uppercase tracking-tight text-unicon-black group-hover:text-unicon-green">{e(p["db"])}</h3>
+                    <p class="text-sm font-light leading-relaxed text-gray-600">{e(where)}</p>
+                    <span class="mt-5 inline-block font-mono text-[9px] uppercase tracking-widest text-unicon-green">Read the case study <i class="fa-solid fa-arrow-right ml-1"></i></span>
+                </a>''')
+    for slug in articles:
+        a = ARTICLES[slug]
+        cards.append(f'''
+                <a href="{BASE}/communications/insights/{slug}.html" target="_top" class="group flex flex-col border border-unicon-border bg-white p-8 transition-colors hover:border-unicon-green">
+                    <p class="mb-3 font-mono text-[9px] uppercase tracking-widest text-unicon-green">{e(a["articleSection"])}</p>
+                    <h3 class="mb-2 font-bold uppercase tracking-tight text-unicon-black group-hover:text-unicon-green">{e(a["headline"])}</h3>
+                    <p class="text-sm font-light leading-relaxed text-gray-600">{e(a["description"][:150])}</p>
+                    <span class="mt-5 inline-block font-mono text-[9px] uppercase tracking-widest text-unicon-green">Read it <i class="fa-solid fa-arrow-right ml-1"></i></span>
+                </a>''')
+
+    return f'''    <section class="border-b border-unicon-border bg-white py-16 md:py-24">
+        <div class="mx-auto max-w-[90rem] px-6 sm:px-8 lg:px-12">
+            <div class="mb-12 max-w-3xl">
+                <p class="mb-3 font-mono text-[10px] uppercase tracking-widest text-unicon-green">From This Sector</p>
+                <h2 class="text-3xl font-extrabold uppercase leading-none tracking-tight sm:text-4xl md:text-5xl">Projects &amp; Reading.</h2>
+            </div>
+            <div class="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">{"".join(cards)}
+            </div>
+            <a href="{BASE}/projects.html" target="_top" class="mt-10 inline-block font-mono text-[10px] font-bold uppercase tracking-widest text-unicon-black hover:text-unicon-green">
+                Every project in the database <i class="fa-solid fa-arrow-right ml-1"></i>
+            </a>
+        </div>
+    </section>'''
+
+
 def related(c):
     cards = "".join(f'''
                 <a href="{BASE}/{p}" target="_top" class="group border border-unicon-border bg-white p-8 transition-colors hover:border-unicon-green">
@@ -486,7 +549,7 @@ def hub(content, rows) -> str:
 def body(slug, c, rows):
     picked = select(rows, c["select"])
     return "\n\n".join([hero(slug, c), intro(c), scope(c), record(slug, c, picked, rows),
-                        method(c), capacity(c, rows), related(c), cta(c)])
+                        method(c), capacity(c, rows), work(c), related(c), cta(c)])
 
 
 def install_markers(s: str) -> str:
