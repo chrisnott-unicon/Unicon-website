@@ -395,6 +395,10 @@ import chrome
 # away from the rest of the site.
 NAV = chrome.NAV_START + "\n" + chrome.nav("projects.html") + "\n    " + chrome.NAV_END
 FOOTER = chrome.FOOT_START + "\n" + chrome.footer("projects.html") + "\n    " + chrome.FOOT_END
+# The contact_click key event is owned by chrome.py too. This page is rewritten
+# whole on every run, so a block that is not placed here is simply lost - which
+# is how it went missing from this page once already.
+TRACKING = chrome.TRACK_START + "\n" + chrome.tracking() + "\n    " + chrome.TRACK_END
 
 HTML = f"""<!DOCTYPE html>
 <html lang="en" class="scroll-smooth">
@@ -816,7 +820,7 @@ HTML = f"""<!DOCTYPE html>
         </div>
     </div>
 
-    <!-- SCRIPTS -->
+    {TRACKING}
 </body>
 </html>
 """
