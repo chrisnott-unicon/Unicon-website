@@ -104,7 +104,7 @@ FOOTER_COMPANY = [
 # the full-resolution PNG, and cached at the edge instead of hitting
 # raw.githubusercontent.com on every page view.
 LOGO = "https://wsrv.nl/?url=raw.githubusercontent.com/chrisnott-unicon/UniconLogo/main/UniconBlk.png&w=200&output=webp&q=75"
-MAP = "https://share.google/XC0JuqEbN4XYJeM5k"
+MAP = "https://maps.app.goo.gl/CYPtcrXV1PaPb5Zh9"
 PHONE_HREF = "tel:+27664834709"
 PHONE_TEXT = "+27 66 483 4709"
 EMAIL = "info@uniconsa.co.za"
@@ -269,8 +269,8 @@ def footer(page: str) -> str:
                         <div class="flex items-start gap-4">
                             <i class="fa-solid fa-location-crosshairs text-unicon-green mt-1 text-sm opacity-70"></i>
                             <div>
-                                <p class="text-xs font-bold text-unicon-black uppercase tracking-tight">Hilton / Pietermaritzburg</p>
-                                <p class="text-[10px] text-gray-500 font-light mt-1">KwaZulu-Natal, South Africa</p>
+                                <p class="text-xs font-bold text-unicon-black uppercase tracking-tight">Office 2 Level, One Offices, 10 Hilton Ave, Leonard</p>
+                                <p class="text-[10px] text-gray-500 font-light mt-1">Hilton, KwaZulu-Natal, 3245, South Africa</p>
                                 <a href="{MAP}" target="_blank" rel="noopener noreferrer" class="text-[9px] font-bold text-unicon-green uppercase tracking-widest mt-2 block hover:underline">View Map Location</a>
                             </div>
                         </div>
