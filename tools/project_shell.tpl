@@ -13,13 +13,7 @@
     <meta property="og:url" content="@@URL@@">
     <meta property="og:type" content="website">
 
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-TWWS9BQM18"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-      gtag('config', 'G-TWWS9BQM18');
-    </script>
+    @@ANALYTICS@@
 
     <link rel="preconnect" href="https://cdn.tailwindcss.com">
     <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>

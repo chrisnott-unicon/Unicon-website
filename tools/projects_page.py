@@ -400,17 +400,12 @@ FOOTER = chrome.FOOT_START + "\n" + chrome.footer("projects.html") + "\n    " + 
 # is how it went missing from this page once already.
 TRACKING = chrome.TRACK_START + "\n" + chrome.tracking() + "\n    " + chrome.TRACK_END
 ENQUIRY = chrome.ENQ_START + "\n" + chrome.enquiry("projects.html") + "\n    " + chrome.ENQ_END
+# GA and the Tag Manager container are both held behind the interaction gate.
+ANALYTICS = chrome.GA_START + "\n" + chrome.analytics("projects.html") + "\n    " + chrome.GA_END
 
 HTML = f"""<!DOCTYPE html>
 <html lang="en" class="scroll-smooth">
 <head>
-    <!-- Google Tag Manager -->
-    <script>(function(w,d,s,l,i){{w[l]=w[l]||[];w[l].push({{'gtm.start':
-    new Date().getTime(),event:'gtm.js'}});var f=d.getElementsByTagName(s)[0],
-    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-    }})(window,document,'script','dataLayer','GTM-59TZ364B');</script>
-    <!-- End Google Tag Manager -->
 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
@@ -418,13 +413,7 @@ HTML = f"""<!DOCTYPE html>
     <meta name="description" content="Every Unicon project since 1991: post-tensioned reservoirs, water treatment works, provincial bridges and turnkey builds. Search {len(recs)} records by discipline.">
     <meta name="keywords" content="Unicon Construction Projects, Bulk Water Reservoirs, Post-Tensioned Reservoir, Water Treatment Works, Bridge Construction, Retail Centre Construction, South Africa, KwaZulu-Natal, UGU District Municipality, Umgeni Water">
     <link rel="canonical" href="{BASE}/projects.html">
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-TWWS9BQM18"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){{dataLayer.push(arguments);}}
-      gtag('js', new Date());
-      gtag('config', 'G-TWWS9BQM18');
-    </script>
+    {ANALYTICS}
 
     <link rel="icon" href="https://wsrv.nl/?url=raw.githubusercontent.com/chrisnott-unicon/UniconLogo/main/UniconBlk.png&amp;w=64&amp;h=64&amp;fit=contain&amp;output=png">
     <meta property="og:title" content="Unicon Construction | Master Project Database">
@@ -463,7 +452,6 @@ HTML = f"""<!DOCTYPE html>
     </style>
 </head>
 <body class="font-sans selection:bg-unicon-green selection:text-white">
-    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-59TZ364B" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
     <a href="#database" class="sr-only focus:not-sr-only focus:absolute focus:left-4 focus:top-4 focus:z-[200] focus:rounded-sm focus:bg-unicon-green focus:px-4 focus:py-2 focus:text-xs focus:font-bold focus:uppercase focus:tracking-widest focus:text-white">Skip to project database</a>
 

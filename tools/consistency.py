@@ -34,7 +34,10 @@ REQUIRED = {
     r'<link rel="canonical"': "canonical tag",
     r'rel="icon"': "favicon",
     r'property="og:title"': "Open Graph title",
-    r'<script async src="https://www\.googletagmanager\.com/gtag/js': "GA4 tag",
+    # GA is loaded only after a human interacts (tools/chrome.py analytics()).
+    # An ungated snippet would start counting bots again the moment it shipped.
+    r"<!-- CHROME:ANALYTICS:START": "gated GA4 block",
+    r"googletagmanager\.com/gtag/js\?id=' \+ ID": "GA4 loader inside the gate",
     r"document\.addEventListener\('DOMContentLoaded'": "shared script",
     # contact_click is a GA4 key event. It used to be pasted in by hand and one
     # generator quietly dropped it, so the block is owned by chrome.py and its
@@ -125,6 +128,10 @@ def main() -> None:
         if exempt:
             continue
         content += 1
+
+        if re.search(r'<script async src="https://www\.googletagmanager\.com/gtag/js', s):
+            fails.append(f"{f}: loads gtag.js directly - GA must go through the "
+                         f"interaction gate in tools/chrome.py")
 
         for pat, name in REQUIRED.items():
             n = len(re.findall(pat, s))
